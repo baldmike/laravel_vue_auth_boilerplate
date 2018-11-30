@@ -5,10 +5,7 @@
                 <div class="card card-default">
                     <div class="card-header"></div>
                     <div class="card-body">
-                        I am the About Component
-                        <li>{{ x * 3}}</li>
-                        <li>{{ y * 3}}</li>
-                        <li>{{ z * 3}}</li>
+                        I am the About Component, coo coo kachoo.
                     </div>
                 </div>
             </div>
@@ -21,9 +18,6 @@
         name: 'about',
         data() {
             return {
-                x: 7,
-                y: 14,
-                z: 21
             }
         },
         mounted() {

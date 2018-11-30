@@ -4,19 +4,36 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 export default new Vuex.Store({ 
-        state: { 
-                X: "", 
-                Y: "", 
-                Z: "" 
-        },
-        getters: { 
+    state: { 
+        x: "5", 
+        y: "5", 
+        z: "5" 
+    },
+    getters: { 
 
+    },
+    mutations: { 
+        makeXDouble(state) {
+            state.x *= 2;
         },
-        mutations: { 
-
+        makeYDouble(state) {
+            state.y *= 2;
         },
-        actions: { 
-
+        makeZDouble(state) {
+            state.z *= 2;
         }
+    },
+    actions: { 
+        doubleX(context) {
+            context.commit('makeXDouble');
+        },
+        doubleY(context) {
+            context.commit('makeYDouble');
+        },
+        doubleZ(context) {
+            context.commit('makeZDouble');
+        }
+
+    }
 
 })

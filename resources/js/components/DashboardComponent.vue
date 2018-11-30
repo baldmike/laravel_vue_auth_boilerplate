@@ -6,9 +6,6 @@
                     <div class="card-header"></div>
                     <div class="card-body">
                         I am the Dashboard Component
-                        <li>{{ x * 2}}</li>
-                        <li>{{ y * 2}}</li>
-                        <li>{{ z * 2}}</li>
                     </div>
                 </div>
             </div>
@@ -21,9 +18,7 @@
         name: 'dashboard',
         data() {
             return {
-                x: 7,
-                y: 14,
-                z: 21
+                
             }
         },
         mounted() {

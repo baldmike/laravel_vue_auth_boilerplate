@@ -24195,7 +24195,7 @@ var router = new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
         component: __WEBPACK_IMPORTED_MODULE_1__components_MainComponent___default.a,
 
         children: [{
-            path: '',
+            path: 'home',
             component: __WEBPACK_IMPORTED_MODULE_2__components_HomeComponent___default.a
         }, {
             path: 'dashboard',
@@ -24342,7 +24342,7 @@ var render = function() {
         [
           _c("b-navbar-toggle", { attrs: { target: "nav_collapse" } }),
           _vm._v(" "),
-          _c("b-navbar-brand", { attrs: { href: "#" } }, [_vm._v("NavBar")]),
+          _c("b-navbar-brand", { attrs: { href: "/" } }, [_vm._v("NavBar")]),
           _vm._v(" "),
           _c(
             "b-collapse",
@@ -24351,7 +24351,7 @@ var render = function() {
               _c(
                 "b-navbar-nav",
                 [
-                  _c("b-nav-item", { attrs: { to: "/" } }, [_vm._v("Home")]),
+                  _c("b-nav-item", { attrs: { to: "home" } }, [_vm._v("Home")]),
                   _vm._v(" "),
                   _c("b-nav-item", { attrs: { to: "dashboard" } }, [
                     _vm._v("Dashboard")
@@ -24507,17 +24507,38 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
+
     name: 'home',
     data: function data() {
-        return {
-            x: 7,
-            y: 14,
-            z: 21
-        };
+        return {};
     },
     mounted: function mounted() {
         console.log('Home Component mounted.');
+    },
+
+    computed: {
+        x: function x() {
+            return this.$store.state.x;
+        },
+        y: function y() {
+            return this.$store.state.y;
+        },
+        z: function z() {
+            return this.$store.state.z;
+        }
+    },
+    methods: {
+        dblX: function dblX() {
+            this.$store.dispatch('doubleX');
+        },
+        dblY: function dblY() {
+            this.$store.dispatch('doubleY');
+        },
+        dblZ: function dblZ() {
+            this.$store.dispatch('doubleZ');
+        }
     }
 });
 
@@ -24539,11 +24560,20 @@ var render = function() {
             _vm._v(
               "\n                    I am the Home Component\n                    "
             ),
-            _c("li", [_vm._v(_vm._s(_vm.x))]),
+            _c("li", [
+              _vm._v("X = " + _vm._s(_vm.x) + " "),
+              _c("button", { on: { click: _vm.dblX } }, [_vm._v("DOUBLE X")])
+            ]),
             _vm._v(" "),
-            _c("li", [_vm._v(_vm._s(_vm.y))]),
+            _c("li", [
+              _vm._v("Y = " + _vm._s(_vm.y) + " "),
+              _c("button", { on: { click: _vm.dblY } }, [_vm._v("DOUBLE Y")])
+            ]),
             _vm._v(" "),
-            _c("li", [_vm._v(_vm._s(_vm.z))])
+            _c("li", [
+              _vm._v("Z = " + _vm._s(_vm.z) + " "),
+              _c("button", { on: { click: _vm.dblZ } }, [_vm._v("DOUBLE Z")])
+            ])
           ])
         ])
       ])
@@ -24621,18 +24651,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: 'dashboard',
     data: function data() {
-        return {
-            x: 7,
-            y: 14,
-            z: 21
-        };
+        return {};
     },
     mounted: function mounted() {
         console.log('Dashboard Component mounted.');
@@ -24647,28 +24670,30 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "page" }, [
-    _c("div", { staticClass: "row justify-content-center" }, [
-      _c("div", { staticClass: "col-md-8" }, [
-        _c("div", { staticClass: "card card-default" }, [
-          _c("div", { staticClass: "card-header" }),
-          _vm._v(" "),
-          _c("div", { staticClass: "card-body" }, [
-            _vm._v(
-              "\n                    I am the Dashboard Component\n                    "
-            ),
-            _c("li", [_vm._v(_vm._s(_vm.x * 2))]),
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "page" }, [
+      _c("div", { staticClass: "row justify-content-center" }, [
+        _c("div", { staticClass: "col-md-8" }, [
+          _c("div", { staticClass: "card card-default" }, [
+            _c("div", { staticClass: "card-header" }),
             _vm._v(" "),
-            _c("li", [_vm._v(_vm._s(_vm.y * 2))]),
-            _vm._v(" "),
-            _c("li", [_vm._v(_vm._s(_vm.z * 2))])
+            _c("div", { staticClass: "card-body" }, [
+              _vm._v(
+                "\n                    I am the Dashboard Component\n                "
+              )
+            ])
           ])
         ])
       ])
     ])
-  ])
-}
-var staticRenderFns = []
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -24790,18 +24815,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: 'about',
     data: function data() {
-        return {
-            x: 7,
-            y: 14,
-            z: 21
-        };
+        return {};
     },
     mounted: function mounted() {
         console.log('About Component mounted.');
@@ -24816,28 +24834,30 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "page" }, [
-    _c("div", { staticClass: "row justify-content-center" }, [
-      _c("div", { staticClass: "col-md-8" }, [
-        _c("div", { staticClass: "card card-default" }, [
-          _c("div", { staticClass: "card-header" }),
-          _vm._v(" "),
-          _c("div", { staticClass: "card-body" }, [
-            _vm._v(
-              "\n                    I am the About Component\n                    "
-            ),
-            _c("li", [_vm._v(_vm._s(_vm.x * 3))]),
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "page" }, [
+      _c("div", { staticClass: "row justify-content-center" }, [
+        _c("div", { staticClass: "col-md-8" }, [
+          _c("div", { staticClass: "card card-default" }, [
+            _c("div", { staticClass: "card-header" }),
             _vm._v(" "),
-            _c("li", [_vm._v(_vm._s(_vm.y * 3))]),
-            _vm._v(" "),
-            _c("li", [_vm._v(_vm._s(_vm.z * 3))])
+            _c("div", { staticClass: "card-body" }, [
+              _vm._v(
+                "\n                    I am the About Component, coo coo kachoo.\n                "
+              )
+            ])
           ])
         ])
       ])
     ])
-  ])
-}
-var staticRenderFns = []
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -35746,14 +35766,34 @@ exports.push([module.i, "/*!\n * Bootstrap v4.1.3 (https://getbootstrap.com/)\n 
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */]);
 
 /* harmony default export */ __webpack_exports__["a"] = (new __WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */].Store({
-        state: {
-                X: "",
-                Y: "",
-                Z: ""
+    state: {
+        x: "5",
+        y: "5",
+        z: "5"
+    },
+    getters: {},
+    mutations: {
+        makeXDouble: function makeXDouble(state) {
+            state.x *= 2;
         },
-        getters: {},
-        mutations: {},
-        actions: {}
+        makeYDouble: function makeYDouble(state) {
+            state.y *= 2;
+        },
+        makeZDouble: function makeZDouble(state) {
+            state.z *= 2;
+        }
+    },
+    actions: {
+        doubleX: function doubleX(context) {
+            context.commit('makeXDouble');
+        },
+        doubleY: function doubleY(context) {
+            context.commit('makeYDouble');
+        },
+        doubleZ: function doubleZ(context) {
+            context.commit('makeZDouble');
+        }
+    }
 
 }));
 

@@ -7,9 +7,9 @@
 
                     <div class="card-body">
                         I am the Home Component
-                        <li>{{ x }}</li>
-                        <li>{{ y }}</li>
-                        <li>{{ z }}</li>
+                        <li>X = {{ x }} <button @click="dblX">DOUBLE X</button></li>
+                        <li>Y = {{ y }} <button @click="dblY">DOUBLE Y</button></li>
+                        <li>Z = {{ z }} <button @click="dblZ">DOUBLE Z</button></li>
                     </div>
                 </div>
             </div>
@@ -18,17 +18,39 @@
 </template>
 
 <script>
+    
     export default {
+
         name: 'home',
         data() {
             return {
-                x: 7,
-                y: 14,
-                z: 21
+
             }
         },
         mounted() {
             console.log('Home Component mounted.')
+        },
+        computed: {
+            x() {
+                return this.$store.state.x;
+            },
+            y() {
+                return this.$store.state.y;
+            },
+            z() {
+                return this.$store.state.z;
+            }
+        },
+        methods: {
+            dblX() {
+                this.$store.dispatch('doubleX');
+            },
+            dblY() {
+                this.$store.dispatch('doubleY');
+            },
+            dblZ() {
+                this.$store.dispatch('doubleZ');
+            }
         }
     }
 </script>
