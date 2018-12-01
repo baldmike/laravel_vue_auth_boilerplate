@@ -24342,7 +24342,9 @@ var render = function() {
         [
           _c("b-navbar-toggle", { attrs: { target: "nav_collapse" } }),
           _vm._v(" "),
-          _c("b-navbar-brand", { attrs: { href: "/" } }, [_vm._v("NavBar")]),
+          _c("b-navbar-brand", { attrs: { to: "/", e: "" } }, [
+            _vm._v("NavBar")
+          ]),
           _vm._v(" "),
           _c(
             "b-collapse",
@@ -24506,6 +24508,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -24550,35 +24556,42 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "page" }, [
-    _c("div", { staticClass: "row justify-content-center" }, [
-      _c("div", { staticClass: "col-md-8" }, [
-        _c("div", { staticClass: "card card-default" }, [
-          _c("div", { staticClass: "card-header" }),
-          _vm._v(" "),
-          _c("div", { staticClass: "card-body" }, [
-            _vm._v(
-              "\n                    I am the Home Component\n                    "
-            ),
-            _c("li", [
-              _vm._v("X = " + _vm._s(_vm.x) + " "),
-              _c("button", { on: { click: _vm.dblX } }, [_vm._v("DOUBLE X")])
-            ]),
+  return _c(
+    "div",
+    { staticClass: "page" },
+    [
+      _c("div", { staticClass: "row justify-content-center" }, [
+        _c("div", { staticClass: "col-md-8" }, [
+          _c("div", { staticClass: "card card-default" }, [
+            _c("div", { staticClass: "card-header" }),
             _vm._v(" "),
-            _c("li", [
-              _vm._v("Y = " + _vm._s(_vm.y) + " "),
-              _c("button", { on: { click: _vm.dblY } }, [_vm._v("DOUBLE Y")])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _vm._v("Z = " + _vm._s(_vm.z) + " "),
-              _c("button", { on: { click: _vm.dblZ } }, [_vm._v("DOUBLE Z")])
+            _c("div", { staticClass: "card-body" }, [
+              _vm._v(
+                "\n                    I am the Home Component\n                    "
+              ),
+              _c("li", [
+                _vm._v("X = " + _vm._s(_vm.x) + " "),
+                _c("button", { on: { click: _vm.dblX } }, [_vm._v("DOUBLE X")])
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _vm._v("Y = " + _vm._s(_vm.y) + " "),
+                _c("button", { on: { click: _vm.dblY } }, [_vm._v("DOUBLE Y")])
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _vm._v("Z = " + _vm._s(_vm.z) + " "),
+                _c("button", { on: { click: _vm.dblZ } }, [_vm._v("DOUBLE Z")])
+              ])
             ])
           ])
         ])
-      ])
-    ])
-  ])
+      ]),
+      _vm._v(" "),
+      _c("b-form", [_c("b-input", [_vm._v("Here")])], 1)
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

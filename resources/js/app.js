@@ -17,6 +17,7 @@ window.Vue = require('vue')
 Vue.component('home-component', require('./components/HomeComponent.vue'))
 Vue.component('main-component', require('./components/MainComponent.vue'))
 Vue.component('dashboard-component', require('./components/DashboardComponent.vue'))
+Vue.component('about-component', require('./components/AboutComponent.vue'))
 
 window.addEventListener('load', function () { 
     const app = new Vue({ 
