@@ -14,6 +14,8 @@
         components: {
             NavBar,
         },
+        computed: mapGetters(['isAuthenticated']),
+        methods: mapActions(['login'])
     }
 
 </script>

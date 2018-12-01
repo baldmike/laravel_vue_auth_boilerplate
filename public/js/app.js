@@ -24296,7 +24296,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     name: "main-app",
     components: {
         NavBar: __WEBPACK_IMPORTED_MODULE_0__NavBar___default.a
-    }
+    },
+    computed: mapGetters(['isAuthenticated']),
+    methods: mapActions(['login'])
 });
 
 /***/ }),
