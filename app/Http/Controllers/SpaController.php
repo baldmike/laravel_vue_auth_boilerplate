@@ -20,6 +20,6 @@ class SpaController extends Controller
     public function index()
     {
         Log::debug('SpaController->index()');
-        return view('welcome');
+        return view('spa');
     }
 }
