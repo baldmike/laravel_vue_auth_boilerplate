@@ -87,6 +87,8 @@ export default {
                 console.log('[Login.vue] login() - fetched current user');
                 console.log(userData.data.data);
 
+
+                this.$cookie.set('user', userData.data.data);
                 auth.login(data.token, userData.data.data);
                 this.$router.push({path: 'dashboard'});
             }).catch((error) => {

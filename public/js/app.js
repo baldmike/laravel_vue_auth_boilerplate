@@ -25197,10 +25197,11 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vue_
 /* harmony default export */ __webpack_exports__["a"] = (new __WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */].Store({
     state: function state() {
         var userToken = __WEBPACK_IMPORTED_MODULE_0_vue___default.a.cookie.get('token');
+        var user = __WEBPACK_IMPORTED_MODULE_0_vue___default.a.cookie.get('user');
 
         return {
             token: userToken ? userToken : null,
-            user: null,
+            user: user ? user : null,
             notificationMessages: [],
             x: "5",
             y: "5",
@@ -25209,6 +25210,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vue_
     },
 
     getters: {
+        // if there is a token, the user is authenticated
         isAuthenticated: function isAuthenticated(state) {
             return !!state.token;
         }
@@ -26394,6 +26396,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           console.log('[Login.vue] login() - fetched current user');
           console.log(userData.data.data);
 
+          _this.$cookie.set('user', userData.data.data);
           auth.login(data.token, userData.data.data);
           _this.$router.push({ path: 'dashboard' });
         }).catch(function (error) {

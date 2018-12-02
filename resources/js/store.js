@@ -13,10 +13,11 @@ export default new Vuex.Store({
 
     state() {
         let userToken = Vue.cookie.get('token');
+        let user = Vue.cookie.get('user');
 
         return {
             token: userToken ? userToken : null,
-            user: null,
+            user: user ? user : null,
             notificationMessages: [],
             x: "5", 
             y: "5", 
@@ -25,6 +26,7 @@ export default new Vuex.Store({
         
     },
     getters: { 
+        // if there is a token, the user is authenticated
         isAuthenticated: state => !!state.token
     },
     mutations: {
