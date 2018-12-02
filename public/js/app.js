@@ -25202,10 +25202,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vue_
         return {
             token: userToken ? userToken : null,
             user: user ? user : null,
-            notificationMessages: [],
-            x: "5",
-            y: "5",
-            z: "5"
+            notificationMessages: []
         };
     },
 
