@@ -19,9 +19,6 @@ export default new Vuex.Store({
             token: userToken ? userToken : null,
             user: user ? user : null,
             notificationMessages: [],
-            x: "5", 
-            y: "5", 
-            z: "5" 
         }
         
     },
