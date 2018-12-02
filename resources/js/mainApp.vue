@@ -7,13 +7,16 @@
 
 <script>
 
-    import NavBar from './NavBar'
+    import NavBar from './components/NavBar'
+    import { mapGetters, mapActions } from 'vuex';
 
     export default {
-        name: "main-app",
+        name: "mainApp",
         components: {
             NavBar,
         },
+        computed: mapGetters(['isAuthenticated']),
+        methods: mapActions(['login'])
     }
 
 </script>
