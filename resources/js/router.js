@@ -1,8 +1,9 @@
 import VueRouter from 'vue-router' 
-import MainComponent from './components/MainComponent'
+import mainApp from './mainApp'
 import HomeComponent from './components/HomeComponent'
 import DashboardComponent from './components/DashboardComponent'
 import AboutComponent from './components/AboutComponent'
+import LoginComponent from './components/LoginComponent'
 
 export const router = new VueRouter({ 
     mode: 'history', 
@@ -10,9 +11,13 @@ export const router = new VueRouter({
     routes: [ 
         {
             path: '/', 
-            component: MainComponent,
+            component: mainApp,
     
-            children: [ 
+            children: [
+                {
+                    path: 'login',
+                    component: LoginComponent
+                },
                 {
                     path: 'home',
                     component: HomeComponent

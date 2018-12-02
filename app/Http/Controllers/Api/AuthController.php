@@ -26,13 +26,15 @@ class AuthController extends Controller
         }
 
         $request->validate([
-            'name' => 'required|string|max:255',
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8',
         ]);
 
         $user = User::create([
-            'name' => $request->name,
+            'first_name' => $request->first_name,
+            'last_name' => $request->lastt_name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
@@ -46,9 +48,6 @@ class AuthController extends Controller
                 'status' => Response::HTTP_CREATED,
             ], Response::HTTP_CREATED);
         }
-
-        
-
     }
 
     public function login(Request $request)

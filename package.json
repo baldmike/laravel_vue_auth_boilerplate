@@ -20,7 +20,9 @@
     },
     "dependencies": {
         "bootstrap-vue": "^2.0.0-rc.11",
+        "vue-cookie": "^1.1.4",
         "vue-router": "^3.0.2",
+        "vuelidate": "^0.7.4",
         "vuex": "^3.0.1"
     }
 }
