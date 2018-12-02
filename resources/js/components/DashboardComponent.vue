@@ -14,6 +14,9 @@
 </template>
 
 <script>
+
+    import { mapActions, mapGetters } from "vuex";
+
     export default {
         name: 'dashboard',
         data() {
@@ -21,9 +24,13 @@
                 
             }
         },
+        beforeCreate() {
+            
+        },
         mounted() {
             console.log('Dashboard Component mounted.')
-        }
+        },
+        computed: mapGetters(['isAuthenticated']),
     }
 </script>
 

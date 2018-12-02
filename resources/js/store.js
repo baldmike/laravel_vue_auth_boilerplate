@@ -61,11 +61,9 @@ export default new Vuex.Store({
             context.commit('setLoginCred', payload)
         },
         logout( { commit }) {
-            let myUser = JSON.parse(window.localStorage.getItem('user'));
-            if(myUser) { console.log(myUser.id); } else { console.log('user not in local storage'); }
         
-            axios.post("/api/logout").then((userData) => {
-        
+            axios.post("/api/logout").then((userData) => {        
+                
                 commit('logout');
 
                 router.push({ path: 'login' });

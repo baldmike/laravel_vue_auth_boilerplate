@@ -9,12 +9,11 @@
         <title>LaraVue Boilerplate</title>
 
         <!-- Fonts -->
+        <link href="https://bootswatch.com/4/lux/bootstrap.min.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css"> 
         <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet"> 
         <link href="https://unpkg.com/nprogress@0.2.0/nprogress.css" rel="stylesheet" />
         
-
-    
     </head>
 
     <body>

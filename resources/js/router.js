@@ -12,6 +12,7 @@ export const router = new VueRouter({
         {
             path: '/', 
             component: mainApp,
+            
     
             children: [
                 {
@@ -20,15 +21,42 @@ export const router = new VueRouter({
                 },
                 {
                     path: 'home',
-                    component: HomeComponent
+                    component: HomeComponent,
+                    beforeEnter: (to, from, next) => {
+                        if (!window.auth.check()) {
+                            next({
+                                path: 'login'
+                            });
+                            return;
+                        }
+                        next();
+                    }
                 },
                 {
                     path: 'dashboard',
-                    component: DashboardComponent
+                    component: DashboardComponent,
+                    beforeEnter: (to, from, next) => {
+                        if (!window.auth.check()) {
+                            next({
+                                path: 'login'
+                            });
+                            return;
+                        }
+                        next();
+                    }
                 },
                 {
                     path: 'about',
-                    component: AboutComponent
+                    component: AboutComponent,
+                    beforeEnter: (to, from, next) => {
+                        if (!window.auth.check()) {
+                            next({
+                                path: 'login'
+                            });
+                            return;
+                        }
+                        next();
+                    }
                 }
             ]
         },
