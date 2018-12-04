@@ -2,7 +2,7 @@ import VueRouter from 'vue-router'
 import mainApp from './mainApp'
 import HomeComponent from './components/HomeComponent'
 import DashboardComponent from './components/DashboardComponent'
-import AboutComponent from './components/AboutComponent'
+import DogsComponent from './components/DogsComponent'
 import LoginComponent from './components/LoginComponent'
 
 export const router = new VueRouter({ 
@@ -46,8 +46,8 @@ export const router = new VueRouter({
                     }
                 },
                 {
-                    path: 'about',
-                    component: AboutComponent,
+                    path: 'dogs',
+                    component: DogsComponent,
                     beforeEnter: (to, from, next) => {
                         if (!window.auth.check()) {
                             next({
@@ -64,11 +64,10 @@ export const router = new VueRouter({
 })
 
 router.beforeResolve((to, from, next) => {
-    // If this isn't an initial page load.
-    if (to.name) {
-        // Start the route progress bar.
-        NProgress.start()
-    }
+
+    // Start the route progress bar.
+    NProgress.start()
+    
     next()
 })
   

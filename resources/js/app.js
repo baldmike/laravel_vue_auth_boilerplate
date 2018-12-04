@@ -21,7 +21,7 @@ window.auth = new Auth();
 Vue.component('home-component', require('./components/HomeComponent.vue'))
 Vue.component('main-app', require('./mainApp.vue'))
 Vue.component('dashboard-component', require('./components/DashboardComponent.vue'))
-Vue.component('about-component', require('./components/AboutComponent.vue'))
+Vue.component('dogs-component', require('./components/DogsComponent.vue'))
 Vue.component('login-component', require('./components/LoginComponent.vue'))
 
 

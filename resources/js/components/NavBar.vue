@@ -9,7 +9,7 @@
                 <b-navbar-nav>
                     <b-nav-item v-if="isAuthenticated" to="home">Home</b-nav-item>
                     <b-nav-item v-if="isAuthenticated" to="dashboard">Dashboard</b-nav-item>
-                    <b-nav-item v-if="isAuthenticated" to="about">About</b-nav-item>
+                    <b-nav-item v-if="isAuthenticated" to="dogs">Dogs</b-nav-item>
                 </b-navbar-nav>
                     
                 <b-navbar-nav class="ml-auto">

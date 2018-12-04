@@ -21542,8 +21542,8 @@ if (inBrowser && window.Vue) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_HomeComponent___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_HomeComponent__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_DashboardComponent__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_DashboardComponent___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_DashboardComponent__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_AboutComponent__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_AboutComponent___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_AboutComponent__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_DogsComponent__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_DogsComponent___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_DogsComponent__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_LoginComponent__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_LoginComponent___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_LoginComponent__);
 
@@ -21588,8 +21588,8 @@ var router = new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
                 next();
             }
         }, {
-            path: 'about',
-            component: __WEBPACK_IMPORTED_MODULE_4__components_AboutComponent___default.a,
+            path: 'dogs',
+            component: __WEBPACK_IMPORTED_MODULE_4__components_DogsComponent___default.a,
             beforeEnter: function beforeEnter(to, from, next) {
                 if (!window.auth.check()) {
                     next({
@@ -21604,11 +21604,10 @@ var router = new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
 });
 
 router.beforeResolve(function (to, from, next) {
-    // If this isn't an initial page load.
-    if (to.name) {
-        // Start the route progress bar.
-        NProgress.start();
-    }
+
+    // Start the route progress bar.
+    NProgress.start();
+
     next();
 });
 
@@ -22020,7 +22019,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/js/components/AboutComponent.vue"
+Component.options.__file = "resources/js/components/DogsComponent.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -22029,9 +22028,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-5049bb1b", Component.options)
+    hotAPI.createRecord("data-v-7482e0ab", Component.options)
   } else {
-    hotAPI.reload("data-v-5049bb1b", Component.options)
+    hotAPI.reload("data-v-7482e0ab", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -25364,7 +25363,7 @@ window.auth = new __WEBPACK_IMPORTED_MODULE_4__auth_js__["a" /* default */]();
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('home-component', __webpack_require__(45));
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('main-app', __webpack_require__(44));
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('dashboard-component', __webpack_require__(47));
-__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('about-component', __webpack_require__(48));
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('dogs-component', __webpack_require__(48));
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('login-component', __webpack_require__(49));
 
 window.addEventListener('load', function () {
@@ -25802,8 +25801,8 @@ var render = function() {
                     : _vm._e(),
                   _vm._v(" "),
                   _vm.isAuthenticated
-                    ? _c("b-nav-item", { attrs: { to: "about" } }, [
-                        _vm._v("About")
+                    ? _c("b-nav-item", { attrs: { to: "dogs" } }, [
+                        _vm._v("Dogs")
                       ])
                     : _vm._e()
                 ],
@@ -26302,7 +26301,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-5049bb1b", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-7482e0ab", module.exports)
   }
 }
 
