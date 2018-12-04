@@ -30,7 +30,7 @@ export default class Auth {
         });
     }
 
-    // checks for login status
+    // checks for login status, returns boolean
     check() {
         return !!store.state.token;
     }

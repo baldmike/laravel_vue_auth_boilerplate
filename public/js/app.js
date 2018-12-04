@@ -39053,7 +39053,7 @@ var Auth = function () {
             });
         }
 
-        // checks for login status
+        // checks for login status, returns boolean
 
     }, {
         key: 'check',
