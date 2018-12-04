@@ -7,13 +7,50 @@ Full Oauth token-based authentication on server (passport) and client (cookies, 
 Once you clone the repo, run the following commands to install dependencies: vuex (state-mgmt - scaffolded, not used), vue-router (your front end router), bootstrap-vue (Vue-specific version of Bootstrap) and axios (http library):
 
 ```
+composer install
 npm install
+php artisan key:generate
+
 ``` 
 
-And then, to compile and serve the app on localhost:8000, run the following command (which executes: php artisan serve & npm run development with a watch flag)
+set up your database and update the following lines in .ENV file:
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE={ WHATEVER YOU NAMED YOUR SCHEMA }
+DB_USERNAME={ YOUR USERNAME }
+DB_PASSWORD={ YOUR PASSWORD }
+```
+
+run the migrations and seed the DB with dummy data:
+```
+php artisan migrate
+php artisan db:seed
+```
+
+install Passport and generate client tokens:
+```
+php artisan passport:install
+```
+
+run the migration to add passport tables: 
+```
+php artisan migrate
+```
+
+in your DB, find oauth_clients table and copy the 'secret' for id=2 (Laravel Password Grant Client) - this was created by passport:install, above.  Then paste the following lines in .ENV file, using that 'secret':
+
+```
+PASSPORT_LOGIN_ENDPOINT = 'localhost:8000'
+PASSPORT_CLIENT_ID=2
+PASSPORT_CLIENT_SECRET={ THE 'SECRET' OF LARAVEL PASSWORD GRANT CLIENT }
+```
+
+Now restart literally EVERYTHING in your house, your fridge, the TV, the coffee maker, the cute little speaker that's listening to everything you say so it can sell you stuff and run:
 
 ```
 npm run live
 ``` 
 
-Now, you have 3 Vue single file components, with full Oauth/token-based authentication, compiled by Webpack and served up by Laravel.  Enjoy!
+grab an email from your db and use the password that is set in the factory to login and adopt your next dog or cat from your local shelter or rescue group, please and thank you.
