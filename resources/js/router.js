@@ -1,7 +1,7 @@
 import VueRouter from 'vue-router' 
 import store from './store'
 import mainApp from './mainApp'
-import HomeComponent from './components/HomeComponent'
+import CatsComponent from './components/CatsComponent'
 import DashboardComponent from './components/DashboardComponent'
 import DogsComponent from './components/DogsComponent'
 import LoginComponent from './components/LoginComponent'
@@ -16,20 +16,6 @@ export const router = new VueRouter({
             props: {component: LoginComponent},
     
             children: [
-                {
-                    path: 'home',
-                    component: HomeComponent,
-                    beforeEnter: (to, from, next) => {
-                        if (!window.auth.check()) {
-                            next({
-                                path: 'login'
-                            });
-                            return;
-                        }
-                        next();
-                    }
-                    
-                },
                 {
                     path: 'dashboard',
                     component: DashboardComponent,
@@ -55,6 +41,20 @@ export const router = new VueRouter({
                         }
                         next();
                     }
+                },
+                {
+                    path: 'cats',
+                    component: CatsComponent,
+                    beforeEnter: (to, from, next) => {
+                        if (!window.auth.check()) {
+                            next({
+                                path: 'login'
+                            });
+                            return;
+                        }
+                        next();
+                    }
+                    
                 }
             ]
         },

@@ -21,11 +21,13 @@ Vue.use(Notifications)
 window.Vue = require('vue')
 window.auth = new Auth();
 
-Vue.component('home-component', require('./components/HomeComponent.vue'))
 Vue.component('main-app', require('./mainApp.vue'))
-Vue.component('dashboard-component', require('./components/DashboardComponent.vue'))
-Vue.component('dogs-component', require('./components/DogsComponent.vue'))
 Vue.component('login-component', require('./components/LoginComponent.vue'))
+Vue.component('dashboard-component', require('./components/DashboardComponent.vue'))
+
+Vue.component('cats-component', require('./components/CatsComponent.vue'))
+Vue.component('dogs-component', require('./components/DogsComponent.vue'))
+
 
 
 window.addEventListener('load', function () { 

@@ -6,7 +6,7 @@
                     <div class="card-header"></div>
 
                     <div class="card-body">
-                        I am the Home Component
+                        I am the Cats Component.
                     </div>
                 </div>
             </div>
@@ -18,7 +18,7 @@
     
     export default {
 
-        name: 'home',
+        name: 'cats',
         data() {
             return {
 
