@@ -65,7 +65,7 @@ export default new Vuex.Store({
                 
                 commit('logout');
 
-                router.push({ path: 'login' });
+                router.push({ path: '/' });
             })
         },
         doubleX(context) {

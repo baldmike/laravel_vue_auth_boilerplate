@@ -7,9 +7,6 @@
 
                     <div class="card-body">
                         I am the Home Component
-                        <li>X = {{ x }} <button @click="dblX">DOUBLE X</button></li>
-                        <li>Y = {{ y }} <button @click="dblY">DOUBLE Y</button></li>
-                        <li>Z = {{ z }} <button @click="dblZ">DOUBLE Z</button></li>
                     </div>
                 </div>
             </div>

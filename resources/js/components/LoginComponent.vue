@@ -75,7 +75,7 @@ export default {
         console.log("LOGIN - FORM DATA SET");
 
         axios.post("/api/login", formData).then(({data}) => {
-            
+            console.log("notification msg sent - login api hit")
             this.$cookie.set('token', data.token)
             auth.setAuthToken(data.token)
 
@@ -90,6 +90,7 @@ export default {
 
                 this.$cookie.set('user', userData.data.data);
                 auth.login(data.token, userData.data.data);
+                
                 this.$router.push({path: 'dashboard'});
             }).catch((error) => {
                 console.log(error);
@@ -108,6 +109,15 @@ export default {
       }
     },
     computed: mapGetters(['isAuthenticated']),
+    mounted() {
+      this.$notify({
+      group: 'auth',
+      title: 'Important message',
+      text: 'Please log in!',
+      duration: '10000',
+      width: '80%'
+    });
+    }
 }
 
 </script>

@@ -1,6 +1,8 @@
 <template>    
     <div class="container">
+        <notifications group="auth" position="top center" width="40%"/>
         <nav-bar></nav-bar>
+        <component v-if="!isAuthenticated" :is="component"></component>
         <router-view></router-view>
     </div>
 </template>
@@ -15,8 +17,14 @@
         components: {
             NavBar,
         },
+        props: ["component"],
         computed: mapGetters(['isAuthenticated']),
-        methods: mapActions(['login'])
+        methods: mapActions(['login']),
+        mounted() {
+            if (window.auth.check()) {
+                this.$router.push('dashboard');
+            }
+        }
     }
 
 </script>

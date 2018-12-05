@@ -1,4 +1,5 @@
 import VueRouter from 'vue-router' 
+import store from './store'
 import mainApp from './mainApp'
 import HomeComponent from './components/HomeComponent'
 import DashboardComponent from './components/DashboardComponent'
@@ -12,13 +13,9 @@ export const router = new VueRouter({
         {
             path: '/', 
             component: mainApp,
-            
+            props: {component: LoginComponent},
     
             children: [
-                {
-                    path: 'login',
-                    component: LoginComponent
-                },
                 {
                     path: 'home',
                     component: HomeComponent,
@@ -31,6 +28,7 @@ export const router = new VueRouter({
                         }
                         next();
                     }
+                    
                 },
                 {
                     path: 'dashboard',
@@ -63,14 +61,21 @@ export const router = new VueRouter({
     ]
 })
 
-router.beforeResolve((to, from, next) => {
 
-    // Start the route progress bar.
+
+router.beforeEach((to, from, next) => {
+        // Start the route progress bar.
     NProgress.start()
     
     next()
+
+    
 })
-  
+
+
+
+
+
 router.afterEach((to, from) => {
     // Complete the animation of the route progress bar.
     NProgress.done()

@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import { router } from './router'
 import BootstrapVue from 'bootstrap-vue'
+import Notifications from 'vue-notification'
 import Auth from './auth.js';
 import VueCookie from 'vue-cookie';
 
@@ -14,6 +15,8 @@ require('./bootstrap')
 Vue.use(VueRouter)
 Vue.use(BootstrapVue)
 Vue.use(VueCookie)
+Vue.use(Notifications)
+
 
 window.Vue = require('vue')
 window.auth = new Auth();
