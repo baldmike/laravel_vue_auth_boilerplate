@@ -10,6 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', 'SpaController@index');
 
-Route::get('/{any}', 'SpaController@index')->where('any', '.*');
+Route::get('/dashboard', 'SpaController@index');
+Route::get('/dogs', 'SpaController@index');
+Route::get('/cats', 'SpaController@index');
+
+Route::get('/{any}', 'SpaController@notFound')->where('any', '.*');
 // Auth::routes();

@@ -5,6 +5,7 @@ import CatsComponent from './components/CatsComponent'
 import DashboardComponent from './components/DashboardComponent'
 import DogsComponent from './components/DogsComponent'
 import LoginComponent from './components/LoginComponent'
+import NotFound from './components/NotFound'
 
 export const router = new VueRouter({ 
     mode: 'history', 
@@ -55,7 +56,8 @@ export const router = new VueRouter({
                         next();
                     }
                     
-                }
+                },
+                {path: '*', component: NotFound}
             ]
         },
     ]

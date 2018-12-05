@@ -22,4 +22,10 @@ class SpaController extends Controller
         Log::debug('SpaController->index()');
         return view('spa');
     }
+
+    public function notFound()
+    {
+        Log::debug('SpaController->notFount()');
+        return view('spa');
+    }
 }
