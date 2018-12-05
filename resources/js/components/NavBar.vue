@@ -7,8 +7,8 @@
             <b-collapse is-nav id="nav_collapse">
 
                 <b-navbar-nav>
-                    <b-nav-item v-if="isAuthenticated" to="cats">Cats</b-nav-item>
                     <b-nav-item v-if="isAuthenticated" to="dogs">Dogs</b-nav-item>
+                    <b-nav-item v-if="isAuthenticated" to="cats">Cats</b-nav-item>
                 </b-navbar-nav>
                     
                 <b-navbar-nav class="ml-auto">
