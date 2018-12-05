@@ -13,6 +13,7 @@ class UsersController extends Controller
 {
      /**
      *
+     * @return \App\Models\User
      */
     public function current()
     {

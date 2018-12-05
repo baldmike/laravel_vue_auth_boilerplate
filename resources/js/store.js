@@ -18,13 +18,13 @@ export default new Vuex.Store({
         return {
             token: userToken ? userToken : null,
             user: user ? user : null,
-            notificationMessages: [],
+            dogs: [],
         }
         
     },
     getters: { 
         // if there is a token, the user is authenticated
-        isAuthenticated: state => !!state.token
+        isAuthenticated: state => !!state.token,
     },
     mutations: {
         setLoginCred(state, payload) {
@@ -33,31 +33,29 @@ export default new Vuex.Store({
             state.isAuthenticated = true;
             axios.defaults.headers.common['Authorization'] = 'Bearer ' + payload.token
         },
+        getAllDogs(state) {
+            axios.call("get", "/api/dogs").then(({ data }) => {
+                console.log("[API call to dogs]: " + data);
+
+                state.dogs.push(data.data);
+            })
+            .catch(error => {
+                console.log("API call error: " + error);
+            });
+        },
         logout(state) {
             state.token = null;
             state.user = null;
             state.isAuthenticated = false;
             Vue.cookie.delete('token');
         },
-        addNotificationMessage(state, payload) {
-            state.notificationMessages.push(payload);
-        },
-        makeXDouble(state) {
-            state.x *= 2;
-        },
-        makeYDouble(state) {
-            state.y *= 2;
-        },
-        makeZDouble(state) {
-            state.z *= 2;
-        }
     },
     actions: {
-        addNotificationMessage(context, payload) {
-            context.commit('addNotificationMessage');
-        },
         setLoginCred(context, payload) {
             context.commit('setLoginCred', payload)
+        },
+        getAllDogs(context) {
+            context.commit('getAllDogs')
         },
         logout( { commit }) {
         
@@ -68,16 +66,6 @@ export default new Vuex.Store({
                 router.push({ path: '/' });
             })
         },
-        doubleX(context) {
-            context.commit('makeXDouble');
-        },
-        doubleY(context) {
-            context.commit('makeYDouble');
-        },
-        doubleZ(context) {
-            context.commit('makeZDouble');
-        }
-
     }
 
 })

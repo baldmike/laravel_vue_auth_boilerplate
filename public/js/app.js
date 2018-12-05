@@ -16827,7 +16827,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vue_
         return {
             token: userToken ? userToken : null,
             user: user ? user : null,
-            notificationMessages: []
+            dogs: []
         };
     },
 
@@ -16844,34 +16844,33 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vue_
             state.isAuthenticated = true;
             __WEBPACK_IMPORTED_MODULE_4_axios___default.a.defaults.headers.common['Authorization'] = 'Bearer ' + payload.token;
         },
+        getAllDogs: function getAllDogs(state) {
+            __WEBPACK_IMPORTED_MODULE_4_axios___default.a.call("get", "/api/dogs").then(function (_ref) {
+                var data = _ref.data;
+
+                console.log("[API call to dogs]: " + data);
+
+                state.dogs.push(data.data);
+            }).catch(function (error) {
+                console.log("API call error: " + error);
+            });
+        },
         logout: function logout(state) {
             state.token = null;
             state.user = null;
             state.isAuthenticated = false;
             __WEBPACK_IMPORTED_MODULE_0_vue___default.a.cookie.delete('token');
-        },
-        addNotificationMessage: function addNotificationMessage(state, payload) {
-            state.notificationMessages.push(payload);
-        },
-        makeXDouble: function makeXDouble(state) {
-            state.x *= 2;
-        },
-        makeYDouble: function makeYDouble(state) {
-            state.y *= 2;
-        },
-        makeZDouble: function makeZDouble(state) {
-            state.z *= 2;
         }
     },
     actions: {
-        addNotificationMessage: function addNotificationMessage(context, payload) {
-            context.commit('addNotificationMessage');
-        },
         setLoginCred: function setLoginCred(context, payload) {
             context.commit('setLoginCred', payload);
         },
-        logout: function logout(_ref) {
-            var commit = _ref.commit;
+        getAllDogs: function getAllDogs(context) {
+            context.commit('getAllDogs');
+        },
+        logout: function logout(_ref2) {
+            var commit = _ref2.commit;
 
 
             __WEBPACK_IMPORTED_MODULE_4_axios___default.a.post("/api/logout").then(function (userData) {
@@ -16880,15 +16879,6 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vue_
 
                 __WEBPACK_IMPORTED_MODULE_3__router__["a" /* router */].push({ path: '/' });
             });
-        },
-        doubleX: function doubleX(context) {
-            context.commit('makeXDouble');
-        },
-        doubleY: function doubleY(context) {
-            context.commit('makeYDouble');
-        },
-        doubleZ: function doubleZ(context) {
-            context.commit('makeZDouble');
         }
     }
 
@@ -21668,7 +21658,7 @@ var router = new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
             beforeEnter: function beforeEnter(to, from, next) {
                 if (!window.auth.check()) {
                     next({
-                        path: 'login'
+                        path: '/'
                     });
                     return;
                 }
@@ -21680,7 +21670,7 @@ var router = new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
             beforeEnter: function beforeEnter(to, from, next) {
                 if (!window.auth.check()) {
                     next({
-                        path: 'login'
+                        path: '/'
                     });
                     return;
                 }
@@ -21692,7 +21682,7 @@ var router = new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
             beforeEnter: function beforeEnter(to, from, next) {
                 if (!window.auth.check()) {
                     next({
-                        path: 'login'
+                        path: '/'
                     });
                     return;
                 }
@@ -27286,20 +27276,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         };
     },
 
-    computed: Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['isAuthenticated', 'user']),
+    computed: Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['isAuthenticated', 'user', 'getDogs']),
     methods: {
         init: function init() {
-            var _this = this;
-
-            axios.call("get", "/api/dogs").then(function (_ref) {
-                var data = _ref.data;
-
-                console.log("[API call to dogs]: " + data);
-
-                _this.dogs = data.data;
-            }).catch(function (error) {
-                console.log("API call error: " + error);
-            });
+            console.log("DogsComponent - init method");
         }
     },
     mounted: function mounted() {
@@ -27455,7 +27435,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
         axios.get("/api/user").then(function (userData) {
           console.log('[Login.vue] login() - fetched current user');
-          console.log(userData.data.data);
+          console.log("userData.data.data: " + userData.data.data);
 
           _this.$cookie.set('user', userData.data.data);
           auth.login(data.token, userData.data.data);
@@ -41229,8 +41209,6 @@ var Auth = function () {
             console.log('[auth.js] - login - token:' + token + "*****************************");
 
             var userData = JSON.stringify(user);
-            // window.localStorage.setItem('token', token)
-            // window.localStorage.setItem('user', userData)
 
             __WEBPACK_IMPORTED_MODULE_1__store__["a" /* default */].dispatch('setLoginCred', {
                 token: token,

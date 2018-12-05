@@ -63,17 +63,10 @@
                 sortDesc: true,
             }
         },
-        computed: mapGetters(['isAuthenticated', 'user']),
+        computed: mapGetters(['isAuthenticated', 'user', 'getDogs']),
         methods: {
             init() {
-                axios.call("get", "/api/dogs").then(({ data }) => {
-                    console.log("[API call to dogs]: " + data);
-
-                    this.dogs = data.data;
-                })
-                .catch(error => {
-                    console.log("API call error: " + error);
-                });
+                console.log("DogsComponent - init method")
             },
 
         },

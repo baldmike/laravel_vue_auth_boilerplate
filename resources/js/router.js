@@ -22,7 +22,7 @@ export const router = new VueRouter({
                     beforeEnter: (to, from, next) => {
                         if (!window.auth.check()) {
                             next({
-                                path: 'login'
+                                path: '/'
                             });
                             return;
                         }
@@ -35,7 +35,7 @@ export const router = new VueRouter({
                     beforeEnter: (to, from, next) => {
                         if (!window.auth.check()) {
                             next({
-                                path: 'login'
+                                path: '/'
                             });
                             return;
                         }
@@ -48,7 +48,7 @@ export const router = new VueRouter({
                     beforeEnter: (to, from, next) => {
                         if (!window.auth.check()) {
                             next({
-                                path: 'login'
+                                path: '/'
                             });
                             return;
                         }
@@ -61,20 +61,13 @@ export const router = new VueRouter({
     ]
 })
 
-
-
 router.beforeEach((to, from, next) => {
         // Start the route progress bar.
     NProgress.start()
     
     next()
-
     
 })
-
-
-
-
 
 router.afterEach((to, from) => {
     // Complete the animation of the route progress bar.

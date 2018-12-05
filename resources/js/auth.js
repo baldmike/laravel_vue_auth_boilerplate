@@ -21,8 +21,6 @@ export default class Auth {
         console.log('[auth.js] - login - token:' + token + "*****************************");
 
         let userData = JSON.stringify(user)
-        // window.localStorage.setItem('token', token)
-        // window.localStorage.setItem('user', userData)
 
         store.dispatch('setLoginCred', {
             token: token,

@@ -85,8 +85,7 @@ export default {
 
             axios.get("/api/user").then((userData) => {
                 console.log('[Login.vue] login() - fetched current user');
-                console.log(userData.data.data);
-
+                console.log("userData.data.data: " + userData.data.data);
 
                 this.$cookie.set('user', userData.data.data);
                 auth.login(data.token, userData.data.data);
