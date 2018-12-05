@@ -26835,7 +26835,7 @@ var render = function() {
           _c("b-navbar-toggle", { attrs: { target: "nav_collapse" } }),
           _vm._v(" "),
           _c("b-navbar-brand", { attrs: { to: "/dashboard" } }, [
-            _vm._v("NavBar")
+            _vm._v("Home")
           ]),
           _vm._v(" "),
           _c(
