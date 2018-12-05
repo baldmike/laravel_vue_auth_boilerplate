@@ -25,6 +25,7 @@ export default new Vuex.Store({
     getters: { 
         // if there is a token, the user is authenticated
         isAuthenticated: state => !!state.token,
+        
     },
     mutations: {
         setLoginCred(state, payload) {
@@ -56,6 +57,15 @@ export default new Vuex.Store({
         },
         getAllDogs(context) {
             context.commit('getAllDogs')
+        },
+        getDogs({ commit }) {
+            commit('showLoader')
+            api.call("get", "/api/users/current").then((userData) => {
+                let user = userData.data.data
+                window.localStorage.setItem('user', JSON.stringify(user))
+                commit('setUser', user)
+                commit('hideLoader')
+            })
         },
         logout( { commit }) {
         

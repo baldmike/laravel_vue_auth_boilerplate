@@ -16836,6 +16836,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vue_
         isAuthenticated: function isAuthenticated(state) {
             return !!state.token;
         }
+
     },
     mutations: {
         setLoginCred: function setLoginCred(state, payload) {
@@ -16869,8 +16870,19 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vue_
         getAllDogs: function getAllDogs(context) {
             context.commit('getAllDogs');
         },
-        logout: function logout(_ref2) {
+        getDogs: function getDogs(_ref2) {
             var commit = _ref2.commit;
+
+            commit('showLoader');
+            api.call("get", "/api/users/current").then(function (userData) {
+                var user = userData.data.data;
+                window.localStorage.setItem('user', JSON.stringify(user));
+                commit('setUser', user);
+                commit('hideLoader');
+            });
+        },
+        logout: function logout(_ref3) {
+            var commit = _ref3.commit;
 
 
             __WEBPACK_IMPORTED_MODULE_4_axios___default.a.post("/api/logout").then(function (userData) {
