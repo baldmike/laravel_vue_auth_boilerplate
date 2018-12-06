@@ -72,14 +72,14 @@ export default {
           password: this.form.password,
         };
 
-        console.log("LOGIN - FORM DATA SET");
+        console.log("[LoginComponent] - LOGIN - FORM DATA SET");
 
         axios.post("/api/login", formData).then(({data}) => {
             console.log("login api hit: " + data.user)
             this.$cookie.set('token', data.token)
-            this.$cookie.set('user', data.user)
+            this.$cookie.set('user', data.user.email)
             auth.setAuthToken(data.token)
-            auth.login(data.token, data.user);
+            auth.login(data.token, data.user.email);
             
             console.log("YOU DID IT! " + data.message);
 

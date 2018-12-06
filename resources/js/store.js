@@ -14,7 +14,7 @@ export default new Vuex.Store({
     state() {
         let userToken = Vue.cookie.get('token');
         let user = Vue.cookie.get('user');
-        
+
         let currentUser = JSON.stringify(user);
 
         console.log("[STORE.STATE] --> user: " + (currentUser));
@@ -25,7 +25,6 @@ export default new Vuex.Store({
             user: user ? user : null,
             dogs: [],
         }
-        
     },
     getters: { 
         // getters get data from state, feed components

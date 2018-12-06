@@ -27498,16 +27498,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         password: this.form.password
       };
 
-      console.log("LOGIN - FORM DATA SET");
+      console.log("[LoginComponent] - LOGIN - FORM DATA SET");
 
       axios.post("/api/login", formData).then(function (_ref) {
         var data = _ref.data;
 
         console.log("login api hit: " + data.user);
         _this.$cookie.set('token', data.token);
-        _this.$cookie.set('user', data.user);
+        _this.$cookie.set('user', data.user.email);
         auth.setAuthToken(data.token);
-        auth.login(data.token, data.user);
+        auth.login(data.token, data.user.email);
 
         console.log("YOU DID IT! " + data.message);
 
