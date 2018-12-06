@@ -75,26 +75,15 @@ export default {
         console.log("LOGIN - FORM DATA SET");
 
         axios.post("/api/login", formData).then(({data}) => {
-            console.log("notification msg sent - login api hit")
+            console.log("login api hit: " + data.user)
             this.$cookie.set('token', data.token)
+            this.$cookie.set('user', data.user)
             auth.setAuthToken(data.token)
-
-            // let theUser = JSON.parse(window.localStorage.getItem('user'));
+            auth.login(data.token, data.user);
             
             console.log("YOU DID IT! " + data.message);
 
-            axios.get("/api/user").then((userData) => {
-                console.log('[Login.vue] login() - fetched current user');
-                console.log("userData.data.data: " + userData.data.data);
-
-                this.$cookie.set('user', userData.data.data);
-                auth.login(data.token, userData.data.data);
-                
-                this.$router.push({path: 'dashboard'});
-            }).catch((error) => {
-                console.log(error);
-                this.$store.dispatch('addNotificationMessage', "There was a problem loading your profile. " + error );
-            })
+            this.$router.push({path: 'dashboard'});
         })
         .catch(function (error) {
           

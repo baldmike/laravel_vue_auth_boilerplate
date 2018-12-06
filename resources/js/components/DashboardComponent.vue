@@ -5,7 +5,8 @@
                 <div class="card card-default">
                     <div class="card-header"></div>
                     <div class="card-body">
-                        I am the Dashboard Component
+                        I am the Dashboard Component - CU
+                        <p>{{ currentUser }}</p>
                     </div>
                 </div>
             </div>
@@ -28,9 +29,10 @@
             
         },
         mounted() {
+            // this.$store.dispatch('refreshUserData')
             console.log('Dashboard Component mounted.')
         },
-        computed: mapGetters(['isAuthenticated']),
+        computed: mapGetters(['isAuthenticated', 'currentUser']),
     }
 </script>
 

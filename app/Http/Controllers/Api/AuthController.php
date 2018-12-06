@@ -118,7 +118,7 @@ class AuthController extends Controller
         Log::debug("logged in user: ");
         Log::debug($user);
 
-        // set the cookie
+        // set the token cookie
         $token_cookie = cookie(
             'tokenCookie',
             $responseData->access_token,
@@ -128,7 +128,18 @@ class AuthController extends Controller
             true
         );
 
+        // set the user cookie
+        $user_cookie = cookie(
+            'userCookie',
+            $user,
+            null,
+            null,
+            null,
+            true
+        );
+
         Cookie::queue($token_cookie);
+        Cookie::queue($user_cookie);
 
         return response()->json([
             'user' => $user,
@@ -136,7 +147,7 @@ class AuthController extends Controller
             'expires_in' => $responseData->expires_in,
             'message' => "{$user->name} successfully logged in.",
             'status' => Response::HTTP_OK,
-        ], Response::HTTP_OK)->withCookie($token_cookie);
+        ], Response::HTTP_OK);
     }
 
     public function logout()

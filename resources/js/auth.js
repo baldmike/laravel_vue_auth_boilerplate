@@ -17,10 +17,9 @@ export default class Auth {
     // completes the login
     login(token, user) {
 
-        console.debug('[auth.js] - login - token:' + token);
-        console.log('[auth.js] - login - token:' + token + "*****************************");
-
         let userData = JSON.stringify(user)
+
+        console.log("[auth.js->login()  -- userData ----> " + userData);
 
         store.dispatch('setLoginCred', {
             token: token,
@@ -35,14 +34,9 @@ export default class Auth {
 
     // log out the user
     logout(router) {
-        let myUser = JSON.parse(window.localStorage.getItem('user'));
-        if(myUser) { console.log(myUser.id); } else { console.log('user not in local storage'); }
 
-        api.call("post", "/api/logout").then((userData) => {
+        axios.call("post", "/api/logout").then(() => {
 
-            window.localStorage.removeItem('token');
-            window.localStorage.removeItem('user');
-            // EventBus.$emit('logout', {});
             this.$store.commit('logout');
 
             router.push({ name: 'login' });

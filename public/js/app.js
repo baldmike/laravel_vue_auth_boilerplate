@@ -16824,6 +16824,11 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vue_
         var userToken = __WEBPACK_IMPORTED_MODULE_0_vue___default.a.cookie.get('token');
         var user = __WEBPACK_IMPORTED_MODULE_0_vue___default.a.cookie.get('user');
 
+        var currentUser = JSON.stringify(user);
+
+        console.log("[STORE.STATE] --> user: " + currentUser);
+        console.log("[STORE.STATE] --> token: " + userToken);
+
         return {
             token: userToken ? userToken : null,
             user: user ? user : null,
@@ -16832,11 +16837,14 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vue_
     },
 
     getters: {
+        // getters get data from state, feed components
         // if there is a token, the user is authenticated
         isAuthenticated: function isAuthenticated(state) {
             return !!state.token;
+        },
+        currentUser: function currentUser(state) {
+            return state.user;
         }
-
     },
     mutations: {
         setLoginCred: function setLoginCred(state, payload) {
@@ -16844,6 +16852,9 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vue_
             state.user = payload.user;
             state.isAuthenticated = true;
             __WEBPACK_IMPORTED_MODULE_4_axios___default.a.defaults.headers.common['Authorization'] = 'Bearer ' + payload.token;
+        },
+        setUser: function setUser(state, user) {
+            state.user = user;
         },
         getAllDogs: function getAllDogs(state) {
             __WEBPACK_IMPORTED_MODULE_4_axios___default.a.call("get", "/api/dogs").then(function (_ref) {
@@ -16861,25 +16872,33 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vue_
             state.user = null;
             state.isAuthenticated = false;
             __WEBPACK_IMPORTED_MODULE_0_vue___default.a.cookie.delete('token');
+            __WEBPACK_IMPORTED_MODULE_0_vue___default.a.cookie.delete('user');
         }
     },
     actions: {
         setLoginCred: function setLoginCred(context, payload) {
             context.commit('setLoginCred', payload);
         },
+        refreshUserData: function refreshUserData(context) {
+            __WEBPACK_IMPORTED_MODULE_4_axios___default.a.call("get", "/api/user").then(function (userData) {
+                var user = userData.data.data;
+                console.log("USER ----> " + user);
+                context.commit('setUser', user);
+            });
+        },
         getAllDogs: function getAllDogs(context) {
             context.commit('getAllDogs');
         },
         getDogs: function getDogs(_ref2) {
-            var commit = _ref2.commit;
+            // commit('showLoader')
+            // api.call("get", "/api/users/current").then((userData) => {
+            //     let user = userData.data.data
+            //     window.localStorage.setItem('user', JSON.stringify(user))
+            //     commit('setUser', user)
+            //     commit('hideLoader')
+            // })
 
-            commit('showLoader');
-            api.call("get", "/api/users/current").then(function (userData) {
-                var user = userData.data.data;
-                window.localStorage.setItem('user', JSON.stringify(user));
-                commit('setUser', user);
-                commit('hideLoader');
-            });
+            var commit = _ref2.commit;
         },
         logout: function logout(_ref3) {
             var commit = _ref3.commit;
@@ -27216,6 +27235,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -27227,10 +27247,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     beforeCreate: function beforeCreate() {},
     mounted: function mounted() {
+        // this.$store.dispatch('refreshUserData')
         console.log('Dashboard Component mounted.');
     },
 
-    computed: Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['isAuthenticated'])
+    computed: Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['isAuthenticated', 'currentUser'])
 });
 
 /***/ }),
@@ -27241,30 +27262,24 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "page" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("div", { staticClass: "card card-default" }, [
-            _c("div", { staticClass: "card-header" }),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _vm._v(
-                "\n                    I am the Dashboard Component\n                "
-              )
-            ])
+  return _c("div", { staticClass: "page" }, [
+    _c("div", { staticClass: "row justify-content-center" }, [
+      _c("div", { staticClass: "col-md-8" }, [
+        _c("div", { staticClass: "card card-default" }, [
+          _c("div", { staticClass: "card-header" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "card-body" }, [
+            _vm._v(
+              "\n                    I am the Dashboard Component - CU\n                    "
+            ),
+            _c("p", [_vm._v(_vm._s(_vm.currentUser))])
           ])
         ])
       ])
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -27488,26 +27503,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       axios.post("/api/login", formData).then(function (_ref) {
         var data = _ref.data;
 
-        console.log("notification msg sent - login api hit");
+        console.log("login api hit: " + data.user);
         _this.$cookie.set('token', data.token);
+        _this.$cookie.set('user', data.user);
         auth.setAuthToken(data.token);
-
-        // let theUser = JSON.parse(window.localStorage.getItem('user'));
+        auth.login(data.token, data.user);
 
         console.log("YOU DID IT! " + data.message);
 
-        axios.get("/api/user").then(function (userData) {
-          console.log('[Login.vue] login() - fetched current user');
-          console.log("userData.data.data: " + userData.data.data);
-
-          _this.$cookie.set('user', userData.data.data);
-          auth.login(data.token, userData.data.data);
-
-          _this.$router.push({ path: 'dashboard' });
-        }).catch(function (error) {
-          console.log(error);
-          _this.$store.dispatch('addNotificationMessage', "There was a problem loading your profile. " + error);
-        });
+        _this.$router.push({ path: 'dashboard' });
       }).catch(function (error) {
 
         console.log("[LoginComponent] - api/login call: " + error);
@@ -41303,10 +41307,9 @@ var Auth = function () {
         key: 'login',
         value: function login(token, user) {
 
-            console.debug('[auth.js] - login - token:' + token);
-            console.log('[auth.js] - login - token:' + token + "*****************************");
-
             var userData = JSON.stringify(user);
+
+            console.log("[auth.js->login()  -- userData ----> " + userData);
 
             __WEBPACK_IMPORTED_MODULE_1__store__["a" /* default */].dispatch('setLoginCred', {
                 token: token,
@@ -41329,18 +41332,8 @@ var Auth = function () {
         value: function logout(router) {
             var _this = this;
 
-            var myUser = JSON.parse(window.localStorage.getItem('user'));
-            if (myUser) {
-                console.log(myUser.id);
-            } else {
-                console.log('user not in local storage');
-            }
+            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.call("post", "/api/logout").then(function () {
 
-            api.call("post", "/api/logout").then(function (userData) {
-
-                window.localStorage.removeItem('token');
-                window.localStorage.removeItem('user');
-                // EventBus.$emit('logout', {});
                 _this.$store.commit('logout');
 
                 router.push({ name: 'login' });

@@ -11,14 +11,17 @@ use Illuminate\Support\Facades\Log;
 
 class UsersController extends Controller
 {
-     /**
+    /**
      *
-     * 
-     */
+     * @return \App\Models\User
+    */
     public function current()
     {
+        
         $currentUser = Auth::user();
         
+        Log::debug("[UsersController - currentUser]: ".$currentUser);
+
         return new UserResource($currentUser);
 
     }

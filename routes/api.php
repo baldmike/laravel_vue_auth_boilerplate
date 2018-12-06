@@ -17,8 +17,12 @@ Route::post('/login', 'Api\AuthController@login');
 Route::post('/register', 'Api\AuthController@register');
 Route::post('/logout', 'Api\AuthController@logout');
 
+
+
 Route::middleware('auth:api')->group(function () {
-    Route::get('/user', 'Api\UsersController@current');
+    
     Route::get('/dogs', 'Api\DogsController@index');
+    Route::get('/user', 'Api\UsersController@current');
+    
 });
 
