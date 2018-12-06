@@ -27236,6 +27236,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -27262,22 +27263,36 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "page" }, [
-    _c("div", { staticClass: "row justify-content-center" }, [
-      _c("div", { staticClass: "col-md-8" }, [
-        _c("div", { staticClass: "card card-default" }, [
-          _c("div", { staticClass: "card-header" }),
+  return _c(
+    "div",
+    [
+      _c(
+        "b-card",
+        {
+          staticClass: "mb-2",
+          staticStyle: { "max-width": "33%" },
+          attrs: {
+            title: _vm.currentUser,
+            "img-src": "https://picsum.photos/600/300/?image=25",
+            "img-alt": "Image",
+            "img-top": "",
+            tag: "article"
+          }
+        },
+        [
+          _c("p", { staticClass: "card-text" }, [
+            _vm._v("\n        " + _vm._s(_vm.currentUser) + "\n        ")
+          ]),
           _vm._v(" "),
-          _c("div", { staticClass: "card-body" }, [
-            _vm._v(
-              "\n                    I am the Dashboard Component - CU\n                    "
-            ),
-            _c("p", [_vm._v(_vm._s(_vm.currentUser))])
+          _c("b-button", { attrs: { href: "#", variant: "primary" } }, [
+            _vm._v("Go somewhere")
           ])
-        ])
-      ])
-    ])
-  ])
+        ],
+        1
+      )
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
