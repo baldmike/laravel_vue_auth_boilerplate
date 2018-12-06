@@ -1,8 +1,8 @@
 # changoZephyr
-Vue front end, Laravel back end.  Just how I like 'em... Throw in a little Full Oauth token-based authentication on server (passport) and client (cookies, vuex & vue-router) and you got yourself a stew.
+Vue front end, Laravel back end.  Just like I like 'em... Throw in a little Full Oauth token-based authentication on server (passport) and client (cookies, vuex & vue-router) and you got yourself a stew.
 
 
-Run the following commands to install dependencies: vuex (state-mgmt - scaffolded, not used), vue-router (your front end router), bootstrap-vue (Vue-specific version of Bootstrap) and axios (http library) & Passport (Laravel's Oauth implementation).  key:generate needs to be run only once, after cloning the repo:
+Run the following commands to install dependencies: vuex, vue-router (front end router), bootstrap-vue (Vue-specific version of Bootstrap) and axios (http library) & Passport (Laravel's Oauth implementation).  key:generate needs to be run only once, after cloning the repo, then run following:
 
 ```
 composer install
@@ -32,12 +32,12 @@ install Passport and generate client tokens:
 php artisan passport:install
 ```
 
-run the migration to add passport tables: 
+run the migration to add passport tables (this gives you client (vue) token): 
 ```
 php artisan migrate
 ```
 
-in your DB, find oauth_clients table and copy the 'secret' for id=2 (Laravel Password Grant Client) - this was created by passport:install, above.  Then paste the following lines in .ENV file, using that 'secret':
+in your DB, find oauth_clients table and copy the 'secret' for id=2 (Laravel Password Grant Client) - this was created by passport:install, above, and is needed for Vue to connect.  Then paste the following lines in .ENV file, using that 'secret':
 
 ```
 PASSPORT_LOGIN_ENDPOINT = 'localhost:8000'
