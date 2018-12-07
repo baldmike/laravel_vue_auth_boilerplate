@@ -8,26 +8,22 @@
                     img-alt="Image"
                     img-top
                     tag="article"
-                    class="mb-2"
-                    :title="dog.name">
+                    class="mb-2">
+
+                    <b-btn v-b-modal.modal1 style="width: 90%;">{{ dog.name }}, {{ dog.breed }}</b-btn>
 
                     <p class="card-text">
-                         
-                        {{ dog.breed }}
+                        
                     </p>
-
-                    <b-btn v-b-modal.modal1>Launch demo modal</b-btn>
                 </b-card>
             </b-col>
         </b-row>
 
 
         <div>
-            <b-btn v-b-modal.modal1>Launch modal</b-btn>
-
             <!-- Modal Component -->
             <b-modal id="modal1" title="Bootstrap-Vue">
-                <p class="my-4">Hello from modal!</p>
+                <p class="my-4">{{ dog.id }}</p>
             </b-modal>
         </div>
     </div>
@@ -40,7 +36,8 @@
         name: 'dog',
         data() {
             return {
-
+                name: '',
+                dog: '',
             }
         },
         computed: mapGetters(['isAuthenticated', 'currentUser', 'getDogs']),

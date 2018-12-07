@@ -26893,7 +26893,14 @@ var render = function() {
     [
       _c(
         "b-navbar",
-        { attrs: { toggleable: "md", type: "dark", variant: "dark" } },
+        {
+          attrs: {
+            toggleable: "md",
+            type: "dark",
+            variant: "dark",
+            "fixed-top": ""
+          }
+        },
         [
           _c("b-navbar-toggle", { attrs: { target: "nav_collapse" } }),
           _vm._v(" "),
@@ -26967,7 +26974,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container" },
+    { staticClass: "container-fluid" },
     [
       _c("notifications", {
         attrs: { group: "auth", position: "top center", width: "40%" }
@@ -27333,17 +27340,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: 'dog',
     data: function data() {
-        return {};
+        return {
+            name: '',
+            dog: ''
+        };
     },
 
     computed: Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['isAuthenticated', 'currentUser', 'getDogs']),
@@ -27388,19 +27394,10 @@ var render = function() {
                     "img-src": "https://picsum.photos/1024/400/?image=13",
                     "img-alt": "Image",
                     "img-top": "",
-                    tag: "article",
-                    title: dog.name
+                    tag: "article"
                   }
                 },
                 [
-                  _c("p", { staticClass: "card-text" }, [
-                    _vm._v(
-                      "\n                     \n                    " +
-                        _vm._s(dog.breed) +
-                        "\n                "
-                    )
-                  ]),
-                  _vm._v(" "),
                   _c(
                     "b-btn",
                     {
@@ -27410,10 +27407,13 @@ var render = function() {
                           rawName: "v-b-modal.modal1",
                           modifiers: { modal1: true }
                         }
-                      ]
+                      ],
+                      staticStyle: { width: "90%" }
                     },
-                    [_vm._v("Launch demo modal")]
-                  )
+                    [_vm._v(_vm._s(dog.name) + ", " + _vm._s(dog.breed))]
+                  ),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "card-text" })
                 ],
                 1
               )
@@ -27426,22 +27426,8 @@ var render = function() {
       _c(
         "div",
         [
-          _c(
-            "b-btn",
-            {
-              directives: [
-                {
-                  name: "b-modal",
-                  rawName: "v-b-modal.modal1",
-                  modifiers: { modal1: true }
-                }
-              ]
-            },
-            [_vm._v("Launch modal")]
-          ),
-          _vm._v(" "),
           _c("b-modal", { attrs: { id: "modal1", title: "Bootstrap-Vue" } }, [
-            _c("p", { staticClass: "my-4" }, [_vm._v("Hello from modal!")])
+            _c("p", { staticClass: "my-4" }, [_vm._v(_vm._s(_vm.dog.id))])
           ])
         ],
         1

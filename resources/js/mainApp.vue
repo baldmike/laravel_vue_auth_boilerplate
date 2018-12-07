@@ -1,5 +1,5 @@
 <template>    
-    <div class="container">
+    <div class="container-fluid">
         <notifications group="auth" position="top center" width="40%"/>
         <nav-bar></nav-bar>
         <component v-if="!isAuthenticated" :is="component"></component>
