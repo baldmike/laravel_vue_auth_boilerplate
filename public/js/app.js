@@ -27324,9 +27324,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
 
 
 
@@ -27373,7 +27370,7 @@ var render = function() {
                 {
                   staticClass: "mb-2",
                   attrs: {
-                    "img-src": "https://picsum.photos/1024/400/?image=41",
+                    "img-src": "https://picsum.photos/1024/400/?image=13",
                     "img-alt": "Image",
                     "img-top": "",
                     tag: "article"

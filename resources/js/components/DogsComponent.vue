@@ -1,13 +1,10 @@
 <template>
-    <!-- <div class="page">
-        <b-table striped hover :items="dogs" :fields="fields" :sort-by.sync="sortBy" :sort-desc.sync="sortDesc" class="table--default table--left"></b-table>
-    </div> -->
     <div>
         <b-row>
             <b-col v-for="(dog, index) in getDogs"
                     :key="index" cols="4">
                 <b-card 
-                    img-src="https://picsum.photos/1024/400/?image=41"
+                    img-src="https://picsum.photos/1024/400/?image=13"
                     img-alt="Image"
                     img-top
                     tag="article"
