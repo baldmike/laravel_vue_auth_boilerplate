@@ -1,8 +1,25 @@
 <template>
-    <div class="page">
+    <!-- <div class="page">
         <b-table striped hover :items="dogs" :fields="fields" :sort-by.sync="sortBy" :sort-desc.sync="sortDesc" class="table--default table--left"></b-table>
+    </div> -->
+    <div>
+        <b-row>
+            <b-col v-for="(dog, index) in getDogs"
+                    :key="index" cols="4">
+                <b-card 
+                    img-src="https://picsum.photos/1024/400/?image=41"
+                    img-alt="Image"
+                    img-top
+                    tag="article"
+                    
+                    class="mb-2">
+                    <p class="card-text">
+                        {{ dog.name }}, {{ dog.breed }}
+                    </p>
+                </b-card>
+            </b-col>
+        </b-row>
     </div>
-    
     
 </template>
 
@@ -14,61 +31,14 @@
         data() {
             return {
 
-                fields: [ 
-            {
-                key: 'name',
-                label: 'Name',
-                sortable: true,
-                // thStyle: 'width: 10%'
-            },
-            {
-                key: 'gender',
-                label: 'Gender',
-                sortable: true,
-                // thStyle: 'width: 10%;'
-            },
-            {
-                key: 'birthdate',
-                label: 'Birthdate',
-                sortable: true,
-                // thStyle: 'width: 10%'
-            }, 
-            {
-                key: 'breed',
-                label: 'Breed',
-                sortable: true,
-                // thStyle: 'width: 10%'
-            },
-            {
-                key: 'weight',
-                label: 'Weight',
-                sortable: true,
-                // thStyle: 'width: 10%'
-            },
-            {
-                key: 'fixed',
-                label: 'Fixed',
-                sortable: true,
-                // thStyle: 'width: 10%'
-            },
-            {
-                key: 'created_at',
-                label: 'Alive Date',
-                sortable: true,
-                // thStyle: 'width: 10%'
-            },
-        ],
-                dogs: [],
-                sortBy: 'name',
-                sortDesc: true,
             }
         },
-        computed: mapGetters(['isAuthenticated', 'user', 'getDogs']),
+        computed: mapGetters(['isAuthenticated', 'currentUser', 'getDogs']),
         methods: {
             init() {
-                console.log("DogsComponent - init method")
+                this.$store.dispatch('getAllDogs');
+                console.log("DogsComponent - init method - THIS.DOGS: ");
             },
-
         },
         mounted() {
             this.init();

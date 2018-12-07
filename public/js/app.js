@@ -16844,6 +16844,9 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vue_
         },
         currentUser: function currentUser(state) {
             return state.user;
+        },
+        getDogs: function getDogs(state) {
+            return state.dogs;
         }
     },
     mutations: {
@@ -16856,16 +16859,8 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vue_
         setUser: function setUser(state, user) {
             state.user = user;
         },
-        getAllDogs: function getAllDogs(state) {
-            __WEBPACK_IMPORTED_MODULE_4_axios___default.a.call("get", "/api/dogs").then(function (_ref) {
-                var data = _ref.data;
-
-                console.log("[API call to dogs]: " + data);
-
-                state.dogs.push(data.data);
-            }).catch(function (error) {
-                console.log("API call error: " + error);
-            });
+        setDogs: function setDogs(state, payload) {
+            state.dogs = payload.data;
         },
         logout: function logout(state) {
             state.token = null;
@@ -16887,21 +16882,17 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vue_
             });
         },
         getAllDogs: function getAllDogs(context) {
-            context.commit('getAllDogs');
-        },
-        getDogs: function getDogs(_ref2) {
-            // commit('showLoader')
-            // api.call("get", "/api/users/current").then((userData) => {
-            //     let user = userData.data.data
-            //     window.localStorage.setItem('user', JSON.stringify(user))
-            //     commit('setUser', user)
-            //     commit('hideLoader')
-            // })
+            __WEBPACK_IMPORTED_MODULE_4_axios___default.a.call("get", "/api/dogs").then(function (_ref) {
+                var data = _ref.data;
 
-            var commit = _ref2.commit;
+                console.log("[API call to dogs]: " + JSON.stringify(data));
+                context.commit('setDogs', data);
+            }).catch(function (error) {
+                console.log("API call error: " + error);
+            });
         },
-        logout: function logout(_ref3) {
-            var commit = _ref3.commit;
+        logout: function logout(_ref2) {
+            var commit = _ref2.commit;
 
 
             __WEBPACK_IMPORTED_MODULE_4_axios___default.a.post("/api/logout").then(function (userData) {
@@ -27319,60 +27310,37 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: 'dog',
     data: function data() {
-        return {
-
-            fields: [{
-                key: 'name',
-                label: 'Name',
-                sortable: true
-                // thStyle: 'width: 10%'
-            }, {
-                key: 'gender',
-                label: 'Gender',
-                sortable: true
-                // thStyle: 'width: 10%;'
-            }, {
-                key: 'birthdate',
-                label: 'Birthdate',
-                sortable: true
-                // thStyle: 'width: 10%'
-            }, {
-                key: 'breed',
-                label: 'Breed',
-                sortable: true
-                // thStyle: 'width: 10%'
-            }, {
-                key: 'weight',
-                label: 'Weight',
-                sortable: true
-                // thStyle: 'width: 10%'
-            }, {
-                key: 'fixed',
-                label: 'Fixed',
-                sortable: true
-                // thStyle: 'width: 10%'
-            }, {
-                key: 'created_at',
-                label: 'Alive Date',
-                sortable: true
-                // thStyle: 'width: 10%'
-            }],
-            dogs: [],
-            sortBy: 'name',
-            sortDesc: true
-        };
+        return {};
     },
 
-    computed: Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['isAuthenticated', 'user', 'getDogs']),
+    computed: Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['isAuthenticated', 'currentUser', 'getDogs']),
     methods: {
         init: function init() {
-            console.log("DogsComponent - init method");
+            this.$store.dispatch('getAllDogs');
+            console.log("DogsComponent - init method - THIS.DOGS: ");
         }
     },
     mounted: function mounted() {
@@ -27392,27 +27360,42 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "page" },
     [
-      _c("b-table", {
-        staticClass: "table--default table--left",
-        attrs: {
-          striped: "",
-          hover: "",
-          items: _vm.dogs,
-          fields: _vm.fields,
-          "sort-by": _vm.sortBy,
-          "sort-desc": _vm.sortDesc
-        },
-        on: {
-          "update:sortBy": function($event) {
-            _vm.sortBy = $event
-          },
-          "update:sortDesc": function($event) {
-            _vm.sortDesc = $event
-          }
-        }
-      })
+      _c(
+        "b-row",
+        _vm._l(_vm.getDogs, function(dog, index) {
+          return _c(
+            "b-col",
+            { key: index, attrs: { cols: "4" } },
+            [
+              _c(
+                "b-card",
+                {
+                  staticClass: "mb-2",
+                  attrs: {
+                    "img-src": "https://picsum.photos/1024/400/?image=41",
+                    "img-alt": "Image",
+                    "img-top": "",
+                    tag: "article"
+                  }
+                },
+                [
+                  _c("p", { staticClass: "card-text" }, [
+                    _vm._v(
+                      "\n                    " +
+                        _vm._s(dog.name) +
+                        ", " +
+                        _vm._s(dog.breed) +
+                        "\n                "
+                    )
+                  ])
+                ]
+              )
+            ],
+            1
+          )
+        })
+      )
     ],
     1
   )
