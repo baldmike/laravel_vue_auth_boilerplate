@@ -27326,6 +27326,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -27388,13 +27399,52 @@ var render = function() {
                         _vm._s(dog.breed) +
                         "\n                "
                     )
-                  ])
-                ]
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "b-btn",
+                    {
+                      directives: [
+                        {
+                          name: "b-modal",
+                          rawName: "v-b-modal.modal1",
+                          modifiers: { modal1: true }
+                        }
+                      ]
+                    },
+                    [_vm._v("Launch demo modal")]
+                  )
+                ],
+                1
               )
             ],
             1
           )
         })
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        [
+          _c(
+            "b-btn",
+            {
+              directives: [
+                {
+                  name: "b-modal",
+                  rawName: "v-b-modal.modal1",
+                  modifiers: { modal1: true }
+                }
+              ]
+            },
+            [_vm._v("Launch modal")]
+          ),
+          _vm._v(" "),
+          _c("b-modal", { attrs: { id: "modal1", title: "Bootstrap-Vue" } }, [
+            _c("p", { staticClass: "my-4" }, [_vm._v("Hello from modal!")])
+          ])
+        ],
+        1
       )
     ],
     1
