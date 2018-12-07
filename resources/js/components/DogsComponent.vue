@@ -8,10 +8,12 @@
                     img-alt="Image"
                     img-top
                     tag="article"
-                    
-                    class="mb-2">
+                    class="mb-2"
+                    :title="dog.name">
+
                     <p class="card-text">
-                        {{ dog.name }}, {{ dog.breed }}
+                         
+                        {{ dog.breed }}
                     </p>
                 </b-card>
             </b-col>
@@ -33,11 +35,13 @@
         computed: mapGetters(['isAuthenticated', 'currentUser', 'getDogs']),
         methods: {
             init() {
+                
                 this.$store.dispatch('getAllDogs');
+                
                 console.log("DogsComponent - init method - THIS.DOGS: ");
             },
         },
-        mounted() {
+        created() {
             this.init();
 
             console.log('Dogs Component mounted.')

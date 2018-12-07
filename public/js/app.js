@@ -27324,6 +27324,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -27336,11 +27338,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     computed: Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['isAuthenticated', 'currentUser', 'getDogs']),
     methods: {
         init: function init() {
+
             this.$store.dispatch('getAllDogs');
+
             console.log("DogsComponent - init method - THIS.DOGS: ");
         }
     },
-    mounted: function mounted() {
+    created: function created() {
         this.init();
 
         console.log('Dogs Component mounted.');
@@ -27373,15 +27377,14 @@ var render = function() {
                     "img-src": "https://picsum.photos/1024/400/?image=13",
                     "img-alt": "Image",
                     "img-top": "",
-                    tag: "article"
+                    tag: "article",
+                    title: dog.name
                   }
                 },
                 [
                   _c("p", { staticClass: "card-text" }, [
                     _vm._v(
-                      "\n                    " +
-                        _vm._s(dog.name) +
-                        ", " +
+                      "\n                     \n                    " +
                         _vm._s(dog.breed) +
                         "\n                "
                     )
