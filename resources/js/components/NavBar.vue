@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <b-navbar toggleable="md" type="dark" variant="dark" fixed-top>
+    <div id="navig">
+        <b-navbar toggleable="md" type="dark" variant="dark" fixed="top">
             <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 
             <b-navbar-brand to="/dashboard">Home</b-navbar-brand>
@@ -22,22 +22,27 @@
 
 <script>
 
-import { mapActions, mapGetters } from "vuex";
+    import { mapActions, mapGetters } from "vuex";
 
-export default {
-    name: "NavBar",
-    methods: {
+    export default {
+        name: "NavBar",
+        methods: {
 
-        logout() {
-            this.$store.dispatch('logout');
-        }
+            logout() {
+                this.$store.dispatch('logout');
+            }
 
-    },
-    
-    
-    computed: mapGetters(['isAuthenticated']),
+        },
         
-}
+        
+        computed: mapGetters(['isAuthenticated']),
+            
+    }
 </script>
 
 
+<style>
+    #navig {
+        margin-bottom: 70px;
+    }
+</style>
