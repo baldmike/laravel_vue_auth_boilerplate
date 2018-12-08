@@ -23,7 +23,7 @@
         <div>
             <!-- Modal Component -->
             <b-modal id="modal1" title="Bootstrap-Vue">
-                <p class="my-4">{{ dog.id }}</p>
+                <p class="my-4">{{ currentUser }}</p>
             </b-modal>
         </div>
     </div>

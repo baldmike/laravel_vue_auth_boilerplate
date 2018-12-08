@@ -26793,6 +26793,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(281)
+}
 var normalizeComponent = __webpack_require__(13)
 /* script */
 var __vue_script__ = __webpack_require__(114)
@@ -26801,7 +26805,7 @@ var __vue_template__ = __webpack_require__(115)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = null
+var __vue_styles__ = injectStyle
 /* scopeId */
 var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
@@ -26890,6 +26894,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
+    { attrs: { id: "navig" } },
     [
       _c(
         "b-navbar",
@@ -26898,7 +26903,7 @@ var render = function() {
             toggleable: "md",
             type: "dark",
             variant: "dark",
-            "fixed-top": ""
+            fixed: "top"
           }
         },
         [
@@ -27427,7 +27432,7 @@ var render = function() {
         "div",
         [
           _c("b-modal", { attrs: { id: "modal1", title: "Bootstrap-Vue" } }, [
-            _c("p", { staticClass: "my-4" }, [_vm._v(_vm._s(_vm.dog.id))])
+            _c("p", { staticClass: "my-4" }, [_vm._v(_vm._s(_vm.currentUser))])
           ])
         ],
         1
@@ -58621,6 +58626,47 @@ module.exports = function(module) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 280 */,
+/* 281 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(282);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(53)("0e75e536", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5dd24bca\",\"scoped\":false,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./NavBar.vue", function() {
+     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5dd24bca\",\"scoped\":false,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./NavBar.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 282 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(14)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n#navig {\n    margin-bottom: 70px;\n}\n", ""]);
+
+// exports
+
 
 /***/ })
 /******/ ]);
