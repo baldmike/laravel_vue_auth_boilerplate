@@ -27409,10 +27409,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         showModal: function showModal(item) {
             this.selectedDog = item;
-            this.$refs.modal1.show();
+            this.$refs.selectedDogModal.show();
         },
         hideModal: function hideModal() {
-            this.$refs.modal1.hide();
+            this.$refs.selectedDogModal.hide();
         }
     },
     created: function created() {
@@ -27480,14 +27480,14 @@ var render = function() {
         [
           _c(
             "b-modal",
-            { ref: "modal1", attrs: { title: "Bootstrap-Vue", dog: "dog" } },
+            { ref: "selectedDogModal", attrs: { dog: "dog" } },
             [
               _c("p", { staticClass: "my-4" }, [
                 _vm._v(_vm._s(_vm.currentUser))
               ]),
               _vm._v(" "),
               _c("p", { staticClass: "my-4" }, [
-                _vm._v(_vm._s(_vm.selectedDog))
+                _vm._v("Name: " + _vm._s(_vm.selectedDog.name))
               ]),
               _vm._v(" "),
               _c(

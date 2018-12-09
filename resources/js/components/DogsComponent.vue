@@ -10,7 +10,7 @@
                     tag="article"
                     class="mb-2">
 
-                    <!-- <b-btn v-b-modal.modal1 style="width: 90%;">{{ dog.name }}, {{ dog.breed }}</b-btn> -->
+                    <!-- <b-btn v-b-modal.selectedDogModal style="width: 90%;">{{ dog.name }}, {{ dog.breed }}</b-btn> -->
                     <b-btn @click="showModal(dog)" dog="'dog.id'">{{ dog.name }}, {{ dog.breed }}</b-btn>
                     <p class="card-text">
                         
@@ -22,9 +22,9 @@
 
         <div>
             <!-- Modal Component -->
-            <b-modal ref="modal1" title="Bootstrap-Vue" :dog="'dog'">
+            <b-modal ref="selectedDogModal" :dog="'dog'">
                 <p class="my-4">{{ currentUser }}</p>
-                <p class="my-4">{{ selectedDog }}</p>
+                <p class="my-4">Name: {{ selectedDog.name }}</p>
                 <b-btn class="mt-3" variant="outline-danger" block @click="hideModal">Close Me</b-btn>
             </b-modal>
         </div>
@@ -52,10 +52,10 @@
             },
             showModal (item) {
                 this.selectedDog = item;
-                this.$refs.modal1.show()
+                this.$refs.selectedDogModal.show()
             },
             hideModal () {
-                this.$refs.modal1.hide()
+                this.$refs.selectedDogModal.hide()
             },
         },
         created() {
