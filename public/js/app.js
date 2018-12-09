@@ -27480,27 +27480,35 @@ var render = function() {
         [
           _c(
             "b-modal",
-            { ref: "selectedDogModal", attrs: { dog: "dog" } },
+            {
+              ref: "selectedDogModal",
+              attrs: { dog: "dog", "ok-only": "", "ok-title": "Close" }
+            },
             [
-              _c("p", { staticClass: "my-4" }, [
-                _vm._v(_vm._s(_vm.currentUser))
+              _c("h1", { staticClass: "my-5" }, [
+                _vm._v(_vm._s(_vm.selectedDog.name))
               ]),
               _vm._v(" "),
-              _c("p", { staticClass: "my-4" }, [
-                _vm._v("Name: " + _vm._s(_vm.selectedDog.name))
+              _c("li", { staticClass: "my-4" }, [
+                _vm._v(
+                  _vm._s(_vm.selectedDog.breed) +
+                    ", " +
+                    _vm._s(_vm.selectedDog.gender) +
+                    ", " +
+                    _vm._s(_vm.selectedDog.weight) +
+                    " pounds"
+                )
               ]),
               _vm._v(" "),
-              _c(
-                "b-btn",
-                {
-                  staticClass: "mt-3",
-                  attrs: { variant: "outline-danger", block: "" },
-                  on: { click: _vm.hideModal }
-                },
-                [_vm._v("Close Me")]
-              )
-            ],
-            1
+              _c("li", { staticClass: "my-4" }, [
+                _vm._v(
+                  "From " +
+                    _vm._s(_vm.selectedDog.source) +
+                    " on " +
+                    _vm._s(_vm.selectedDog.created_at)
+                )
+              ])
+            ]
           )
         ],
         1
