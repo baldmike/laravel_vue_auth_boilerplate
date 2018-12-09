@@ -4,7 +4,7 @@
             <b-col v-for="(dog, index) in getDogs"
                     :key="index" cols="4">
                 <b-card 
-                    img-src="https://picsum.photos/1024/400/?image=13"
+                    img-src="https://picsum.photos/1024/400/?image=31"
                     img-alt="Image"
                     img-top
                     tag="article"
@@ -22,10 +22,11 @@
 
         <div>
             <!-- Modal Component -->
-            <b-modal ref="selectedDogModal" :dog="'dog'" ok-only ok-title="Close">
+            <b-modal ref="selectedDogModal" :dog="'dog'" ok-only ok-title="Close" ok-variant="dark">
                 <h1 class="my-5">{{ selectedDog.name }}</h1>
                 <li class="my-4">{{ selectedDog.breed }}, {{selectedDog.gender}}, {{ selectedDog.weight }} pounds</li>
                 <li class="my-4">From {{ selectedDog.source }} on {{ selectedDog.created_at }}</li>
+                <div class="my-4">{{ selectedDog.description }}</div>
             </b-modal>
         </div>
     </div>

@@ -27387,6 +27387,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -27445,7 +27446,7 @@ var render = function() {
                 {
                   staticClass: "mb-2",
                   attrs: {
-                    "img-src": "https://picsum.photos/1024/400/?image=13",
+                    "img-src": "https://picsum.photos/1024/400/?image=31",
                     "img-alt": "Image",
                     "img-top": "",
                     tag: "article"
@@ -27482,7 +27483,12 @@ var render = function() {
             "b-modal",
             {
               ref: "selectedDogModal",
-              attrs: { dog: "dog", "ok-only": "", "ok-title": "Close" }
+              attrs: {
+                dog: "dog",
+                "ok-only": "",
+                "ok-title": "Close",
+                "ok-variant": "dark"
+              }
             },
             [
               _c("h1", { staticClass: "my-5" }, [
@@ -27507,6 +27513,10 @@ var render = function() {
                     " on " +
                     _vm._s(_vm.selectedDog.created_at)
                 )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "my-4" }, [
+                _vm._v(_vm._s(_vm.selectedDog.description))
               ])
             ]
           )
