@@ -10,7 +10,6 @@
                     tag="article"
                     class="mb-2">
 
-                    <!-- <b-btn v-b-modal.selectedDogModal style="width: 90%;">{{ dog.name }}, {{ dog.breed }}</b-btn> -->
                     <b-btn @click="showModal(dog)" dog="'dog.id'">{{ dog.name }}, {{ dog.breed }}</b-btn>
                     <p class="card-text">
                         
