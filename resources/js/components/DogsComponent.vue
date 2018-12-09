@@ -22,10 +22,10 @@
 
         <div>
             <!-- Modal Component -->
-            <b-modal ref="selectedDogModal" :dog="'dog'">
-                <p class="my-4">{{ currentUser }}</p>
-                <p class="my-4">Name: {{ selectedDog.name }}</p>
-                <b-btn class="mt-3" variant="outline-danger" block @click="hideModal">Close Me</b-btn>
+            <b-modal ref="selectedDogModal" :dog="'dog'" ok-only ok-title="Close">
+                <h1 class="my-5">{{ selectedDog.name }}</h1>
+                <li class="my-4">{{ selectedDog.breed }}, {{selectedDog.gender}}, {{ selectedDog.weight }} pounds</li>
+                <li class="my-4">From {{ selectedDog.source }} on {{ selectedDog.created_at }}</li>
             </b-modal>
         </div>
     </div>
