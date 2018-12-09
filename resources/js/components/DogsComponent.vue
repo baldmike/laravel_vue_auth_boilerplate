@@ -10,7 +10,7 @@
                     tag="article"
                     class="mb-2">
 
-                    <b-btn @click="showModal(dog)" dog="'dog.id'">{{ dog.name }}, {{ dog.breed }}</b-btn>
+                    <b-btn @click="showModal(dog)" dog="'dog.id'">{{ dog.name }}  <span style="color: black;">{{ dog.breed }}</span></b-btn>
                     <p class="card-text">
                         
                     </p>
@@ -22,9 +22,9 @@
         <div>
             <!-- Modal Component -->
             <b-modal ref="selectedDogModal" :dog="'dog'" ok-only ok-title="Close" ok-variant="dark">
-                <h1 class="my-5">{{ selectedDog.name }}</h1>
+                <h1 class="my-2">{{ selectedDog.name }}</h1>
                 <li class="my-4">{{ selectedDog.breed }}, {{selectedDog.gender}}, {{ selectedDog.weight }} pounds</li>
-                <li class="my-4">From {{ selectedDog.source }} on {{ selectedDog.created_at }}</li>
+                <li class="my-4">From {{ selectedDog.source }} on {{ selectedDog.created_at | moment("dddd, MMMM Do YYYY" )}}</li>
                 <div class="my-4">{{ selectedDog.description }}</div>
             </b-modal>
         </div>

@@ -1,5 +1,5 @@
 <template>
-    <h1 v-if="$route.name">Page Not Found</h1>
+    <h1 v-if="$route.name === NotFound">Page Not Found</h1>
 </template>
 
 <script>

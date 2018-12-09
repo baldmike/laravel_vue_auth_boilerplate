@@ -16,6 +16,7 @@ Vue.use(VueRouter)
 Vue.use(BootstrapVue)
 Vue.use(VueCookie)
 Vue.use(Notifications)
+Vue.use(require('vue-moment'));
 
 
 window.Vue = require('vue')

@@ -54,8 +54,7 @@ export const router = new VueRouter({
                             return;
                         }
                         next();
-                    }
-                    
+                    },
                 },
                 {path: '*', component: NotFound}
             ]
