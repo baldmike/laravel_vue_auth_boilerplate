@@ -17060,7 +17060,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vue_
         return {
             token: userToken ? userToken : null,
             user: user ? user : null,
-            dogs: []
+            animals: []
         };
     },
 
@@ -17073,8 +17073,8 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vue_
         currentUser: function currentUser(state) {
             return state.user;
         },
-        getDogs: function getDogs(state) {
-            return state.dogs;
+        getAnimals: function getAnimals(state) {
+            return state.animals;
         }
     },
     mutations: {
@@ -17087,8 +17087,8 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vue_
         setUser: function setUser(state, user) {
             state.user = user;
         },
-        setDogs: function setDogs(state, payload) {
-            state.dogs = payload.data;
+        setAnimals: function setAnimals(state, payload) {
+            state.animals = payload.data;
         },
         logout: function logout(state) {
             state.token = null;
@@ -17109,12 +17109,12 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vue_
                 context.commit('setUser', user);
             });
         },
-        getAllDogs: function getAllDogs(context) {
-            __WEBPACK_IMPORTED_MODULE_4_axios___default.a.call("get", "/api/dogs").then(function (_ref) {
+        getAllAnimals: function getAllAnimals(context) {
+            __WEBPACK_IMPORTED_MODULE_4_axios___default.a.call("get", "/api/animals").then(function (_ref) {
                 var data = _ref.data;
 
-                console.log("[API call to dogs]: " + JSON.stringify(data));
-                context.commit('setDogs', data);
+                console.log("[API call to animals]: " + JSON.stringify(data));
+                context.commit('setAnimals', data);
             }).catch(function (error) {
                 console.log("API call error: " + error);
             });
@@ -27007,7 +27007,7 @@ var render = function() {
                   _vm._v(" "),
                   _vm.isAuthenticated
                     ? _c("b-nav-item", { attrs: { to: "newDog" } }, [
-                        _vm._v("New Dog")
+                        _vm._v("New Animal")
                       ])
                     : _vm._e(),
                   _vm._v(" "),
@@ -27449,34 +27449,34 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    name: 'dog',
+    name: 'animal',
     data: function data() {
         return {
             name: '',
-            dog: '',
-            selectedDog: ''
+            animal: '',
+            selectedAnimal: ''
         };
     },
 
-    computed: Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['isAuthenticated', 'currentUser', 'getDogs']),
+    computed: Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['isAuthenticated', 'currentUser', 'getAnimals']),
     methods: {
         init: function init() {
 
-            this.$store.dispatch('getAllDogs');
-            console.log("DogsComponent - init method - THIS.DOGS: ");
+            this.$store.dispatch('getAllAnimals');
+            console.log("AnimalsComponent - init method - THIS.DOGS: ");
         },
         showModal: function showModal(item) {
-            this.selectedDog = item;
-            this.$refs.selectedDogModal.show();
+            this.selectedAnimal = item;
+            this.$refs.selectedAnimalModal.show();
         },
         hideModal: function hideModal() {
-            this.$refs.selectedDogModal.hide();
+            this.$refs.selectedAnimalModal.hide();
         }
     },
     created: function created() {
         this.init();
 
-        console.log('Dogs Component mounted.');
+        console.log('Animals Component mounted.');
     }
 });
 
@@ -27493,7 +27493,7 @@ var render = function() {
     [
       _c(
         "b-row",
-        _vm._l(_vm.getDogs, function(dog, index) {
+        _vm._l(_vm.getAnimals, function(animal, index) {
           return _c(
             "b-col",
             { key: index, attrs: { cols: "3" } },
@@ -27514,17 +27514,17 @@ var render = function() {
                     "b-btn",
                     {
                       staticClass: "selectButton",
-                      attrs: { dog: "'dog.id'" },
+                      attrs: { animal: "'animal.id'" },
                       on: {
                         click: function($event) {
-                          _vm.showModal(dog)
+                          _vm.showModal(animal)
                         }
                       }
                     },
                     [
-                      _vm._v(_vm._s(dog.name) + "  "),
+                      _vm._v(_vm._s(animal.name) + "  "),
                       _c("span", { staticStyle: { color: "black" } }, [
-                        _vm._v(_vm._s(dog.breed))
+                        _vm._v(_vm._s(animal.breed))
                       ])
                     ]
                   ),
@@ -27545,9 +27545,9 @@ var render = function() {
           _c(
             "b-modal",
             {
-              ref: "selectedDogModal",
+              ref: "selectedAnimalModal",
               attrs: {
-                dog: "dog",
+                animal: "animal",
                 "ok-only": "",
                 "ok-title": "Close",
                 "ok-variant": "dark"
@@ -27555,16 +27555,16 @@ var render = function() {
             },
             [
               _c("h1", { staticClass: "my-2" }, [
-                _vm._v(_vm._s(_vm.selectedDog.name))
+                _vm._v(_vm._s(_vm.selectedAnimal.name))
               ]),
               _vm._v(" "),
               _c("li", { staticClass: "my-4" }, [
                 _vm._v(
-                  _vm._s(_vm.selectedDog.breed) +
+                  _vm._s(_vm.selectedAnimal.breed) +
                     ", " +
-                    _vm._s(_vm.selectedDog.gender) +
+                    _vm._s(_vm.selectedAnimal.gender) +
                     ", " +
-                    _vm._s(_vm.selectedDog.weight) +
+                    _vm._s(_vm.selectedAnimal.weight) +
                     " pounds"
                 )
               ]),
@@ -27572,11 +27572,11 @@ var render = function() {
               _c("li", { staticClass: "my-4" }, [
                 _vm._v(
                   "From " +
-                    _vm._s(_vm.selectedDog.source) +
+                    _vm._s(_vm.selectedAnimal.source) +
                     " on " +
                     _vm._s(
                       _vm._f("moment")(
-                        _vm.selectedDog.created_at,
+                        _vm.selectedAnimal.created_at,
                         "dddd, MMMM Do YYYY"
                       )
                     )
@@ -27584,7 +27584,7 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "my-4" }, [
-                _vm._v(_vm._s(_vm.selectedDog.description))
+                _vm._v(_vm._s(_vm.selectedAnimal.description))
               ])
             ]
           )
