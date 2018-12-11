@@ -5,11 +5,11 @@ namespace App\Http\Controllers\Api;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Resources\Json\JsonResource;
-use App\Http\Resources\DogResource;
+use App\Http\Resources\AnimalResource;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Dog;
+use App\Models\Animal;
 
-class DogsController extends Controller
+class AnimalsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,7 +18,7 @@ class DogsController extends Controller
      */
     public function index()
     {
-        return DogResource::collection(Dog::orderBy('name', 'asc')->get());
+        return AnimalResource::collection(Animal::orderBy('name', 'asc')->get());
     }
 
     /**

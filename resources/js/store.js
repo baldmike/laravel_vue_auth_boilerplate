@@ -23,7 +23,7 @@ export default new Vuex.Store({
         return {
             token: userToken ? userToken : null,
             user: user ? user : null,
-            dogs: [],
+            animals: [],
         }
     },
     getters: { 
@@ -31,7 +31,7 @@ export default new Vuex.Store({
         // if there is a token, the user is authenticated
         isAuthenticated: state => !!state.token,
         currentUser: state => state.user,
-        getDogs: state => state.dogs,
+        getAnimals: state => state.animals,
     },
     mutations: {
         setLoginCred(state, payload) {
@@ -43,8 +43,8 @@ export default new Vuex.Store({
         setUser(state, user) {
             state.user = user;
         },
-        setDogs(state, payload) {
-            state.dogs = payload.data;
+        setAnimals(state, payload) {
+            state.animals = payload.data;
         },
         logout(state) {
             state.token = null;
@@ -65,10 +65,10 @@ export default new Vuex.Store({
                 context.commit('setUser', user)
             })
         },
-        getAllDogs(context) {
-            axios.call("get", "/api/dogs").then(({ data }) => {
-                console.log("[API call to dogs]: " + JSON.stringify(data));
-                context.commit('setDogs', data);
+        getAllAnimals(context) {
+            axios.call("get", "/api/animals").then(({ data }) => {
+                console.log("[API call to animals]: " + JSON.stringify(data));
+                context.commit('setAnimals', data);
             })
             .catch(error => {
                 console.log("API call error: " + error);

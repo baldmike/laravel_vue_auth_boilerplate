@@ -13,8 +13,9 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(App\Models\Dog::class, function (Faker $faker) {
+$factory->define(App\Models\Animal::class, function (Faker $faker) {
     return [
+        'species' => $faker->randomElement($species = array ('dog', 'cat', 'rab')),
         'name' => $faker->firstName,
         'source' => $faker->randomElement($source = array ('CRISP','CACC','Alive', 'Stray')),
         'gender' => $faker->randomElement($gender = array ('M', 'F')),
