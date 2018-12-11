@@ -2,15 +2,15 @@
     <div>
         <b-row>
             <b-col v-for="(dog, index) in getDogs"
-                    :key="index" cols="4">
+                    :key="index" cols="3">
                 <b-card 
                     img-src="https://picsum.photos/1024/400/?image=31"
                     img-alt="Image"
                     img-top
                     tag="article"
-                    class="mb-2">
+                    class="mb-2 center">
 
-                    <b-btn @click="showModal(dog)" dog="'dog.id'">{{ dog.name }}  <span style="color: black;">{{ dog.breed }}</span></b-btn>
+                    <b-btn class="selectButton" @click="showModal(dog)" dog="'dog.id'">{{ dog.name }}  <span style="color: black;">{{ dog.breed }}</span></b-btn>
                     <p class="card-text">
                         
                     </p>
@@ -65,3 +65,13 @@
         }
     }
 </script>
+
+<style>
+    .btn {
+        text-align: center;
+        width: 80%;
+    }
+    .center {
+        text-align: center;
+    }
+</style>
