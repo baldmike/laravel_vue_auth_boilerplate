@@ -16,7 +16,7 @@ class CreateAnimalRequest extends FormRequest
      */
     public function authorize()
     {
-        $authorized = Auth::user();
+        $user = Auth::user();
 
         if(!$user) {
             return false;
