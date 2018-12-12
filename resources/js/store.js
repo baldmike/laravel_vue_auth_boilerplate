@@ -27,15 +27,16 @@ export default new Vuex.Store({
         }
     },
     getters: { 
-        // getters get data from state, feed components
-        // if there is a token, the user is authenticated
+        // getters get data from state and are available in components
+
+        // !! returns boolean  --  if there is a token, the user is authenticated
         isAuthenticated: state => !!state.token,
         currentUser: state => state.user,
         getAnimals: state => state.animals,
     },
     mutations: {
         // mutations are committed by actions, and are the ONLY way to manipulate state
-        
+
         setLoginCred(state, payload) {
             state.token = payload.token;
             state.user = payload.user;
