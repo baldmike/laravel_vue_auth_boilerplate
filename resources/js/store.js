@@ -34,6 +34,8 @@ export default new Vuex.Store({
         getAnimals: state => state.animals,
     },
     mutations: {
+        // mutations are committed by actions, and are the ONLY way to manipulate state
+        
         setLoginCred(state, payload) {
             state.token = payload.token;
             state.user = payload.user;
@@ -55,6 +57,8 @@ export default new Vuex.Store({
         },
     },
     actions: {
+        // actions are dispatched, they commit mutations
+
         setLoginCred(context, payload) {
             context.commit('setLoginCred', payload)
         },
