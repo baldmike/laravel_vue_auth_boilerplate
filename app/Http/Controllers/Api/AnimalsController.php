@@ -3,10 +3,15 @@
 namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\Http\Requests\CreateAnimalRequest;
 use App\Http\Resources\AnimalResource;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 use App\Models\Animal;
 
 class AnimalsController extends Controller
@@ -37,9 +42,30 @@ class AnimalsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateAnimalRequest $request)
     {
-        
+        $validated = $request->validated();
+
+        if($validated) {
+            $animal = new Animal();
+
+            $animal->species = request('species');
+            $animal->breed = request('breed');
+            $animal->name = request('name');
+            $animal->source = request('source');
+            $animal->microchip = request('microchip');
+            $animal->gender = request('gender');
+            $animal->birthdate = request('birthdate');
+            $animal->description = request('description');
+            $animal->weight = request('weight');
+            $animal->fixed = request('fixed');
+
+            $animal->save();
+
+            return new AnimalResource($animal);
+        }
+
+        return response()->json(null, Response::HTTP_BAD_REQUEST);
     }
 
     /**
