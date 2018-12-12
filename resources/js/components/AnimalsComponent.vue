@@ -2,7 +2,7 @@
     <div>
         <b-row>
             <b-col v-for="(animal, index) in getAnimals"
-                    :key="index" cols="3">
+                    :key="index" cols="2">
                 <b-card 
                     img-src="https://picsum.photos/1024/400/?image=13"
                     img-alt="Image"
@@ -17,7 +17,6 @@
                 </b-card>
             </b-col>
         </b-row>
-
 
         <div>
             <!-- Modal Component -->
@@ -46,7 +45,6 @@
         computed: mapGetters(['isAuthenticated', 'currentUser', 'getAnimals']),
         methods: {
             init() {
-                
                 this.$store.dispatch('getAllAnimals');
                 console.log("AnimalsComponent - init method - THIS.DOGS: ");
             },
@@ -69,7 +67,7 @@
 <style>
     .btn {
         text-align: center;
-        width: 80%;
+        width: 100%;
     }
     .center {
         text-align: center;

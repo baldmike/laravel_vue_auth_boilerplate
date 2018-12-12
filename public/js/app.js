@@ -27371,7 +27371,7 @@ exports = module.exports = __webpack_require__(11)(false);
 
 
 // module
-exports.push([module.i, "\n.btn {\n    text-align: center;\n    width: 80%;\n}\n.center {\n    text-align: center;\n}\n", ""]);
+exports.push([module.i, "\n.btn {\n    text-align: center;\n    width: 100%;\n}\n.center {\n    text-align: center;\n}\n", ""]);
 
 // exports
 
@@ -27383,7 +27383,6 @@ exports.push([module.i, "\n.btn {\n    text-align: center;\n    width: 80%;\n}\n
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(16);
-//
 //
 //
 //
@@ -27432,7 +27431,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     computed: Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['isAuthenticated', 'currentUser', 'getAnimals']),
     methods: {
         init: function init() {
-
             this.$store.dispatch('getAllAnimals');
             console.log("AnimalsComponent - init method - THIS.DOGS: ");
         },
@@ -27467,7 +27465,7 @@ var render = function() {
         _vm._l(_vm.getAnimals, function(animal, index) {
           return _c(
             "b-col",
-            { key: index, attrs: { cols: "3" } },
+            { key: index, attrs: { cols: "2" } },
             [
               _c(
                 "b-card",

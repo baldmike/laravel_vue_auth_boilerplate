@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1"> 
         <meta name="csrf-token" content="{{ csrf_token()}}"> 
     
-        <title>LaraVue Boilerplate</title>
+        <title>Chango Zephyr</title>
 
         <!-- Fonts -->
         <link href="https://bootswatch.com/4/lux/bootstrap.min.css" rel="stylesheet">
