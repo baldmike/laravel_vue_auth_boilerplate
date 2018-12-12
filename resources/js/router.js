@@ -3,7 +3,7 @@ import store from './store'
 import mainApp from './mainApp'
 import CatsComponent from './components/CatsComponent'
 import DashboardComponent from './components/DashboardComponent'
-import DogsComponent from './components/DogsComponent'
+import AnimalsComponent from './components/AnimalsComponent'
 import LoginComponent from './components/LoginComponent'
 import NotFound from './components/NotFound'
 
@@ -31,8 +31,8 @@ export const router = new VueRouter({
                     }
                 },
                 {
-                    path: 'dogs',
-                    component: DogsComponent,
+                    path: 'animals',
+                    component: AnimalsComponent,
                     beforeEnter: (to, from, next) => {
                         if (!window.auth.check()) {
                             next({
@@ -42,19 +42,6 @@ export const router = new VueRouter({
                         }
                         next();
                     }
-                },
-                {
-                    path: 'cats',
-                    component: CatsComponent,
-                    beforeEnter: (to, from, next) => {
-                        if (!window.auth.check()) {
-                            next({
-                                path: '/'
-                            });
-                            return;
-                        }
-                        next();
-                    },
                 },
                 {path: '*', component: NotFound}
             ]

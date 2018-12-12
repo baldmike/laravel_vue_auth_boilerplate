@@ -4,13 +4,13 @@
             <b-col v-for="(animal, index) in getAnimals"
                     :key="index" cols="3">
                 <b-card 
-                    img-src="https://picsum.photos/1024/400/?image=31"
+                    img-src="https://picsum.photos/1024/400/?image=13"
                     img-alt="Image"
                     img-top
                     tag="article"
                     class="mb-2 center">
 
-                    <b-btn class="selectButton" @click="showModal(animal)" animal="'animal.id'">{{ animal.name }}  <span style="color: black;">{{ animal.breed }}</span></b-btn>
+                    <b-btn class="selectButton" @click="showModal(animal)" animal="'animal.id'">{{ animal.name }}  <span style="color: black;"> {{ animal.species }} </span> {{ animal.breed }}</b-btn>
                     <p class="card-text">
                         
                     </p>

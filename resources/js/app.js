@@ -27,8 +27,7 @@ Vue.component('login-component', require('./components/LoginComponent.vue'))
 Vue.component('dashboard-component', require('./components/DashboardComponent.vue'))
 Vue.component('not-found', require('./components/NotFound.vue'))
 
-Vue.component('cats-component', require('./components/CatsComponent.vue'))
-Vue.component('dogs-component', require('./components/DogsComponent.vue'))
+Vue.component('animals-component', require('./components/AnimalsComponent.vue'))
 
 
 

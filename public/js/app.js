@@ -21882,8 +21882,8 @@ if (inBrowser && window.Vue) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_CatsComponent___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_CatsComponent__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_DashboardComponent__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_DashboardComponent___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_DashboardComponent__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_DogsComponent__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_DogsComponent___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_DogsComponent__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_AnimalsComponent__ = __webpack_require__(286);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_AnimalsComponent___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_AnimalsComponent__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_LoginComponent__ = __webpack_require__(56);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_LoginComponent___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__components_LoginComponent__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_NotFound__ = __webpack_require__(58);
@@ -21918,20 +21918,8 @@ var router = new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
                 next();
             }
         }, {
-            path: 'dogs',
-            component: __WEBPACK_IMPORTED_MODULE_5__components_DogsComponent___default.a,
-            beforeEnter: function beforeEnter(to, from, next) {
-                if (!window.auth.check()) {
-                    next({
-                        path: '/'
-                    });
-                    return;
-                }
-                next();
-            }
-        }, {
-            path: 'cats',
-            component: __WEBPACK_IMPORTED_MODULE_3__components_CatsComponent___default.a,
+            path: 'animals',
+            component: __WEBPACK_IMPORTED_MODULE_5__components_AnimalsComponent___default.a,
             beforeEnter: function beforeEnter(to, from, next) {
                 if (!window.auth.check()) {
                     next({
@@ -22426,57 +22414,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 55 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(128)
-}
-var normalizeComponent = __webpack_require__(14)
-/* script */
-var __vue_script__ = __webpack_require__(130)
-/* template */
-var __vue_template__ = __webpack_require__(131)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/js/components/DogsComponent.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-7482e0ab", Component.options)
-  } else {
-    hotAPI.reload("data-v-7482e0ab", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
+/* 55 */,
 /* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -25435,8 +25373,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('login-component', __webpa
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('dashboard-component', __webpack_require__(54));
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('not-found', __webpack_require__(58));
 
-__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('cats-component', __webpack_require__(53));
-__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('dogs-component', __webpack_require__(55));
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('animals-component', __webpack_require__(286));
 
 window.addEventListener('load', function () {
     var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
@@ -26944,9 +26881,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
 
 
 
@@ -27000,26 +26934,8 @@ var render = function() {
                 "b-navbar-nav",
                 [
                   _vm.isAuthenticated
-                    ? _c("b-nav-item", { attrs: { to: "dogs" } }, [
-                        _vm._v("Dogs")
-                      ])
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _vm.isAuthenticated
-                    ? _c("b-nav-item", { attrs: { to: "newDog" } }, [
-                        _vm._v("New Animal")
-                      ])
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _vm.isAuthenticated
-                    ? _c("b-nav-item", { attrs: { to: "cats" } }, [
-                        _vm._v("Cats")
-                      ])
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _vm.isAuthenticated
-                    ? _c("b-nav-item", { attrs: { to: "#" } }, [
-                        _vm._v("New Cat")
+                    ? _c("b-nav-item", { attrs: { to: "animals" } }, [
+                        _vm._v("Animals")
                       ])
                     : _vm._e()
                 ],
@@ -27366,246 +27282,10 @@ if (false) {
 }
 
 /***/ }),
-/* 128 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(129);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(24)("f4bba106", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7482e0ab\",\"scoped\":false,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./DogsComponent.vue", function() {
-     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7482e0ab\",\"scoped\":false,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./DogsComponent.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 129 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(11)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.btn {\n    text-align: center;\n    width: 80%;\n}\n.center {\n    text-align: center;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 130 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(16);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    name: 'animal',
-    data: function data() {
-        return {
-            name: '',
-            animal: '',
-            selectedAnimal: ''
-        };
-    },
-
-    computed: Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['isAuthenticated', 'currentUser', 'getAnimals']),
-    methods: {
-        init: function init() {
-
-            this.$store.dispatch('getAllAnimals');
-            console.log("AnimalsComponent - init method - THIS.DOGS: ");
-        },
-        showModal: function showModal(item) {
-            this.selectedAnimal = item;
-            this.$refs.selectedAnimalModal.show();
-        },
-        hideModal: function hideModal() {
-            this.$refs.selectedAnimalModal.hide();
-        }
-    },
-    created: function created() {
-        this.init();
-
-        console.log('Animals Component mounted.');
-    }
-});
-
-/***/ }),
-/* 131 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c(
-        "b-row",
-        _vm._l(_vm.getAnimals, function(animal, index) {
-          return _c(
-            "b-col",
-            { key: index, attrs: { cols: "3" } },
-            [
-              _c(
-                "b-card",
-                {
-                  staticClass: "mb-2 center",
-                  attrs: {
-                    "img-src": "https://picsum.photos/1024/400/?image=31",
-                    "img-alt": "Image",
-                    "img-top": "",
-                    tag: "article"
-                  }
-                },
-                [
-                  _c(
-                    "b-btn",
-                    {
-                      staticClass: "selectButton",
-                      attrs: { animal: "'animal.id'" },
-                      on: {
-                        click: function($event) {
-                          _vm.showModal(animal)
-                        }
-                      }
-                    },
-                    [
-                      _vm._v(_vm._s(animal.name) + "  "),
-                      _c("span", { staticStyle: { color: "black" } }, [
-                        _vm._v(_vm._s(animal.breed))
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "card-text" })
-                ],
-                1
-              )
-            ],
-            1
-          )
-        })
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        [
-          _c(
-            "b-modal",
-            {
-              ref: "selectedAnimalModal",
-              attrs: {
-                animal: "animal",
-                "ok-only": "",
-                "ok-title": "Close",
-                "ok-variant": "dark"
-              }
-            },
-            [
-              _c("h1", { staticClass: "my-2" }, [
-                _vm._v(_vm._s(_vm.selectedAnimal.name))
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "my-4" }, [
-                _vm._v(
-                  _vm._s(_vm.selectedAnimal.breed) +
-                    ", " +
-                    _vm._s(_vm.selectedAnimal.gender) +
-                    ", " +
-                    _vm._s(_vm.selectedAnimal.weight) +
-                    " pounds"
-                )
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "my-4" }, [
-                _vm._v(
-                  "From " +
-                    _vm._s(_vm.selectedAnimal.source) +
-                    " on " +
-                    _vm._s(
-                      _vm._f("moment")(
-                        _vm.selectedAnimal.created_at,
-                        "dddd, MMMM Do YYYY"
-                      )
-                    )
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "my-4" }, [
-                _vm._v(_vm._s(_vm.selectedAnimal.description))
-              ])
-            ]
-          )
-        ],
-        1
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-7482e0ab", module.exports)
-  }
-}
-
-/***/ }),
+/* 128 */,
+/* 129 */,
+/* 130 */,
+/* 131 */,
 /* 132 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -63493,6 +63173,299 @@ Object.defineProperty(exports, '__esModule', { value: true });
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 285 */,
+/* 286 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(287)
+}
+var normalizeComponent = __webpack_require__(14)
+/* script */
+var __vue_script__ = __webpack_require__(289)
+/* template */
+var __vue_template__ = __webpack_require__(290)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/AnimalsComponent.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-6cd9df9e", Component.options)
+  } else {
+    hotAPI.reload("data-v-6cd9df9e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 287 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(288);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(24)("452e6168", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6cd9df9e\",\"scoped\":false,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./AnimalsComponent.vue", function() {
+     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6cd9df9e\",\"scoped\":false,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./AnimalsComponent.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 288 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(11)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.btn {\n    text-align: center;\n    width: 80%;\n}\n.center {\n    text-align: center;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 289 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(16);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    name: 'animal',
+    data: function data() {
+        return {
+            name: '',
+            animal: '',
+            selectedAnimal: ''
+        };
+    },
+
+    computed: Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['isAuthenticated', 'currentUser', 'getAnimals']),
+    methods: {
+        init: function init() {
+
+            this.$store.dispatch('getAllAnimals');
+            console.log("AnimalsComponent - init method - THIS.DOGS: ");
+        },
+        showModal: function showModal(item) {
+            this.selectedAnimal = item;
+            this.$refs.selectedAnimalModal.show();
+        },
+        hideModal: function hideModal() {
+            this.$refs.selectedAnimalModal.hide();
+        }
+    },
+    created: function created() {
+        this.init();
+
+        console.log('Animals Component mounted.');
+    }
+});
+
+/***/ }),
+/* 290 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c(
+        "b-row",
+        _vm._l(_vm.getAnimals, function(animal, index) {
+          return _c(
+            "b-col",
+            { key: index, attrs: { cols: "3" } },
+            [
+              _c(
+                "b-card",
+                {
+                  staticClass: "mb-2 center",
+                  attrs: {
+                    "img-src": "https://picsum.photos/1024/400/?image=13",
+                    "img-alt": "Image",
+                    "img-top": "",
+                    tag: "article"
+                  }
+                },
+                [
+                  _c(
+                    "b-btn",
+                    {
+                      staticClass: "selectButton",
+                      attrs: { animal: "'animal.id'" },
+                      on: {
+                        click: function($event) {
+                          _vm.showModal(animal)
+                        }
+                      }
+                    },
+                    [
+                      _vm._v(_vm._s(animal.name) + "  "),
+                      _c("span", { staticStyle: { color: "black" } }, [
+                        _vm._v(" " + _vm._s(animal.species) + " ")
+                      ]),
+                      _vm._v(" " + _vm._s(animal.breed))
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "card-text" })
+                ],
+                1
+              )
+            ],
+            1
+          )
+        })
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        [
+          _c(
+            "b-modal",
+            {
+              ref: "selectedAnimalModal",
+              attrs: {
+                animal: "animal",
+                "ok-only": "",
+                "ok-title": "Close",
+                "ok-variant": "dark"
+              }
+            },
+            [
+              _c("h1", { staticClass: "my-2" }, [
+                _vm._v(_vm._s(_vm.selectedAnimal.name))
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "my-4" }, [
+                _vm._v(
+                  _vm._s(_vm.selectedAnimal.breed) +
+                    ", " +
+                    _vm._s(_vm.selectedAnimal.gender) +
+                    ", " +
+                    _vm._s(_vm.selectedAnimal.weight) +
+                    " pounds"
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "my-4" }, [
+                _vm._v(
+                  "From " +
+                    _vm._s(_vm.selectedAnimal.source) +
+                    " on " +
+                    _vm._s(
+                      _vm._f("moment")(
+                        _vm.selectedAnimal.created_at,
+                        "dddd, MMMM Do YYYY"
+                      )
+                    )
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "my-4" }, [
+                _vm._v(_vm._s(_vm.selectedAnimal.description))
+              ])
+            ]
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-6cd9df9e", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);
