@@ -27465,7 +27465,7 @@ var render = function() {
         _vm._l(_vm.getAnimals, function(animal, index) {
           return _c(
             "b-col",
-            { key: index, attrs: { cols: "2" } },
+            { key: index, attrs: { cols: "4" } },
             [
               _c(
                 "b-card",
@@ -27491,11 +27491,11 @@ var render = function() {
                       }
                     },
                     [
-                      _vm._v(_vm._s(animal.name) + "  "),
+                      _vm._v(_vm._s(animal.name) + "  |  "),
                       _c("span", { staticStyle: { color: "black" } }, [
                         _vm._v(" " + _vm._s(animal.species) + " ")
                       ]),
-                      _vm._v(" " + _vm._s(animal.breed))
+                      _vm._v("  |  " + _vm._s(animal.breed))
                     ]
                   ),
                   _vm._v(" "),
