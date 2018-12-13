@@ -53,7 +53,7 @@ class AnimalsController extends Controller
             $animal->breed = request('breed');
             $animal->name = request('name');
             $animal->source = request('source');
-            $animal->microchip = request('microchip');
+            $animal->microchip_number = request('microchip_number');
             $animal->gender = request('gender');
             $animal->birthdate = request('birthdate');
             $animal->description = request('description');
@@ -76,18 +76,11 @@ class AnimalsController extends Controller
      */
     public function show($id)
     {
-        //
-    }
+        if (is_null($id)) {
+            return response()->json(null, Response::HTTP_NOT_FOUND);
+        }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        return new AnimalResource(Animal::findOrFail($id));
     }
 
     /**
