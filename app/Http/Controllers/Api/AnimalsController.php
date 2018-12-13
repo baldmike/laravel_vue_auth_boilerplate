@@ -28,16 +28,8 @@ class AnimalsController extends Controller
      */
     public function index()
     {
+        Log::debug('[AnimalsController] - index');
         return AnimalResource::collection(Animal::orderBy('name', 'asc')->get());
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
         
     }
 
@@ -125,26 +117,28 @@ class AnimalsController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Animal
      * 
      * @return \Illuminate\Http\Response
      * 
      */
     public function destroy(DeleteAnimalRequest $request)
     {
-        Log::debug("[AnimalsController] - destroy! BEFORE");
+        Log::debug("[AnimalsController] - DESTROY! BEFORE");
 
         $validated = $request->validated();
 
+        dd($validated);
+
         if ($validated) 
         {
-            $toDelete = Animal::find($id);
+            $toDelete = Animal::find($validated->id);
 
             $toDelete->delete();
 
             Log::debug("[AnimalsController] - destroy: ".$toDelete);
         }
         
+        return response()->json(null, Response::HTTP_OK);
 
         
     }
