@@ -2,18 +2,22 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Models\Animal;
+
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Resources\Json\JsonResource;
-use App\Http\Requests\CreateAnimalRequest;
-use App\Http\Resources\AnimalResource;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
-use App\Models\Animal;
+
 use App\Http\Requests\DeleteAnimalRequest;
+use App\Http\Requests\UpdateAnimalRequest;
+use App\Http\Requests\CreateAnimalRequest;
+use App\Http\Controllers\Controller;
+use App\Http\Resources\AnimalResource;
 
 class AnimalsController extends Controller
 {
@@ -128,6 +132,8 @@ class AnimalsController extends Controller
      */
     public function destroy(DeleteAnimalRequest $request)
     {
+        Log::debug("[AnimalsController] - destroy! BEFORE");
+
         $validated = $request->validated();
 
         if ($validated) 
@@ -135,7 +141,7 @@ class AnimalsController extends Controller
             $toDelete = Animal::find($id);
 
             $toDelete->delete();
-            
+
             Log::debug("[AnimalsController] - destroy: ".$toDelete);
         }
         
