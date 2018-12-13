@@ -3,8 +3,11 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
+use App\Models\Animal;
 
-class UpdateAnimalRequest extends FormRequest
+class DeleteAnimalRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -34,7 +37,6 @@ class UpdateAnimalRequest extends FormRequest
             'species' => 'required',
             'breed' => 'required',
             'name' => 'required',
-            'source' => 'required',
         ];
     }
 }
