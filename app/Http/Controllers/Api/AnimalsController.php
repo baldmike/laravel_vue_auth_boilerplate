@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Animal;
+use App\Http\Requests\DeleteAnimalRequest;
 
 class AnimalsController extends Controller
 {
@@ -90,19 +91,55 @@ class AnimalsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateAnimalRequest $request)
     {
-        //
+        $validated - $request->validated();
+
+        if (!$validated) {
+            return response()->json(null, Response::HTTP_BAD_REQUEST);
+        } else {
+
+            $animal->species = request('species');
+            $animal->breed = request('breed');
+            $animal->name = request('name');
+            $animal->source = request('source');
+            $animal->microchip_number = request('microchip_number');
+            $animal->gender = request('gender');
+            $animal->birthdate = request('birthdate');
+            $animal->description = request('description');
+            $animal->weight = request('weight');
+            $animal->fixed = request('fixed');
+
+            $animal->save();
+
+            return new AnimalResource($animal);
+
+        }
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Animal
+     * 
      * @return \Illuminate\Http\Response
+     * 
      */
-    public function destroy($id)
+    public function destroy(DeleteAnimalRequest $request)
     {
-        //
+        $validated = $request->validated();
+
+        if ($validated) 
+        {
+            $toDelete = Animal::find($id);
+
+            $toDelete->delete();
+            
+            Log::debug("[AnimalsController] - destroy: ".$toDelete);
+        }
+        
+
+        
     }
 }
