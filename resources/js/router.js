@@ -43,6 +43,19 @@ export const router = new VueRouter({
                         next();
                     }
                 },
+                {
+                    path: 'cats',
+                    component: CatsComponent,
+                    beforeEnter: (to, from, next) => {
+                        if (!window.auth.check()) {
+                            next({
+                                path: '/'
+                            });
+                            return;
+                        }
+                        next();
+                    }
+                },
                 {path: '*', component: NotFound}
             ]
         },
