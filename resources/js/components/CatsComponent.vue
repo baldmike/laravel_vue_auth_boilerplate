@@ -6,7 +6,23 @@
                     <div class="card-header"></div>
 
                     <div class="card-body">
-                        I am the Cats Component.
+                        <b-row>
+            <b-col v-for="(animal, index) in getCats"
+                    :key="index" cols="4">
+                <b-card 
+                    img-src="https://picsum.photos/1024/400/?image=13"
+                    img-alt="Image"
+                    img-top
+                    tag="article"
+                    class="mb-2 center">
+
+                    <b-btn class="selectButton" @click="showModal(animal)" animal="'animal.id'">{{ animal.name }}  |  <span style="color: black;"> {{ animal.species }} </span>  |  {{ animal.breed }}</b-btn>
+                    <p class="card-text">
+                        
+                    </p>
+                </b-card>
+            </b-col>
+        </b-row>
                     </div>
                 </div>
             </div>
@@ -16,6 +32,8 @@
 
 <script>
     
+    import { mapActions, mapGetters } from "vuex";
+
     export default {
 
         name: 'cats',
@@ -25,35 +43,16 @@
             }
         },
         mounted() {
-            console.log('Home Component mounted.')
+            console.log('Cats Component mounted.')
         },
-        computed: {
-            x() {
-                return this.$store.state.x;
-            },
-            y() {
-                return this.$store.state.y;
-            },
-            z() {
-                return this.$store.state.z;
-            }
-        },
+        computed: mapGetters(['isAuthenticated', 'currentUser', 'getCats']),
+            
         methods: {
-            dblX() {
-                this.$store.dispatch('doubleX');
-            },
-            dblY() {
-                this.$store.dispatch('doubleY');
-            },
-            dblZ() {
-                this.$store.dispatch('doubleZ');
-            }
+            
         }
     }
 </script>
 
 <style scoped>
-    .page {
-        background-color: rosybrown;
-    }
+    
 </style>

@@ -1,5 +1,6 @@
 <template>
-    <div class="container">
+    <div class="container-fluid">
+      <b-col cols="4">
         <b-form @submit="login">
             <h3>login</h3>
             <b-form-group id="emailInputGroup"
@@ -30,6 +31,7 @@
                 Login
             </b-button>
         </b-form>
+      </b-col>
     </div>
 </template>
 

@@ -2,18 +2,22 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Models\Animal;
+
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Resources\Json\JsonResource;
-use App\Http\Requests\CreateAnimalRequest;
-use App\Http\Resources\AnimalResource;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
-use App\Models\Animal;
+
 use App\Http\Requests\DeleteAnimalRequest;
+use App\Http\Requests\UpdateAnimalRequest;
+use App\Http\Requests\CreateAnimalRequest;
+use App\Http\Controllers\Controller;
+use App\Http\Resources\AnimalResource;
 
 class AnimalsController extends Controller
 {
@@ -24,16 +28,8 @@ class AnimalsController extends Controller
      */
     public function index()
     {
+        Log::debug('[AnimalsController] - index');
         return AnimalResource::collection(Animal::orderBy('name', 'asc')->get());
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
         
     }
 
@@ -121,24 +117,28 @@ class AnimalsController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Animal
      * 
      * @return \Illuminate\Http\Response
      * 
      */
     public function destroy(DeleteAnimalRequest $request)
     {
+        Log::debug("[AnimalsController] - DESTROY! BEFORE");
+
         $validated = $request->validated();
+
+        dd($validated);
 
         if ($validated) 
         {
-            $toDelete = Animal::find($id);
+            $toDelete = Animal::find($validated->id);
 
             $toDelete->delete();
-            
+
             Log::debug("[AnimalsController] - destroy: ".$toDelete);
         }
         
+        return response()->json(null, Response::HTTP_OK);
 
         
     }
