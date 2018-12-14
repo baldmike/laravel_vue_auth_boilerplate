@@ -26962,23 +26962,7 @@ var render = function() {
             "b-collapse",
             { attrs: { "is-nav": "", id: "nav_collapse" } },
             [
-              _c(
-                "b-navbar-nav",
-                [
-                  _vm.isAuthenticated
-                    ? _c("b-nav-item", { attrs: { to: "animals" } }, [
-                        _vm._v("Animals")
-                      ])
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _vm.isAuthenticated
-                    ? _c("b-nav-item", { attrs: { to: "cats" } }, [
-                        _vm._v("Cats")
-                      ])
-                    : _vm._e()
-                ],
-                1
-              ),
+              _c("b-navbar-nav"),
               _vm._v(" "),
               _c(
                 "b-navbar-nav",
@@ -27365,7 +27349,7 @@ exports = module.exports = __webpack_require__(11)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -27376,7 +27360,9 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__AnimalsComponent__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__AnimalsComponent___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__AnimalsComponent__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(14);
 //
 //
 //
@@ -27384,27 +27370,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: 'dashboard',
+    components: {
+        AnimalsComponent: __WEBPACK_IMPORTED_MODULE_0__AnimalsComponent___default.a
+    },
     data: function data() {
         return {};
     },
 
-    computed: Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['isAuthenticated', 'currentUser', 'getAnimals']),
+    computed: Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["c" /* mapGetters */])(['isAuthenticated', 'currentUser', 'getAnimals']),
     methods: {
         init: function init() {
             this.$store.dispatch('getAllAnimals');
@@ -27419,7 +27399,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }
     },
     created: function created() {
-        this.init();
+        if (this.$store.state.animals.length === 0) {
+            this.init();
+        }
 
         console.log('Dashboard Component mounted.');
     }
@@ -27434,33 +27416,9 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "div",
-    [
-      _c(
-        "b-card",
-        {
-          staticClass: "mb-2",
-          staticStyle: { "max-width": "33%" },
-          attrs: {
-            title: _vm.currentUser,
-            "img-src": "https://picsum.photos/600/300/?image=54",
-            "img-alt": "Image",
-            "img-top": "",
-            tag: "article"
-          }
-        },
-        [
-          _c("p", { staticClass: "card-text" }, [
-            _vm._v("\n        " + _vm._s(_vm.currentUser) + "\n        ")
-          ]),
-          _vm._v(" "),
-          _c("b-button", { attrs: { href: "#", variant: "primary" } }, [
-            _vm._v("Go somewhere")
-          ])
-        ],
-        1
-      )
-    ],
+    "transition",
+    { attrs: { name: "slide" } },
+    [_c("animals-component")],
     1
   )
 }
@@ -27581,6 +27539,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     computed: _extends({
         filteredAnimals: function filteredAnimals() {
             var self = this;
+
             return this.$store.state.animals.filter(function (animal) {
                 return animal.name.toLowerCase().indexOf(self.search.toLowerCase()) >= 0;
             });

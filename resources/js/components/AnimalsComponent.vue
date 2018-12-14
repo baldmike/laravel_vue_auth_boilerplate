@@ -55,7 +55,10 @@
         computed: {
             filteredAnimals:function() {
                 var self=this;
-                return this.$store.state.animals.filter(function(animal){return animal.name.toLowerCase().indexOf(self.search.toLowerCase())>=0;});
+                
+                return this.$store.state.animals.filter(function(animal) {
+                    return animal.name.toLowerCase().indexOf(self.search.toLowerCase())>=0;
+                });
             },
         ...mapGetters(['isAuthenticated', 'currentUser', 'getAnimals'])},
         methods: {
