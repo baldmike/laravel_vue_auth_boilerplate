@@ -21923,7 +21923,7 @@ var router = new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
     routes: [{
         path: '/',
         component: __WEBPACK_IMPORTED_MODULE_2__mainApp___default.a,
-        props: { component: __WEBPACK_IMPORTED_MODULE_6__components_LoginComponent___default.a },
+        props: { loginComponent: __WEBPACK_IMPORTED_MODULE_6__components_LoginComponent___default.a },
 
         children: [{
             path: 'dashboard',
@@ -26750,7 +26750,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     components: {
         NavBar: __WEBPACK_IMPORTED_MODULE_0__components_NavBar___default.a
     },
-    props: ["component"],
+    props: ["loginComponent"],
     computed: Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["c" /* mapGetters */])(['isAuthenticated']),
     methods: Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["b" /* mapActions */])(['login']),
     mounted: function mounted() {
@@ -27032,9 +27032,11 @@ var render = function() {
       _vm._v(" "),
       _c("nav-bar"),
       _vm._v(" "),
-      !_vm.isAuthenticated ? _c(_vm.component, { tag: "component" }) : _vm._e(),
+      !_vm.isAuthenticated
+        ? _c(_vm.loginComponent, { tag: "login-component" })
+        : _vm._e(),
       _vm._v(" "),
-      _c("router-view")
+      _vm.isAuthenticated ? _c("router-view") : _vm._e()
     ],
     1
   )
@@ -27507,7 +27509,7 @@ exports = module.exports = __webpack_require__(11)(false);
 
 
 // module
-exports.push([module.i, "\n.btn {\n    text-align: center;\n    width: 100%;\n}\n.center {\n    text-align: center;\n}\n", ""]);
+exports.push([module.i, "\n.btn {\n    text-align: center;\n    width: 100%;\n}\n.center {\n    text-align: center;\n}\n.searchBar {\n    width: 100%;\n    text-align: center;\n}\n", ""]);
 
 // exports
 
@@ -27585,10 +27587,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         }
     }, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['isAuthenticated', 'currentUser', 'getAnimals'])),
     methods: {
-        // init() {
-        //     this.$store.dispatch('getAllAnimals');
-        //     console.log("AnimalsComponent - init method - THIS.DOGS: ");
-        // },
         showModal: function showModal(item) {
             this.selectedAnimal = item;
             this.$refs.selectedAnimalModal.show();
@@ -27597,11 +27595,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             this.$refs.selectedAnimalModal.hide();
         }
     }
-    // created() {
-    //     this.init();
-
-    //     console.log('Animals Component mounted.')
-    // }
 });
 
 /***/ }),
@@ -27618,31 +27611,30 @@ var render = function() {
       _c(
         "b-row",
         [
-          _c("b-col", { attrs: { cols: "2" } }, [
-            _c("h4", [_vm._v("Search: ")])
-          ]),
-          _vm._v(" "),
           _c("b-col", { attrs: { cols: "4" } }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.search,
-                  expression: "search"
-                }
-              ],
-              attrs: { type: "text" },
-              domProps: { value: _vm.search },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
+            _c("div", { staticClass: "my-3" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.search,
+                    expression: "search"
                   }
-                  _vm.search = $event.target.value
+                ],
+                staticClass: "searchBar",
+                attrs: { type: "text", placeholder: "Enter animal's name" },
+                domProps: { value: _vm.search },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.search = $event.target.value
+                  }
                 }
-              }
-            })
+              })
+            ])
           ])
         ],
         1

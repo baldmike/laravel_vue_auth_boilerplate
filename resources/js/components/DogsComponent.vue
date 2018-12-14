@@ -1,19 +1,10 @@
 <template>
     <div>
         <b-row>
-            <b-col cols="4">
-                <div class="my-3">
-                    <input class="searchBar" type="text" v-model="search" placeholder="Enter animal's name">
-                </div>
-                
-            </b-col>
-        </b-row>
-
-        <b-row>
-            <b-col v-for="(animal, index) in filteredAnimals"
+            <b-col v-for="(animal, index) in getDogs"
                     :key="index" cols="4">
                 <b-card 
-                    img-src="https://picsum.photos/1024/400/?image=13"
+                    img-src="https://picsum.photos/1024/400/?image=16"
                     img-alt="Image"
                     img-top
                     tag="article"
@@ -40,46 +31,30 @@
 </template>
 
 <script>
+    
     import { mapActions, mapGetters } from "vuex";
 
     export default {
-        name: 'animal',
+
+        name: 'cats',
         data() {
             return {
                 name: '',
                 animal: '',
-                search: '',
                 selectedAnimal: '',
             }
         },
-        computed: {
-            filteredAnimals:function() {
-                var self=this;
-                return this.$store.state.animals.filter(function(animal){return animal.name.toLowerCase().indexOf(self.search.toLowerCase())>=0;});
-            },
-        ...mapGetters(['isAuthenticated', 'currentUser', 'getAnimals'])},
-        methods: {
-            showModal (item) {
-                this.selectedAnimal = item;
-                this.$refs.selectedAnimalModal.show()
-            },
-            hideModal () {
-                this.$refs.selectedAnimalModal.hide()
-            },
+        mounted() {
+            console.log('Cats Component mounted.')
         },
+        computed: mapGetters(['isAuthenticated', 'currentUser', 'getCats']),
+            
+        methods: {
+            
+        }
     }
 </script>
 
-<style>
-    .btn {
-        text-align: center;
-        width: 100%;
-    }
-    .center {
-        text-align: center;
-    }
-    .searchBar {
-        width: 100%;
-        text-align: center;
-    }
+<style scoped>
+    
 </style>
