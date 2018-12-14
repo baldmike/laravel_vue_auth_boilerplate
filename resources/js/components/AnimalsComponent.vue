@@ -1,7 +1,16 @@
 <template>
     <div>
         <b-row>
-            <b-col v-for="(animal, index) in getAnimals"
+            <b-col cols="2">
+                <h4>Search: </h4>
+            </b-col>
+            <b-col cols="4">
+                <input type="text" v-model="search">
+            </b-col>
+        </b-row>
+
+        <b-row>
+            <b-col v-for="(animal, index) in filteredAnimals"
                     :key="index" cols="4">
                 <b-card 
                     img-src="https://picsum.photos/1024/400/?image=13"
@@ -39,15 +48,21 @@
             return {
                 name: '',
                 animal: '',
+                search: '',
                 selectedAnimal: '',
             }
         },
-        computed: mapGetters(['isAuthenticated', 'currentUser', 'getAnimals']),
-        methods: {
-            init() {
-                this.$store.dispatch('getAllAnimals');
-                console.log("AnimalsComponent - init method - THIS.DOGS: ");
+        computed: {
+            filteredAnimals:function() {
+                var self=this;
+                return this.$store.state.animals.filter(function(animal){return animal.name.toLowerCase().indexOf(self.search.toLowerCase())>=0;});
             },
+        ...mapGetters(['isAuthenticated', 'currentUser', 'getAnimals'])},
+        methods: {
+            // init() {
+            //     this.$store.dispatch('getAllAnimals');
+            //     console.log("AnimalsComponent - init method - THIS.DOGS: ");
+            // },
             showModal (item) {
                 this.selectedAnimal = item;
                 this.$refs.selectedAnimalModal.show()
@@ -56,11 +71,11 @@
                 this.$refs.selectedAnimalModal.hide()
             },
         },
-        created() {
-            this.init();
+        // created() {
+        //     this.init();
 
-            console.log('Animals Component mounted.')
-        }
+        //     console.log('Animals Component mounted.')
+        // }
     }
 </script>
 

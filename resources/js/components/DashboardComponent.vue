@@ -1,7 +1,7 @@
 <template>
     <div>
         <b-card :title="currentUser"
-                img-src="https://picsum.photos/600/300/?image=25"
+                img-src="https://picsum.photos/600/300/?image=54"
                 img-alt="Image"
                 img-top
                 tag="article"
@@ -26,19 +26,28 @@
                 
             }
         },
-        beforeCreate() {
-            
+        computed: mapGetters(['isAuthenticated', 'currentUser', 'getAnimals']),
+        methods: {
+            init() {
+                this.$store.dispatch('getAllAnimals');
+                console.log("AnimalsComponent - init method - THIS.DOGS: ");
+            },
+            showModal (item) {
+                this.selectedAnimal = item;
+                this.$refs.selectedAnimalModal.show()
+            },
+            hideModal () {
+                this.$refs.selectedAnimalModal.hide()
+            },
         },
-        mounted() {
-            // this.$store.dispatch('refreshUserData')
+        created() {
+            this.init();
+
             console.log('Dashboard Component mounted.')
-        },
-        computed: mapGetters(['isAuthenticated', 'currentUser']),
+        }
     }
 </script>
 
 <style scoped>
-    .page {
-        background-color: lime;
-    }
+    
 </style>

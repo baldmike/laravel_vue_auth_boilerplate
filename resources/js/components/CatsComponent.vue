@@ -1,16 +1,10 @@
 <template>
-    <div class="page">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card card-default">
-                    <div class="card-header"></div>
-
-                    <div class="card-body">
-                        <b-row>
+    <div>
+        <b-row>
             <b-col v-for="(animal, index) in getCats"
                     :key="index" cols="4">
                 <b-card 
-                    img-src="https://picsum.photos/1024/400/?image=13"
+                    img-src="https://picsum.photos/1024/400/?image=16"
                     img-alt="Image"
                     img-top
                     tag="article"
@@ -23,9 +17,15 @@
                 </b-card>
             </b-col>
         </b-row>
-                    </div>
-                </div>
-            </div>
+
+        <div>
+            <!-- Modal Component -->
+            <b-modal ref="selectedAnimalModal" :animal="'animal'" ok-only ok-title="Close" ok-variant="dark">
+                <h1 class="my-2">{{ selectedAnimal.name }}</h1>
+                <li class="my-4">{{ selectedAnimal.breed }}, {{selectedAnimal.gender}}, {{ selectedAnimal.weight }} pounds</li>
+                <li class="my-4">From {{ selectedAnimal.source }} on {{ selectedAnimal.created_at | moment("dddd, MMMM Do YYYY" )}}</li>
+                <div class="my-4">{{ selectedAnimal.description }}</div>
+            </b-modal>
         </div>
     </div>
 </template>
@@ -39,7 +39,9 @@
         name: 'cats',
         data() {
             return {
-
+                name: '',
+                animal: '',
+                selectedAnimal: '',
             }
         },
         mounted() {
