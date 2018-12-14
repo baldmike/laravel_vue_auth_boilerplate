@@ -26,6 +26,7 @@ export default new Vuex.Store({
             animals: [],
             dogs: [],
             cats: [],
+            rabbits: [],
         }
     },
     getters: { 
@@ -53,6 +54,7 @@ export default new Vuex.Store({
             state.animals = payload.data;
             state.cats = payload.data.filter(animal => animal.species === 'cat');
             state.dogs = payload.data.filter(animal => animal.species === 'dog');
+            state.rabbits = payload.data.filter(animal => animal.species === 'rab');
         },
         logout(state) {
             state.token = null;
