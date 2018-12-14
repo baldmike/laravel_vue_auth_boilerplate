@@ -24,6 +24,8 @@ export default new Vuex.Store({
             token: userToken ? userToken : null,
             user: user ? user : null,
             animals: [],
+            dogs: [],
+            cats: [],
         }
     },
     getters: { 
@@ -33,6 +35,7 @@ export default new Vuex.Store({
         isAuthenticated: state => !!state.token,
         currentUser: state => state.user,
         getAnimals: state => state.animals,
+        getCats: state => state.cats
     },
     mutations: {
         // mutations are committed by actions, and are the ONLY way to manipulate state
@@ -48,6 +51,8 @@ export default new Vuex.Store({
         },
         setAnimals(state, payload) {
             state.animals = payload.data;
+            state.cats = payload.data.filter(animal => animal.species === 'cat');
+            state.dogs = payload.data.filter(animal => animal.species === 'dog');
         },
         logout(state) {
             state.token = null;
