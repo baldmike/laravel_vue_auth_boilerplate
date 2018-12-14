@@ -28,6 +28,7 @@ Vue.component('dashboard-component', require('./components/DashboardComponent.vu
 Vue.component('not-found', require('./components/NotFound.vue'))
 
 Vue.component('animals-component', require('./components/AnimalsComponent.vue'))
+Vue.component('create-animal-component', require('./components/CreateAnimalComponent.vue'))
 
 
 

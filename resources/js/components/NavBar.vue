@@ -7,7 +7,7 @@
             <b-collapse is-nav id="nav_collapse">
 
                 <b-navbar-nav>
-                    <!-- <b-nav-item v-if="isAuthenticated" to="animals">Animals</b-nav-item> -->
+                    <b-nav-item v-if="isAuthenticated" to="createAnimal">Create Animal</b-nav-item>
                     <!-- <b-nav-item v-if="isAuthenticated" to="cats">Cats</b-nav-item> -->
                 </b-navbar-nav>
                     
