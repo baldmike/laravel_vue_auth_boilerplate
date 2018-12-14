@@ -2,8 +2,8 @@
     <div class="container-fluid">
         <notifications group="auth" position="top center" width="40%"/>
         <nav-bar></nav-bar>
-        <component v-if="!isAuthenticated" :is="component"></component>
-        <router-view></router-view>
+        <login-component v-if="!isAuthenticated" :is="loginComponent"></login-component>
+        <router-view v-if="isAuthenticated"></router-view>
     </div>
 </template>
 
@@ -17,7 +17,7 @@
         components: {
             NavBar,
         },
-        props: ["component"],
+        props: ["loginComponent"],
         computed: mapGetters(['isAuthenticated']),
         methods: mapActions(['login']),
         mounted() {
@@ -28,3 +28,4 @@
     }
 
 </script>
+

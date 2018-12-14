@@ -14,7 +14,7 @@ export const router = new VueRouter({
         {
             path: '/', 
             component: mainApp,
-            props: {component: LoginComponent},
+            props: {loginComponent: LoginComponent},
     
             children: [
                 {
