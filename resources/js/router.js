@@ -1,7 +1,7 @@
 import VueRouter from 'vue-router' 
 import store from './store'
 import mainApp from './mainApp'
-import CatsComponent from './components/CatsComponent'
+import CreateAnimalComponent from './components/CreateAnimalComponent'
 import DashboardComponent from './components/DashboardComponent'
 import AnimalsComponent from './components/AnimalsComponent'
 import LoginComponent from './components/LoginComponent'
@@ -44,8 +44,8 @@ export const router = new VueRouter({
                     }
                 },
                 {
-                    path: 'cats',
-                    component: CatsComponent,
+                    path: 'createAnimal',
+                    component: CreateAnimalComponent,
                     beforeEnter: (to, from, next) => {
                         if (!window.auth.check()) {
                             next({
@@ -63,7 +63,7 @@ export const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-        // Start the route progress bar.
+    // Start the route progress bar.
     NProgress.start()
     
     next()

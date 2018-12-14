@@ -1,7 +1,7 @@
 <template>
-    <transition name="slide">
+    <div>
         <animals-component></animals-component>
-    </transition>
+    </div>
     
 </template>
 

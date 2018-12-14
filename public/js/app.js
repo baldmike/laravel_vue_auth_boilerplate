@@ -21898,8 +21898,8 @@ if (inBrowser && window.Vue) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__store__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mainApp__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mainApp___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__mainApp__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_CatsComponent__ = __webpack_require__(119);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_CatsComponent___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_CatsComponent__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_CreateAnimalComponent__ = __webpack_require__(286);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_CreateAnimalComponent___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_CreateAnimalComponent__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_DashboardComponent__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_DashboardComponent___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_DashboardComponent__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_AnimalsComponent__ = __webpack_require__(54);
@@ -21950,8 +21950,8 @@ var router = new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
                 next();
             }
         }, {
-            path: 'cats',
-            component: __WEBPACK_IMPORTED_MODULE_3__components_CatsComponent___default.a,
+            path: 'createAnimal',
+            component: __WEBPACK_IMPORTED_MODULE_3__components_CreateAnimalComponent___default.a,
             beforeEnter: function beforeEnter(to, from, next) {
                 if (!window.auth.check()) {
                     next({
@@ -25405,6 +25405,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('dashboard-component', __w
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('not-found', __webpack_require__(57));
 
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('animals-component', __webpack_require__(54));
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('create-animal-component', __webpack_require__(286));
 
 window.addEventListener('load', function () {
     var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
@@ -26962,7 +26963,17 @@ var render = function() {
             "b-collapse",
             { attrs: { "is-nav": "", id: "nav_collapse" } },
             [
-              _c("b-navbar-nav"),
+              _c(
+                "b-navbar-nav",
+                [
+                  _vm.isAuthenticated
+                    ? _c("b-nav-item", { attrs: { to: "createAnimal" } }, [
+                        _vm._v("Create Animal")
+                      ])
+                    : _vm._e()
+                ],
+                1
+              ),
               _vm._v(" "),
               _c(
                 "b-navbar-nav",
@@ -27036,285 +27047,11 @@ if (false) {
 }
 
 /***/ }),
-/* 119 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(120)
-}
-var normalizeComponent = __webpack_require__(15)
-/* script */
-var __vue_script__ = __webpack_require__(122)
-/* template */
-var __vue_template__ = __webpack_require__(123)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = "data-v-5e0345c5"
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/js/components/CatsComponent.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-5e0345c5", Component.options)
-  } else {
-    hotAPI.reload("data-v-5e0345c5", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 120 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(121);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(24)("39a8daf2", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5e0345c5\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CatsComponent.vue", function() {
-     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5e0345c5\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CatsComponent.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 121 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(11)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 122 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(14);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-
-    name: 'cats',
-    data: function data() {
-        return {
-            name: '',
-            animal: '',
-            selectedAnimal: ''
-        };
-    },
-    mounted: function mounted() {
-        console.log('Cats Component mounted.');
-    },
-
-    computed: Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['isAuthenticated', 'currentUser', 'getCats']),
-
-    methods: {}
-});
-
-/***/ }),
-/* 123 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c(
-        "b-row",
-        _vm._l(_vm.getCats, function(animal, index) {
-          return _c(
-            "b-col",
-            { key: index, attrs: { cols: "4" } },
-            [
-              _c(
-                "b-card",
-                {
-                  staticClass: "mb-2 center",
-                  attrs: {
-                    "img-src": "https://picsum.photos/1024/400/?image=16",
-                    "img-alt": "Image",
-                    "img-top": "",
-                    tag: "article"
-                  }
-                },
-                [
-                  _c(
-                    "b-btn",
-                    {
-                      staticClass: "selectButton",
-                      attrs: { animal: "'animal.id'" },
-                      on: {
-                        click: function($event) {
-                          _vm.showModal(animal)
-                        }
-                      }
-                    },
-                    [
-                      _vm._v(_vm._s(animal.name) + "  |  "),
-                      _c("span", { staticStyle: { color: "black" } }, [
-                        _vm._v(" " + _vm._s(animal.species) + " ")
-                      ]),
-                      _vm._v("  |  " + _vm._s(animal.breed))
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "card-text" })
-                ],
-                1
-              )
-            ],
-            1
-          )
-        })
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        [
-          _c(
-            "b-modal",
-            {
-              ref: "selectedAnimalModal",
-              attrs: {
-                animal: "animal",
-                "ok-only": "",
-                "ok-title": "Close",
-                "ok-variant": "dark"
-              }
-            },
-            [
-              _c("h1", { staticClass: "my-2" }, [
-                _vm._v(_vm._s(_vm.selectedAnimal.name))
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "my-4" }, [
-                _vm._v(
-                  _vm._s(_vm.selectedAnimal.breed) +
-                    ", " +
-                    _vm._s(_vm.selectedAnimal.gender) +
-                    ", " +
-                    _vm._s(_vm.selectedAnimal.weight) +
-                    " pounds"
-                )
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "my-4" }, [
-                _vm._v(
-                  "From " +
-                    _vm._s(_vm.selectedAnimal.source) +
-                    " on " +
-                    _vm._s(
-                      _vm._f("moment")(
-                        _vm.selectedAnimal.created_at,
-                        "dddd, MMMM Do YYYY"
-                      )
-                    )
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "my-4" }, [
-                _vm._v(_vm._s(_vm.selectedAnimal.description))
-              ])
-            ]
-          )
-        ],
-        1
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-5e0345c5", module.exports)
-  }
-}
-
-/***/ }),
+/* 119 */,
+/* 120 */,
+/* 121 */,
+/* 122 */,
+/* 123 */,
 /* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -27415,12 +27152,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "transition",
-    { attrs: { name: "slide" } },
-    [_c("animals-component")],
-    1
-  )
+  return _c("div", [_c("animals-component")], 1)
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -63611,6 +63343,305 @@ Object.defineProperty(exports, '__esModule', { value: true });
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 285 */,
+/* 286 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(15)
+/* script */
+var __vue_script__ = __webpack_require__(287)
+/* template */
+var __vue_template__ = __webpack_require__(288)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/CreateAnimalComponent.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-07337dea", Component.options)
+  } else {
+    hotAPI.reload("data-v-07337dea", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 287 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      form: {
+        email: '',
+        name: '',
+        food: null,
+        checked: []
+      },
+      foods: [{ text: 'Select One', value: null }, 'Carrots', 'Beans', 'Tomatoes', 'Corn'],
+      show: true
+    };
+  },
+
+  methods: {
+    onSubmit: function onSubmit(evt) {
+      evt.preventDefault();
+      alert(JSON.stringify(this.form));
+    },
+    onReset: function onReset(evt) {
+      var _this = this;
+
+      evt.preventDefault();
+      /* Reset our form values */
+      this.form.email = '';
+      this.form.name = '';
+      this.form.food = null;
+      this.form.checked = [];
+      /* Trick to reset/clear native browser form validation state */
+      this.show = false;
+      this.$nextTick(function () {
+        _this.show = true;
+      });
+    }
+  }
+});
+
+/***/ }),
+/* 288 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _vm.show
+        ? _c(
+            "b-form",
+            { on: { submit: _vm.onSubmit, reset: _vm.onReset } },
+            [
+              _c(
+                "b-form-group",
+                {
+                  attrs: {
+                    id: "exampleInputGroup1",
+                    label: "Email address:",
+                    "label-for": "exampleInput1",
+                    description:
+                      "We'll never share your email with anyone else."
+                  }
+                },
+                [
+                  _c("b-form-input", {
+                    attrs: {
+                      id: "exampleInput1",
+                      type: "email",
+                      required: "",
+                      placeholder: "Enter email"
+                    },
+                    model: {
+                      value: _vm.form.email,
+                      callback: function($$v) {
+                        _vm.$set(_vm.form, "email", $$v)
+                      },
+                      expression: "form.email"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "b-form-group",
+                {
+                  attrs: {
+                    id: "exampleInputGroup2",
+                    label: "Your Name:",
+                    "label-for": "exampleInput2"
+                  }
+                },
+                [
+                  _c("b-form-input", {
+                    attrs: {
+                      id: "exampleInput2",
+                      type: "text",
+                      required: "",
+                      placeholder: "Enter name"
+                    },
+                    model: {
+                      value: _vm.form.name,
+                      callback: function($$v) {
+                        _vm.$set(_vm.form, "name", $$v)
+                      },
+                      expression: "form.name"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "b-form-group",
+                {
+                  attrs: {
+                    id: "exampleInputGroup3",
+                    label: "Food:",
+                    "label-for": "exampleInput3"
+                  }
+                },
+                [
+                  _c("b-form-select", {
+                    attrs: {
+                      id: "exampleInput3",
+                      options: _vm.foods,
+                      required: ""
+                    },
+                    model: {
+                      value: _vm.form.food,
+                      callback: function($$v) {
+                        _vm.$set(_vm.form, "food", $$v)
+                      },
+                      expression: "form.food"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "b-form-group",
+                { attrs: { id: "exampleGroup4" } },
+                [
+                  _c(
+                    "b-form-checkbox-group",
+                    {
+                      attrs: { id: "exampleChecks" },
+                      model: {
+                        value: _vm.form.checked,
+                        callback: function($$v) {
+                          _vm.$set(_vm.form, "checked", $$v)
+                        },
+                        expression: "form.checked"
+                      }
+                    },
+                    [
+                      _c("b-form-checkbox", { attrs: { value: "me" } }, [
+                        _vm._v("Check me out")
+                      ]),
+                      _vm._v(" "),
+                      _c("b-form-checkbox", { attrs: { value: "that" } }, [
+                        _vm._v("Check that out")
+                      ])
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "b-button",
+                { attrs: { type: "submit", variant: "primary" } },
+                [_vm._v("Submit")]
+              ),
+              _vm._v(" "),
+              _c("b-button", { attrs: { type: "reset", variant: "danger" } }, [
+                _vm._v("Reset")
+              ])
+            ],
+            1
+          )
+        : _vm._e()
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-07337dea", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);
