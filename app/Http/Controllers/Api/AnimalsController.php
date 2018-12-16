@@ -30,7 +30,6 @@ class AnimalsController extends Controller
     {
         Log::debug('[AnimalsController] - index');
         return AnimalResource::collection(Animal::orderBy('name', 'asc')->get());
-        
     }
 
     /**
@@ -42,6 +41,8 @@ class AnimalsController extends Controller
     public function store(CreateAnimalRequest $request)
     {
         $validated = $request->validated();
+
+        Log::debug("AnimalsController - store()");
 
         if($validated) {
             $animal = new Animal();
