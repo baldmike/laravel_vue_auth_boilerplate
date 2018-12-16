@@ -32,10 +32,12 @@ class CreateAnimalRequest extends FormRequest
      */
     public function rules()
     {
+        Log::debug("INSIDE THE REQUEST");
+
         return [
-            'species' => 'required',
-            'breed' => 'required',
             'name' => 'required',
+            'species' => 'required',
+            'species' => 'required',
             'source' => 'required',
         ];
     }

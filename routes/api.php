@@ -23,7 +23,7 @@ Route::middleware('auth:api')->group(function () {
     
     // Route::get('/animals', 'Api\AnimalsController@index');
 
-    // the following line creates all resource routes like it's Doug Freakin Henning
+    // the following line creates all resource routes
     Route::resource('animals', 'Api\AnimalsController');
     
     Route::get('/user', 'Api\UsersController@current');
