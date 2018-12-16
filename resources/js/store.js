@@ -36,7 +36,8 @@ export default new Vuex.Store({
         isAuthenticated: state => !!state.token,
         currentUser: state => state.user,
         getAnimals: state => state.animals,
-        getCats: state => state.cats
+        getCats: state => state.cats,
+        getDogs: state => state.dogs
     },
     mutations: {
         // mutations are committed by actions, and are the ONLY way to manipulate state

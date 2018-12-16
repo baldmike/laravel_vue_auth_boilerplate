@@ -2,10 +2,17 @@
     <div>
         <b-row>
             <b-col cols="4">
+                <b-button>Dogs</b-button>
+                <b-button>Cats</b-button>
+                <b-button>Rabbits</b-button>
+            </b-col>
+            <b-col cols="4">
                 <div class="my-3">
                     <input class="searchBar" type="text" v-model="search" placeholder="Enter animal's name">
                 </div>
-                
+            </b-col>
+            <b-col cols="4">
+                <b-button>Show Dogs</b-button>
             </b-col>
         </b-row>
 
@@ -13,7 +20,7 @@
             <b-col v-for="(animal, index) in filteredAnimals"
                     :key="index" cols="4">
                 <b-card 
-                    img-src="https://picsum.photos/1024/400/?image=13"
+                    img-src="https://picsum.photos/1024/400/?image=43"
                     img-alt="Image"
                     img-top
                     tag="article"
@@ -53,7 +60,7 @@
             }
         },
         computed: {
-            filteredAnimals:function() {
+            filteredAnimals() {
                 var self=this;
                 
                 return this.$store.state.animals.filter(function(animal) {
@@ -76,7 +83,7 @@
 <style>
     .btn {
         text-align: center;
-        width: 100%;
+        /* width: 100%; */
     }
     .center {
         text-align: center;

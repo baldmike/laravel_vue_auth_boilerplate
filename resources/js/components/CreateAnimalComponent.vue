@@ -1,7 +1,7 @@
 <template>
   <b-row>
       <b-col cols="6" offset="3">
-          <b-form @submit="onSubmit" @reset="onReset" v-if="show">
+          <b-form @reset="onReset" v-if="show">
             <b-row>
                 <b-col cols="4">
                     <b-form-group id="nameInputGroup"
@@ -14,7 +14,7 @@
                                     :state="!$v.form.name.$invalid"
                                     placeholder="Enter Animal's Name"/>
                         <b-form-invalid-feedback id="nameLiveFeedback">
-                            This is a required field and must be at least 3 characters
+                            Red fields are required.
                         </b-form-invalid-feedback>
                     </b-form-group>
                 </b-col>
@@ -36,7 +36,7 @@
                         label="Fixed"
                         label-for="fixed">
                         <b-form-checkbox-group v-model="form.fixed" id="fixed">
-                            <b-form-checkbox></b-form-checkbox>
+                            <b-form-checkbox value="1" unchecked-value="0"></b-form-checkbox>
                         </b-form-checkbox-group>
                     </b-form-group>
                 </b-col>
@@ -215,14 +215,19 @@
                 })
 
                 axios.post("/api/animals", fd, {headers: {'Content-Type': 'multipart/form-data'}}).then(({data}) => {
+                    this.$notify({
+                        group: 'notifications',
+                        title: 'Success',
+                        text: 'Animal added',
+                        duration: '6000',
+                        width: '100%'
+                    });
                     console.log("CreateAnimalComponent -- createAnimal -- createAnimal()" + data.name);
                 }).catch((error) => {
                     console.log(error);
                 })
-                console.log(fd);
-                console.log("fd");
-            },
-            onSubmit (evt) {
+
+                this.$router.push('dashboard');
                 
             },
 
@@ -251,7 +256,5 @@
 </script>
 
 <style scoped>
-    .btn {
-        
-    }
+
 </style>

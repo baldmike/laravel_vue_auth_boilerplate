@@ -17082,6 +17082,9 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vue_
         },
         getCats: function getCats(state) {
             return state.cats;
+        },
+        getDogs: function getDogs(state) {
+            return state.dogs;
         }
     },
     mutations: {
@@ -27942,7 +27945,7 @@ var render = function() {
     { staticClass: "container-fluid" },
     [
       _c("notifications", {
-        attrs: { group: "auth", position: "top center", width: "40%" }
+        attrs: { group: "notifications", position: "top center", width: "50%" }
       }),
       _vm._v(" "),
       _c("nav-bar"),
@@ -28001,7 +28004,7 @@ exports = module.exports = __webpack_require__(11)(false);
 
 
 // module
-exports.push([module.i, "\n.btn[data-v-07337dea] {\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -28224,14 +28227,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             axios.post("/api/animals", fd, { headers: { 'Content-Type': 'multipart/form-data' } }).then(function (_ref) {
                 var data = _ref.data;
 
+                _this.$notify({
+                    group: 'notifications',
+                    title: 'Success',
+                    text: 'Animal added',
+                    duration: '6000',
+                    width: '100%'
+                });
                 console.log("CreateAnimalComponent -- createAnimal -- createAnimal()" + data.name);
             }).catch(function (error) {
                 console.log(error);
             });
-            console.log(fd);
-            console.log("fd");
+
+            this.$router.push('dashboard');
         },
-        onSubmit: function onSubmit(evt) {},
         onReset: function onReset(evt) {
             var _this2 = this;
 
@@ -29012,7 +29021,7 @@ var render = function() {
           _vm.show
             ? _c(
                 "b-form",
-                { on: { submit: _vm.onSubmit, reset: _vm.onReset } },
+                { on: { reset: _vm.onReset } },
                 [
                   _c(
                     "b-row",
@@ -29053,7 +29062,7 @@ var render = function() {
                                 { attrs: { id: "nameLiveFeedback" } },
                                 [
                                   _vm._v(
-                                    "\n                          This is a required field and must be at least 3 characters\n                      "
+                                    "\n                          Red fields are required.\n                      "
                                   )
                                 ]
                               )
@@ -29126,7 +29135,14 @@ var render = function() {
                                     expression: "form.fixed"
                                   }
                                 },
-                                [_c("b-form-checkbox")],
+                                [
+                                  _c("b-form-checkbox", {
+                                    attrs: {
+                                      value: "1",
+                                      "unchecked-value": "0"
+                                    }
+                                  })
+                                ],
                                 1
                               )
                             ],
@@ -29557,7 +29573,7 @@ exports = module.exports = __webpack_require__(11)(false);
 
 
 // module
-exports.push([module.i, "\n.btn {\n    text-align: center;\n    width: 100%;\n}\n.center {\n    text-align: center;\n}\n.searchBar {\n    width: 100%;\n    text-align: center;\n}\n", ""]);
+exports.push([module.i, "\n.btn {\n    text-align: center;\n    /* width: 100%; */\n}\n.center {\n    text-align: center;\n}\n.searchBar {\n    width: 100%;\n    text-align: center;\n}\n", ""]);
 
 // exports
 
@@ -29571,6 +29587,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(16);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -29660,6 +29683,19 @@ var render = function() {
       _c(
         "b-row",
         [
+          _c(
+            "b-col",
+            { attrs: { cols: "4" } },
+            [
+              _c("b-button", [_vm._v("Dogs")]),
+              _vm._v(" "),
+              _c("b-button", [_vm._v("Cats")]),
+              _vm._v(" "),
+              _c("b-button", [_vm._v("Rabbits")])
+            ],
+            1
+          ),
+          _vm._v(" "),
           _c("b-col", { attrs: { cols: "4" } }, [
             _c("div", { staticClass: "my-3" }, [
               _c("input", {
@@ -29684,7 +29720,14 @@ var render = function() {
                 }
               })
             ])
-          ])
+          ]),
+          _vm._v(" "),
+          _c(
+            "b-col",
+            { attrs: { cols: "4" } },
+            [_c("b-button", [_vm._v("Show Dogs")])],
+            1
+          )
         ],
         1
       ),
@@ -29701,7 +29744,7 @@ var render = function() {
                 {
                   staticClass: "mb-2 center",
                   attrs: {
-                    "img-src": "https://picsum.photos/1024/400/?image=13",
+                    "img-src": "https://picsum.photos/1024/400/?image=43",
                     "img-alt": "Image",
                     "img-top": "",
                     tag: "article"
