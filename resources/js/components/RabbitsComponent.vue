@@ -4,12 +4,12 @@
             <b-col cols="4">
                 <b-button class="filterButton" @click="showAll">Show All</b-button>
                 <b-button class="filterButton" @click="showDogs">Dogs</b-button>
-                <b-button class="filterButton" @click="showCats" disabled>Cats</b-button>
-                <b-button class="filterButton" @click="showRabbits">Rabbits</b-button>
+                <b-button class="filterButton" @click="showCats">Cats</b-button>
+                <b-button class="filterButton" @click="showRabbits" disabled>Rabbits</b-button>
             </b-col>
             <b-col cols="4">
                 <div class="my-3">
-                    <input class="searchBar" type="text" v-model="searchName" placeholder="Enter cat's name">
+                    <input class="searchBar" type="text" v-model="searchName" placeholder="Enter rabbit's name">
                 </div>
             </b-col>
             <b-col cols="4">
@@ -18,16 +18,16 @@
         </b-row>
 
         <b-row>
-            <b-col v-for="(cat, index) in filteredCats"
+            <b-col v-for="(rabbit, index) in filteredRabbits"
                     :key="index" cols="4">
                 <b-card 
-                    img-src="https://picsum.photos/1024/400/?image=21"
+                    img-src="https://picsum.photos/1024/400/?image=18"
                     img-alt="Image"
                     img-top
                     tag="article"
                     class="mb-2 center">
 
-                    <b-btn class="selectButton" @click="showModal(cat)" cat="'cat.id'">{{ cat.name }}  |  <span style="color: black;"> {{ cat.species }} </span>  |  {{ cat.breed }}</b-btn>
+                    <b-btn class="selectButton" @click="showModal(rabbit)" rabbit="'rabbit.id'">{{ rabbit.name }}  |  <span style="color: black;"> {{ rabbit.species }} </span>  |  {{ rabbit.breed }}</b-btn>
                     <p class="card-text">
                         
                     </p>
@@ -37,7 +37,7 @@
 
         <div>
             <!-- Modal Component -->
-            <b-modal ref="selectedCatModal" :cat="'cat'" ok-only ok-title="Close" ok-variant="dark">
+            <b-modal ref="selectedCatModal" :rabbit="'rabbit'" ok-only ok-title="Close" ok-variant="dark">
                 <h1 class="my-2">{{ selectedCat.name }}</h1>
                 <li class="my-4">{{ selectedCat.breed }}, {{selectedCat.gender}}, {{ selectedCat.weight }} pounds</li>
                 <li class="my-4">From {{ selectedCat.source }} on {{ selectedCat.created_at | moment("dddd, MMMM Do YYYY" )}}</li>
@@ -51,31 +51,31 @@
     import { mapActions, mapGetters } from "vuex";
 
     export default {
-        name: 'cats',
+        name: 'rabbits',
         data() {
             return {
                 name: '',
-                cat: '',
+                rabbit: '',
                 searchName: '',
                 selectedCat: '',
             }
         },
         computed: {
-            filteredCats() {
+            filteredRabbits() {
                 var self=this;
                 
-                return this.$store.state.cats.filter(function(cat) {
-                    return cat.name.toLowerCase().indexOf(self.searchName.toLowerCase())>=0;
+                return this.$store.state.rabbits.filter(function(rabbit) {
+                    return rabbit.name.toLowerCase().indexOf(self.searchName.toLowerCase())>=0;
                 });
             },
         ...mapGetters(['isAuthenticated', 'currentUser', 'getCats'])},
         methods: {
             showModal (item) {
                 this.selectedCat = item;
-                this.$refs.selectedCatModal.show()
+                this.$refs.selectedRabbitModal.show()
             },
             hideModal () {
-                this.$refs.selectedCatModal.hide()
+                this.$refs.selectedRabbitModal.hide()
             },
             showCats() {
                 this.$router.push('cats');

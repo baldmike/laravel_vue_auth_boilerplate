@@ -1,10 +1,27 @@
 <template>
     <div>
         <b-row>
-            <b-col v-for="(dog, index) in getDogs"
+            <b-col cols="4">
+                <b-button class="filterButton" @click="showAll">Show All</b-button>
+                <b-button class="filterButton" @click="showDogs" disabled>Dogs</b-button>
+                <b-button class="filterButton" @click="showCats">Cats</b-button>
+                <b-button class="filterButton" @click="showRabbits">Rabbits</b-button>
+            </b-col>
+            <b-col cols="4">
+                <div class="my-3">
+                    <input class="searchBar" type="text" v-model="search" placeholder="Enter dog's name">
+                </div>
+            </b-col>
+            <b-col cols="4">
+                
+            </b-col>
+        </b-row>
+
+        <b-row>
+            <b-col v-for="(dog, index) in filteredDogs"
                     :key="index" cols="4">
                 <b-card 
-                    img-src="https://picsum.photos/1024/400/?image=34"
+                    img-src="https://picsum.photos/1024/400/?image=69"
                     img-alt="Image"
                     img-top
                     tag="article"
@@ -31,30 +48,67 @@
 </template>
 
 <script>
-    
     import { mapActions, mapGetters } from "vuex";
 
     export default {
-
-        name: 'cats',
+        name: 'dogs',
         data() {
             return {
                 name: '',
                 dog: '',
+                search: '',
                 selectedDog: '',
             }
         },
-        mounted() {
-            console.log('Dogs Component mounted.')
-        },
-        computed: mapGetters(['isAuthenticated', 'currentUser', 'getDogs']),
-            
+        computed: {
+            filteredDogs() {
+                var self=this;
+                
+                return this.$store.state.dogs.filter(function(dog) {
+                    return dog.name.toLowerCase().indexOf(self.search.toLowerCase())>=0;
+                });
+            },
+        ...mapGetters(['isAuthenticated', 'currentUser', 'getDogs'])},
         methods: {
-            
-        }
+            showModal (item) {
+                this.selectedDog = item;
+                this.$refs.selectedDogModal.show()
+            },
+            hideModal () {
+                this.$refs.selectedDogModal.hide()
+            },
+            showCats() {
+                this.$router.push('cats');
+            },
+            showDogs() {
+                this.$router.push('dogs');
+            },
+            showRabbits() {
+                this.$router.push('rabbits');
+            },
+            showAll() {
+                this.$router.push('dashboard')
+            }
+        },
     }
 </script>
 
-<style scoped>
-    
+<style>
+    .btn {
+        text-align: center;
+        width: 24%;
+    }
+    .center {
+        text-align: center;
+    }
+    .searchBar {
+        width: 100%;
+        text-align: center;
+    }
+    .selectButton {
+        width: 85%;
+    }
+    .filterButton {
+        width: 24%;
+    }
 </style>

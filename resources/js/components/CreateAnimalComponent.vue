@@ -218,7 +218,7 @@
                     this.$notify({
                         group: 'notifications',
                         title: 'Success',
-                        text: 'Animal added',
+                        text: this.form.name + 'Animal added',
                         duration: '6000',
                         width: '100%'
                     });
