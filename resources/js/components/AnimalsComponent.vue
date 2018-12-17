@@ -2,9 +2,10 @@
     <div>
         <b-row>
             <b-col cols="4">
-                <b-button>Dogs</b-button>
-                <b-button>Cats</b-button>
-                <b-button>Rabbits</b-button>
+                <b-button class="filterButton" @click="showAll" disabled>Show All</b-button>
+                <b-button class="filterButton" @click="showDogs">Dogs</b-button>
+                <b-button class="filterButton" @click="showCats">Cats</b-button>
+                <b-button class="filterButton" @click="showRabbits">Rabbits</b-button>
             </b-col>
             <b-col cols="4">
                 <div class="my-3">
@@ -12,7 +13,7 @@
                 </div>
             </b-col>
             <b-col cols="4">
-                <b-button>Show Dogs</b-button>
+                
             </b-col>
         </b-row>
 
@@ -76,14 +77,26 @@
             hideModal () {
                 this.$refs.selectedAnimalModal.hide()
             },
+            showDogs() {
+                this.$router.push('dogs');
+            },
+            showCats() {
+                this.$router.push('cats');
+            },
+            showRabbits() {
+                this.$router.push('rabbits');
+            },
+            showAll() {
+                this.$router.push('dashboard')
+            }
         },
     }
 </script>
 
-<style>
+<style scoped>
     .btn {
         text-align: center;
-        /* width: 100%; */
+        /* width: 24%; */
     }
     .center {
         text-align: center;
@@ -91,5 +104,11 @@
     .searchBar {
         width: 100%;
         text-align: center;
+    }
+    .selectButton {
+        width: 85%;
+    }
+    .filterButton {
+        width: 24%;
     }
 </style>

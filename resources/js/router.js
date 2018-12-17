@@ -4,6 +4,9 @@ import mainApp from './mainApp'
 import CreateAnimalComponent from './components/CreateAnimalComponent'
 import DashboardComponent from './components/DashboardComponent'
 import AnimalsComponent from './components/AnimalsComponent'
+import DogsComponent from './components/DogsComponent'
+import CatsComponent from './components/CatsComponent'
+import RabbitsComponent from './components/RabbitsComponent'
 import LoginComponent from './components/LoginComponent'
 import NotFound from './components/NotFound'
 
@@ -33,6 +36,45 @@ export const router = new VueRouter({
                 {
                     path: 'animals',
                     component: AnimalsComponent,
+                    beforeEnter: (to, from, next) => {
+                        if (!window.auth.check()) {
+                            next({
+                                path: '/'
+                            });
+                            return;
+                        }
+                        next();
+                    }
+                },
+                {
+                    path: 'dogs',
+                    component: DogsComponent,
+                    beforeEnter: (to, from, next) => {
+                        if (!window.auth.check()) {
+                            next({
+                                path: '/'
+                            });
+                            return;
+                        }
+                        next();
+                    }
+                },
+                {
+                    path: 'cats',
+                    component: CatsComponent,
+                    beforeEnter: (to, from, next) => {
+                        if (!window.auth.check()) {
+                            next({
+                                path: '/'
+                            });
+                            return;
+                        }
+                        next();
+                    }
+                },
+                {
+                    path: 'rabbits',
+                    component: RabbitsComponent,
                     beforeEnter: (to, from, next) => {
                         if (!window.auth.check()) {
                             next({
