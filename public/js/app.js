@@ -29665,7 +29665,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             var self = this;
 
             return this.$store.state.animals.filter(function (animal) {
-                return animal.name.toLowerCase().indexOf(self.search.toLowerCase()) >= 0;
+                return animal.name.toLowerCase().indexOf(self.search.toLowerCase()) >= 0 || animal.breed.toLowerCase().indexOf(self.search.toLowerCase()) >= 0 || animal.species.toLowerCase().indexOf(self.search.toLowerCase()) >= 0;
             });
         }
     }, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['isAuthenticated', 'currentUser', 'getAnimals'])),
@@ -64137,8 +64137,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         filteredDogs: function filteredDogs() {
             var self = this;
 
-            return this.$store.state.dogs.filter(function (dog) {
-                return dog.name.toLowerCase().indexOf(self.search.toLowerCase()) >= 0;
+            return this.$store.state.dogs.filter(function (animal) {
+                return animal.name.toLowerCase().indexOf(self.search.toLowerCase()) >= 0 || animal.breed.toLowerCase().indexOf(self.search.toLowerCase()) >= 0 || animal.species.toLowerCase().indexOf(self.search.toLowerCase()) >= 0;
             });
         }
     }, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['isAuthenticated', 'currentUser', 'getDogs'])),
@@ -64267,7 +64267,7 @@ var render = function() {
                   }
                 ],
                 staticClass: "searchBar",
-                attrs: { type: "text", placeholder: "Enter dog's name" },
+                attrs: { type: "text", placeholder: "Search" },
                 domProps: { value: _vm.search },
                 on: {
                   input: function($event) {
@@ -64559,7 +64559,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         return {
             name: '',
             cat: '',
-            searchName: '',
+            search: '',
             selectedCat: ''
         };
     },
@@ -64568,8 +64568,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         filteredCats: function filteredCats() {
             var self = this;
 
-            return this.$store.state.cats.filter(function (cat) {
-                return cat.name.toLowerCase().indexOf(self.searchName.toLowerCase()) >= 0;
+            return this.$store.state.animals.filter(function (animal) {
+                return animal.name.toLowerCase().indexOf(self.search.toLowerCase()) >= 0 || animal.breed.toLowerCase().indexOf(self.search.toLowerCase()) >= 0 || animal.species.toLowerCase().indexOf(self.search.toLowerCase()) >= 0;
             });
         }
     }, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['isAuthenticated', 'currentUser', 'getCats'])),
@@ -64652,19 +64652,19 @@ var render = function() {
                   {
                     name: "model",
                     rawName: "v-model",
-                    value: _vm.searchName,
-                    expression: "searchName"
+                    value: _vm.search,
+                    expression: "search"
                   }
                 ],
                 staticClass: "searchBar",
-                attrs: { type: "text", placeholder: "Enter cat's name" },
-                domProps: { value: _vm.searchName },
+                attrs: { type: "text", placeholder: "Search" },
+                domProps: { value: _vm.search },
                 on: {
                   input: function($event) {
                     if ($event.target.composing) {
                       return
                     }
-                    _vm.searchName = $event.target.value
+                    _vm.search = $event.target.value
                   }
                 }
               })
@@ -64892,7 +64892,7 @@ var render = function() {
                   }
                 ],
                 staticClass: "searchBar",
-                attrs: { type: "text", placeholder: "Enter animal's name" },
+                attrs: { type: "text", placeholder: "Search" },
                 domProps: { value: _vm.search },
                 on: {
                   input: function($event) {
@@ -65184,7 +65184,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         return {
             name: '',
             rabbit: '',
-            searchName: '',
+            search: '',
             selectedCat: ''
         };
     },
@@ -65193,8 +65193,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         filteredRabbits: function filteredRabbits() {
             var self = this;
 
-            return this.$store.state.rabbits.filter(function (rabbit) {
-                return rabbit.name.toLowerCase().indexOf(self.searchName.toLowerCase()) >= 0;
+            return this.$store.state.animals.filter(function (animal) {
+                return animal.name.toLowerCase().indexOf(self.search.toLowerCase()) >= 0 || animal.breed.toLowerCase().indexOf(self.search.toLowerCase()) >= 0 || animal.species.toLowerCase().indexOf(self.search.toLowerCase()) >= 0;
             });
         }
     }, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['isAuthenticated', 'currentUser', 'getCats'])),
@@ -65277,19 +65277,19 @@ var render = function() {
                   {
                     name: "model",
                     rawName: "v-model",
-                    value: _vm.searchName,
-                    expression: "searchName"
+                    value: _vm.search,
+                    expression: "search"
                   }
                 ],
                 staticClass: "searchBar",
-                attrs: { type: "text", placeholder: "Enter rabbit's name" },
-                domProps: { value: _vm.searchName },
+                attrs: { type: "text", placeholder: "Search" },
+                domProps: { value: _vm.search },
                 on: {
                   input: function($event) {
                     if ($event.target.composing) {
                       return
                     }
-                    _vm.searchName = $event.target.value
+                    _vm.search = $event.target.value
                   }
                 }
               })
