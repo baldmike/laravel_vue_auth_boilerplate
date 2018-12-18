@@ -9,7 +9,7 @@
             </b-col>
             <b-col cols="4">
                 <div class="my-3">
-                    <input class="searchBar" type="text" v-model="searchName" placeholder="Enter cat's name">
+                    <input class="searchBar" type="text" v-model="search" placeholder="Search">
                 </div>
             </b-col>
             <b-col cols="4">
@@ -56,17 +56,15 @@
             return {
                 name: '',
                 cat: '',
-                searchName: '',
+                search: '',
                 selectedCat: '',
             }
         },
         computed: {
             filteredCats() {
                 var self=this;
-                
-                return this.$store.state.cats.filter(function(cat) {
-                    return cat.name.toLowerCase().indexOf(self.searchName.toLowerCase())>=0;
-                });
+
+                return this.$store.state.animals.filter(animal => animal.name.toLowerCase().indexOf(self.search.toLowerCase())>=0 || animal.breed.toLowerCase().indexOf(self.search.toLowerCase())>=0 || animal.species.toLowerCase().indexOf(self.search.toLowerCase())>=0);
             },
         ...mapGetters(['isAuthenticated', 'currentUser', 'getCats'])},
         methods: {
