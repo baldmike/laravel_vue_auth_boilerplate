@@ -1,112 +1,216 @@
 <template>
-    <div>
-        <b-row>
-            <b-col cols="4">
-                <b-button class="filterButton" @click="showAll">Show All</b-button>
-                <b-button class="filterButton" @click="showDogs">Dogs</b-button>
-                <b-button class="filterButton" @click="showCats">Cats</b-button>
-                <b-button class="filterButton" @click="showRabbits" disabled>Rabbits</b-button>
-            </b-col>
-            <b-col cols="4">
-                <div class="my-3">
-                    <input class="searchBar" type="text" v-model="search" placeholder="Search">
+    <div class="uploader"
+        @dragenter="OnDragEnter"
+        @dragleave="OnDragLeave"
+        @dragover.prevent
+        @drop="onDrop"
+        :class="{ dragging: isDragging }">
+        
+        <div class="upload-control" v-show="images.length">
+            <label for="file">Select a file</label>
+            <button @click="upload">Upload</button>
+        </div>
+
+
+        <div v-show="!images.length">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <p>Drag your images here</p>
+            <div>OR</div>
+            <div class="file-input">
+                <label for="file">Select a file</label>
+                <input type="file" id="file" @change="onInputChange" multiple>
+            </div>
+        </div>
+
+        <div class="images-preview" v-show="images.length">
+            <div class="img-wrapper" v-for="(image, index) in images" :key="index">
+                <img :src="image" :alt="`Image Uplaoder ${index}`">
+                <div class="details">
+                    <span class="name" v-text="files[index].name"></span>
+                    <span class="size" v-text="getFileSize(files[index].size)"></span>
                 </div>
-            </b-col>
-            <b-col cols="4">
-                
-            </b-col>
-        </b-row>
-
-        <b-row>
-            <b-col v-for="(rabbit, index) in filteredRabbits"
-                    :key="index" cols="4">
-                <b-card 
-                    img-src="https://picsum.photos/1024/400/?image=18"
-                    img-alt="Image"
-                    img-top
-                    tag="article"
-                    class="mb-2 center">
-
-                    <b-btn class="selectButton" @click="showModal(rabbit)" rabbit="'rabbit.id'">{{ rabbit.name }}  |  <span style="color: black;"> {{ rabbit.species }} </span>  |  {{ rabbit.breed }}</b-btn>
-                    <p class="card-text">
-                        
-                    </p>
-                </b-card>
-            </b-col>
-        </b-row>
-
-        <div>
-            <!-- Modal Component -->
-            <b-modal ref="selectedCatModal" :rabbit="'rabbit'" ok-only ok-title="Close" ok-variant="dark">
-                <h1 class="my-2">{{ selectedCat.name }}</h1>
-                <li class="my-4">{{ selectedCat.breed }}, {{selectedCat.gender}}, {{ selectedCat.weight }} pounds</li>
-                <li class="my-4">From {{ selectedCat.source }} on {{ selectedCat.created_at | moment("dddd, MMMM Do YYYY" )}}</li>
-                <div class="my-4">{{ selectedCat.description }}</div>
-            </b-modal>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
-    import { mapActions, mapGetters } from "vuex";
-
-    export default {
-        name: 'rabbits',
-        data() {
-            return {
-                name: '',
-                rabbit: '',
-                search: '',
-                selectedCat: '',
-            }
+export default {
+    data: () => ({
+        isDragging: false,
+        dragCount: 0,
+        files: [],
+        images: []
+    }),
+    methods: {
+        OnDragEnter(e) {
+            e.preventDefault();
+            
+            this.dragCount++;
+            this.isDragging = true;
+            return false;
         },
-        computed: {
-            filteredRabbits() {
-                var self=this;
-
-                return this.$store.state.animals.filter(animal => animal.name.toLowerCase().indexOf(self.search.toLowerCase())>=0 || animal.breed.toLowerCase().indexOf(self.search.toLowerCase())>=0 || animal.species.toLowerCase().indexOf(self.search.toLowerCase())>=0);
-            },
-        ...mapGetters(['isAuthenticated', 'currentUser', 'getCats'])},
-        methods: {
-            showModal (item) {
-                this.selectedCat = item;
-                this.$refs.selectedRabbitModal.show()
-            },
-            hideModal () {
-                this.$refs.selectedRabbitModal.hide()
-            },
-            showCats() {
-                this.$router.push('cats');
-            },
-            showDogs() {
-                this.$router.push('dogs');
-            },
-            showRabbits() {
-                this.$router.push('rabbits');
-            },
-            showAll() {
-                this.$router.push('dashboard')
-            }
+        OnDragLeave(e) {
+            e.preventDefault();
+            this.dragCount--;
+            if (this.dragCount <= 0)
+                this.isDragging = false;
         },
+        onInputChange(e) {
+            const files = e.target.files;
+            Array.from(files).forEach(file => this.addImage(file));
+        },
+        onDrop(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            this.isDragging = false;
+            const files = e.dataTransfer.files;
+            Array.from(files).forEach(file => this.addImage(file));
+        },
+        addImage(file) {
+            if (!file.type.match('image.*')) {
+                console.log("NOT AN IMAGE");
+                return;
+            }
+            this.files.push(file);
+            const img = new Image(),
+                reader = new FileReader();
+            reader.onload = (e) => this.images.push(e.target.result);
+            reader.readAsDataURL(file);
+        },
+        getFileSize(size) {
+            const fSExt = ['Bytes', 'KB', 'MB', 'GB'];
+            let i = 0;
+            
+            while(size > 900) {
+                size /= 1024;
+                i++;
+            }
+            return `${(Math.round(size * 100) / 100)} ${fSExt[i]}`;
+        },
+        upload() {
+            const formData = new FormData();
+            
+            this.files.forEach(file => {
+                formData.append('images[]', file, file.name);
+            });
+            axios.post('/images-upload', formData)
+                .then(response => {
+                    this.$notify({
+                        group: 'notifications',
+                        title: 'Success',
+                        text: 'Image successfully uploaded',
+                        duration: '6000',
+                        width: '100%'
+                    });
+                    this.images = [];
+                    this.files = [];
+                })
+        }
     }
+}
 </script>
 
-<style>
-    .btn {
-        text-align: center;
-        width: 24%;
+<style lang="scss" scoped>
+.uploader {
+    width: 100%;
+    background: #2196F3;
+    color: #fff;
+    padding: 40px 15px;
+    text-align: center;
+    border-radius: 10px;
+    border: 3px dashed #fff;
+    font-size: 20px;
+    position: relative;
+    &.dragging {
+        background: #fff;
+        color: #2196F3;
+        border: 3px dashed #2196F3;
+        .file-input label {
+            background: #2196F3;
+            color: #fff;
+        }
     }
-    .center {
-        text-align: center;
+    i {
+        font-size: 85px;
     }
-    .searchBar {
+    .file-input {
+        width: 200px;
+        margin: auto;
+        height: 68px;
+        position: relative;
+        label,
+        input {
+            background: #fff;
+            color: #2196F3;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 7px;
+            cursor: pointer;
+        }
+        input {
+            opacity: 0;
+            z-index: -2;
+        }
+    }
+    .images-preview {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        .img-wrapper {
+            width: 160px;
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+            height: 150px;
+            justify-content: space-between;
+            background: #fff;
+            box-shadow: 5px 5px 20px #3e3737;
+            img {
+                max-height: 105px;
+            }
+        }
+        .details {
+            font-size: 12px;
+            background: #fff;
+            color: #000;
+            display: flex;
+            flex-direction: column;
+            align-items: self-start;
+            padding: 3px 6px;
+            .name {
+                overflow: hidden;
+                height: 18px;
+            }
+        }
+    }
+    .upload-control {
+        position: absolute;
         width: 100%;
-        text-align: center;
+        background: #fff;
+        top: 0;
+        left: 0;
+        border-top-left-radius: 7px;
+        border-top-right-radius: 7px;
+        padding: 10px;
+        padding-bottom: 4px;
+        text-align: right;
+        button, label {
+            background: #2196F3;
+            border: 2px solid #03A9F4;
+            border-radius: 3px;
+            color: #fff;
+            font-size: 15px;
+            cursor: pointer;
+        }
+        label {
+            padding: 2px 5px;
+            margin-right: 10px;
+        }
     }
-    .selectButton {
-        width: 85%;
-    }
-    .filterButton {
-        width: 24%;
-    }
+}
 </style>

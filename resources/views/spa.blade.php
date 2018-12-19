@@ -9,10 +9,11 @@
         <title>Chango Zephyr</title>
 
         <!-- Fonts -->
-        <link href="https://bootswatch.com/4/lux/bootstrap.min.css" rel="stylesheet">
+        <link href="https://bootswatch.com/4/litera/bootstrap.min.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css"> 
         <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet"> 
         <link href="https://unpkg.com/nprogress@0.2.0/nprogress.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
         
     </head>
 
