@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-row>
-        <b-col cols="6" offset="3">
+        <b-col>
             <b-form @reset="onReset" v-if="show">
                 <b-row>
                     <b-col cols="4">
@@ -133,45 +133,46 @@
                     </b-col>
                 </b-row>
 
+                <b-row>
+                    <div class="uploader"
+                        @dragenter="OnDragEnter"
+                        @dragleave="OnDragLeave"
+                        @dragover.prevent
+                        @drop="onDrop"
+                        :class="{ dragging: isDragging }">
+                        
+                        <div class="upload-control" v-show="images.length">
+                            <label for="file">Select a file</label>
+                            <button @click="upload">Upload</button>
+                        </div>
+
+
+                        <div v-show="!images.length">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>Drag your images here</p>
+                            <div>OR</div>
+                            <div class="file-input">
+                                <label for="file">Select a file</label>
+                                <input type="file" id="file" @change="onInputChange" multiple>
+                            </div>
+                        </div>
+
+                        <div class="images-preview" v-show="images.length">
+                            <div class="img-wrapper" v-for="(image, index) in images" :key="index">
+                                <img :src="image" :alt="`Image Uplaoder ${index}`">
+                                <div class="details">
+                                    <span class="name" v-text="files[index].name"></span>
+                                    <span class="size" v-text="getFileSize(files[index].size)"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </b-row>
+
                 <b-button class="my-3" variant="dark" :disabled="$v.form.$invalid" @click="createAnimal">Welcome to Alive, {{ form.name }}</b-button>
                 <b-button class="my-3" type="reset" variant="danger">Reset</b-button>
             </b-form>
         </b-col>
-    </b-row>
-    <b-row>
-        <div class="uploader"
-            @dragenter="OnDragEnter"
-            @dragleave="OnDragLeave"
-            @dragover.prevent
-            @drop="onDrop"
-            :class="{ dragging: isDragging }">
-            
-            <div class="upload-control" v-show="images.length">
-                <label for="file">Select a file</label>
-                <button @click="upload">Upload</button>
-            </div>
-
-
-            <div v-show="!images.length">
-                <i class="fas fa-cloud-upload-alt"></i>
-                <p>Drag your images here</p>
-                <div>OR</div>
-                <div class="file-input">
-                    <label for="file">Select a file</label>
-                    <input type="file" id="file" @change="onInputChange" multiple>
-                </div>
-            </div>
-
-            <div class="images-preview" v-show="images.length">
-                <div class="img-wrapper" v-for="(image, index) in images" :key="index">
-                    <img :src="image" :alt="`Image Uplaoder ${index}`">
-                    <div class="details">
-                        <span class="name" v-text="files[index].name"></span>
-                        <span class="size" v-text="getFileSize(files[index].size)"></span>
-                    </div>
-                </div>
-            </div>
-        </div>
     </b-row>
   </div>
 </template>
