@@ -28371,34 +28371,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -29728,137 +29700,22 @@ var render = function() {
                         1
                       ),
                       _vm._v(" "),
-                      _c("b-row", [
-                        _c(
-                          "div",
-                          {
-                            staticClass: "uploader",
-                            class: { dragging: _vm.isDragging },
-                            on: {
-                              dragenter: _vm.OnDragEnter,
-                              dragleave: _vm.OnDragLeave,
-                              dragover: function($event) {
-                                $event.preventDefault()
-                              },
-                              drop: _vm.onDrop
-                            }
-                          },
-                          [
-                            _c(
-                              "div",
-                              {
-                                directives: [
-                                  {
-                                    name: "show",
-                                    rawName: "v-show",
-                                    value: _vm.images.length,
-                                    expression: "images.length"
-                                  }
-                                ],
-                                staticClass: "upload-control"
-                              },
-                              [
-                                _c("label", { attrs: { for: "file" } }, [
-                                  _vm._v("Select a file")
-                                ]),
-                                _vm._v(" "),
-                                _c("button", { on: { click: _vm.upload } }, [
-                                  _vm._v("Upload")
-                                ])
-                              ]
-                            ),
+                      _c(
+                        "b-row",
+                        [
+                          _c("b-col", [
+                            _c("label", { attrs: { for: "file" } }, [
+                              _vm._v("Select a file")
+                            ]),
                             _vm._v(" "),
-                            _c(
-                              "div",
-                              {
-                                directives: [
-                                  {
-                                    name: "show",
-                                    rawName: "v-show",
-                                    value: !_vm.images.length,
-                                    expression: "!images.length"
-                                  }
-                                ]
-                              },
-                              [
-                                _c("i", {
-                                  staticClass: "fas fa-cloud-upload-alt"
-                                }),
-                                _vm._v(" "),
-                                _c("p", [_vm._v("Drag your images here")]),
-                                _vm._v(" "),
-                                _c("div", [_vm._v("OR")]),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "file-input" }, [
-                                  _c("label", { attrs: { for: "file" } }, [
-                                    _vm._v("Select a file")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("input", {
-                                    attrs: {
-                                      type: "file",
-                                      id: "file",
-                                      multiple: ""
-                                    },
-                                    on: { change: _vm.onInputChange }
-                                  })
-                                ])
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              {
-                                directives: [
-                                  {
-                                    name: "show",
-                                    rawName: "v-show",
-                                    value: _vm.images.length,
-                                    expression: "images.length"
-                                  }
-                                ],
-                                staticClass: "images-preview"
-                              },
-                              _vm._l(_vm.images, function(image, index) {
-                                return _c(
-                                  "div",
-                                  { key: index, staticClass: "img-wrapper" },
-                                  [
-                                    _c("img", {
-                                      attrs: {
-                                        src: image,
-                                        alt: "Image Uplaoder " + index
-                                      }
-                                    }),
-                                    _vm._v(" "),
-                                    _c("div", { staticClass: "details" }, [
-                                      _c("span", {
-                                        staticClass: "name",
-                                        domProps: {
-                                          textContent: _vm._s(
-                                            _vm.files[index].name
-                                          )
-                                        }
-                                      }),
-                                      _vm._v(" "),
-                                      _c("span", {
-                                        staticClass: "size",
-                                        domProps: {
-                                          textContent: _vm._s(
-                                            _vm.getFileSize(
-                                              _vm.files[index].size
-                                            )
-                                          )
-                                        }
-                                      })
-                                    ])
-                                  ]
-                                )
-                              })
-                            )
-                          ]
-                        )
-                      ]),
+                            _c("input", {
+                              attrs: { type: "file", id: "file", multiple: "" },
+                              on: { change: _vm.onInputChange }
+                            })
+                          ])
+                        ],
+                        1
+                      ),
                       _vm._v(" "),
                       _c(
                         "b-button",
