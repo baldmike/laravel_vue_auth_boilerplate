@@ -98,7 +98,7 @@ export const router = new VueRouter({
                         next();
                     }
                 },
-                {path: '*', component: NotFound}
+                {path: '*', component: DashboardComponent}
             ]
         },
     ]

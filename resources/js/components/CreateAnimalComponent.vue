@@ -134,12 +134,10 @@
                 </b-row>
                 <b-row>
                     <b-col>
-                        <label for="file">Select a file</label>
-                        <input type="file" id="file" @change="onInputChange" multiple>
+                        <label for="profilePhoto">Select a file</label>
+                        <input type="file" id="profilePhoto" :name="form.profilePhoto" @change="onInputChange" enctype="multipart/form-data">
                     </b-col>
                 </b-row>
-
-                
 
                 <b-button class="my-3" variant="dark" :disabled="$v.form.$invalid" @click="createAnimal">Welcome to Alive, {{ form.name }}</b-button>
                 <b-button class="my-3" type="reset" variant="danger">Reset</b-button>
@@ -169,6 +167,7 @@
                     birthdate: '',
                     weight: '',
                     description: '',
+                    profilePhoto: ''
                 },
                 species: [
                     { text: 'Choose Species', value: null },
@@ -223,20 +222,35 @@
         },
         methods: {
             createAnimal() {
+                console.log("****************");
+                console.log(this.form.profilePhoto);
+                console.log("****************");
+
                 let fd = new FormData();
-                Object.keys(this.form).forEach(key => {
-                    fd.append(key, this.form[key])
-                })
+                fd.append("name", this.form.name);
+                fd.append("gender", this.form.gender);
+                fd.append("fixed", this.form.fixed);
+                fd.append("species", this.form.species);
+                fd.append("breed", this.form.breed);
+                fd.append("source", this.form.source);
+                fd.append("microchip_number", this.form.microchipNumber);
+                fd.append("birthdate", this.form.birthdate);
+                fd.append("weight", this.form.weight);
+                fd.append("description", this.form.description);
+                fd.append("profile_photo", this.form.profilePhoto);
+                // Object.keys(this.form).forEach(key => {
+                //     fd.append(key, this.form[key])
+                // })
 
                 axios.post("/api/animals", fd, {headers: {'Content-Type': 'multipart/form-data'}}).then(({data}) => {
                     this.$notify({
                         group: 'notifications',
                         title: 'Success',
-                        text: this.form.name + 'Animal added',
+                        text: this.form.name + ' added',
                         duration: '6000',
                         width: '100%'
                     });
-                    console.log("CreateAnimalComponent -- createAnimal -- createAnimal()" + data.name);
+                    console.log("CreateAnimalComponent -- createAnimal -- createAnimal()" + data.toString());
                 }).catch((error) => {
                     console.log(error);
                 })
@@ -259,6 +273,7 @@
                 this.form.birthdate = '';
                 this.form.weight = '';
                 this.form.description = '';
+                this.form.profilePhoto = '';
                 
                 this.form.checked = [];
                 /* Trick to reset/clear native browser form validation state */
@@ -279,8 +294,8 @@
                     this.isDragging = false;
             },
             onInputChange(e) {
-                const files = e.target.files;
-                Array.from(files).forEach(file => this.addImage(file));
+                this.form.profilePhoto = e.target.files[0];
+                // Array.from(files).forEach(file => this.addImage(file));
             },
             onDrop(e) {
                 e.preventDefault();

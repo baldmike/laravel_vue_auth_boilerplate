@@ -37,7 +37,6 @@ class CreateAnimalRequest extends FormRequest
         return [
             'name' => 'required',
             'species' => 'required',
-            'species' => 'required',
             'source' => 'required',
         ];
     }

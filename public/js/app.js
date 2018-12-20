@@ -22060,7 +22060,7 @@ var router = new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
                 }
                 next();
             }
-        }, { path: '*', component: __WEBPACK_IMPORTED_MODULE_10__components_NotFound___default.a }]
+        }, { path: '*', component: __WEBPACK_IMPORTED_MODULE_4__components_DashboardComponent___default.a }]
     }]
 });
 
@@ -28369,8 +28369,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 
 
@@ -28390,7 +28388,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 fixed: 0,
                 birthdate: '',
                 weight: '',
-                description: ''
+                description: '',
+                profilePhoto: ''
             },
             species: [{ text: 'Choose Species', value: null }, 'Dog', 'Cat', 'Rabbit'],
             breeds: [{ text: 'Choose Breed', value: null }, 'Pit Bull', 'Chihuahua', 'Terrier', 'Calico', 'Siamese', 'Tabby', 'Rabbit'],
@@ -28434,10 +28433,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         createAnimal: function createAnimal() {
             var _this = this;
 
+            console.log("****************");
+            console.log(this.form.profilePhoto);
+            console.log("****************");
+
             var fd = new FormData();
-            Object.keys(this.form).forEach(function (key) {
-                fd.append(key, _this.form[key]);
-            });
+            fd.append("name", this.form.name);
+            fd.append("gender", this.form.gender);
+            fd.append("fixed", this.form.fixed);
+            fd.append("species", this.form.species);
+            fd.append("breed", this.form.breed);
+            fd.append("source", this.form.source);
+            fd.append("microchip_number", this.form.microchipNumber);
+            fd.append("birthdate", this.form.birthdate);
+            fd.append("weight", this.form.weight);
+            fd.append("description", this.form.description);
+            fd.append("profile_photo", this.form.profilePhoto);
+            // Object.keys(this.form).forEach(key => {
+            //     fd.append(key, this.form[key])
+            // })
 
             axios.post("/api/animals", fd, { headers: { 'Content-Type': 'multipart/form-data' } }).then(function (_ref) {
                 var data = _ref.data;
@@ -28445,11 +28459,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this.$notify({
                     group: 'notifications',
                     title: 'Success',
-                    text: _this.form.name + 'Animal added',
+                    text: _this.form.name + ' added',
                     duration: '6000',
                     width: '100%'
                 });
-                console.log("CreateAnimalComponent -- createAnimal -- createAnimal()" + data.name);
+                console.log("CreateAnimalComponent -- createAnimal -- createAnimal()" + data.toString());
             }).catch(function (error) {
                 console.log(error);
             });
@@ -28472,6 +28486,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.form.birthdate = '';
             this.form.weight = '';
             this.form.description = '';
+            this.form.profilePhoto = '';
 
             this.form.checked = [];
             /* Trick to reset/clear native browser form validation state */
@@ -28493,26 +28508,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             if (this.dragCount <= 0) this.isDragging = false;
         },
         onInputChange: function onInputChange(e) {
-            var _this3 = this;
-
-            var files = e.target.files;
-            Array.from(files).forEach(function (file) {
-                return _this3.addImage(file);
-            });
+            this.form.profilePhoto = e.target.files[0];
+            // Array.from(files).forEach(file => this.addImage(file));
         },
         onDrop: function onDrop(e) {
-            var _this4 = this;
+            var _this3 = this;
 
             e.preventDefault();
             e.stopPropagation();
             this.isDragging = false;
             var files = e.dataTransfer.files;
             Array.from(files).forEach(function (file) {
-                return _this4.addImage(file);
+                return _this3.addImage(file);
             });
         },
         addImage: function addImage(file) {
-            var _this5 = this;
+            var _this4 = this;
 
             if (!file.type.match('image.*')) {
                 console.log("NOT AN IMAGE");
@@ -28522,7 +28533,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var img = new Image(),
                 reader = new FileReader();
             reader.onload = function (e) {
-                return _this5.images.push(e.target.result);
+                return _this4.images.push(e.target.result);
             };
             reader.readAsDataURL(file);
         },
@@ -28537,7 +28548,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             return Math.round(size * 100) / 100 + " " + fSExt[i];
         },
         upload: function upload() {
-            var _this6 = this;
+            var _this5 = this;
 
             var formData = new FormData();
 
@@ -28545,15 +28556,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 formData.append('images[]', file, file.name);
             });
             axios.post('/images-upload', formData).then(function (response) {
-                _this6.$notify({
+                _this5.$notify({
                     group: 'notifications',
                     title: 'Success',
                     text: 'Image successfully uploaded',
                     duration: '6000',
                     width: '100%'
                 });
-                _this6.images = [];
-                _this6.files = [];
+                _this5.images = [];
+                _this5.files = [];
             });
         }
     }
@@ -29704,12 +29715,17 @@ var render = function() {
                         "b-row",
                         [
                           _c("b-col", [
-                            _c("label", { attrs: { for: "file" } }, [
+                            _c("label", { attrs: { for: "profilePhoto" } }, [
                               _vm._v("Select a file")
                             ]),
                             _vm._v(" "),
                             _c("input", {
-                              attrs: { type: "file", id: "file", multiple: "" },
+                              attrs: {
+                                type: "file",
+                                id: "profilePhoto",
+                                name: _vm.form.profilePhoto,
+                                enctype: "multipart/form-data"
+                              },
                               on: { change: _vm.onInputChange }
                             })
                           ])
@@ -29995,6 +30011,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         },
         showAll: function showAll() {
             this.$router.push('dashboard');
+        },
+        noPic: function noPic() {
+            console.log("NO PROFILE PICTURE");
         }
     }
 });
@@ -30091,8 +30110,9 @@ var render = function() {
                 {
                   staticClass: "mb-2 center",
                   attrs: {
-                    "img-src": "https://picsum.photos/1024/400/?image=43",
-                    "img-alt": "Image",
+                    "img-src":
+                      "http://localhost:8000/storage/" + animal.profile_photo,
+                    "img-alt": "Selected animal image",
                     "img-top": "",
                     tag: "article"
                   }
