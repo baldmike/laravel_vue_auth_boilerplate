@@ -19,18 +19,12 @@
 
         <b-row>
             <b-col v-for="(animal, index) in filteredAnimals"
-                    :key="index" cols="4">
-                <b-card 
-                    :img-src="'http://localhost:8000/storage/' + animal.profile_photo"
-                    img-alt="Selected animal image"
-                    img-top
-                    tag="article"
-                    class="mb-2 center">
-
+                    :key="index" cols="3" class="animal-card">
+                <b-card v-if="animal.profile_photo" :img-src="'http://localhost:8000/storage/' + animal.profile_photo" style="max-height: 40rem;" img-alt="Selected animal image">
                     <b-btn class="selectButton" @click="showModal(animal)" animal="'animal.id'">{{ animal.name }}  |  <span style="color: black;"> {{ animal.species }} </span>  |  {{ animal.breed }}</b-btn>
-                    <p class="card-text">
-                        
-                    </p>
+                </b-card>
+                <b-card v-else :img-src="'http://localhost:8000/storage/images/dog_placeholder.jpg'" style="max-height: 40rem;" img-alt="No Selected animal image">
+                    <b-btn class="selectButton" @click="showModal(animal)" animal="'animal.id'">{{ animal.name }}  |  <span style="color: black;"> {{ animal.species }} </span>  |  {{ animal.breed }}</b-btn>
                 </b-card>
             </b-col>
         </b-row>

@@ -29963,12 +29963,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
-//
-//
-//
-//
 
 
 
@@ -30103,45 +30097,76 @@ var render = function() {
         _vm._l(_vm.filteredAnimals, function(animal, index) {
           return _c(
             "b-col",
-            { key: index, attrs: { cols: "4" } },
+            { key: index, staticClass: "animal-card", attrs: { cols: "3" } },
             [
-              _c(
-                "b-card",
-                {
-                  staticClass: "mb-2 center",
-                  attrs: {
-                    "img-src":
-                      "http://localhost:8000/storage/" + animal.profile_photo,
-                    "img-alt": "Selected animal image",
-                    "img-top": "",
-                    tag: "article"
-                  }
-                },
-                [
-                  _c(
-                    "b-btn",
+              animal.profile_photo
+                ? _c(
+                    "b-card",
                     {
-                      staticClass: "selectButton",
-                      attrs: { animal: "'animal.id'" },
-                      on: {
-                        click: function($event) {
-                          _vm.showModal(animal)
-                        }
+                      staticStyle: { "max-height": "40rem" },
+                      attrs: {
+                        "img-src":
+                          "http://localhost:8000/storage/" +
+                          animal.profile_photo,
+                        "img-alt": "Selected animal image"
                       }
                     },
                     [
-                      _vm._v(_vm._s(animal.name) + "  |  "),
-                      _c("span", { staticStyle: { color: "black" } }, [
-                        _vm._v(" " + _vm._s(animal.species) + " ")
-                      ]),
-                      _vm._v("  |  " + _vm._s(animal.breed))
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "card-text" })
-                ],
-                1
-              )
+                      _c(
+                        "b-btn",
+                        {
+                          staticClass: "selectButton",
+                          attrs: { animal: "'animal.id'" },
+                          on: {
+                            click: function($event) {
+                              _vm.showModal(animal)
+                            }
+                          }
+                        },
+                        [
+                          _vm._v(_vm._s(animal.name) + "  |  "),
+                          _c("span", { staticStyle: { color: "black" } }, [
+                            _vm._v(" " + _vm._s(animal.species) + " ")
+                          ]),
+                          _vm._v("  |  " + _vm._s(animal.breed))
+                        ]
+                      )
+                    ],
+                    1
+                  )
+                : _c(
+                    "b-card",
+                    {
+                      staticStyle: { "max-height": "40rem" },
+                      attrs: {
+                        "img-src":
+                          "http://localhost:8000/storage/images/dog_placeholder.jpg",
+                        "img-alt": "No Selected animal image"
+                      }
+                    },
+                    [
+                      _c(
+                        "b-btn",
+                        {
+                          staticClass: "selectButton",
+                          attrs: { animal: "'animal.id'" },
+                          on: {
+                            click: function($event) {
+                              _vm.showModal(animal)
+                            }
+                          }
+                        },
+                        [
+                          _vm._v(_vm._s(animal.name) + "  |  "),
+                          _c("span", { staticStyle: { color: "black" } }, [
+                            _vm._v(" " + _vm._s(animal.species) + " ")
+                          ]),
+                          _vm._v("  |  " + _vm._s(animal.breed))
+                        ]
+                      )
+                    ],
+                    1
+                  )
             ],
             1
           )
