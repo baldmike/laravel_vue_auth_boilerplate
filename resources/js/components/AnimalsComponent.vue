@@ -21,8 +21,8 @@
             <b-col v-for="(animal, index) in filteredAnimals"
                     :key="index" cols="4">
                 <b-card 
-                    img-src="https://picsum.photos/1024/400/?image=43"
-                    img-alt="Image"
+                    :img-src="'http://localhost:8000/storage/' + animal.profile_photo"
+                    img-alt="Selected animal image"
                     img-top
                     tag="article"
                     class="mb-2 center">
@@ -86,6 +86,9 @@
             },
             showAll() {
                 this.$router.push('dashboard')
+            },
+            noPic() {
+                console.log("NO PROFILE PICTURE");
             }
         },
     }
