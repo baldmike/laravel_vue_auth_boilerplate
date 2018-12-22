@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="body">
         <b-row>
             <b-col cols="4">
                 <b-button class="filterButton" @click="showAll" disabled>Show All</b-button>
@@ -20,14 +20,14 @@
         <b-row>
             <b-col v-for="(animal, index) in filteredAnimals"
                     :key="index" cols="3" class="animal-card">
-                <b-card v-if="animal.profile_photo" :img-src="'http://localhost:8000/storage/' + animal.profile_photo" img-alt="Selected animal image">
-                    <b-btn class="selectButton" @click="showModal(animal)" animal="'animal.id'">{{ animal.name }}  |  <span style="color: black;"> {{ animal.species }} </span>  |  {{ animal.breed }}</b-btn>
+                <b-card v-if="animal.profile_photo" :img-src="'http://localhost:8000/storage/' + animal.profile_photo" thumbnail fluid img-alt="Selected animal image" style="height: 400px;">
                 </b-card>
-                <b-card v-else :img-src="'http://localhost:8000/storage/images/dog_placeholder.jpg'" img-alt="No Selected animal image">
-                    <b-btn class="selectButton" @click="showModal(animal)" animal="'animal.id'">{{ animal.name }}  |  <span style="color: black;"> {{ animal.species }} </span>  |  {{ animal.breed }}</b-btn>
+                <b-card v-else :img-src="'http://localhost:8000/storage/images/dog_placeholder.jpg'" style="height: 400px;" img-alt="No Selected animal image">
                 </b-card>
+                <b-btn class="selectButton" @click="showModal(animal)" animal="'animal.id'">{{ animal.name }}  |  <span style="color: black;"> {{ animal.species }} </span>  |  {{ animal.breed }}</b-btn>
             </b-col>
         </b-row>
+        
 
         <div>
             <!-- Modal Component -->
@@ -89,6 +89,10 @@
 </script>
 
 <style scoped>
+
+    .body {
+        padding: 20px;
+    }
     .btn {
         text-align: center;
         /* width: 24%; */
@@ -101,7 +105,7 @@
         text-align: center;
     }
     .selectButton {
-        width: 85%;
+        width: 100%;
     }
     .filterButton {
         width: 24%;

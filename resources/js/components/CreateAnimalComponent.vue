@@ -1,141 +1,123 @@
 <template>
-  <div>
+  <div class="body">
     <b-row>
         <b-col>
             <b-form @reset="onReset" v-if="show">
                 <b-row>
-                    <b-col cols="4">
-                        <b-form-group id="nameInputGroup"
-                                label="Animal Name:"
-                                label-for="animalName">
-                            <b-form-input id="animalName"
-                                        type="text"
-                                        v-model="form.name"
-                                        required
-                                        :state="!$v.form.name.$invalid"
-                                        placeholder="Enter Animal's Name"/>
-                            <b-form-invalid-feedback id="nameLiveFeedback">
-                                Red fields are required.
-                            </b-form-invalid-feedback>
-                        </b-form-group>
-                    </b-col>
-                    <b-col cols="3">
-                        <b-form-group id="genderInputGroup"
-                            label="Gender:"
-                            label-for="gender">
-                            <b-form-select id="gender" 
-                                    :options="gender"
-                                    required
-                                    v-model="form.gender"
-                                    :state="!$v.form.gender.$invalid">
-                            </b-form-select>
-                        </b-form-group>
-                    </b-col>
-
-                    <b-col cols="1">
-                        <b-form-group id="fixedInputGroup"
-                            label="Fixed"
-                            label-for="fixed">
-                            <b-form-checkbox-group v-model="form.fixed" id="fixed">
-                                <b-form-checkbox value="1" unchecked-value="0"></b-form-checkbox>
-                            </b-form-checkbox-group>
-                        </b-form-group>
-                    </b-col>
-
-                    
-                    <b-col cols="4">
-                        <b-form-group id="sourceInputGroup"
-                                label="Source:"
-                                label-for="source">
-                            <b-form-select id="source"
-                                        :options="sources"
-                                        required
-                                        v-model="form.source"
-                                        :state="!$v.form.source.$invalid">
-                            </b-form-select>
-                        </b-form-group>
-                    </b-col>
-                </b-row>
-                
-                <b-row>
-                    <b-col>
-                        <b-form-group id="speciesInputGroup"
-                                label="Species:"
-                                label-for="species">
+                    <b-col sm="12" md="4">
                             <b-form-select id="species" 
+                                    class="inputBox"
                                     :options="species"
                                     required
                                     v-model="form.species"
                                     :state="!$v.form.species.$invalid">
                             </b-form-select>
-                        </b-form-group>
                     </b-col>
+                    <b-col sm="12" md="4">
+                            <b-form-input id="animalName"
+                                        class="inputBox"
+                                        type="text"
+                                        v-model="form.name"
+                                        required
+                                        :state="!$v.form.name.$invalid"
+                                        placeholder="What is their name?"/>
+                            <b-form-invalid-feedback id="nameLiveFeedback">
+                                Red fields are required.
+                            </b-form-invalid-feedback>
+                    </b-col>
+                    <b-col sm="4" md="3">
+                            <b-form-select id="gender"
+                                    class="inputBox" 
+                                    :options="gender"
+                                    required
+                                    v-model="form.gender"
+                                    :state="!$v.form.gender.$invalid">
+                            </b-form-select>
+                    </b-col>                    
+                    <b-col sm="3" md="4">
+                            <b-form-select id="source"
+                                        class="inputBox"
+                                        :options="sources"
+                                        required
+                                        v-model="form.source"
+                                        :state="!$v.form.source.$invalid">
+                            </b-form-select>
+                    </b-col>
+                    <b-col sm="4">
+                        <b-form-radio-group id="fixed" v-model="form.fixed" :options="fixedOptions" name="fixed" inline/>
+                    </b-col>
+                </b-row>
+                
+                <b-row>
                     
                     <b-col>
-                        <b-form-group id="breedInputGroup"
-                                    label="Breed:"
-                                    label-for="breed">
                             <b-form-select id="breed"
+                                        class="inputBox"
                                         :options="breeds"
                                         v-model="form.breed">
                             </b-form-select>
-                        </b-form-group>
                     </b-col>
 
                     <b-col>
-                        <b-form-group id="microchipInputGroup"
-                                label="Microchip Number:"
-                                label-for="microchip">
                             <b-form-input id="microchipNumber"
+                                        class="inputBox"
                                         type="text"
                                         v-model="form.microchipNumber"
-                                        placeholder="Enter microchip number, if available">
+                                        placeholder="What is their microchip number?">
                             </b-form-input>
-                        </b-form-group>
                     </b-col>
                 </b-row>
 
                 <b-row>
                     <b-col>
-                        <b-form-group id="birthdateInputGroup"
-                                label="Birthdate:"
-                                label-for="birthdate">
                             <b-form-input id="birthdate"
+                                        class="inputBox"
                                         type="date"
                                         v-model="form.birthdate">
                             </b-form-input>
-                        </b-form-group>
                     </b-col>
 
                     <b-col>
-                        <b-form-group id="weightInputGroup"
-                            label="Weight:"
-                            label-for="weight">
                             <b-form-input id="weight"
+                                    class="inputBox"
                                     type="number"
                                     v-model="form.weight">
                             </b-form-input>
-                        </b-form-group>
                     </b-col>
                 </b-row>
 
                 <b-row>
                     <b-col>
-                        <b-form-group id="descriptionInputGroup"
-                            label="Description:"
-                            label-for="description">
                             <b-form-textarea id="description"
+                                    class="inputBox"
                                     :rows="3"
                                     :max-rows="6"
-                                    v-model="form.description">
+                                    v-model="form.description"
+                                    placeholder="Please give a short description:">
                             </b-form-textarea>
-                        </b-form-group>
                     </b-col>
                 </b-row>
                 <b-row>
+                    <b-col sm="12" md="4" offset="4">
+                        <!-- <label for="profilePhoto">Select a file</label> -->
+                        <input type="file"
+                                id="profilePhoto"
+                                class="fas fa-cloud-upload-alt"
+                                :name="form.profilePhoto" 
+                                @change="onInputChange" 
+                                enctype="multipart/form-data">
+                        <img id="image" ref="image" :src="image">
+                    </b-col>
                     <b-col>
-                        <label for="profilePhoto">Select a file</label>
-                        <input type="file" id="profilePhoto" :name="form.profilePhoto" @change="onInputChange" enctype="multipart/form-data">
+                        <div class="images-preview">
+                            <div class="img-wrapper" v-for="(image, index) in images" :key="index">
+                                <img :src="image" :alt="`Image Uplaoder ${index}`">
+                                <div class="details">
+                                    <span class="name" v-text="files[index].name"></span>
+                                    <span class="size" v-text="getFileSize(files[index].size)"></span>
+                                </div>
+                            </div>
+                        </div>
                     </b-col>
                 </b-row>
 
@@ -170,25 +152,29 @@
                     profilePhoto: ''
                 },
                 species: [
-                    { text: 'Choose Species', value: null },
+                    { text: 'What Kind of animal?', value: null },
                     'Dog', 'Cat', 'Rabbit'
                 ],
                 breeds: [
-                    { text: 'Choose Breed', value: null },
+                    { text: "What breed are they?'", value: null },
                     'Pit Bull', 'Chihuahua', 'Terrier', 'Calico', 'Siamese', 'Tabby', 'Rabbit'
                 ],
                 sources: [
-                    { text: 'Choose Source', value: null },
+                    { text: 'Where are they from?', value: null },
                     'CACC', 'CRISP', 'Stray', 'Alive'
                 ],
                 gender: [
-                    { text: 'Gender', value: null },
+                    { text: 'Male or Female?', value: null },
                     'Male', 'Female'
+                ],
+                fixedOptions: [
+                    'Not Fixed', 'Fixed'
                 ],
                 show: true,
                 isDragging: false,
                 dragCount: 0,
                 files: [],
+                image: '',
                 images: []
             }
         },
@@ -295,7 +281,10 @@
             },
             onInputChange(e) {
                 this.form.profilePhoto = e.target.files[0];
-                // Array.from(files).forEach(file => this.addImage(file));
+
+                const files = e.target.files;
+                
+                Array.from(files).forEach(file => this.addImage(file));
             },
             onDrop(e) {
                 e.preventDefault();
@@ -305,15 +294,15 @@
                 Array.from(files).forEach(file => this.addImage(file));
             },
             addImage(file) {
-                if (!file.type.match('image.*')) {
-                    console.log("NOT AN IMAGE");
-                    return;
-                }
+                
                 this.files.push(file);
-                const img = new Image(),
-                    reader = new FileReader();
+                
+                let reader = new FileReader();
+
                 reader.onload = (e) => this.images.push(e.target.result);
+
                 reader.readAsDataURL(file);
+                
             },
             getFileSize(size) {
                 const fSExt = ['Bytes', 'KB', 'MB', 'GB'];
@@ -348,14 +337,27 @@
 </script>
 
 <style lang="scss" scoped>
+
+    .body {
+        background-color: #2196F3;
+        padding: 20px;
+    }
+    .imageInput {
+        margin: 10px;
+        margin-left: 0px;
+        height: 4rem;
+        background-color: white;
+        text-align: center;
+    }
+    .inputBox {
+        margin: 10px;
+        margin-left: 0px;
+    }
     .uploader {
-    width: 100%;
-    background: #2196F3;
+    background: #fff;
     color: #fff;
-    padding: 40px 15px;
+    padding: 20px;
     text-align: center;
-    border-radius: 10px;
-    border: 3px dashed #fff;
     font-size: 20px;
     position: relative;
     &.dragging {
