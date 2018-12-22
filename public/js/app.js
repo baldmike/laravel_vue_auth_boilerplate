@@ -28205,7 +28205,7 @@ exports = module.exports = __webpack_require__(8)(false);
 
 
 // module
-exports.push([module.i, "\n.uploader[data-v-07337dea] {\n  width: 100%;\n  background: #2196F3;\n  color: #fff;\n  padding: 40px 15px;\n  text-align: center;\n  border-radius: 10px;\n  border: 3px dashed #fff;\n  font-size: 20px;\n  position: relative;\n}\n.uploader.dragging[data-v-07337dea] {\n    background: #fff;\n    color: #2196F3;\n    border: 3px dashed #2196F3;\n}\n.uploader.dragging .file-input label[data-v-07337dea] {\n      background: #2196F3;\n      color: #fff;\n}\n.uploader i[data-v-07337dea] {\n    font-size: 85px;\n}\n.uploader .file-input[data-v-07337dea] {\n    width: 200px;\n    margin: auto;\n    height: 68px;\n    position: relative;\n}\n.uploader .file-input label[data-v-07337dea],\n    .uploader .file-input input[data-v-07337dea] {\n      background: #fff;\n      color: #2196F3;\n      width: 100%;\n      position: absolute;\n      left: 0;\n      top: 0;\n      padding: 10px;\n      border-radius: 4px;\n      margin-top: 7px;\n      cursor: pointer;\n}\n.uploader .file-input input[data-v-07337dea] {\n      opacity: 0;\n      z-index: -2;\n}\n.uploader .images-preview[data-v-07337dea] {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-wrap: wrap;\n        flex-wrap: wrap;\n    margin-top: 20px;\n}\n.uploader .images-preview .img-wrapper[data-v-07337dea] {\n      width: 160px;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: vertical;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: column;\n              flex-direction: column;\n      margin: 10px;\n      height: 150px;\n      -webkit-box-pack: justify;\n          -ms-flex-pack: justify;\n              justify-content: space-between;\n      background: #fff;\n      -webkit-box-shadow: 5px 5px 20px #3e3737;\n              box-shadow: 5px 5px 20px #3e3737;\n}\n.uploader .images-preview .img-wrapper img[data-v-07337dea] {\n        max-height: 105px;\n}\n.uploader .images-preview .details[data-v-07337dea] {\n      font-size: 12px;\n      background: #fff;\n      color: #000;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: vertical;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: column;\n              flex-direction: column;\n      -webkit-box-align: self-start;\n          -ms-flex-align: self-start;\n              align-items: self-start;\n      padding: 3px 6px;\n}\n.uploader .images-preview .details .name[data-v-07337dea] {\n        overflow: hidden;\n        height: 18px;\n}\n.uploader .upload-control[data-v-07337dea] {\n    position: absolute;\n    width: 100%;\n    background: #fff;\n    top: 0;\n    left: 0;\n    border-top-left-radius: 7px;\n    border-top-right-radius: 7px;\n    padding: 10px;\n    padding-bottom: 4px;\n    text-align: right;\n}\n.uploader .upload-control button[data-v-07337dea], .uploader .upload-control label[data-v-07337dea] {\n      background: #2196F3;\n      border: 2px solid #03A9F4;\n      border-radius: 3px;\n      color: #fff;\n      font-size: 15px;\n      cursor: pointer;\n}\n.uploader .upload-control label[data-v-07337dea] {\n      padding: 2px 5px;\n      margin-right: 10px;\n}\n", ""]);
+exports.push([module.i, "\n.body[data-v-07337dea] {\n  background-color: #2196F3;\n  padding: 20px;\n}\n.imageInput[data-v-07337dea] {\n  margin: 10px;\n  margin-left: 0px;\n  height: 4rem;\n  background-color: white;\n  text-align: center;\n}\n.inputBox[data-v-07337dea] {\n  margin: 10px;\n  margin-left: 0px;\n}\n.uploader[data-v-07337dea] {\n  background: #fff;\n  color: #fff;\n  padding: 20px;\n  text-align: center;\n  font-size: 20px;\n  position: relative;\n}\n.uploader.dragging[data-v-07337dea] {\n    background: #fff;\n    color: #2196F3;\n    border: 3px dashed #2196F3;\n}\n.uploader.dragging .file-input label[data-v-07337dea] {\n      background: #2196F3;\n      color: #fff;\n}\n.uploader i[data-v-07337dea] {\n    font-size: 85px;\n}\n.uploader .file-input[data-v-07337dea] {\n    width: 200px;\n    margin: auto;\n    height: 68px;\n    position: relative;\n}\n.uploader .file-input label[data-v-07337dea],\n    .uploader .file-input input[data-v-07337dea] {\n      background: #fff;\n      color: #2196F3;\n      width: 100%;\n      position: absolute;\n      left: 0;\n      top: 0;\n      padding: 10px;\n      border-radius: 4px;\n      margin-top: 7px;\n      cursor: pointer;\n}\n.uploader .file-input input[data-v-07337dea] {\n      opacity: 0;\n      z-index: -2;\n}\n.uploader .images-preview[data-v-07337dea] {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-wrap: wrap;\n        flex-wrap: wrap;\n    margin-top: 20px;\n}\n.uploader .images-preview .img-wrapper[data-v-07337dea] {\n      width: 160px;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: vertical;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: column;\n              flex-direction: column;\n      margin: 10px;\n      height: 150px;\n      -webkit-box-pack: justify;\n          -ms-flex-pack: justify;\n              justify-content: space-between;\n      background: #fff;\n      -webkit-box-shadow: 5px 5px 20px #3e3737;\n              box-shadow: 5px 5px 20px #3e3737;\n}\n.uploader .images-preview .img-wrapper img[data-v-07337dea] {\n        max-height: 105px;\n}\n.uploader .images-preview .details[data-v-07337dea] {\n      font-size: 12px;\n      background: #fff;\n      color: #000;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: vertical;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: column;\n              flex-direction: column;\n      -webkit-box-align: self-start;\n          -ms-flex-align: self-start;\n              align-items: self-start;\n      padding: 3px 6px;\n}\n.uploader .images-preview .details .name[data-v-07337dea] {\n        overflow: hidden;\n        height: 18px;\n}\n.uploader .upload-control[data-v-07337dea] {\n    position: absolute;\n    width: 100%;\n    background: #fff;\n    top: 0;\n    left: 0;\n    border-top-left-radius: 7px;\n    border-top-right-radius: 7px;\n    padding: 10px;\n    padding-bottom: 4px;\n    text-align: right;\n}\n.uploader .upload-control button[data-v-07337dea], .uploader .upload-control label[data-v-07337dea] {\n      background: #2196F3;\n      border: 2px solid #03A9F4;\n      border-radius: 3px;\n      color: #fff;\n      font-size: 15px;\n      cursor: pointer;\n}\n.uploader .upload-control label[data-v-07337dea] {\n      padding: 2px 5px;\n      margin-right: 10px;\n}\n", ""]);
 
 // exports
 
@@ -28220,24 +28220,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuelidate___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vuelidate__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -28391,14 +28373,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 description: '',
                 profilePhoto: ''
             },
-            species: [{ text: 'Choose Species', value: null }, 'Dog', 'Cat', 'Rabbit'],
-            breeds: [{ text: 'Choose Breed', value: null }, 'Pit Bull', 'Chihuahua', 'Terrier', 'Calico', 'Siamese', 'Tabby', 'Rabbit'],
-            sources: [{ text: 'Choose Source', value: null }, 'CACC', 'CRISP', 'Stray', 'Alive'],
-            gender: [{ text: 'Gender', value: null }, 'Male', 'Female'],
+            species: [{ text: 'What Kind of animal?', value: null }, 'Dog', 'Cat', 'Rabbit'],
+            breeds: [{ text: "What breed are they?'", value: null }, 'Pit Bull', 'Chihuahua', 'Terrier', 'Calico', 'Siamese', 'Tabby', 'Rabbit'],
+            sources: [{ text: 'Where are they from?', value: null }, 'CACC', 'CRISP', 'Stray', 'Alive'],
+            gender: [{ text: 'Male or Female?', value: null }, 'Male', 'Female'],
+            fixedOptions: ['Not Fixed', 'Fixed'],
             show: true,
             isDragging: false,
             dragCount: 0,
             files: [],
+            image: '',
             images: []
         };
     },
@@ -28508,33 +28492,38 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             if (this.dragCount <= 0) this.isDragging = false;
         },
         onInputChange: function onInputChange(e) {
+            var _this3 = this;
+
             this.form.profilePhoto = e.target.files[0];
-            // Array.from(files).forEach(file => this.addImage(file));
+
+            var files = e.target.files;
+
+            Array.from(files).forEach(function (file) {
+                return _this3.addImage(file);
+            });
         },
         onDrop: function onDrop(e) {
-            var _this3 = this;
+            var _this4 = this;
 
             e.preventDefault();
             e.stopPropagation();
             this.isDragging = false;
             var files = e.dataTransfer.files;
             Array.from(files).forEach(function (file) {
-                return _this3.addImage(file);
+                return _this4.addImage(file);
             });
         },
         addImage: function addImage(file) {
-            var _this4 = this;
+            var _this5 = this;
 
-            if (!file.type.match('image.*')) {
-                console.log("NOT AN IMAGE");
-                return;
-            }
             this.files.push(file);
-            var img = new Image(),
-                reader = new FileReader();
+
+            var reader = new FileReader();
+
             reader.onload = function (e) {
-                return _this4.images.push(e.target.result);
+                return _this5.images.push(e.target.result);
             };
+
             reader.readAsDataURL(file);
         },
         getFileSize: function getFileSize(size) {
@@ -28548,7 +28537,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             return Math.round(size * 100) / 100 + " " + fSExt[i];
         },
         upload: function upload() {
-            var _this5 = this;
+            var _this6 = this;
 
             var formData = new FormData();
 
@@ -28556,15 +28545,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 formData.append('images[]', file, file.name);
             });
             axios.post('/images-upload', formData).then(function (response) {
-                _this5.$notify({
+                _this6.$notify({
                     group: 'notifications',
                     title: 'Success',
                     text: 'Image successfully uploaded',
                     duration: '6000',
                     width: '100%'
                 });
-                _this5.images = [];
-                _this5.files = [];
+                _this6.images = [];
+                _this6.files = [];
             });
         }
     }
@@ -29315,6 +29304,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
+    { staticClass: "body" },
     [
       _c(
         "b-row",
@@ -29332,46 +29322,58 @@ var render = function() {
                         [
                           _c(
                             "b-col",
-                            { attrs: { cols: "4" } },
+                            { attrs: { sm: "12", md: "4" } },
                             [
-                              _c(
-                                "b-form-group",
-                                {
-                                  attrs: {
-                                    id: "nameInputGroup",
-                                    label: "Animal Name:",
-                                    "label-for": "animalName"
-                                  }
+                              _c("b-form-select", {
+                                staticClass: "inputBox",
+                                attrs: {
+                                  id: "species",
+                                  options: _vm.species,
+                                  required: "",
+                                  state: !_vm.$v.form.species.$invalid
                                 },
+                                model: {
+                                  value: _vm.form.species,
+                                  callback: function($$v) {
+                                    _vm.$set(_vm.form, "species", $$v)
+                                  },
+                                  expression: "form.species"
+                                }
+                              })
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "b-col",
+                            { attrs: { sm: "12", md: "4" } },
+                            [
+                              _c("b-form-input", {
+                                staticClass: "inputBox",
+                                attrs: {
+                                  id: "animalName",
+                                  type: "text",
+                                  required: "",
+                                  state: !_vm.$v.form.name.$invalid,
+                                  placeholder: "What is their name?"
+                                },
+                                model: {
+                                  value: _vm.form.name,
+                                  callback: function($$v) {
+                                    _vm.$set(_vm.form, "name", $$v)
+                                  },
+                                  expression: "form.name"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c(
+                                "b-form-invalid-feedback",
+                                { attrs: { id: "nameLiveFeedback" } },
                                 [
-                                  _c("b-form-input", {
-                                    attrs: {
-                                      id: "animalName",
-                                      type: "text",
-                                      required: "",
-                                      state: !_vm.$v.form.name.$invalid,
-                                      placeholder: "Enter Animal's Name"
-                                    },
-                                    model: {
-                                      value: _vm.form.name,
-                                      callback: function($$v) {
-                                        _vm.$set(_vm.form, "name", $$v)
-                                      },
-                                      expression: "form.name"
-                                    }
-                                  }),
-                                  _vm._v(" "),
-                                  _c(
-                                    "b-form-invalid-feedback",
-                                    { attrs: { id: "nameLiveFeedback" } },
-                                    [
-                                      _vm._v(
-                                        "\n                              Red fields are required.\n                          "
-                                      )
-                                    ]
+                                  _vm._v(
+                                    "\n                              Red fields are required.\n                          "
                                   )
-                                ],
-                                1
+                                ]
                               )
                             ],
                             1
@@ -29379,355 +29381,262 @@ var render = function() {
                           _vm._v(" "),
                           _c(
                             "b-col",
-                            { attrs: { cols: "3" } },
+                            { attrs: { sm: "4", md: "3" } },
                             [
-                              _c(
-                                "b-form-group",
-                                {
-                                  attrs: {
-                                    id: "genderInputGroup",
-                                    label: "Gender:",
-                                    "label-for": "gender"
-                                  }
+                              _c("b-form-select", {
+                                staticClass: "inputBox",
+                                attrs: {
+                                  id: "gender",
+                                  options: _vm.gender,
+                                  required: "",
+                                  state: !_vm.$v.form.gender.$invalid
                                 },
-                                [
-                                  _c("b-form-select", {
-                                    attrs: {
-                                      id: "gender",
-                                      options: _vm.gender,
-                                      required: "",
-                                      state: !_vm.$v.form.gender.$invalid
-                                    },
-                                    model: {
-                                      value: _vm.form.gender,
-                                      callback: function($$v) {
-                                        _vm.$set(_vm.form, "gender", $$v)
-                                      },
-                                      expression: "form.gender"
-                                    }
-                                  })
-                                ],
-                                1
-                              )
+                                model: {
+                                  value: _vm.form.gender,
+                                  callback: function($$v) {
+                                    _vm.$set(_vm.form, "gender", $$v)
+                                  },
+                                  expression: "form.gender"
+                                }
+                              })
                             ],
                             1
                           ),
                           _vm._v(" "),
                           _c(
                             "b-col",
-                            { attrs: { cols: "1" } },
+                            { attrs: { sm: "3", md: "4" } },
                             [
-                              _c(
-                                "b-form-group",
-                                {
-                                  attrs: {
-                                    id: "fixedInputGroup",
-                                    label: "Fixed",
-                                    "label-for": "fixed"
-                                  }
+                              _c("b-form-select", {
+                                staticClass: "inputBox",
+                                attrs: {
+                                  id: "source",
+                                  options: _vm.sources,
+                                  required: "",
+                                  state: !_vm.$v.form.source.$invalid
                                 },
-                                [
-                                  _c(
-                                    "b-form-checkbox-group",
-                                    {
-                                      attrs: { id: "fixed" },
-                                      model: {
-                                        value: _vm.form.fixed,
-                                        callback: function($$v) {
-                                          _vm.$set(_vm.form, "fixed", $$v)
-                                        },
-                                        expression: "form.fixed"
+                                model: {
+                                  value: _vm.form.source,
+                                  callback: function($$v) {
+                                    _vm.$set(_vm.form, "source", $$v)
+                                  },
+                                  expression: "form.source"
+                                }
+                              })
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "b-col",
+                            { attrs: { sm: "4" } },
+                            [
+                              _c("b-form-radio-group", {
+                                attrs: {
+                                  id: "fixed",
+                                  options: _vm.fixedOptions,
+                                  name: "fixed",
+                                  inline: ""
+                                },
+                                model: {
+                                  value: _vm.form.fixed,
+                                  callback: function($$v) {
+                                    _vm.$set(_vm.form, "fixed", $$v)
+                                  },
+                                  expression: "form.fixed"
+                                }
+                              })
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "b-row",
+                        [
+                          _c(
+                            "b-col",
+                            [
+                              _c("b-form-select", {
+                                staticClass: "inputBox",
+                                attrs: { id: "breed", options: _vm.breeds },
+                                model: {
+                                  value: _vm.form.breed,
+                                  callback: function($$v) {
+                                    _vm.$set(_vm.form, "breed", $$v)
+                                  },
+                                  expression: "form.breed"
+                                }
+                              })
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "b-col",
+                            [
+                              _c("b-form-input", {
+                                staticClass: "inputBox",
+                                attrs: {
+                                  id: "microchipNumber",
+                                  type: "text",
+                                  placeholder: "What is their microchip number?"
+                                },
+                                model: {
+                                  value: _vm.form.microchipNumber,
+                                  callback: function($$v) {
+                                    _vm.$set(_vm.form, "microchipNumber", $$v)
+                                  },
+                                  expression: "form.microchipNumber"
+                                }
+                              })
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "b-row",
+                        [
+                          _c(
+                            "b-col",
+                            [
+                              _c("b-form-input", {
+                                staticClass: "inputBox",
+                                attrs: { id: "birthdate", type: "date" },
+                                model: {
+                                  value: _vm.form.birthdate,
+                                  callback: function($$v) {
+                                    _vm.$set(_vm.form, "birthdate", $$v)
+                                  },
+                                  expression: "form.birthdate"
+                                }
+                              })
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "b-col",
+                            [
+                              _c("b-form-input", {
+                                staticClass: "inputBox",
+                                attrs: { id: "weight", type: "number" },
+                                model: {
+                                  value: _vm.form.weight,
+                                  callback: function($$v) {
+                                    _vm.$set(_vm.form, "weight", $$v)
+                                  },
+                                  expression: "form.weight"
+                                }
+                              })
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "b-row",
+                        [
+                          _c(
+                            "b-col",
+                            [
+                              _c("b-form-textarea", {
+                                staticClass: "inputBox",
+                                attrs: {
+                                  id: "description",
+                                  rows: 3,
+                                  "max-rows": 6,
+                                  placeholder:
+                                    "Please give a short description:"
+                                },
+                                model: {
+                                  value: _vm.form.description,
+                                  callback: function($$v) {
+                                    _vm.$set(_vm.form, "description", $$v)
+                                  },
+                                  expression: "form.description"
+                                }
+                              })
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "b-row",
+                        [
+                          _c(
+                            "b-col",
+                            { attrs: { sm: "12", md: "4", offset: "4" } },
+                            [
+                              _c("input", {
+                                staticClass: "fas fa-cloud-upload-alt",
+                                attrs: {
+                                  type: "file",
+                                  id: "profilePhoto",
+                                  name: _vm.form.profilePhoto,
+                                  enctype: "multipart/form-data"
+                                },
+                                on: { change: _vm.onInputChange }
+                              }),
+                              _vm._v(" "),
+                              _c("img", {
+                                ref: "image",
+                                attrs: { id: "image", src: _vm.image }
+                              })
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("b-col", [
+                            _c(
+                              "div",
+                              { staticClass: "images-preview" },
+                              _vm._l(_vm.images, function(image, index) {
+                                return _c(
+                                  "div",
+                                  { key: index, staticClass: "img-wrapper" },
+                                  [
+                                    _c("img", {
+                                      attrs: {
+                                        src: image,
+                                        alt: "Image Uplaoder " + index
                                       }
-                                    },
-                                    [
-                                      _c("b-form-checkbox", {
-                                        attrs: {
-                                          value: "1",
-                                          "unchecked-value": "0"
+                                    }),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "details" }, [
+                                      _c("span", {
+                                        staticClass: "name",
+                                        domProps: {
+                                          textContent: _vm._s(
+                                            _vm.files[index].name
+                                          )
+                                        }
+                                      }),
+                                      _vm._v(" "),
+                                      _c("span", {
+                                        staticClass: "size",
+                                        domProps: {
+                                          textContent: _vm._s(
+                                            _vm.getFileSize(
+                                              _vm.files[index].size
+                                            )
+                                          )
                                         }
                                       })
-                                    ],
-                                    1
-                                  )
-                                ],
-                                1
-                              )
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "b-col",
-                            { attrs: { cols: "4" } },
-                            [
-                              _c(
-                                "b-form-group",
-                                {
-                                  attrs: {
-                                    id: "sourceInputGroup",
-                                    label: "Source:",
-                                    "label-for": "source"
-                                  }
-                                },
-                                [
-                                  _c("b-form-select", {
-                                    attrs: {
-                                      id: "source",
-                                      options: _vm.sources,
-                                      required: "",
-                                      state: !_vm.$v.form.source.$invalid
-                                    },
-                                    model: {
-                                      value: _vm.form.source,
-                                      callback: function($$v) {
-                                        _vm.$set(_vm.form, "source", $$v)
-                                      },
-                                      expression: "form.source"
-                                    }
-                                  })
-                                ],
-                                1
-                              )
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "b-row",
-                        [
-                          _c(
-                            "b-col",
-                            [
-                              _c(
-                                "b-form-group",
-                                {
-                                  attrs: {
-                                    id: "speciesInputGroup",
-                                    label: "Species:",
-                                    "label-for": "species"
-                                  }
-                                },
-                                [
-                                  _c("b-form-select", {
-                                    attrs: {
-                                      id: "species",
-                                      options: _vm.species,
-                                      required: "",
-                                      state: !_vm.$v.form.species.$invalid
-                                    },
-                                    model: {
-                                      value: _vm.form.species,
-                                      callback: function($$v) {
-                                        _vm.$set(_vm.form, "species", $$v)
-                                      },
-                                      expression: "form.species"
-                                    }
-                                  })
-                                ],
-                                1
-                              )
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "b-col",
-                            [
-                              _c(
-                                "b-form-group",
-                                {
-                                  attrs: {
-                                    id: "breedInputGroup",
-                                    label: "Breed:",
-                                    "label-for": "breed"
-                                  }
-                                },
-                                [
-                                  _c("b-form-select", {
-                                    attrs: { id: "breed", options: _vm.breeds },
-                                    model: {
-                                      value: _vm.form.breed,
-                                      callback: function($$v) {
-                                        _vm.$set(_vm.form, "breed", $$v)
-                                      },
-                                      expression: "form.breed"
-                                    }
-                                  })
-                                ],
-                                1
-                              )
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "b-col",
-                            [
-                              _c(
-                                "b-form-group",
-                                {
-                                  attrs: {
-                                    id: "microchipInputGroup",
-                                    label: "Microchip Number:",
-                                    "label-for": "microchip"
-                                  }
-                                },
-                                [
-                                  _c("b-form-input", {
-                                    attrs: {
-                                      id: "microchipNumber",
-                                      type: "text",
-                                      placeholder:
-                                        "Enter microchip number, if available"
-                                    },
-                                    model: {
-                                      value: _vm.form.microchipNumber,
-                                      callback: function($$v) {
-                                        _vm.$set(
-                                          _vm.form,
-                                          "microchipNumber",
-                                          $$v
-                                        )
-                                      },
-                                      expression: "form.microchipNumber"
-                                    }
-                                  })
-                                ],
-                                1
-                              )
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "b-row",
-                        [
-                          _c(
-                            "b-col",
-                            [
-                              _c(
-                                "b-form-group",
-                                {
-                                  attrs: {
-                                    id: "birthdateInputGroup",
-                                    label: "Birthdate:",
-                                    "label-for": "birthdate"
-                                  }
-                                },
-                                [
-                                  _c("b-form-input", {
-                                    attrs: { id: "birthdate", type: "date" },
-                                    model: {
-                                      value: _vm.form.birthdate,
-                                      callback: function($$v) {
-                                        _vm.$set(_vm.form, "birthdate", $$v)
-                                      },
-                                      expression: "form.birthdate"
-                                    }
-                                  })
-                                ],
-                                1
-                              )
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "b-col",
-                            [
-                              _c(
-                                "b-form-group",
-                                {
-                                  attrs: {
-                                    id: "weightInputGroup",
-                                    label: "Weight:",
-                                    "label-for": "weight"
-                                  }
-                                },
-                                [
-                                  _c("b-form-input", {
-                                    attrs: { id: "weight", type: "number" },
-                                    model: {
-                                      value: _vm.form.weight,
-                                      callback: function($$v) {
-                                        _vm.$set(_vm.form, "weight", $$v)
-                                      },
-                                      expression: "form.weight"
-                                    }
-                                  })
-                                ],
-                                1
-                              )
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "b-row",
-                        [
-                          _c(
-                            "b-col",
-                            [
-                              _c(
-                                "b-form-group",
-                                {
-                                  attrs: {
-                                    id: "descriptionInputGroup",
-                                    label: "Description:",
-                                    "label-for": "description"
-                                  }
-                                },
-                                [
-                                  _c("b-form-textarea", {
-                                    attrs: {
-                                      id: "description",
-                                      rows: 3,
-                                      "max-rows": 6
-                                    },
-                                    model: {
-                                      value: _vm.form.description,
-                                      callback: function($$v) {
-                                        _vm.$set(_vm.form, "description", $$v)
-                                      },
-                                      expression: "form.description"
-                                    }
-                                  })
-                                ],
-                                1
-                              )
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "b-row",
-                        [
-                          _c("b-col", [
-                            _c("label", { attrs: { for: "profilePhoto" } }, [
-                              _vm._v("Select a file")
-                            ]),
-                            _vm._v(" "),
-                            _c("input", {
-                              attrs: {
-                                type: "file",
-                                id: "profilePhoto",
-                                name: _vm.form.profilePhoto,
-                                enctype: "multipart/form-data"
-                              },
-                              on: { change: _vm.onInputChange }
-                            })
+                                    ])
+                                  ]
+                                )
+                              })
+                            )
                           ])
                         ],
                         1
@@ -29906,7 +29815,7 @@ exports = module.exports = __webpack_require__(8)(false);
 
 
 // module
-exports.push([module.i, "\n.btn[data-v-6cd9df9e] {\n    text-align: center;\n    /* width: 24%; */\n}\n.center[data-v-6cd9df9e] {\n    text-align: center;\n}\n.searchBar[data-v-6cd9df9e] {\n    width: 100%;\n    text-align: center;\n}\n.selectButton[data-v-6cd9df9e] {\n    width: 85%;\n}\n.filterButton[data-v-6cd9df9e] {\n    width: 24%;\n}\n.animal-card[data-v-6cd9df9e] {\n    margin-bottom: 20px;\n}\n", ""]);
+exports.push([module.i, "\n.body[data-v-6cd9df9e] {\n    padding: 20px;\n}\n.btn[data-v-6cd9df9e] {\n    text-align: center;\n    /* width: 24%; */\n}\n.center[data-v-6cd9df9e] {\n    text-align: center;\n}\n.searchBar[data-v-6cd9df9e] {\n    width: 100%;\n    text-align: center;\n}\n.selectButton[data-v-6cd9df9e] {\n    width: 100%;\n}\n.filterButton[data-v-6cd9df9e] {\n    width: 24%;\n}\n.animal-card[data-v-6cd9df9e] {\n    margin-bottom: 20px;\n}\n", ""]);
 
 // exports
 
@@ -30022,6 +29931,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
+    { staticClass: "body" },
     [
       _c(
         "b-row",
@@ -30100,71 +30010,44 @@ var render = function() {
             { key: index, staticClass: "animal-card", attrs: { cols: "3" } },
             [
               animal.profile_photo
-                ? _c(
-                    "b-card",
-                    {
-                      attrs: {
-                        "img-src":
-                          "http://localhost:8000/storage/" +
-                          animal.profile_photo,
-                        "img-alt": "Selected animal image"
-                      }
-                    },
-                    [
-                      _c(
-                        "b-btn",
-                        {
-                          staticClass: "selectButton",
-                          attrs: { animal: "'animal.id'" },
-                          on: {
-                            click: function($event) {
-                              _vm.showModal(animal)
-                            }
-                          }
-                        },
-                        [
-                          _vm._v(_vm._s(animal.name) + "  |  "),
-                          _c("span", { staticStyle: { color: "black" } }, [
-                            _vm._v(" " + _vm._s(animal.species) + " ")
-                          ]),
-                          _vm._v("  |  " + _vm._s(animal.breed))
-                        ]
-                      )
-                    ],
-                    1
-                  )
-                : _c(
-                    "b-card",
-                    {
-                      attrs: {
-                        "img-src":
-                          "http://localhost:8000/storage/images/dog_placeholder.jpg",
-                        "img-alt": "No Selected animal image"
-                      }
-                    },
-                    [
-                      _c(
-                        "b-btn",
-                        {
-                          staticClass: "selectButton",
-                          attrs: { animal: "'animal.id'" },
-                          on: {
-                            click: function($event) {
-                              _vm.showModal(animal)
-                            }
-                          }
-                        },
-                        [
-                          _vm._v(_vm._s(animal.name) + "  |  "),
-                          _c("span", { staticStyle: { color: "black" } }, [
-                            _vm._v(" " + _vm._s(animal.species) + " ")
-                          ]),
-                          _vm._v("  |  " + _vm._s(animal.breed))
-                        ]
-                      )
-                    ],
-                    1
-                  )
+                ? _c("b-card", {
+                    staticStyle: { height: "400px" },
+                    attrs: {
+                      "img-src":
+                        "http://localhost:8000/storage/" + animal.profile_photo,
+                      thumbnail: "",
+                      fluid: "",
+                      "img-alt": "Selected animal image"
+                    }
+                  })
+                : _c("b-card", {
+                    staticStyle: { height: "400px" },
+                    attrs: {
+                      "img-src":
+                        "http://localhost:8000/storage/images/dog_placeholder.jpg",
+                      "img-alt": "No Selected animal image"
+                    }
+                  }),
+              _vm._v(" "),
+              _c(
+                "b-btn",
+                {
+                  staticClass: "selectButton",
+                  attrs: { animal: "'animal.id'" },
+                  on: {
+                    click: function($event) {
+                      _vm.showModal(animal)
+                    }
+                  }
+                },
+                [
+                  _vm._v(_vm._s(animal.name) + "  |  "),
+                  _c("span", { staticStyle: { color: "black" } }, [
+                    _vm._v(" " + _vm._s(animal.species) + " ")
+                  ]),
+                  _vm._v("  |  " + _vm._s(animal.breed))
+                ]
+              )
             ],
             1
           )
