@@ -44,7 +44,13 @@
                             </b-form-select>
                     </b-col>
                     <b-col sm="4">
-                        <b-form-radio-group id="fixed" v-model="form.fixed" :options="fixedOptions" name="fixed" inline/>
+                        <b-form-radio-group id="fixed" 
+                                    buttons 
+                                    button-variant="outline-primary" 
+                                    v-model="form.fixed" 
+                                    :options="fixedOptions" 
+                                    name="fixed" 
+                                    inline/>
                     </b-col>
                 </b-row>
                 
@@ -98,7 +104,7 @@
                     </b-col>
                 </b-row>
                 <b-row>
-                    <b-col sm="12" md="4" offset="4">
+                    <b-col sm="12" md="4" offset="5" v-if="!images.length">
                         <!-- <label for="profilePhoto">Select a file</label> -->
                         <input type="file"
                                 id="profilePhoto"
@@ -108,10 +114,10 @@
                                 enctype="multipart/form-data">
                         <img id="image" ref="image" :src="image">
                     </b-col>
-                    <b-col>
+                    <b-col sm="12" md="4" offset="5">
                         <div class="images-preview">
-                            <div class="img-wrapper" v-for="(image, index) in images" :key="index">
-                                <img :src="image" :alt="`Image Uplaoder ${index}`">
+                            <div  v-for="(image, index) in images" :key="index">
+                                <img :src="image" alt="uploaded image">
                                 <div class="details">
                                     <span class="name" v-text="files[index].name"></span>
                                     <span class="size" v-text="getFileSize(files[index].size)"></span>
@@ -262,6 +268,10 @@
                 this.form.profilePhoto = '';
                 
                 this.form.checked = [];
+
+                this.images = [];
+                this.files = [];
+
                 /* Trick to reset/clear native browser form validation state */
                 this.show = false;
                 this.$nextTick(() => { this.show = true });

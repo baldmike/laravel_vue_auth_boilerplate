@@ -28351,6 +28351,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 
@@ -28473,6 +28479,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.form.profilePhoto = '';
 
             this.form.checked = [];
+
+            this.images = [];
+            this.files = [];
+
             /* Trick to reset/clear native browser form validation state */
             this.show = false;
             this.$nextTick(function () {
@@ -29434,6 +29444,8 @@ var render = function() {
                               _c("b-form-radio-group", {
                                 attrs: {
                                   id: "fixed",
+                                  buttons: "",
+                                  "button-variant": "outline-primary",
                                   options: _vm.fixedOptions,
                                   name: "fixed",
                                   inline: ""
@@ -29574,41 +29586,43 @@ var render = function() {
                       _c(
                         "b-row",
                         [
+                          !_vm.images.length
+                            ? _c(
+                                "b-col",
+                                { attrs: { sm: "12", md: "4", offset: "5" } },
+                                [
+                                  _c("input", {
+                                    staticClass: "fas fa-cloud-upload-alt",
+                                    attrs: {
+                                      type: "file",
+                                      id: "profilePhoto",
+                                      name: _vm.form.profilePhoto,
+                                      enctype: "multipart/form-data"
+                                    },
+                                    on: { change: _vm.onInputChange }
+                                  }),
+                                  _vm._v(" "),
+                                  _c("img", {
+                                    ref: "image",
+                                    attrs: { id: "image", src: _vm.image }
+                                  })
+                                ]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
                           _c(
                             "b-col",
-                            { attrs: { sm: "12", md: "4", offset: "4" } },
+                            { attrs: { sm: "12", md: "4", offset: "5" } },
                             [
-                              _c("input", {
-                                staticClass: "fas fa-cloud-upload-alt",
-                                attrs: {
-                                  type: "file",
-                                  id: "profilePhoto",
-                                  name: _vm.form.profilePhoto,
-                                  enctype: "multipart/form-data"
-                                },
-                                on: { change: _vm.onInputChange }
-                              }),
-                              _vm._v(" "),
-                              _c("img", {
-                                ref: "image",
-                                attrs: { id: "image", src: _vm.image }
-                              })
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("b-col", [
-                            _c(
-                              "div",
-                              { staticClass: "images-preview" },
-                              _vm._l(_vm.images, function(image, index) {
-                                return _c(
-                                  "div",
-                                  { key: index, staticClass: "img-wrapper" },
-                                  [
+                              _c(
+                                "div",
+                                { staticClass: "images-preview" },
+                                _vm._l(_vm.images, function(image, index) {
+                                  return _c("div", { key: index }, [
                                     _c("img", {
                                       attrs: {
                                         src: image,
-                                        alt: "Image Uplaoder " + index
+                                        alt: "uploaded image"
                                       }
                                     }),
                                     _vm._v(" "),
@@ -29633,11 +29647,11 @@ var render = function() {
                                         }
                                       })
                                     ])
-                                  ]
-                                )
-                              })
-                            )
-                          ])
+                                  ])
+                                })
+                              )
+                            ]
+                          )
                         ],
                         1
                       ),
