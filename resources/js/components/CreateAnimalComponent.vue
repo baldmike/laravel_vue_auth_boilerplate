@@ -1,138 +1,124 @@
 <template>
-  <div class="body">
-    <b-row>
-        <b-col>
-            <b-form @reset="onReset" v-if="show">
-                <b-row>
-                    <b-col sm="12" md="4">
-                            <b-form-select id="species" 
-                                    class="inputBox"
-                                    :options="species"
-                                    required
-                                    v-model="form.species"
-                                    :state="!$v.form.species.$invalid">
-                            </b-form-select>
-                    </b-col>
-                    <b-col sm="12" md="4">
-                            <b-form-input id="animalName"
-                                        class="inputBox"
-                                        type="text"
-                                        v-model="form.name"
-                                        required
-                                        :state="!$v.form.name.$invalid"
-                                        placeholder="What is their name?"/>
-                            <b-form-invalid-feedback id="nameLiveFeedback">
-                                Red fields are required.
-                            </b-form-invalid-feedback>
-                    </b-col>
-                    <b-col sm="4" md="3">
-                            <b-form-select id="gender"
-                                    class="inputBox" 
-                                    :options="gender"
-                                    required
-                                    v-model="form.gender"
-                                    :state="!$v.form.gender.$invalid">
-                            </b-form-select>
-                    </b-col>                    
-                    <b-col sm="3" md="4">
-                            <b-form-select id="source"
-                                        class="inputBox"
-                                        :options="sources"
-                                        required
-                                        v-model="form.source"
-                                        :state="!$v.form.source.$invalid">
-                            </b-form-select>
-                    </b-col>
-                    <b-col sm="4">
-                        <b-form-radio-group id="fixed" 
-                                    buttons 
-                                    button-variant="outline-primary" 
-                                    v-model="form.fixed" 
-                                    :options="fixedOptions" 
-                                    name="fixed" 
-                                    inline/>
-                    </b-col>
-                </b-row>
+    <div class="body">
+        <b-col cols="6" offset="3" class="create-animal-box">
+            <b-form>
+                <b-form-group id="nameGroup" v-if="formStep===1">
+                    <h5>Please use the navigation buttons!</h5>
+                    <b-form-input id="animalName"
+                    class="input-box"
+                    type="text"
+                    v-model="form.name"
+                    required
+                    :state="!$v.form.name.$invalid"
+                    placeholder="Animal's name"/>                 
+                </b-form-group>
                 
-                <b-row>
+                <b-form-group id="speciesGroup" v-if="formStep===2">
+                    <div class="speciesBox">
+                        <h5>What is {{ form.name }}?</h5>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <b-btn class="buttonSelector" id="dogChosen" :class="{ green: isDog }" @click="selectDog"><i class="fas fa-dog" style="font-size: 44px;"></i></b-btn>
+                                    </td>
+                                    <td>
+                                        <b-btn class="buttonSelector" id="catChosen" :class="{ green: isCat }" @click="selectCat"><i class="fas fa-cat" style="font-size: 44px;" ></i></b-btn>
+                                    </td> 
+                                </tr> 
+                                <tr>
+                                    <td>{{ form.name }} is a Dog.</td>
+                                    <td>{{ form.name }} is a Cat.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </b-form-group>
+
+                <b-form-group id="genderGroup" v-if="formStep===3">
+                    <div class="genderBox">
+                        <h5>Is {{ form.name }} a boy {{ form.species }} or a girl {{ form.species }}?</h5>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <b-btn class="buttonSelector" :class="{ green: isMale }" @click="selectMale"><i class="fas fa-male" style="font-size: 44px;"></i></b-btn>
+                                    </td>
+                                    <td>
+                                        <b-btn class="buttonSelector" :class="{ green: isFemale }" @click="selectFemale"><i class="fas fa-female" style="font-size: 44px;"></i></b-btn>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>{{ form.name }}</td>
+                                    <td>{{ form.name }}</td>
+                                </tr>
+                                <tr>
+                                    <td>is a boy {{ form.species }}</td>
+                                    <td>is a girl {{ form.species }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </b-form-group>
                     
-                    <b-col>
-                            <b-form-select id="breed"
-                                        class="inputBox"
-                                        :options="breeds"
-                                        v-model="form.breed">
-                            </b-form-select>
-                    </b-col>
+                <b-form-group>
+                    <div class="sourceBox" v-if="formStep===4">
+                        <h5>Where is {{ form.name }} from?</h5>
+                        <b-btn class="buttonSelector" :class="{ green: isCacc }" @click="selectCacc" style="font-size: 24px;">CACC</b-btn>
+                        <b-btn class="buttonSelector" :class="{ green: isCrisp }" @click="selectCrisp" style="font-size: 24px;">CRISP</b-btn>
+                        <b-btn class="buttonSelector" :class="{ green: isStray }" @click="selectStray" style="font-size: 24px;">STRAY</b-btn>
+                        <b-btn class="buttonSelector" :class="{ green: isAlive }" @click="selectAlive" style="font-size: 24px;">ALIVE</b-btn>
+                    </div>
+                </b-form-group>
 
-                    <b-col>
-                            <b-form-input id="microchipNumber"
-                                        class="inputBox"
-                                        type="text"
-                                        v-model="form.microchipNumber"
-                                        placeholder="What is their microchip number?">
-                            </b-form-input>
-                    </b-col>
-                </b-row>
+                <b-form-group id="genderGroup" v-if="formStep===5">
+                    <div class="genderBox">
+                        <h5>Is {{ form.name }} fixed?</h5>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <b-btn class="buttonSelector" @click="altered"><i class="fas fa-check-circle" style="font-size: 36px; color: limegreen;" ></i></b-btn>
+                                    </td>
+                                    <td>
+                                        <b-btn class="buttonSelector" @click="unaltered"><i class="fas fa-exclamation-circle" style="font-size: 36px; color: red;" ></i></b-btn>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>{{ form.name }}</td>
+                                    <td>{{ form.name }}</td>
+                                </tr>
+                                <tr>
+                                    <td>is altered.</td>
+                                    <td>is not unaltered.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </b-form-group>
+                
+                <b-form-group id="nameGroup" v-if="formStep===6">
+                    <h5>If {{  form.name }} is not chipped, just click right arrow.</h5>
+                    <b-form-input id="microchip"
+                    class="input-box"
+                    type="text"
+                    v-model="form.microchipNumber"
+                    placeholder="Microchip number"/>                 
+                </b-form-group>
 
-                <b-row>
-                    <b-col>
-                            <b-form-input id="birthdate"
-                                        class="inputBox"
-                                        type="date"
-                                        v-model="form.birthdate">
-                            </b-form-input>
-                    </b-col>
+                <b-form-group class="navBox">
+                    <b-btn class="navButton" @click="previousFormStep"><i class="fas fa-arrow-left" style="font-size: 44px;"></i></b-btn>
+                    <b-btn class="navButton" @click="nextFormStep"><i class="fas fa-arrow-right" style="font-size: 44px;"></i></b-btn>
+                </b-form-group>
 
-                    <b-col>
-                            <b-form-input id="weight"
-                                    class="inputBox"
-                                    type="number"
-                                    v-model="form.weight">
-                            </b-form-input>
-                    </b-col>
-                </b-row>
+                <b-form-group class="submitBox" v-if="formStep>5">
+                    <b-button class="my-3" variant="dark" :disabled="$v.form.$invalid" @click="createAnimal">Welcome to Alive, {{ form.name }}</b-button>
+                </b-form-group>
 
-                <b-row>
-                    <b-col>
-                            <b-form-textarea id="description"
-                                    class="inputBox"
-                                    :rows="3"
-                                    :max-rows="6"
-                                    v-model="form.description"
-                                    placeholder="Please give a short description:">
-                            </b-form-textarea>
-                    </b-col>
-                </b-row>
-                <b-row>
-                    <b-col sm="12" md="4" offset="5" v-if="!images.length">
-                        <!-- <label for="profilePhoto">Select a file</label> -->
-                        <input type="file"
-                                id="profilePhoto"
-                                class="fas fa-cloud-upload-alt"
-                                :name="form.profilePhoto" 
-                                @change="onInputChange" 
-                                enctype="multipart/form-data">
-                        <img id="image" ref="image" :src="image">
-                    </b-col>
-                    <b-col sm="12" md="4" offset="5">
-                        <div class="images-preview">
-                            <div  v-for="(image, index) in images" :key="index">
-                                <img :src="image" alt="uploaded image">
-                                <div class="details">
-                                    <span class="name" v-text="files[index].name"></span>
-                                    <span class="size" v-text="getFileSize(files[index].size)"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </b-col>
-                </b-row>
-
-                <b-button class="my-3" variant="dark" :disabled="$v.form.$invalid" @click="createAnimal">Welcome to Alive, {{ form.name }}</b-button>
-                <b-button class="my-3" type="reset" variant="danger">Reset</b-button>
+                    
             </b-form>
-        </b-col>
-    </b-row>
-  </div>
+        </b-col>  
+    </div>
 </template>
 
 <script>
@@ -157,31 +143,25 @@
                     description: '',
                     profilePhoto: ''
                 },
-                species: [
-                    { text: 'What Kind of animal?', value: null },
-                    'Dog', 'Cat', 'Rabbit'
-                ],
                 breeds: [
                     { text: "What breed are they?'", value: null },
                     'Pit Bull', 'Chihuahua', 'Terrier', 'Calico', 'Siamese', 'Tabby', 'Rabbit'
                 ],
-                sources: [
-                    { text: 'Where are they from?', value: null },
-                    'CACC', 'CRISP', 'Stray', 'Alive'
-                ],
-                gender: [
-                    { text: 'Male or Female?', value: null },
-                    'Male', 'Female'
-                ],
-                fixedOptions: [
-                    'Not Fixed', 'Fixed'
-                ],
                 show: true,
+                formStep: 1,
                 isDragging: false,
                 dragCount: 0,
                 files: [],
                 image: '',
-                images: []
+                images: [],
+                isDog: false,
+                isCat: false,
+                isMale: false,
+                isFemale: false,
+                isCacc: false,
+                isCrisp: false,
+                isStray: false,
+                isAlive: false,
             }
         },
         mixins: [
@@ -191,7 +171,6 @@
             form: {
                 name: {
                     required,
-                    minLength: minLength(2)
                 },
                 species: {
                     required,
@@ -202,9 +181,6 @@
                 source: {
                     required
                 },
-                breed: {
-                    required
-                },
             }
         },
         computed: {
@@ -213,6 +189,9 @@
             },
         },
         methods: {
+            onSubmit(e) {
+                e.preventDefault();
+            },
             createAnimal() {
                 console.log("****************");
                 console.log(this.form.profilePhoto);
@@ -250,7 +229,101 @@
                 this.$router.push('dashboard');
                 
             },
-
+            selectDog() {
+                this.form.species = "dog";
+                this.isDog = !this.isDog;
+                console.log("this is active");
+                let self = this;
+                setTimeout(function() {
+                    self.formStep += 1;
+                }, 1000);
+            },
+            selectCat() {
+                this.form.species = "cat";
+                this.isCat = !this.isCat;
+                let self = this;
+                setTimeout(function() {
+                    self.formStep += 1;
+                }, 1000);
+                // add to "profile" as user builds
+            },
+            selectMale() {
+                this.form.gender = "male";
+                this.isMale = !this.isMale;
+                let self = this;
+                setTimeout(function() {
+                    self.formStep += 1;
+                }, 1000);
+                // add to "profile" as user builds
+            },
+            selectFemale() {
+                this.form.gender = "female";
+                this.isFemale = !this.isFemale;
+                let self = this;
+                setTimeout(function() {
+                    self.formStep += 1;
+                }, 1000);
+                // add to "profile" as user builds
+            },
+            selectCacc() {
+                this.form.source = "cacc";
+                this.isCacc = !this.isCacc;
+                let self = this;
+                setTimeout(function() {
+                    self.formStep += 1;
+                }, 1000);
+                // add to "profile" as user builds
+            },
+            selectCrisp() {
+                this.form.source = "crisp";
+                this.isCrisp = !this.isCrisp;
+                let self = this;
+                setTimeout(function() {
+                    self.formStep += 1;
+                }, 1000);
+                // add to "profile" as user builds
+            },
+            selectStray() {
+                this.form.source = "stray";
+                this.isStray = !this.isStray;
+                let self = this;
+                setTimeout(function() {
+                    self.formStep += 1;
+                }, 1000);
+                // add to "profile" as user builds
+            },
+            selectAlive() {
+                this.form.source = "alive";
+                this.isAlive = !this.isAlive;
+                let self = this;
+                setTimeout(function() {
+                    self.formStep += 1;
+                }, 1000);
+                // add to "profile" as user builds
+            },
+            altered() {
+                this.form.fixed = true;
+                let self = this;
+                setTimeout(function() {
+                    self.formStep += 1;
+                }, 700);
+                // add to "profile" as user builds
+            },
+            unaltered() {
+                let self = this;
+                setTimeout(function() {
+                    self.formStep += 1;
+                }, 700);
+                // add to "profile" as user builds
+            },
+            nextFormStep() {
+                this.formStep += 1;
+            },
+            previousFormStep() {
+                if (this.formStep > 1) {
+                    this.formStep -= 1;
+                }
+            },
             onReset (evt) {
                 evt.preventDefault();
 
@@ -276,31 +349,12 @@
                 this.show = false;
                 this.$nextTick(() => { this.show = true });
             },
-            OnDragEnter(e) {
-            e.preventDefault();
-            
-            this.dragCount++;
-            this.isDragging = true;
-            return false;
-            },
-            OnDragLeave(e) {
-                e.preventDefault();
-                this.dragCount--;
-                if (this.dragCount <= 0)
-                    this.isDragging = false;
-            },
+
             onInputChange(e) {
                 this.form.profilePhoto = e.target.files[0];
 
                 const files = e.target.files;
                 
-                Array.from(files).forEach(file => this.addImage(file));
-            },
-            onDrop(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                this.isDragging = false;
-                const files = e.dataTransfer.files;
                 Array.from(files).forEach(file => this.addImage(file));
             },
             addImage(file) {
@@ -341,15 +395,49 @@
                     this.images = [];
                     this.files = [];
                 })
+            },
+            showModal() {
+                this.$refs.formIndexModal.show()
+            },
+            init() {
+                console.log("CreateAnimalComponent Mounted")
             }
+        },
+        mounted() {
+            this.init();
         }
     }
 </script>
 
-<style lang="scss" scoped>
 
+
+
+
+
+
+
+
+
+<style scoped>
+    .buttonSelector {
+        width: 100px;
+        height: 100px;
+        border-radius: 25px;
+        margin: 30px;
+        margin-bottom: 5px;
+        margin-top: 10px;
+    }
+    .navButton {
+        width: 100px;
+        height: 60px;
+        border-radius: 25px;
+        margin: 30px;
+        margin-bottom: 5px;
+        background-color: lightgray;
+    }
     .body {
         background-color: #2196F3;
+        height: 1000px;
         padding: 20px;
     }
     .imageInput {
@@ -359,106 +447,34 @@
         background-color: white;
         text-align: center;
     }
-    .inputBox {
+    .input-box {
         margin: 10px;
         margin-left: 0px;
     }
-    .uploader {
-    background: #fff;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-    font-size: 20px;
-    position: relative;
-    &.dragging {
-        background: #fff;
-        color: #2196F3;
-        border: 3px dashed #2196F3;
-        .file-input label {
-            background: #2196F3;
-            color: #fff;
-        }
+    .selectedButton {
+        background-color: white;
     }
-    i {
-        font-size: 85px;
+    .create-animal-box {
+        text-align: center;
     }
-    .file-input {
-        width: 200px;
-        margin: auto;
-        height: 68px;
-        position: relative;
-        label,
-        input {
-            background: #fff;
-            color: #2196F3;
-            width: 100%;
-            position: absolute;
-            left: 0;
-            top: 0;
-            padding: 10px;
-            border-radius: 4px;
-            margin-top: 7px;
-            cursor: pointer;
-        }
-        input {
-            opacity: 0;
-            z-index: -2;
-        }
+    .speciesBox {
+        text-align: center;
     }
-    .images-preview {
-        display: flex;
-        flex-wrap: wrap;
-        margin-top: 20px;
-        .img-wrapper {
-            width: 160px;
-            display: flex;
-            flex-direction: column;
-            margin: 10px;
-            height: 150px;
-            justify-content: space-between;
-            background: #fff;
-            box-shadow: 5px 5px 20px #3e3737;
-            img {
-                max-height: 105px;
-            }
-        }
-        .details {
-            font-size: 12px;
-            background: #fff;
-            color: #000;
-            display: flex;
-            flex-direction: column;
-            align-items: self-start;
-            padding: 3px 6px;
-            .name {
-                overflow: hidden;
-                height: 18px;
-            }
-        }
+    .genderBox {
+        text-align: center;
     }
-    .upload-control {
-        position: absolute;
-        width: 100%;
-        background: #fff;
-        top: 0;
-        left: 0;
-        border-top-left-radius: 7px;
-        border-top-right-radius: 7px;
-        padding: 10px;
-        padding-bottom: 4px;
-        text-align: right;
-        button, label {
-            background: #2196F3;
-            border: 2px solid #03A9F4;
-            border-radius: 3px;
-            color: #fff;
-            font-size: 15px;
-            cursor: pointer;
-        }
-        label {
-            padding: 2px 5px;
-            margin-right: 10px;
-        }
+    .navBox {
+        text-align: center;
     }
-}
+    .submitBox {
+        text-align: center;
+    }
+    .green {
+        color: limegreen;
+    }
+
+    table {
+        margin-left: auto;
+        margin-right: auto;
+    }
 </style>

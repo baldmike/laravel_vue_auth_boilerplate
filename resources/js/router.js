@@ -8,7 +8,6 @@ import DogsComponent from './components/DogsComponent'
 import CatsComponent from './components/CatsComponent'
 import RabbitsComponent from './components/RabbitsComponent'
 import LoginComponent from './components/LoginComponent'
-import NotFound from './components/NotFound'
 
 export const router = new VueRouter({ 
     mode: 'history', 
@@ -98,7 +97,7 @@ export const router = new VueRouter({
                         next();
                     }
                 },
-                {path: '*', component: DashboardComponent}
+                // {path: '*', component: DashboardComponent}
             ]
         },
     ]

@@ -1,8 +1,11 @@
 <template>
-    <div>
-        <animals-component></animals-component>
+    <div class="mainPlace">
+        <b-row>
+            <b-col>
+                <animals-component></animals-component>
+            </b-col>
+        </b-row>
     </div>
-    
 </template>
 
 <script>
@@ -44,6 +47,11 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+    @import "../../sass/_variables.scss";
+
+    .mainPlace {
+        background-color: $blue;
+    }
     
 </style>

@@ -25,7 +25,7 @@ class SpaController extends Controller
 
     public function notFound()
     {
-        Log::debug('SpaController->notFount()');
+        Log::debug('SpaController->notFound()');
         return view('spa');
     }
 }
