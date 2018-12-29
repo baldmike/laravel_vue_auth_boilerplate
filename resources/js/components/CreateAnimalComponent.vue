@@ -27,8 +27,12 @@
                                     </td> 
                                 </tr> 
                                 <tr>
-                                    <td>{{ form.name }} is a Dog.</td>
-                                    <td>{{ form.name }} is a Cat.</td>
+                                    <td>{{ form.name }}</td>
+                                    <td>{{ form.name }}</td>
+                                </tr>
+                                <tr>
+                                    <td>is a Dog.</td>
+                                    <td>is a Cat.</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -61,8 +65,8 @@
                     </div>
                 </b-form-group>
                     
-                <b-form-group>
-                    <div class="sourceBox" v-if="formStep===4">
+                <b-form-group id="sourceGroup" v-if="formStep===4">
+                    <div class="sourceBox">
                         <h5>Where is {{ form.name }} from?</h5>
                         <b-btn class="buttonSelector" :class="{ green: isCacc }" @click="selectCacc" style="font-size: 24px;">CACC</b-btn>
                         <b-btn class="buttonSelector" :class="{ green: isCrisp }" @click="selectCrisp" style="font-size: 24px;">CRISP</b-btn>
@@ -78,10 +82,10 @@
                             <tbody>
                                 <tr>
                                     <td>
-                                        <b-btn class="buttonSelector" @click="altered"><i class="fas fa-check-circle" style="font-size: 36px; color: limegreen;" ></i></b-btn>
+                                        <b-btn class="buttonSelector" :class="{ green: isAltered }" @click="altered"><i class="fas fa-check-circle" style="font-size: 36px;" ></i></b-btn>
                                     </td>
                                     <td>
-                                        <b-btn class="buttonSelector" @click="unaltered"><i class="fas fa-exclamation-circle" style="font-size: 36px; color: red;" ></i></b-btn>
+                                        <b-btn class="buttonSelector" :class="{ red: isUnaltered }" @click="unaltered"><i class="fas fa-exclamation-circle" style="font-size: 36px;" ></i></b-btn>
                                     </td>
                                 </tr>
                                 <tr>
@@ -162,6 +166,8 @@
                 isCrisp: false,
                 isStray: false,
                 isAlive: false,
+                isAltered: false,
+                isUnaltered: false
             }
         },
         mixins: [
@@ -232,46 +238,61 @@
             selectDog() {
                 this.form.species = "dog";
                 this.isDog = !this.isDog;
+                if (this.isCat) {
+                    this.isCat = !this.isCat;
+                }
                 console.log("this is active");
                 let self = this;
                 setTimeout(function() {
                     self.formStep += 1;
-                }, 1000);
+                }, 1300);
             },
             selectCat() {
                 this.form.species = "cat";
                 this.isCat = !this.isCat;
+                if (this.isDog) {
+                    this.isDog = !this.isDog;
+                } 
                 let self = this;
                 setTimeout(function() {
                     self.formStep += 1;
-                }, 1000);
+                }, 1300);
                 // add to "profile" as user builds
             },
             selectMale() {
                 this.form.gender = "male";
                 this.isMale = !this.isMale;
+                if (this.isFemale) {
+                    this.isFemale = !this.isFemale;
+                } 
                 let self = this;
                 setTimeout(function() {
                     self.formStep += 1;
-                }, 1000);
+                }, 1300);
                 // add to "profile" as user builds
             },
             selectFemale() {
                 this.form.gender = "female";
                 this.isFemale = !this.isFemale;
+                if (this.isMale) {
+                    this.isMale = !this.isMale;
+                } 
                 let self = this;
                 setTimeout(function() {
                     self.formStep += 1;
-                }, 1000);
+                }, 1300);
                 // add to "profile" as user builds
             },
             selectCacc() {
                 this.form.source = "cacc";
                 this.isCacc = !this.isCacc;
+                if (this.isCacc) {
+                    this.isCass = !this.isCacc
+                }
                 let self = this;
                 setTimeout(function() {
                     self.formStep += 1;
-                }, 1000);
+                }, 1300);
                 // add to "profile" as user builds
             },
             selectCrisp() {
@@ -280,7 +301,7 @@
                 let self = this;
                 setTimeout(function() {
                     self.formStep += 1;
-                }, 1000);
+                }, 1300);
                 // add to "profile" as user builds
             },
             selectStray() {
@@ -289,7 +310,7 @@
                 let self = this;
                 setTimeout(function() {
                     self.formStep += 1;
-                }, 1000);
+                }, 1300);
                 // add to "profile" as user builds
             },
             selectAlive() {
@@ -298,22 +319,30 @@
                 let self = this;
                 setTimeout(function() {
                     self.formStep += 1;
-                }, 1000);
+                }, 1300);
                 // add to "profile" as user builds
             },
             altered() {
                 this.form.fixed = true;
+                this.isAltered = !this.isAltered;
+                if (this.isUnaltered) { 
+                    this.isUnaltered = !this.isUnaltered;
+                }
                 let self = this;
                 setTimeout(function() {
                     self.formStep += 1;
-                }, 700);
+                }, 1300);
                 // add to "profile" as user builds
             },
             unaltered() {
+                this.isUnaltered = !this.isUnaltered;
+                if (this.isAltered) {
+                    this.isAltered = !this.isAltered;
+                }
                 let self = this;
                 setTimeout(function() {
                     self.formStep += 1;
-                }, 700);
+                }, 1300);
                 // add to "profile" as user builds
             },
             nextFormStep() {
@@ -409,16 +438,8 @@
     }
 </script>
 
-
-
-
-
-
-
-
-
-
 <style scoped>
+
     .buttonSelector {
         width: 100px;
         height: 100px;
@@ -463,6 +484,9 @@
     .genderBox {
         text-align: center;
     }
+    .sourceBox {
+        text-align: center;
+    }
     .navBox {
         text-align: center;
     }
@@ -471,6 +495,9 @@
     }
     .green {
         color: limegreen;
+    }
+    .red {
+        color: red;
     }
 
     table {

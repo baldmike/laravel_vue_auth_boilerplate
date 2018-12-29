@@ -28155,7 +28155,7 @@ exports = module.exports = __webpack_require__(8)(false);
 
 
 // module
-exports.push([module.i, "\n.buttonSelector[data-v-07337dea] {\n    width: 100px;\n    height: 100px;\n    border-radius: 25px;\n    margin: 30px;\n    margin-bottom: 5px;\n    margin-top: 10px;\n}\n.navButton[data-v-07337dea] {\n    width: 100px;\n    height: 60px;\n    border-radius: 25px;\n    margin: 30px;\n    margin-bottom: 5px;\n    background-color: lightgray;\n}\n.body[data-v-07337dea] {\n    background-color: #2196F3;\n    height: 1000px;\n    padding: 20px;\n}\n.imageInput[data-v-07337dea] {\n    margin: 10px;\n    margin-left: 0px;\n    height: 4rem;\n    background-color: white;\n    text-align: center;\n}\n.input-box[data-v-07337dea] {\n    margin: 10px;\n    margin-left: 0px;\n}\n.selectedButton[data-v-07337dea] {\n    background-color: white;\n}\n.create-animal-box[data-v-07337dea] {\n    text-align: center;\n}\n.speciesBox[data-v-07337dea] {\n    text-align: center;\n}\n.genderBox[data-v-07337dea] {\n    text-align: center;\n}\n.navBox[data-v-07337dea] {\n    text-align: center;\n}\n.submitBox[data-v-07337dea] {\n    text-align: center;\n}\n.green[data-v-07337dea] {\n    color: limegreen;\n}\ntable[data-v-07337dea] {\n    margin-left: auto;\n    margin-right: auto;\n}\n", ""]);
+exports.push([module.i, "\n.buttonSelector[data-v-07337dea] {\n    width: 100px;\n    height: 100px;\n    border-radius: 25px;\n    margin: 30px;\n    margin-bottom: 5px;\n    margin-top: 10px;\n}\n.navButton[data-v-07337dea] {\n    width: 100px;\n    height: 60px;\n    border-radius: 25px;\n    margin: 30px;\n    margin-bottom: 5px;\n    background-color: lightgray;\n}\n.body[data-v-07337dea] {\n    background-color: #2196F3;\n    height: 1000px;\n    padding: 20px;\n}\n.imageInput[data-v-07337dea] {\n    margin: 10px;\n    margin-left: 0px;\n    height: 4rem;\n    background-color: white;\n    text-align: center;\n}\n.input-box[data-v-07337dea] {\n    margin: 10px;\n    margin-left: 0px;\n}\n.selectedButton[data-v-07337dea] {\n    background-color: white;\n}\n.create-animal-box[data-v-07337dea] {\n    text-align: center;\n}\n.speciesBox[data-v-07337dea] {\n    text-align: center;\n}\n.genderBox[data-v-07337dea] {\n    text-align: center;\n}\n.sourceBox[data-v-07337dea] {\n    text-align: center;\n}\n.navBox[data-v-07337dea] {\n    text-align: center;\n}\n.submitBox[data-v-07337dea] {\n    text-align: center;\n}\n.green[data-v-07337dea] {\n    color: limegreen;\n}\n.red[data-v-07337dea] {\n    color: red;\n}\ntable[data-v-07337dea] {\n    margin-left: auto;\n    margin-right: auto;\n}\n", ""]);
 
 // exports
 
@@ -28170,6 +28170,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuelidate___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vuelidate__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__);
+//
+//
+//
+//
 //
 //
 //
@@ -28330,7 +28334,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             isCacc: false,
             isCrisp: false,
             isStray: false,
-            isAlive: false
+            isAlive: false,
+            isAltered: false,
+            isUnaltered: false
         };
     },
 
@@ -28403,46 +28409,61 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         selectDog: function selectDog() {
             this.form.species = "dog";
             this.isDog = !this.isDog;
+            if (this.isCat) {
+                this.isCat = !this.isCat;
+            }
             console.log("this is active");
             var self = this;
             setTimeout(function () {
                 self.formStep += 1;
-            }, 1000);
+            }, 1300);
         },
         selectCat: function selectCat() {
             this.form.species = "cat";
             this.isCat = !this.isCat;
+            if (this.isDog) {
+                this.isDog = !this.isDog;
+            }
             var self = this;
             setTimeout(function () {
                 self.formStep += 1;
-            }, 1000);
+            }, 1300);
             // add to "profile" as user builds
         },
         selectMale: function selectMale() {
             this.form.gender = "male";
             this.isMale = !this.isMale;
+            if (this.isFemale) {
+                this.isFemale = !this.isFemale;
+            }
             var self = this;
             setTimeout(function () {
                 self.formStep += 1;
-            }, 1000);
+            }, 1300);
             // add to "profile" as user builds
         },
         selectFemale: function selectFemale() {
             this.form.gender = "female";
             this.isFemale = !this.isFemale;
+            if (this.isMale) {
+                this.isMale = !this.isMale;
+            }
             var self = this;
             setTimeout(function () {
                 self.formStep += 1;
-            }, 1000);
+            }, 1300);
             // add to "profile" as user builds
         },
         selectCacc: function selectCacc() {
             this.form.source = "cacc";
             this.isCacc = !this.isCacc;
+            if (this.isCacc) {
+                this.isCass = !this.isCacc;
+            }
             var self = this;
             setTimeout(function () {
                 self.formStep += 1;
-            }, 1000);
+            }, 1300);
             // add to "profile" as user builds
         },
         selectCrisp: function selectCrisp() {
@@ -28451,7 +28472,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var self = this;
             setTimeout(function () {
                 self.formStep += 1;
-            }, 1000);
+            }, 1300);
             // add to "profile" as user builds
         },
         selectStray: function selectStray() {
@@ -28460,7 +28481,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var self = this;
             setTimeout(function () {
                 self.formStep += 1;
-            }, 1000);
+            }, 1300);
             // add to "profile" as user builds
         },
         selectAlive: function selectAlive() {
@@ -28469,22 +28490,30 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var self = this;
             setTimeout(function () {
                 self.formStep += 1;
-            }, 1000);
+            }, 1300);
             // add to "profile" as user builds
         },
         altered: function altered() {
             this.form.fixed = true;
+            this.isAltered = !this.isAltered;
+            if (this.isUnaltered) {
+                this.isUnaltered = !this.isUnaltered;
+            }
             var self = this;
             setTimeout(function () {
                 self.formStep += 1;
-            }, 700);
+            }, 1300);
             // add to "profile" as user builds
         },
         unaltered: function unaltered() {
+            this.isUnaltered = !this.isUnaltered;
+            if (this.isAltered) {
+                this.isAltered = !this.isAltered;
+            }
             var self = this;
             setTimeout(function () {
                 self.formStep += 1;
-            }, 700);
+            }, 1300);
             // add to "profile" as user builds
         },
         nextFormStep: function nextFormStep() {
@@ -29429,13 +29458,15 @@ var render = function() {
                           ]),
                           _vm._v(" "),
                           _c("tr", [
-                            _c("td", [
-                              _vm._v(_vm._s(_vm.form.name) + " is a Dog.")
-                            ]),
+                            _c("td", [_vm._v(_vm._s(_vm.form.name))]),
                             _vm._v(" "),
-                            _c("td", [
-                              _vm._v(_vm._s(_vm.form.name) + " is a Cat.")
-                            ])
+                            _c("td", [_vm._v(_vm._s(_vm.form.name))])
+                          ]),
+                          _vm._v(" "),
+                          _c("tr", [
+                            _c("td", [_vm._v("is a Dog.")]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v("is a Cat.")])
                           ])
                         ])
                       ])
@@ -29525,9 +29556,9 @@ var render = function() {
                   ])
                 : _vm._e(),
               _vm._v(" "),
-              _c("b-form-group", [
-                _vm.formStep === 4
-                  ? _c(
+              _vm.formStep === 4
+                ? _c("b-form-group", { attrs: { id: "sourceGroup" } }, [
+                    _c(
                       "div",
                       { staticClass: "sourceBox" },
                       [
@@ -29581,8 +29612,8 @@ var render = function() {
                       ],
                       1
                     )
-                  : _vm._e()
-              ]),
+                  ])
+                : _vm._e(),
               _vm._v(" "),
               _vm.formStep === 5
                 ? _c("b-form-group", { attrs: { id: "genderGroup" } }, [
@@ -29601,15 +29632,13 @@ var render = function() {
                                   "b-btn",
                                   {
                                     staticClass: "buttonSelector",
+                                    class: { green: _vm.isAltered },
                                     on: { click: _vm.altered }
                                   },
                                   [
                                     _c("i", {
                                       staticClass: "fas fa-check-circle",
-                                      staticStyle: {
-                                        "font-size": "36px",
-                                        color: "limegreen"
-                                      }
+                                      staticStyle: { "font-size": "36px" }
                                     })
                                   ]
                                 )
@@ -29624,15 +29653,13 @@ var render = function() {
                                   "b-btn",
                                   {
                                     staticClass: "buttonSelector",
+                                    class: { red: _vm.isUnaltered },
                                     on: { click: _vm.unaltered }
                                   },
                                   [
                                     _c("i", {
                                       staticClass: "fas fa-exclamation-circle",
-                                      staticStyle: {
-                                        "font-size": "36px",
-                                        color: "red"
-                                      }
+                                      staticStyle: { "font-size": "36px" }
                                     })
                                   ]
                                 )
