@@ -6,7 +6,7 @@ import Notifications from 'vue-notification'
 import Auth from './auth.js';
 import VueCookie from 'vue-cookie';
 
-import 'bootstrap/dist/css/bootstrap.css' 
+import 'bootstrap/dist/css/bootstrap.css'
 
 import store from './store'
 
