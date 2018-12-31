@@ -5,6 +5,7 @@
                 <b-form-group id="nameGroup" v-if="formStep===1">
                     <h5>Please use the navigation buttons!</h5>
                     <b-form-input id="animalName"
+                    onkeypress="return event.keyCode != 13;"
                     class="input-box"
                     type="text"
                     v-model="form.name"
@@ -77,7 +78,7 @@
 
                 <b-form-group id="genderGroup" v-if="formStep===5">
                     <div class="genderBox">
-                        <h5>Is {{ form.name }} fixed?</h5>
+                        <h5>Is {{ form.name }} {{ fixed }}?</h5>
                         <table>
                             <tbody>
                                 <tr>
@@ -93,8 +94,8 @@
                                     <td>{{ form.name }}</td>
                                 </tr>
                                 <tr>
-                                    <td>is altered.</td>
-                                    <td>is not unaltered.</td>
+                                    <td>is {{ fixed }}.</td>
+                                    <td>is not {{ fixed }}.</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -102,7 +103,7 @@
                 </b-form-group>
                 
                 <b-form-group id="nameGroup" v-if="formStep===6">
-                    <h5>If {{  form.name }} is not chipped, just click right arrow.</h5>
+                    <h5>If {{  form.name }} is chipped, enter {{ pronoun }} chip number:.</h5>
                     <b-form-input id="microchip"
                     class="input-box"
                     type="text"
@@ -110,12 +111,50 @@
                     placeholder="Microchip number"/>                 
                 </b-form-group>
 
+                <b-form-group id="birthdateGroup" v-if="formStep===7">
+                    <b-col>
+                        <b-form-input id="birthdate"
+                                    
+                                    type="date"
+                                    v-model="form.birthdate">
+                        </b-form-input>
+                        <v-date-picker></v-date-picker>
+                    </b-col>
+                </b-form-group>
+
+                <b-form-group v-if="formStep===10">
+                    <b-row>
+                        <b-col sm="12" md="4" md-offset="5" v-if="!images.length">
+                            <label for="profilePhoto">Select a file</label>
+                            <button @click="upload">Upload</button>
+                            <input type="file"
+                                    id="profilePhoto"
+                                    class="fas fa-cloud-upload-alt"
+                                    :name="form.profilePhoto" 
+                                    @change="onInputChange" 
+                                    enctype="multipart/form-data">
+                            <img id="image" ref="image" :src="image">
+                        </b-col>
+                        <b-col sm="12" md="4" offset="5">
+                            <div class="images-preview">
+                                <div  v-for="(image, index) in images" :key="index">
+                                    <img :src="image" alt="uploaded image">
+                                    <div class="details">
+                                        <span class="name" v-text="files[index].name"></span>
+                                        <span class="size" v-text="getFileSize(files[index].size)"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </b-col>
+                    </b-row>
+                </b-form-group>
+
                 <b-form-group class="navBox">
-                    <b-btn class="navButton" @click="previousFormStep"><i class="fas fa-arrow-left" style="font-size: 44px;"></i></b-btn>
+                    <b-btn class="navButton" @click="previousFormStep" v-if="formStep>1"><i class="fas fa-arrow-left" style="font-size: 44px;"></i></b-btn>
                     <b-btn class="navButton" @click="nextFormStep"><i class="fas fa-arrow-right" style="font-size: 44px;"></i></b-btn>
                 </b-form-group>
 
-                <b-form-group class="submitBox" v-if="formStep>5">
+                <b-form-group class="submitBox" v-if="formStep>7">
                     <b-button class="my-3" variant="dark" :disabled="$v.form.$invalid" @click="createAnimal">Welcome to Alive, {{ form.name }}</b-button>
                 </b-form-group>
 
@@ -193,8 +232,28 @@
             selectedSpecies() {
                 return this.form.species;
             },
+            pronoun() {
+                if (this.form.gender === "male") {
+                    return "his";
+                } else {
+                    return "her";
+                }
+            },
+            fixed() {
+                if (this.form.gender === "male") {
+                    return "neutered"
+                } else {
+                    return "spayed"
+                }
+            },
         },
         methods: {
+            noenter(e) {
+                e = e || window.event;
+                var key = e.keyCode || e.charCode;
+                //alert('e.type: ' + e.type + '; key: ' + key);
+                return key !== 13; 
+            },
             onSubmit(e) {
                 e.preventDefault();
             },
@@ -237,112 +296,161 @@
             },
             selectDog() {
                 this.form.species = "dog";
-                this.isDog = !this.isDog;
+                this.isDog = true;
+                
                 if (this.isCat) {
-                    this.isCat = !this.isCat;
+                    this.isCat = false;
                 }
-                console.log("this is active");
+                
                 let self = this;
                 setTimeout(function() {
                     self.formStep += 1;
-                }, 1300);
+                }, 700);
             },
             selectCat() {
                 this.form.species = "cat";
-                this.isCat = !this.isCat;
+                this.isCat = true;
+
                 if (this.isDog) {
-                    this.isDog = !this.isDog;
+                    this.isDog = false;
                 } 
                 let self = this;
                 setTimeout(function() {
                     self.formStep += 1;
-                }, 1300);
+                }, 700);
                 // add to "profile" as user builds
             },
             selectMale() {
                 this.form.gender = "male";
-                this.isMale = !this.isMale;
+                this.isMale = true;
+
                 if (this.isFemale) {
-                    this.isFemale = !this.isFemale;
+                    this.isFemale = false;
                 } 
                 let self = this;
                 setTimeout(function() {
                     self.formStep += 1;
-                }, 1300);
+                }, 700);
                 // add to "profile" as user builds
             },
             selectFemale() {
                 this.form.gender = "female";
-                this.isFemale = !this.isFemale;
+                this.isFemale = true;
+
                 if (this.isMale) {
-                    this.isMale = !this.isMale;
+                    this.isMale = false;
                 } 
                 let self = this;
                 setTimeout(function() {
                     self.formStep += 1;
-                }, 1300);
+                }, 700);
                 // add to "profile" as user builds
             },
             selectCacc() {
                 this.form.source = "cacc";
-                this.isCacc = !this.isCacc;
-                if (this.isCacc) {
-                    this.isCass = !this.isCacc
+                this.isCacc = true;
+
+                if (this.isCrisp) {
+                    this.isCrisp = false;
                 }
+                if (this.isStray) {
+                    this.isStray = false;
+                }
+                if (this.isAlive) {
+                    this.isAlive = false;
+                }
+                
+                
                 let self = this;
                 setTimeout(function() {
                     self.formStep += 1;
-                }, 1300);
+                }, 700);
                 // add to "profile" as user builds
             },
             selectCrisp() {
                 this.form.source = "crisp";
-                this.isCrisp = !this.isCrisp;
+                this.isCrisp = true;
+
+                if (this.isStray) {
+                    this.isStray = false;
+                }
+                if (this.isCacc) {
+                    this.isCacc = false;
+                }
+                if (this.isAlive) {
+                    this.isAlive = false;
+                }
+
                 let self = this;
                 setTimeout(function() {
                     self.formStep += 1;
-                }, 1300);
+                }, 700);
                 // add to "profile" as user builds
             },
             selectStray() {
                 this.form.source = "stray";
-                this.isStray = !this.isStray;
+                this.isStray = true;
+
+                if (this.isCrisp) {
+                    this.isCrisp = false;
+                }
+                if (this.isCacc) {
+                    this.isCacc = false;
+                }
+                if (this.isAlive) {
+                    this.isAlive = false;
+                }
+
                 let self = this;
                 setTimeout(function() {
                     self.formStep += 1;
-                }, 1300);
+                }, 700);
                 // add to "profile" as user builds
             },
             selectAlive() {
                 this.form.source = "alive";
-                this.isAlive = !this.isAlive;
+                this.isAlive = true;
+
+                if (this.isCrsip) {
+                    this.isCrisp = false;
+                }
+                if (this.isCacc) {
+                    this.isCacc = false;
+                }
+                if (this.isStray) {
+                    this.isStray = false;
+                }
+
                 let self = this;
                 setTimeout(function() {
                     self.formStep += 1;
-                }, 1300);
+                }, 700);
                 // add to "profile" as user builds
             },
             altered() {
                 this.form.fixed = true;
-                this.isAltered = !this.isAltered;
+                this.isAltered = true;
+
                 if (this.isUnaltered) { 
-                    this.isUnaltered = !this.isUnaltered;
+                    this.isUnaltered = false;
                 }
+
                 let self = this;
                 setTimeout(function() {
                     self.formStep += 1;
-                }, 1300);
+                }, 700);
                 // add to "profile" as user builds
             },
             unaltered() {
-                this.isUnaltered = !this.isUnaltered;
+                this.isUnaltered = true;
+
                 if (this.isAltered) {
-                    this.isAltered = !this.isAltered;
+                    this.isAltered = false;
                 }
                 let self = this;
                 setTimeout(function() {
                     self.formStep += 1;
-                }, 1300);
+                }, 700);
                 // add to "profile" as user builds
             },
             nextFormStep() {
@@ -380,6 +488,12 @@
             },
 
             onInputChange(e) {
+                e.preventDefault();
+
+                if (window.event.keyCode == 13 ) {
+                    return false;
+                }
+
                 this.form.profilePhoto = e.target.files[0];
 
                 const files = e.target.files;
@@ -438,7 +552,126 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+
+
+        .uploader {
+        width: 100%;
+        background: #2196F3;
+        color: #fff;
+        padding: 40px 15px;
+        text-align: center;
+        border-radius: 10px;
+        border: 3px dashed #fff;
+        font-size: 20px;
+        position: relative;
+
+        &.dragging {
+            background: #fff;
+            color: #2196F3;
+            border: 3px dashed #2196F3;
+
+            .file-input label {
+                background: #2196F3;
+                color: #fff;
+            }
+        }
+
+        i {
+            font-size: 85px;
+        }
+
+        .file-input {
+            width: 200px;
+            margin: auto;
+            height: 68px;
+            position: relative;
+
+            label,
+            input {
+                background: #fff;
+                color: #2196F3;
+                width: 100%;
+                position: absolute;
+                left: 0;
+                top: 0;
+                padding: 10px;
+                border-radius: 4px;
+                margin-top: 7px;
+                cursor: pointer;
+            }
+
+            input {
+                opacity: 0;
+                z-index: -2;
+            }
+        }
+
+        .images-preview {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 20px;
+
+            .img-wrapper {
+                width: 160px;
+                display: flex;
+                flex-direction: column;
+                margin: 10px;
+                height: 150px;
+                justify-content: space-between;
+                background: #fff;
+                box-shadow: 5px 5px 20px #3e3737;
+
+                img {
+                    max-height: 105px;
+                }
+            }
+
+            .details {
+                font-size: 12px;
+                background: #fff;
+                color: #000;
+                display: flex;
+                flex-direction: column;
+                align-items: self-start;
+                padding: 3px 6px;
+
+                .name {
+                    overflow: hidden;
+                    height: 18px;
+                }
+            }
+        }
+
+        .upload-control {
+            position: absolute;
+            width: 100%;
+            background: #fff;
+            top: 0;
+            left: 0;
+            border-top-left-radius: 7px;
+            border-top-right-radius: 7px;
+            padding: 10px;
+            padding-bottom: 4px;
+            text-align: right;
+
+            button, label {
+                background: #2196F3;
+                border: 2px solid #03A9F4;
+                border-radius: 3px;
+                color: #fff;
+                font-size: 15px;
+                cursor: pointer;
+            }
+
+            label {
+                padding: 2px 5px;
+                margin-right: 10px;
+            }
+        }
+    }
+
+
 
     .buttonSelector {
         width: 100px;
@@ -461,16 +694,10 @@
         height: 1000px;
         padding: 20px;
     }
-    .imageInput {
-        margin: 10px;
-        margin-left: 0px;
-        height: 4rem;
-        background-color: white;
-        text-align: center;
-    }
+    
     .input-box {
-        margin: 10px;
-        margin-left: 0px;
+
+        width: 100%;
     }
     .selectedButton {
         background-color: white;
@@ -489,6 +716,7 @@
     }
     .navBox {
         text-align: center;
+        padding-bottom: 25px;
     }
     .submitBox {
         text-align: center;
@@ -498,6 +726,9 @@
     }
     .red {
         color: red;
+    }
+    .grey {
+        color: slategrey;
     }
 
     table {

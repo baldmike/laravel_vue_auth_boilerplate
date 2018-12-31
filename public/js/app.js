@@ -28131,13 +28131,13 @@ var content = __webpack_require__(125);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(16)("8df7fd72", content, false, {});
+var update = __webpack_require__(16)("2f9323fe", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-07337dea\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CreateAnimalComponent.vue", function() {
-     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-07337dea\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CreateAnimalComponent.vue");
+   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-07337dea\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/sass-loader/lib/loader.js!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CreateAnimalComponent.vue", function() {
+     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-07337dea\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/sass-loader/lib/loader.js!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CreateAnimalComponent.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -28155,7 +28155,7 @@ exports = module.exports = __webpack_require__(8)(false);
 
 
 // module
-exports.push([module.i, "\n.buttonSelector[data-v-07337dea] {\n    width: 100px;\n    height: 100px;\n    border-radius: 25px;\n    margin: 30px;\n    margin-bottom: 5px;\n    margin-top: 10px;\n}\n.navButton[data-v-07337dea] {\n    width: 100px;\n    height: 60px;\n    border-radius: 25px;\n    margin: 30px;\n    margin-bottom: 5px;\n    background-color: lightgray;\n}\n.body[data-v-07337dea] {\n    background-color: #2196F3;\n    height: 1000px;\n    padding: 20px;\n}\n.imageInput[data-v-07337dea] {\n    margin: 10px;\n    margin-left: 0px;\n    height: 4rem;\n    background-color: white;\n    text-align: center;\n}\n.input-box[data-v-07337dea] {\n    margin: 10px;\n    margin-left: 0px;\n}\n.selectedButton[data-v-07337dea] {\n    background-color: white;\n}\n.create-animal-box[data-v-07337dea] {\n    text-align: center;\n}\n.speciesBox[data-v-07337dea] {\n    text-align: center;\n}\n.genderBox[data-v-07337dea] {\n    text-align: center;\n}\n.sourceBox[data-v-07337dea] {\n    text-align: center;\n}\n.navBox[data-v-07337dea] {\n    text-align: center;\n}\n.submitBox[data-v-07337dea] {\n    text-align: center;\n}\n.green[data-v-07337dea] {\n    color: limegreen;\n}\n.red[data-v-07337dea] {\n    color: red;\n}\ntable[data-v-07337dea] {\n    margin-left: auto;\n    margin-right: auto;\n}\n", ""]);
+exports.push([module.i, "\n.uploader[data-v-07337dea] {\n  width: 100%;\n  background: #2196F3;\n  color: #fff;\n  padding: 40px 15px;\n  text-align: center;\n  border-radius: 10px;\n  border: 3px dashed #fff;\n  font-size: 20px;\n  position: relative;\n}\n.uploader.dragging[data-v-07337dea] {\n    background: #fff;\n    color: #2196F3;\n    border: 3px dashed #2196F3;\n}\n.uploader.dragging .file-input label[data-v-07337dea] {\n      background: #2196F3;\n      color: #fff;\n}\n.uploader i[data-v-07337dea] {\n    font-size: 85px;\n}\n.uploader .file-input[data-v-07337dea] {\n    width: 200px;\n    margin: auto;\n    height: 68px;\n    position: relative;\n}\n.uploader .file-input label[data-v-07337dea],\n    .uploader .file-input input[data-v-07337dea] {\n      background: #fff;\n      color: #2196F3;\n      width: 100%;\n      position: absolute;\n      left: 0;\n      top: 0;\n      padding: 10px;\n      border-radius: 4px;\n      margin-top: 7px;\n      cursor: pointer;\n}\n.uploader .file-input input[data-v-07337dea] {\n      opacity: 0;\n      z-index: -2;\n}\n.uploader .images-preview[data-v-07337dea] {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-wrap: wrap;\n        flex-wrap: wrap;\n    margin-top: 20px;\n}\n.uploader .images-preview .img-wrapper[data-v-07337dea] {\n      width: 160px;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: vertical;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: column;\n              flex-direction: column;\n      margin: 10px;\n      height: 150px;\n      -webkit-box-pack: justify;\n          -ms-flex-pack: justify;\n              justify-content: space-between;\n      background: #fff;\n      -webkit-box-shadow: 5px 5px 20px #3e3737;\n              box-shadow: 5px 5px 20px #3e3737;\n}\n.uploader .images-preview .img-wrapper img[data-v-07337dea] {\n        max-height: 105px;\n}\n.uploader .images-preview .details[data-v-07337dea] {\n      font-size: 12px;\n      background: #fff;\n      color: #000;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: vertical;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: column;\n              flex-direction: column;\n      -webkit-box-align: self-start;\n          -ms-flex-align: self-start;\n              align-items: self-start;\n      padding: 3px 6px;\n}\n.uploader .images-preview .details .name[data-v-07337dea] {\n        overflow: hidden;\n        height: 18px;\n}\n.uploader .upload-control[data-v-07337dea] {\n    position: absolute;\n    width: 100%;\n    background: #fff;\n    top: 0;\n    left: 0;\n    border-top-left-radius: 7px;\n    border-top-right-radius: 7px;\n    padding: 10px;\n    padding-bottom: 4px;\n    text-align: right;\n}\n.uploader .upload-control button[data-v-07337dea], .uploader .upload-control label[data-v-07337dea] {\n      background: #2196F3;\n      border: 2px solid #03A9F4;\n      border-radius: 3px;\n      color: #fff;\n      font-size: 15px;\n      cursor: pointer;\n}\n.uploader .upload-control label[data-v-07337dea] {\n      padding: 2px 5px;\n      margin-right: 10px;\n}\n.buttonSelector[data-v-07337dea] {\n  width: 100px;\n  height: 100px;\n  border-radius: 25px;\n  margin: 30px;\n  margin-bottom: 5px;\n  margin-top: 10px;\n}\n.navButton[data-v-07337dea] {\n  width: 100px;\n  height: 60px;\n  border-radius: 25px;\n  margin: 30px;\n  margin-bottom: 5px;\n  background-color: lightgray;\n}\n.body[data-v-07337dea] {\n  background-color: #2196F3;\n  height: 1000px;\n  padding: 20px;\n}\n.input-box[data-v-07337dea] {\n  width: 100%;\n}\n.selectedButton[data-v-07337dea] {\n  background-color: white;\n}\n.create-animal-box[data-v-07337dea] {\n  text-align: center;\n}\n.speciesBox[data-v-07337dea] {\n  text-align: center;\n}\n.genderBox[data-v-07337dea] {\n  text-align: center;\n}\n.sourceBox[data-v-07337dea] {\n  text-align: center;\n}\n.navBox[data-v-07337dea] {\n  text-align: center;\n  padding-bottom: 25px;\n}\n.submitBox[data-v-07337dea] {\n  text-align: center;\n}\n.green[data-v-07337dea] {\n  color: limegreen;\n}\n.red[data-v-07337dea] {\n  color: red;\n}\n.grey[data-v-07337dea] {\n  color: slategrey;\n}\ntable[data-v-07337dea] {\n  margin-left: auto;\n  margin-right: auto;\n}\n", ""]);
 
 // exports
 
@@ -28170,6 +28170,45 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuelidate___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vuelidate__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -28360,9 +28399,29 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     computed: {
         selectedSpecies: function selectedSpecies() {
             return this.form.species;
+        },
+        pronoun: function pronoun() {
+            if (this.form.gender === "male") {
+                return "his";
+            } else {
+                return "her";
+            }
+        },
+        fixed: function fixed() {
+            if (this.form.gender === "male") {
+                return "neutered";
+            } else {
+                return "spayed";
+            }
         }
     },
     methods: {
+        noenter: function noenter(e) {
+            e = e || window.event;
+            var key = e.keyCode || e.charCode;
+            //alert('e.type: ' + e.type + '; key: ' + key);
+            return key !== 13;
+        },
         onSubmit: function onSubmit(e) {
             e.preventDefault();
         },
@@ -28408,112 +28467,160 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         selectDog: function selectDog() {
             this.form.species = "dog";
-            this.isDog = !this.isDog;
+            this.isDog = true;
+
             if (this.isCat) {
-                this.isCat = !this.isCat;
+                this.isCat = false;
             }
-            console.log("this is active");
+
             var self = this;
             setTimeout(function () {
                 self.formStep += 1;
-            }, 1300);
+            }, 700);
         },
         selectCat: function selectCat() {
             this.form.species = "cat";
-            this.isCat = !this.isCat;
+            this.isCat = true;
+
             if (this.isDog) {
-                this.isDog = !this.isDog;
+                this.isDog = false;
             }
             var self = this;
             setTimeout(function () {
                 self.formStep += 1;
-            }, 1300);
+            }, 700);
             // add to "profile" as user builds
         },
         selectMale: function selectMale() {
             this.form.gender = "male";
-            this.isMale = !this.isMale;
+            this.isMale = true;
+
             if (this.isFemale) {
-                this.isFemale = !this.isFemale;
+                this.isFemale = false;
             }
             var self = this;
             setTimeout(function () {
                 self.formStep += 1;
-            }, 1300);
+            }, 700);
             // add to "profile" as user builds
         },
         selectFemale: function selectFemale() {
             this.form.gender = "female";
-            this.isFemale = !this.isFemale;
+            this.isFemale = true;
+
             if (this.isMale) {
-                this.isMale = !this.isMale;
+                this.isMale = false;
             }
             var self = this;
             setTimeout(function () {
                 self.formStep += 1;
-            }, 1300);
+            }, 700);
             // add to "profile" as user builds
         },
         selectCacc: function selectCacc() {
             this.form.source = "cacc";
-            this.isCacc = !this.isCacc;
-            if (this.isCacc) {
-                this.isCass = !this.isCacc;
+            this.isCacc = true;
+
+            if (this.isCrisp) {
+                this.isCrisp = false;
             }
+            if (this.isStray) {
+                this.isStray = false;
+            }
+            if (this.isAlive) {
+                this.isAlive = false;
+            }
+
             var self = this;
             setTimeout(function () {
                 self.formStep += 1;
-            }, 1300);
+            }, 700);
             // add to "profile" as user builds
         },
         selectCrisp: function selectCrisp() {
             this.form.source = "crisp";
-            this.isCrisp = !this.isCrisp;
+            this.isCrisp = true;
+
+            if (this.isStray) {
+                this.isStray = false;
+            }
+            if (this.isCacc) {
+                this.isCacc = false;
+            }
+            if (this.isAlive) {
+                this.isAlive = false;
+            }
+
             var self = this;
             setTimeout(function () {
                 self.formStep += 1;
-            }, 1300);
+            }, 700);
             // add to "profile" as user builds
         },
         selectStray: function selectStray() {
             this.form.source = "stray";
-            this.isStray = !this.isStray;
+            this.isStray = true;
+
+            if (this.isCrisp) {
+                this.isCrisp = false;
+            }
+            if (this.isCacc) {
+                this.isCacc = false;
+            }
+            if (this.isAlive) {
+                this.isAlive = false;
+            }
+
             var self = this;
             setTimeout(function () {
                 self.formStep += 1;
-            }, 1300);
+            }, 700);
             // add to "profile" as user builds
         },
         selectAlive: function selectAlive() {
             this.form.source = "alive";
-            this.isAlive = !this.isAlive;
+            this.isAlive = true;
+
+            if (this.isCrsip) {
+                this.isCrisp = false;
+            }
+            if (this.isCacc) {
+                this.isCacc = false;
+            }
+            if (this.isStray) {
+                this.isStray = false;
+            }
+
             var self = this;
             setTimeout(function () {
                 self.formStep += 1;
-            }, 1300);
+            }, 700);
             // add to "profile" as user builds
         },
         altered: function altered() {
             this.form.fixed = true;
-            this.isAltered = !this.isAltered;
+            this.isAltered = true;
+
             if (this.isUnaltered) {
-                this.isUnaltered = !this.isUnaltered;
+                this.isUnaltered = false;
             }
+
             var self = this;
             setTimeout(function () {
                 self.formStep += 1;
-            }, 1300);
+            }, 700);
             // add to "profile" as user builds
         },
         unaltered: function unaltered() {
-            this.isUnaltered = !this.isUnaltered;
+            this.isUnaltered = true;
+
             if (this.isAltered) {
-                this.isAltered = !this.isAltered;
+                this.isAltered = false;
             }
             var self = this;
             setTimeout(function () {
                 self.formStep += 1;
-            }, 1300);
+            }, 700);
             // add to "profile" as user builds
         },
         nextFormStep: function nextFormStep() {
@@ -28555,6 +28662,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         onInputChange: function onInputChange(e) {
             var _this3 = this;
+
+            e.preventDefault();
+
+            if (window.event.keyCode == 13) {
+                return false;
+            }
 
             this.form.profilePhoto = e.target.files[0];
 
@@ -29384,6 +29497,7 @@ var render = function() {
                         staticClass: "input-box",
                         attrs: {
                           id: "animalName",
+                          onkeypress: "return event.keyCode != 13;",
                           type: "text",
                           required: "",
                           state: !_vm.$v.form.name.$invalid,
@@ -29619,7 +29733,13 @@ var render = function() {
                 ? _c("b-form-group", { attrs: { id: "genderGroup" } }, [
                     _c("div", { staticClass: "genderBox" }, [
                       _c("h5", [
-                        _vm._v("Is " + _vm._s(_vm.form.name) + " fixed?")
+                        _vm._v(
+                          "Is " +
+                            _vm._s(_vm.form.name) +
+                            " " +
+                            _vm._s(_vm.fixed) +
+                            "?"
+                        )
                       ]),
                       _vm._v(" "),
                       _c("table", [
@@ -29675,9 +29795,11 @@ var render = function() {
                           ]),
                           _vm._v(" "),
                           _c("tr", [
-                            _c("td", [_vm._v("is altered.")]),
+                            _c("td", [_vm._v("is " + _vm._s(_vm.fixed) + ".")]),
                             _vm._v(" "),
-                            _c("td", [_vm._v("is not unaltered.")])
+                            _c("td", [
+                              _vm._v("is not " + _vm._s(_vm.fixed) + ".")
+                            ])
                           ])
                         ])
                       ])
@@ -29694,7 +29816,9 @@ var render = function() {
                         _vm._v(
                           "If " +
                             _vm._s(_vm.form.name) +
-                            " is not chipped, just click right arrow."
+                            " is chipped, enter " +
+                            _vm._s(_vm.pronoun) +
+                            " chip number:."
                         )
                       ]),
                       _vm._v(" "),
@@ -29718,23 +29842,146 @@ var render = function() {
                   )
                 : _vm._e(),
               _vm._v(" "),
+              _vm.formStep === 7
+                ? _c(
+                    "b-form-group",
+                    { attrs: { id: "birthdateGroup" } },
+                    [
+                      _c(
+                        "b-col",
+                        [
+                          _c("b-form-input", {
+                            attrs: { id: "birthdate", type: "date" },
+                            model: {
+                              value: _vm.form.birthdate,
+                              callback: function($$v) {
+                                _vm.$set(_vm.form, "birthdate", $$v)
+                              },
+                              expression: "form.birthdate"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("v-date-picker")
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.formStep === 10
+                ? _c(
+                    "b-form-group",
+                    [
+                      _c(
+                        "b-row",
+                        [
+                          !_vm.images.length
+                            ? _c(
+                                "b-col",
+                                {
+                                  attrs: { sm: "12", md: "4", "md-offset": "5" }
+                                },
+                                [
+                                  _c(
+                                    "label",
+                                    { attrs: { for: "profilePhoto" } },
+                                    [_vm._v("Select a file")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("button", { on: { click: _vm.upload } }, [
+                                    _vm._v("Upload")
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("input", {
+                                    staticClass: "fas fa-cloud-upload-alt",
+                                    attrs: {
+                                      type: "file",
+                                      id: "profilePhoto",
+                                      name: _vm.form.profilePhoto,
+                                      enctype: "multipart/form-data"
+                                    },
+                                    on: { change: _vm.onInputChange }
+                                  }),
+                                  _vm._v(" "),
+                                  _c("img", {
+                                    ref: "image",
+                                    attrs: { id: "image", src: _vm.image }
+                                  })
+                                ]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _c(
+                            "b-col",
+                            { attrs: { sm: "12", md: "4", offset: "5" } },
+                            [
+                              _c(
+                                "div",
+                                { staticClass: "images-preview" },
+                                _vm._l(_vm.images, function(image, index) {
+                                  return _c("div", { key: index }, [
+                                    _c("img", {
+                                      attrs: {
+                                        src: image,
+                                        alt: "uploaded image"
+                                      }
+                                    }),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "details" }, [
+                                      _c("span", {
+                                        staticClass: "name",
+                                        domProps: {
+                                          textContent: _vm._s(
+                                            _vm.files[index].name
+                                          )
+                                        }
+                                      }),
+                                      _vm._v(" "),
+                                      _c("span", {
+                                        staticClass: "size",
+                                        domProps: {
+                                          textContent: _vm._s(
+                                            _vm.getFileSize(
+                                              _vm.files[index].size
+                                            )
+                                          )
+                                        }
+                                      })
+                                    ])
+                                  ])
+                                })
+                              )
+                            ]
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                : _vm._e(),
+              _vm._v(" "),
               _c(
                 "b-form-group",
                 { staticClass: "navBox" },
                 [
-                  _c(
-                    "b-btn",
-                    {
-                      staticClass: "navButton",
-                      on: { click: _vm.previousFormStep }
-                    },
-                    [
-                      _c("i", {
-                        staticClass: "fas fa-arrow-left",
-                        staticStyle: { "font-size": "44px" }
-                      })
-                    ]
-                  ),
+                  _vm.formStep > 1
+                    ? _c(
+                        "b-btn",
+                        {
+                          staticClass: "navButton",
+                          on: { click: _vm.previousFormStep }
+                        },
+                        [
+                          _c("i", {
+                            staticClass: "fas fa-arrow-left",
+                            staticStyle: { "font-size": "44px" }
+                          })
+                        ]
+                      )
+                    : _vm._e(),
                   _vm._v(" "),
                   _c(
                     "b-btn",
@@ -29753,7 +30000,7 @@ var render = function() {
                 1
               ),
               _vm._v(" "),
-              _vm.formStep > 5
+              _vm.formStep > 7
                 ? _c(
                     "b-form-group",
                     { staticClass: "submitBox" },
