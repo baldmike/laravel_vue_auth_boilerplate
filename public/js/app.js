@@ -28131,13 +28131,13 @@ var content = __webpack_require__(125);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(16)("8df7fd72", content, false, {});
+var update = __webpack_require__(16)("2f9323fe", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-07337dea\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CreateAnimalComponent.vue", function() {
-     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-07337dea\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CreateAnimalComponent.vue");
+   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-07337dea\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/sass-loader/lib/loader.js!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CreateAnimalComponent.vue", function() {
+     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-07337dea\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/sass-loader/lib/loader.js!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CreateAnimalComponent.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -28155,7 +28155,7 @@ exports = module.exports = __webpack_require__(8)(false);
 
 
 // module
-exports.push([module.i, "\n.buttonSelector[data-v-07337dea] {\n    width: 100px;\n    height: 100px;\n    border-radius: 25px;\n    margin: 30px;\n    margin-bottom: 5px;\n    margin-top: 10px;\n}\n.navButton[data-v-07337dea] {\n    width: 100px;\n    height: 60px;\n    border-radius: 25px;\n    margin: 30px;\n    margin-bottom: 5px;\n    background-color: lightgray;\n}\n.body[data-v-07337dea] {\n    background-color: #2196F3;\n    height: 1000px;\n    padding: 20px;\n}\n.imageInput[data-v-07337dea] {\n    margin: 10px;\n    margin-left: 0px;\n    height: 4rem;\n    background-color: white;\n    text-align: center;\n}\n.input-box[data-v-07337dea] {\n    margin: 10px;\n    margin-left: 0px;\n}\n.selectedButton[data-v-07337dea] {\n    background-color: white;\n}\n.create-animal-box[data-v-07337dea] {\n    text-align: center;\n}\n.speciesBox[data-v-07337dea] {\n    text-align: center;\n}\n.genderBox[data-v-07337dea] {\n    text-align: center;\n}\n.navBox[data-v-07337dea] {\n    text-align: center;\n}\n.submitBox[data-v-07337dea] {\n    text-align: center;\n}\n.green[data-v-07337dea] {\n    color: limegreen;\n}\ntable[data-v-07337dea] {\n    margin-left: auto;\n    margin-right: auto;\n}\n", ""]);
+exports.push([module.i, "\n.uploader[data-v-07337dea] {\n  width: 100%;\n  background: #2196F3;\n  color: #fff;\n  padding: 40px 15px;\n  text-align: center;\n  border-radius: 10px;\n  border: 3px dashed #fff;\n  font-size: 20px;\n  position: relative;\n}\n.uploader.dragging[data-v-07337dea] {\n    background: #fff;\n    color: #2196F3;\n    border: 3px dashed #2196F3;\n}\n.uploader.dragging .file-input label[data-v-07337dea] {\n      background: #2196F3;\n      color: #fff;\n}\n.uploader i[data-v-07337dea] {\n    font-size: 85px;\n}\n.uploader .file-input[data-v-07337dea] {\n    width: 200px;\n    margin: auto;\n    height: 68px;\n    position: relative;\n}\n.uploader .file-input label[data-v-07337dea],\n    .uploader .file-input input[data-v-07337dea] {\n      background: #fff;\n      color: #2196F3;\n      width: 100%;\n      position: absolute;\n      left: 0;\n      top: 0;\n      padding: 10px;\n      border-radius: 4px;\n      margin-top: 7px;\n      cursor: pointer;\n}\n.uploader .file-input input[data-v-07337dea] {\n      opacity: 0;\n      z-index: -2;\n}\n.uploader .images-preview[data-v-07337dea] {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-wrap: wrap;\n        flex-wrap: wrap;\n    margin-top: 20px;\n    margin-left: auto;\n}\n.uploader .images-preview .img-wrapper[data-v-07337dea] {\n      width: 160px;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: vertical;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: column;\n              flex-direction: column;\n      margin: 10px;\n      height: 150px;\n      -webkit-box-pack: justify;\n          -ms-flex-pack: justify;\n              justify-content: space-between;\n      background: #fff;\n      -webkit-box-shadow: 5px 5px 20px #3e3737;\n              box-shadow: 5px 5px 20px #3e3737;\n}\n.uploader .images-preview .img-wrapper img[data-v-07337dea] {\n        max-height: 105px;\n}\n.uploader .images-preview .details[data-v-07337dea] {\n      font-size: 12px;\n      background: #fff;\n      color: #000;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: vertical;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: column;\n              flex-direction: column;\n      -webkit-box-align: self-start;\n          -ms-flex-align: self-start;\n              align-items: self-start;\n      padding: 3px 6px;\n}\n.uploader .images-preview .details .name[data-v-07337dea] {\n        overflow: hidden;\n        height: 18px;\n}\n.uploader .upload-control[data-v-07337dea] {\n    position: absolute;\n    width: 100%;\n    background: #fff;\n    top: 0;\n    left: 0;\n    border-top-left-radius: 7px;\n    border-top-right-radius: 7px;\n    padding: 10px;\n    padding-bottom: 4px;\n    text-align: right;\n}\n.uploader .upload-control button[data-v-07337dea], .uploader .upload-control label[data-v-07337dea] {\n      background: #2196F3;\n      border: 2px solid #03A9F4;\n      border-radius: 3px;\n      color: #fff;\n      font-size: 15px;\n      cursor: pointer;\n}\n.uploader .upload-control label[data-v-07337dea] {\n      padding: 2px 5px;\n      margin-right: 10px;\n}\n.button-selector[data-v-07337dea] {\n  width: 6rem;\n  height: 6rem;\n  border-radius: 25px;\n  margin: 1rem;\n  font-size: 3rem;\n}\n.button-digit[data-v-07337dea] {\n  width: 3rem;\n  height: 3rem;\n  border-radius: 25px;\n  margin-left: auto;\n  margin-right: auto;\n  font-size: 1rem;\n}\n.nav-button[data-v-07337dea] {\n  width: 6rem;\n  height: 3rem;\n  font-size: 1rem;\n  border-radius: 25px;\n  margin: 1rem;\n  background-color: lightgray;\n}\n.body[data-v-07337dea] {\n  height: 100vh;\n}\n.input-box[data-v-07337dea] {\n  width: 80%;\n  margin-left: auto;\n  margin-right: auto;\n}\n.create-animal-box[data-v-07337dea] {\n  background-color: #2196F3;\n  margin-top: 20px;\n  padding-top: 20px;\n  text-align: center;\n  border: 2px solid black;\n  -webkit-box-shadow: 5px 5px;\n          box-shadow: 5px 5px;\n  height: 90vh;\n}\n.speciesBox[data-v-07337dea] {\n  text-align: center;\n}\n.genderBox[data-v-07337dea] {\n  text-align: center;\n}\n.sourceBox[data-v-07337dea] {\n  text-align: center;\n}\n.nav-box[data-v-07337dea] {\n  text-align: center;\n  position: absolute;\n  width: 50%;\n  left: 25%;\n  bottom: 0;\n}\n.submitBox[data-v-07337dea] {\n  text-align: center;\n}\n.green[data-v-07337dea] {\n  color: limegreen;\n}\n.red[data-v-07337dea] {\n  color: red;\n}\n.grey[data-v-07337dea] {\n  color: slategrey;\n}\n.progress[data-v-07337dea] {\n  background-color: navy;\n  height: 10px;\n  -webkit-transition: width 500ms;\n  transition: width 500ms;\n  border-right: 2px solid black;\n}\n.form-box[data-v-07337dea] {\n  height: 300px;\n}\n.pic-box[data-v-07337dea] {\n  margin-left: auto;\n  margin-right: auto;\n  text-align: center;\n}\n.digit-row[data-v-07337dea] {\n  margin-left: auto;\n  margin-right: auto;\n  margin-top: 1rem;\n}\ntable[data-v-07337dea] {\n  margin-left: auto;\n  margin-right: auto;\n}\n@media only screen and (max-width: 900px) {\n.nav-box[data-v-07337dea] {\n    text-align: center;\n    color: red;\n    position: absolute;\n    bottom: 0;\n}\n.nav-button[data-v-07337dea] {\n    width: 4rem;\n    height: 3rem;\n    font-size: 1rem;\n    border-radius: 25px;\n    margin: .4rem;\n    background-color: lightgray;\n}\n}\n", ""]);
 
 // exports
 
@@ -28170,6 +28170,87 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuelidate___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vuelidate__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -28330,7 +28411,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             isCacc: false,
             isCrisp: false,
             isStray: false,
-            isAlive: false
+            isAlive: false,
+            isAltered: false,
+            isUnaltered: false
         };
     },
 
@@ -28338,7 +28421,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     validations: {
         form: {
             name: {
-                required: __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["required"]
+                required: __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["required"],
+                minLength: 1
             },
             species: {
                 required: __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["required"]
@@ -28354,9 +28438,32 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     computed: {
         selectedSpecies: function selectedSpecies() {
             return this.form.species;
+        },
+        pronoun: function pronoun() {
+            if (this.form.gender === "male") {
+                return "his";
+            } else {
+                return "her";
+            }
+        },
+        fixed: function fixed() {
+            if (this.form.gender === "male") {
+                return "neutered";
+            } else {
+                return "spayed";
+            }
+        },
+        progress: function progress() {
+            return this.formStep * 10;
         }
     },
     methods: {
+        noenter: function noenter(e) {
+            e = e || window.event;
+            var key = e.keyCode || e.charCode;
+            //alert('e.type: ' + e.type + '; key: ' + key);
+            return key !== 13;
+        },
         onSubmit: function onSubmit(e) {
             e.preventDefault();
         },
@@ -28402,89 +28509,190 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         selectDog: function selectDog() {
             this.form.species = "dog";
-            this.isDog = !this.isDog;
-            console.log("this is active");
+            this.isDog = true;
+
+            if (this.isCat) {
+                this.isCat = false;
+            }
+
             var self = this;
             setTimeout(function () {
                 self.formStep += 1;
-            }, 1000);
+            }, 500);
         },
         selectCat: function selectCat() {
             this.form.species = "cat";
-            this.isCat = !this.isCat;
+            this.isCat = true;
+
+            if (this.isDog) {
+                this.isDog = false;
+            }
             var self = this;
             setTimeout(function () {
                 self.formStep += 1;
-            }, 1000);
+            }, 500);
             // add to "profile" as user builds
         },
         selectMale: function selectMale() {
             this.form.gender = "male";
-            this.isMale = !this.isMale;
+            this.isMale = true;
+
+            if (this.isFemale) {
+                this.isFemale = false;
+            }
             var self = this;
             setTimeout(function () {
                 self.formStep += 1;
-            }, 1000);
+            }, 500);
             // add to "profile" as user builds
         },
         selectFemale: function selectFemale() {
             this.form.gender = "female";
-            this.isFemale = !this.isFemale;
+            this.isFemale = true;
+
+            if (this.isMale) {
+                this.isMale = false;
+            }
             var self = this;
             setTimeout(function () {
                 self.formStep += 1;
-            }, 1000);
+            }, 500);
             // add to "profile" as user builds
         },
         selectCacc: function selectCacc() {
             this.form.source = "cacc";
-            this.isCacc = !this.isCacc;
+            this.isCacc = true;
+
+            if (this.isCrisp) {
+                this.isCrisp = false;
+            }
+            if (this.isStray) {
+                this.isStray = false;
+            }
+            if (this.isAlive) {
+                this.isAlive = false;
+            }
+
             var self = this;
             setTimeout(function () {
                 self.formStep += 1;
-            }, 1000);
+            }, 500);
             // add to "profile" as user builds
         },
         selectCrisp: function selectCrisp() {
             this.form.source = "crisp";
-            this.isCrisp = !this.isCrisp;
+            this.isCrisp = true;
+
+            if (this.isStray) {
+                this.isStray = false;
+            }
+            if (this.isCacc) {
+                this.isCacc = false;
+            }
+            if (this.isAlive) {
+                this.isAlive = false;
+            }
+
             var self = this;
             setTimeout(function () {
                 self.formStep += 1;
-            }, 1000);
+            }, 500);
             // add to "profile" as user builds
         },
         selectStray: function selectStray() {
             this.form.source = "stray";
-            this.isStray = !this.isStray;
+            this.isStray = true;
+
+            if (this.isCrisp) {
+                this.isCrisp = false;
+            }
+            if (this.isCacc) {
+                this.isCacc = false;
+            }
+            if (this.isAlive) {
+                this.isAlive = false;
+            }
+
             var self = this;
             setTimeout(function () {
                 self.formStep += 1;
-            }, 1000);
+            }, 500);
             // add to "profile" as user builds
         },
         selectAlive: function selectAlive() {
             this.form.source = "alive";
-            this.isAlive = !this.isAlive;
+            this.isAlive = true;
+
+            if (this.isCrsip) {
+                this.isCrisp = false;
+            }
+            if (this.isCacc) {
+                this.isCacc = false;
+            }
+            if (this.isStray) {
+                this.isStray = false;
+            }
+
             var self = this;
             setTimeout(function () {
                 self.formStep += 1;
-            }, 1000);
+            }, 500);
             // add to "profile" as user builds
         },
+        select1: function select1() {
+            this.form.weight += '1';
+        },
+        select2: function select2() {
+            this.form.weight += '2';
+        },
+        select3: function select3() {
+            this.form.weight += '3';
+        },
+        select4: function select4() {
+            this.form.weight += '4';
+        },
+        select5: function select5() {
+            this.form.weight += '5';
+        },
+        select6: function select6() {
+            this.form.weight += '6';
+        },
+        select7: function select7() {
+            this.form.weight += '7';
+        },
+        select8: function select8() {
+            this.form.weight += '8';
+        },
+        select9: function select9() {
+            this.form.weight += '9';
+        },
+        select0: function select0() {
+            this.form.weight += '0';
+        },
         altered: function altered() {
-            this.form.fixed = true;
+            this.form.fixed = 1;
+            this.isAltered = true;
+
+            if (this.isUnaltered) {
+                this.isUnaltered = false;
+            }
+
             var self = this;
             setTimeout(function () {
                 self.formStep += 1;
-            }, 700);
+            }, 500);
             // add to "profile" as user builds
         },
         unaltered: function unaltered() {
+            this.isUnaltered = true;
+
+            if (this.isAltered) {
+                this.isAltered = false;
+            }
             var self = this;
             setTimeout(function () {
                 self.formStep += 1;
-            }, 700);
+            }, 500);
             // add to "profile" as user builds
         },
         nextFormStep: function nextFormStep() {
@@ -28526,6 +28734,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         onInputChange: function onInputChange(e) {
             var _this3 = this;
+
+            e.preventDefault();
+
+            if (window.event.keyCode == 13) {
+                return false;
+            }
 
             this.form.profilePhoto = e.target.files[0];
 
@@ -29339,7 +29553,10 @@ var render = function() {
     [
       _c(
         "b-col",
-        { staticClass: "create-animal-box", attrs: { cols: "6", offset: "3" } },
+        {
+          staticClass: "create-animal-box",
+          attrs: { sm: "12", md: "6", "offset-md": "3" }
+        },
         [
           _c(
             "b-form",
@@ -29347,14 +29564,17 @@ var render = function() {
               _vm.formStep === 1
                 ? _c(
                     "b-form-group",
-                    { attrs: { id: "nameGroup" } },
+                    { staticClass: "form-box", attrs: { id: "nameGroup" } },
                     [
-                      _c("h5", [_vm._v("Please use the navigation buttons!")]),
+                      _c("h5", { staticStyle: { "margin-bottom": "20px" } }, [
+                        _vm._v("Please enter the animal's name:")
+                      ]),
                       _vm._v(" "),
                       _c("b-form-input", {
                         staticClass: "input-box",
                         attrs: {
                           id: "animalName",
+                          onkeypress: "return event.keyCode != 13;",
                           type: "text",
                           required: "",
                           state: !_vm.$v.form.name.$invalid,
@@ -29374,300 +29594,309 @@ var render = function() {
                 : _vm._e(),
               _vm._v(" "),
               _vm.formStep === 2
-                ? _c("b-form-group", { attrs: { id: "speciesGroup" } }, [
-                    _c("div", { staticClass: "speciesBox" }, [
-                      _c("h5", [
-                        _vm._v("What is " + _vm._s(_vm.form.name) + "?")
-                      ]),
-                      _vm._v(" "),
-                      _c("table", [
-                        _c("tbody", [
-                          _c("tr", [
-                            _c(
-                              "td",
-                              [
-                                _c(
-                                  "b-btn",
-                                  {
-                                    staticClass: "buttonSelector",
-                                    class: { green: _vm.isDog },
-                                    attrs: { id: "dogChosen" },
-                                    on: { click: _vm.selectDog }
-                                  },
-                                  [
-                                    _c("i", {
-                                      staticClass: "fas fa-dog",
-                                      staticStyle: { "font-size": "44px" }
-                                    })
-                                  ]
-                                )
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "td",
-                              [
-                                _c(
-                                  "b-btn",
-                                  {
-                                    staticClass: "buttonSelector",
-                                    class: { green: _vm.isCat },
-                                    attrs: { id: "catChosen" },
-                                    on: { click: _vm.selectCat }
-                                  },
-                                  [
-                                    _c("i", {
-                                      staticClass: "fas fa-cat",
-                                      staticStyle: { "font-size": "44px" }
-                                    })
-                                  ]
-                                )
-                              ],
-                              1
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("tr", [
-                            _c("td", [
-                              _vm._v(_vm._s(_vm.form.name) + " is a Dog.")
+                ? _c(
+                    "b-form-group",
+                    { staticClass: "form-box", attrs: { id: "speciesGroup" } },
+                    [
+                      _c("div", { staticClass: "speciesBox" }, [
+                        _c("h5", [
+                          _vm._v("What is " + _vm._s(_vm.form.name) + "?")
+                        ]),
+                        _vm._v(" "),
+                        _c("table", [
+                          _c("tbody", [
+                            _c("tr", [
+                              _c(
+                                "td",
+                                [
+                                  _c(
+                                    "b-btn",
+                                    {
+                                      staticClass: "button-selector",
+                                      class: { green: _vm.isDog },
+                                      attrs: { id: "dogChosen" },
+                                      on: { click: _vm.selectDog }
+                                    },
+                                    [_c("i", { staticClass: "fas fa-dog" })]
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "td",
+                                [
+                                  _c(
+                                    "b-btn",
+                                    {
+                                      staticClass: "button-selector",
+                                      class: { green: _vm.isCat },
+                                      attrs: { id: "catChosen" },
+                                      on: { click: _vm.selectCat }
+                                    },
+                                    [_c("i", { staticClass: "fas fa-cat" })]
+                                  )
+                                ],
+                                1
+                              )
                             ]),
                             _vm._v(" "),
-                            _c("td", [
-                              _vm._v(_vm._s(_vm.form.name) + " is a Cat.")
+                            _c("tr", [
+                              _c("td", [_vm._v(_vm._s(_vm.form.name))]),
+                              _vm._v(" "),
+                              _c("td", [_vm._v(_vm._s(_vm.form.name))])
+                            ]),
+                            _vm._v(" "),
+                            _c("tr", [
+                              _c("td", [_vm._v("is a Dog.")]),
+                              _vm._v(" "),
+                              _c("td", [_vm._v("is a Cat.")])
                             ])
                           ])
                         ])
                       ])
-                    ])
-                  ])
+                    ]
+                  )
                 : _vm._e(),
               _vm._v(" "),
               _vm.formStep === 3
-                ? _c("b-form-group", { attrs: { id: "genderGroup" } }, [
-                    _c("div", { staticClass: "genderBox" }, [
-                      _c("h5", [
-                        _vm._v(
-                          "Is " +
-                            _vm._s(_vm.form.name) +
-                            " a boy " +
-                            _vm._s(_vm.form.species) +
-                            " or a girl " +
-                            _vm._s(_vm.form.species) +
-                            "?"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("table", [
-                        _c("tbody", [
-                          _c("tr", [
-                            _c(
-                              "td",
-                              [
-                                _c(
-                                  "b-btn",
-                                  {
-                                    staticClass: "buttonSelector",
-                                    class: { green: _vm.isMale },
-                                    on: { click: _vm.selectMale }
-                                  },
-                                  [
-                                    _c("i", {
-                                      staticClass: "fas fa-male",
-                                      staticStyle: { "font-size": "44px" }
-                                    })
-                                  ]
-                                )
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "td",
-                              [
-                                _c(
-                                  "b-btn",
-                                  {
-                                    staticClass: "buttonSelector",
-                                    class: { green: _vm.isFemale },
-                                    on: { click: _vm.selectFemale }
-                                  },
-                                  [
-                                    _c("i", {
-                                      staticClass: "fas fa-female",
-                                      staticStyle: { "font-size": "44px" }
-                                    })
-                                  ]
-                                )
-                              ],
-                              1
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("tr", [
-                            _c("td", [_vm._v(_vm._s(_vm.form.name))]),
-                            _vm._v(" "),
-                            _c("td", [_vm._v(_vm._s(_vm.form.name))])
-                          ]),
-                          _vm._v(" "),
-                          _c("tr", [
-                            _c("td", [
-                              _vm._v("is a boy " + _vm._s(_vm.form.species))
+                ? _c(
+                    "b-form-group",
+                    { staticClass: "form-box", attrs: { id: "genderGroup" } },
+                    [
+                      _c("div", { staticClass: "genderBox" }, [
+                        _c("h5", [
+                          _vm._v(
+                            "Is " +
+                              _vm._s(_vm.form.name) +
+                              " a boy " +
+                              _vm._s(_vm.form.species) +
+                              " or a girl " +
+                              _vm._s(_vm.form.species) +
+                              "?"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("table", [
+                          _c("tbody", [
+                            _c("tr", [
+                              _c(
+                                "td",
+                                [
+                                  _c(
+                                    "b-btn",
+                                    {
+                                      staticClass: "button-selector",
+                                      class: { green: _vm.isMale },
+                                      on: { click: _vm.selectMale }
+                                    },
+                                    [_c("i", { staticClass: "fas fa-male" })]
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "td",
+                                [
+                                  _c(
+                                    "b-btn",
+                                    {
+                                      staticClass: "button-selector",
+                                      class: { green: _vm.isFemale },
+                                      on: { click: _vm.selectFemale }
+                                    },
+                                    [_c("i", { staticClass: "fas fa-female" })]
+                                  )
+                                ],
+                                1
+                              )
                             ]),
                             _vm._v(" "),
-                            _c("td", [
-                              _vm._v("is a girl " + _vm._s(_vm.form.species))
+                            _c("tr", [
+                              _c("td", [_vm._v(_vm._s(_vm.form.name))]),
+                              _vm._v(" "),
+                              _c("td", [_vm._v(_vm._s(_vm.form.name))])
+                            ]),
+                            _vm._v(" "),
+                            _c("tr", [
+                              _c("td", [
+                                _vm._v("is a boy " + _vm._s(_vm.form.species))
+                              ]),
+                              _vm._v(" "),
+                              _c("td", [
+                                _vm._v("is a girl " + _vm._s(_vm.form.species))
+                              ])
                             ])
                           ])
                         ])
                       ])
-                    ])
-                  ])
+                    ]
+                  )
                 : _vm._e(),
               _vm._v(" "),
-              _c("b-form-group", [
-                _vm.formStep === 4
-                  ? _c(
-                      "div",
-                      { staticClass: "sourceBox" },
-                      [
-                        _c("h5", [
-                          _vm._v("Where is " + _vm._s(_vm.form.name) + " from?")
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "b-btn",
-                          {
-                            staticClass: "buttonSelector",
-                            class: { green: _vm.isCacc },
-                            staticStyle: { "font-size": "24px" },
-                            on: { click: _vm.selectCacc }
-                          },
-                          [_vm._v("CACC")]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "b-btn",
-                          {
-                            staticClass: "buttonSelector",
-                            class: { green: _vm.isCrisp },
-                            staticStyle: { "font-size": "24px" },
-                            on: { click: _vm.selectCrisp }
-                          },
-                          [_vm._v("CRISP")]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "b-btn",
-                          {
-                            staticClass: "buttonSelector",
-                            class: { green: _vm.isStray },
-                            staticStyle: { "font-size": "24px" },
-                            on: { click: _vm.selectStray }
-                          },
-                          [_vm._v("STRAY")]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "b-btn",
-                          {
-                            staticClass: "buttonSelector",
-                            class: { green: _vm.isAlive },
-                            staticStyle: { "font-size": "24px" },
-                            on: { click: _vm.selectAlive }
-                          },
-                          [_vm._v("ALIVE")]
-                        )
-                      ],
-                      1
-                    )
-                  : _vm._e()
-              ]),
-              _vm._v(" "),
-              _vm.formStep === 5
-                ? _c("b-form-group", { attrs: { id: "genderGroup" } }, [
-                    _c("div", { staticClass: "genderBox" }, [
-                      _c("h5", [
-                        _vm._v("Is " + _vm._s(_vm.form.name) + " fixed?")
-                      ]),
-                      _vm._v(" "),
-                      _c("table", [
-                        _c("tbody", [
-                          _c("tr", [
-                            _c(
-                              "td",
-                              [
-                                _c(
-                                  "b-btn",
-                                  {
-                                    staticClass: "buttonSelector",
-                                    on: { click: _vm.altered }
-                                  },
-                                  [
-                                    _c("i", {
-                                      staticClass: "fas fa-check-circle",
-                                      staticStyle: {
-                                        "font-size": "36px",
-                                        color: "limegreen"
-                                      }
-                                    })
-                                  ]
-                                )
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "td",
-                              [
-                                _c(
-                                  "b-btn",
-                                  {
-                                    staticClass: "buttonSelector",
-                                    on: { click: _vm.unaltered }
-                                  },
-                                  [
-                                    _c("i", {
-                                      staticClass: "fas fa-exclamation-circle",
-                                      staticStyle: {
-                                        "font-size": "36px",
-                                        color: "red"
-                                      }
-                                    })
-                                  ]
-                                )
-                              ],
-                              1
+              _vm.formStep === 4
+                ? _c(
+                    "b-form-group",
+                    { staticClass: "form-box", attrs: { id: "sourceGroup" } },
+                    [
+                      _c(
+                        "div",
+                        { staticClass: "sourceBox" },
+                        [
+                          _c("h5", [
+                            _vm._v(
+                              "Where is " + _vm._s(_vm.form.name) + " from?"
                             )
                           ]),
                           _vm._v(" "),
-                          _c("tr", [
-                            _c("td", [_vm._v(_vm._s(_vm.form.name))]),
-                            _vm._v(" "),
-                            _c("td", [_vm._v(_vm._s(_vm.form.name))])
-                          ]),
+                          _c(
+                            "b-btn",
+                            {
+                              staticClass: "button-selector",
+                              class: { green: _vm.isCacc },
+                              staticStyle: { "font-size": "1rem" },
+                              on: { click: _vm.selectCacc }
+                            },
+                            [_vm._v("CACC")]
+                          ),
                           _vm._v(" "),
-                          _c("tr", [
-                            _c("td", [_vm._v("is altered.")]),
+                          _c(
+                            "b-btn",
+                            {
+                              staticClass: "button-selector",
+                              class: { green: _vm.isCrisp },
+                              staticStyle: { "font-size": "1rem" },
+                              on: { click: _vm.selectCrisp }
+                            },
+                            [_vm._v("CRISP")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "b-btn",
+                            {
+                              staticClass: "button-selector",
+                              class: { green: _vm.isStray },
+                              staticStyle: { "font-size": "1rem" },
+                              on: { click: _vm.selectStray }
+                            },
+                            [_vm._v("STRAY")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "b-btn",
+                            {
+                              staticClass: "button-selector",
+                              class: { green: _vm.isAlive },
+                              staticStyle: { "font-size": "1rem" },
+                              on: { click: _vm.selectAlive }
+                            },
+                            [_vm._v("ALIVE")]
+                          )
+                        ],
+                        1
+                      )
+                    ]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.formStep === 5
+                ? _c(
+                    "b-form-group",
+                    { staticClass: "form-box", attrs: { id: "genderGroup" } },
+                    [
+                      _c("div", { staticClass: "genderBox" }, [
+                        _c("h5", [
+                          _vm._v(
+                            "Is " +
+                              _vm._s(_vm.form.name) +
+                              " " +
+                              _vm._s(_vm.fixed) +
+                              "?"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("table", [
+                          _c("tbody", [
+                            _c("tr", [
+                              _c(
+                                "td",
+                                [
+                                  _c(
+                                    "b-btn",
+                                    {
+                                      staticClass: "button-selector",
+                                      class: { green: _vm.isAltered },
+                                      on: { click: _vm.altered }
+                                    },
+                                    [
+                                      _c("i", {
+                                        staticClass: "fas fa-check-circle"
+                                      })
+                                    ]
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "td",
+                                [
+                                  _c(
+                                    "b-btn",
+                                    {
+                                      staticClass: "button-selector",
+                                      class: { red: _vm.isUnaltered },
+                                      on: { click: _vm.unaltered }
+                                    },
+                                    [
+                                      _c("i", {
+                                        staticClass: "fas fa-exclamation-circle"
+                                      })
+                                    ]
+                                  )
+                                ],
+                                1
+                              )
+                            ]),
                             _vm._v(" "),
-                            _c("td", [_vm._v("is not unaltered.")])
+                            _c("tr", [
+                              _c("td", [_vm._v(_vm._s(_vm.form.name))]),
+                              _vm._v(" "),
+                              _c("td", [_vm._v(_vm._s(_vm.form.name))])
+                            ]),
+                            _vm._v(" "),
+                            _c("tr", [
+                              _c("td", [
+                                _vm._v("is " + _vm._s(_vm.fixed) + ".")
+                              ]),
+                              _vm._v(" "),
+                              _c("td", [
+                                _vm._v("is not " + _vm._s(_vm.fixed) + ".")
+                              ])
+                            ])
                           ])
                         ])
                       ])
-                    ])
-                  ])
+                    ]
+                  )
                 : _vm._e(),
               _vm._v(" "),
               _vm.formStep === 6
                 ? _c(
                     "b-form-group",
-                    { attrs: { id: "nameGroup" } },
+                    {
+                      staticClass: "form-box",
+                      attrs: { id: "microchipGroup" }
+                    },
                     [
                       _c("h5", [
                         _vm._v(
                           "If " +
                             _vm._s(_vm.form.name) +
-                            " is not chipped, just click right arrow."
+                            " is chipped, enter " +
+                            _vm._s(_vm.pronoun) +
+                            " chip number:."
                         )
                       ]),
                       _vm._v(" "),
@@ -29675,6 +29904,7 @@ var render = function() {
                         staticClass: "input-box",
                         attrs: {
                           id: "microchip",
+                          onkeypress: "return event.keyCode != 13;",
                           type: "text",
                           placeholder: "Microchip number"
                         },
@@ -29691,42 +29921,298 @@ var render = function() {
                   )
                 : _vm._e(),
               _vm._v(" "),
-              _c(
-                "b-form-group",
-                { staticClass: "navBox" },
-                [
-                  _c(
-                    "b-btn",
+              _vm.formStep === 7
+                ? _c(
+                    "b-form-group",
                     {
-                      staticClass: "navButton",
-                      on: { click: _vm.previousFormStep }
+                      staticClass: "form-box",
+                      attrs: { id: "birthdateGroup" }
                     },
                     [
-                      _c("i", {
-                        staticClass: "fas fa-arrow-left",
-                        staticStyle: { "font-size": "44px" }
+                      _c("h5", [
+                        _vm._v(
+                          "What is " + _vm._s(_vm.form.name) + "'s birthday?"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("b-form-input", {
+                        attrs: {
+                          id: "birthdate",
+                          onkeypress: "return event.keyCode != 13;",
+                          type: "date"
+                        },
+                        model: {
+                          value: _vm.form.birthdate,
+                          callback: function($$v) {
+                            _vm.$set(_vm.form, "birthdate", $$v)
+                          },
+                          expression: "form.birthdate"
+                        }
                       })
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "b-btn",
-                    {
-                      staticClass: "navButton",
-                      on: { click: _vm.nextFormStep }
-                    },
-                    [
-                      _c("i", {
-                        staticClass: "fas fa-arrow-right",
-                        staticStyle: { "font-size": "44px" }
-                      })
-                    ]
+                    ],
+                    1
                   )
-                ],
-                1
-              ),
+                : _vm._e(),
               _vm._v(" "),
-              _vm.formStep > 5
+              _vm.formStep === 8
+                ? _c(
+                    "b-form-group",
+                    { staticClass: "form-box" },
+                    [
+                      _c(
+                        "b-row",
+                        [
+                          !_vm.images.length
+                            ? _c(
+                                "b-col",
+                                {
+                                  attrs: { sm: "12", md: "4", "md-offset": "5" }
+                                },
+                                [
+                                  _c(
+                                    "label",
+                                    { attrs: { for: "profilePhoto" } },
+                                    [_vm._v("Select a file")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("input", {
+                                    attrs: {
+                                      type: "file",
+                                      id: "profilePhoto",
+                                      name: _vm.form.profilePhoto,
+                                      enctype: "multipart/form-data"
+                                    },
+                                    on: { change: _vm.onInputChange }
+                                  })
+                                ]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _c(
+                            "b-col",
+                            { attrs: { sm: "12", md: "4", "offset-md": "4" } },
+                            [
+                              _c(
+                                "div",
+                                { staticClass: "images-preview" },
+                                _vm._l(_vm.images, function(image, index) {
+                                  return _c("div", { key: index }, [
+                                    _c("img", {
+                                      attrs: {
+                                        src: image,
+                                        alt: "uploaded image"
+                                      }
+                                    }),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "details" }, [
+                                      _c("span", {
+                                        staticClass: "name",
+                                        domProps: {
+                                          textContent: _vm._s(
+                                            _vm.files[index].name
+                                          )
+                                        }
+                                      }),
+                                      _vm._v(" "),
+                                      _c("span", {
+                                        staticClass: "size",
+                                        domProps: {
+                                          textContent: _vm._s(
+                                            _vm.getFileSize(
+                                              _vm.files[index].size
+                                            )
+                                          )
+                                        }
+                                      })
+                                    ])
+                                  ])
+                                })
+                              )
+                            ]
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.formStep === 9
+                ? _c(
+                    "b-form-group",
+                    { staticClass: "form-box" },
+                    [
+                      _c("h5", { staticStyle: { "margin-bottom": "20px" } }, [
+                        _vm._v(
+                          "How much does " + _vm._s(_vm.form.name) + " weigh:"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.weight,
+                            expression: "form.weight"
+                          }
+                        ],
+                        attrs: { type: "number", id: "weight" },
+                        domProps: { value: _vm.form.weight },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.form, "weight", $event.target.value)
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "b-row",
+                        { staticClass: "digit-row" },
+                        [
+                          _c(
+                            "b-btn",
+                            {
+                              staticClass: "button-digit",
+                              class: { green: _vm.is1 },
+                              staticStyle: { "font-size": "1rem" },
+                              on: { click: _vm.select1 }
+                            },
+                            [_vm._v("1")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "b-btn",
+                            {
+                              staticClass: "button-digit",
+                              class: { green: _vm.is2 },
+                              staticStyle: { "font-size": "1rem" },
+                              on: { click: _vm.select2 }
+                            },
+                            [_vm._v("2")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "b-btn",
+                            {
+                              staticClass: "button-digit",
+                              class: { green: _vm.is3 },
+                              staticStyle: { "font-size": "1rem" },
+                              on: { click: _vm.select3 }
+                            },
+                            [_vm._v("3")]
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "b-row",
+                        { staticClass: "digit-row" },
+                        [
+                          _c(
+                            "b-btn",
+                            {
+                              staticClass: "button-digit",
+                              class: { green: _vm.is4 },
+                              staticStyle: { "font-size": "1rem" },
+                              on: { click: _vm.select4 }
+                            },
+                            [_vm._v("4")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "b-btn",
+                            {
+                              staticClass: "button-digit",
+                              class: { green: _vm.is5 },
+                              staticStyle: { "font-size": "1rem" },
+                              on: { click: _vm.select5 }
+                            },
+                            [_vm._v("5")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "b-btn",
+                            {
+                              staticClass: "button-digit",
+                              class: { green: _vm.is6 },
+                              staticStyle: { "font-size": "1rem" },
+                              on: { click: _vm.select6 }
+                            },
+                            [_vm._v("6")]
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "b-row",
+                        { staticClass: "digit-row" },
+                        [
+                          _c(
+                            "b-btn",
+                            {
+                              staticClass: "button-digit",
+                              class: { green: _vm.is7 },
+                              staticStyle: { "font-size": "1rem" },
+                              on: { click: _vm.select7 }
+                            },
+                            [_vm._v("7")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "b-btn",
+                            {
+                              staticClass: "button-digit",
+                              class: { green: _vm.is8 },
+                              staticStyle: { "font-size": "1rem" },
+                              on: { click: _vm.select8 }
+                            },
+                            [_vm._v("8")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "b-btn",
+                            {
+                              staticClass: "button-digit",
+                              class: { green: _vm.is9 },
+                              staticStyle: { "font-size": "1rem" },
+                              on: { click: _vm.select9 }
+                            },
+                            [_vm._v("9")]
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "b-row",
+                        { staticClass: "digit-row" },
+                        [
+                          _c(
+                            "b-btn",
+                            {
+                              staticClass: "button-digit",
+                              class: { green: _vm.is0 },
+                              staticStyle: { "font-size": "1rem" },
+                              on: { click: _vm.select0 }
+                            },
+                            [_vm._v("0")]
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.formStep > 9
                 ? _c(
                     "b-form-group",
                     { staticClass: "submitBox" },
@@ -29747,6 +30233,46 @@ var render = function() {
                     1
                   )
                 : _vm._e()
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "progress" }, [
+            _c("div", {
+              staticClass: "progress",
+              staticStyle: { "background-color": "white", margin: "0" },
+              style: { width: _vm.progress + "%" }
+            })
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "nav-box" },
+            [
+              _c(
+                "b-row",
+                [
+                  _c(
+                    "b-btn",
+                    {
+                      staticClass: "nav-button",
+                      attrs: { disabled: _vm.formStep < 2 },
+                      on: { click: _vm.previousFormStep }
+                    },
+                    [_c("i", { staticClass: "fas fa-arrow-left" })]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "b-btn",
+                    {
+                      staticClass: "nav-button",
+                      on: { click: _vm.nextFormStep }
+                    },
+                    [_c("i", { staticClass: "fas fa-arrow-right" })]
+                  )
+                ],
+                1
+              )
             ],
             1
           )
