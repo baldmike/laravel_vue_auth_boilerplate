@@ -28373,6 +28373,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -28667,6 +28668,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         select0: function select0() {
             this.form.weight += '0';
+        },
+        deleteDigit: function deleteDigit() {
+            this.form.weight = this.form.weight.slice(0, -1);
         },
         altered: function altered() {
             this.form.fixed = 1;
@@ -30077,7 +30081,6 @@ var render = function() {
                             "b-btn",
                             {
                               staticClass: "button-digit",
-                              class: { green: _vm.is1 },
                               staticStyle: { "font-size": "1rem" },
                               on: { click: _vm.select1 }
                             },
@@ -30088,7 +30091,6 @@ var render = function() {
                             "b-btn",
                             {
                               staticClass: "button-digit",
-                              class: { green: _vm.is2 },
                               staticStyle: { "font-size": "1rem" },
                               on: { click: _vm.select2 }
                             },
@@ -30099,7 +30101,6 @@ var render = function() {
                             "b-btn",
                             {
                               staticClass: "button-digit",
-                              class: { green: _vm.is3 },
                               staticStyle: { "font-size": "1rem" },
                               on: { click: _vm.select3 }
                             },
@@ -30117,7 +30118,6 @@ var render = function() {
                             "b-btn",
                             {
                               staticClass: "button-digit",
-                              class: { green: _vm.is4 },
                               staticStyle: { "font-size": "1rem" },
                               on: { click: _vm.select4 }
                             },
@@ -30128,7 +30128,6 @@ var render = function() {
                             "b-btn",
                             {
                               staticClass: "button-digit",
-                              class: { green: _vm.is5 },
                               staticStyle: { "font-size": "1rem" },
                               on: { click: _vm.select5 }
                             },
@@ -30139,7 +30138,6 @@ var render = function() {
                             "b-btn",
                             {
                               staticClass: "button-digit",
-                              class: { green: _vm.is6 },
                               staticStyle: { "font-size": "1rem" },
                               on: { click: _vm.select6 }
                             },
@@ -30157,7 +30155,6 @@ var render = function() {
                             "b-btn",
                             {
                               staticClass: "button-digit",
-                              class: { green: _vm.is7 },
                               staticStyle: { "font-size": "1rem" },
                               on: { click: _vm.select7 }
                             },
@@ -30168,7 +30165,6 @@ var render = function() {
                             "b-btn",
                             {
                               staticClass: "button-digit",
-                              class: { green: _vm.is8 },
                               staticStyle: { "font-size": "1rem" },
                               on: { click: _vm.select8 }
                             },
@@ -30179,7 +30175,6 @@ var render = function() {
                             "b-btn",
                             {
                               staticClass: "button-digit",
-                              class: { green: _vm.is9 },
                               staticStyle: { "font-size": "1rem" },
                               on: { click: _vm.select9 }
                             },
@@ -30197,11 +30192,20 @@ var render = function() {
                             "b-btn",
                             {
                               staticClass: "button-digit",
-                              class: { green: _vm.is0 },
                               staticStyle: { "font-size": "1rem" },
                               on: { click: _vm.select0 }
                             },
                             [_vm._v("0")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "b-btn",
+                            {
+                              staticClass: "button-digit",
+                              staticStyle: { "font-size": "1rem" },
+                              on: { click: _vm.deleteDigit }
+                            },
+                            [_vm._v("C")]
                           )
                         ],
                         1

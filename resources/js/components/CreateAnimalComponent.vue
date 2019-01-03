@@ -153,25 +153,26 @@
                             v-model="form.weight">
 
                     <b-row class="digit-row">
-                        <b-btn class="button-digit" :class="{ green: is1 }" @click="select1" style="font-size: 1rem;">1</b-btn>
-                        <b-btn class="button-digit" :class="{ green: is2 }" @click="select2" style="font-size: 1rem;">2</b-btn>
-                        <b-btn class="button-digit" :class="{ green: is3 }" @click="select3" style="font-size: 1rem;">3</b-btn>
+                        <b-btn class="button-digit" @click="select1" style="font-size: 1rem;">1</b-btn>
+                        <b-btn class="button-digit" @click="select2" style="font-size: 1rem;">2</b-btn>
+                        <b-btn class="button-digit" @click="select3" style="font-size: 1rem;">3</b-btn>
                     </b-row>
 
                     <b-row class="digit-row">
-                        <b-btn class="button-digit" :class="{ green: is4 }" @click="select4" style="font-size: 1rem;">4</b-btn>
-                        <b-btn class="button-digit" :class="{ green: is5 }" @click="select5" style="font-size: 1rem;">5</b-btn>
-                        <b-btn class="button-digit" :class="{ green: is6 }" @click="select6" style="font-size: 1rem;">6</b-btn>
+                        <b-btn class="button-digit" @click="select4" style="font-size: 1rem;">4</b-btn>
+                        <b-btn class="button-digit" @click="select5" style="font-size: 1rem;">5</b-btn>
+                        <b-btn class="button-digit" @click="select6" style="font-size: 1rem;">6</b-btn>
                     </b-row>
 
                     <b-row class="digit-row">
-                        <b-btn class="button-digit" :class="{ green: is7 }" @click="select7" style="font-size: 1rem;">7</b-btn>
-                        <b-btn class="button-digit" :class="{ green: is8 }" @click="select8" style="font-size: 1rem;">8</b-btn>
-                        <b-btn class="button-digit" :class="{ green: is9 }" @click="select9" style="font-size: 1rem;">9</b-btn>
+                        <b-btn class="button-digit" @click="select7" style="font-size: 1rem;">7</b-btn>
+                        <b-btn class="button-digit" @click="select8" style="font-size: 1rem;">8</b-btn>
+                        <b-btn class="button-digit" @click="select9" style="font-size: 1rem;">9</b-btn>
                     </b-row>
 
                     <b-row class="digit-row">
-                        <b-btn class="button-digit" :class="{ green: is0 }" @click="select0" style="font-size: 1rem;">0</b-btn>
+                        <b-btn class="button-digit" @click="select0" style="font-size: 1rem;">0</b-btn>
+                        <b-btn class="button-digit" @click="deleteDigit" style="font-size: 1rem;">C</b-btn>
                     </b-row>
                     
                 </b-form-group>
@@ -497,6 +498,9 @@
             },
             select0() {
                 this.form.weight += '0';
+            },
+            deleteDigit() {
+                this.form.weight = this.form.weight.slice(0, -1);
             },
             altered() {
                 this.form.fixed = 1;
