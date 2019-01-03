@@ -1,9 +1,9 @@
 <template>
     <div class="body">
-        <b-col cols="6" offset="3" class="create-animal-box">
+        <b-col sm="12" md="6" offset-md="3" class="create-animal-box">
             <b-form>
-                <b-form-group id="nameGroup" v-if="formStep===1">
-                    <h5>Please use the navigation buttons!</h5>
+                <b-form-group id="nameGroup" v-if="formStep===1" class="form-box">
+                    <h5 style="margin-bottom: 20px;">Please enter the animal's name:</h5>
                     <b-form-input id="animalName"
                     onkeypress="return event.keyCode != 13;"
                     class="input-box"
@@ -14,17 +14,17 @@
                     placeholder="Animal's name"/>                 
                 </b-form-group>
                 
-                <b-form-group id="speciesGroup" v-if="formStep===2">
+                <b-form-group id="speciesGroup" v-if="formStep===2" class="form-box">
                     <div class="speciesBox">
                         <h5>What is {{ form.name }}?</h5>
                         <table>
                             <tbody>
                                 <tr>
                                     <td>
-                                        <b-btn class="buttonSelector" id="dogChosen" :class="{ green: isDog }" @click="selectDog"><i class="fas fa-dog" style="font-size: 44px;"></i></b-btn>
+                                        <b-btn class="button-selector" id="dogChosen" :class="{ green: isDog }" @click="selectDog"><i class="fas fa-dog"></i></b-btn>
                                     </td>
                                     <td>
-                                        <b-btn class="buttonSelector" id="catChosen" :class="{ green: isCat }" @click="selectCat"><i class="fas fa-cat" style="font-size: 44px;" ></i></b-btn>
+                                        <b-btn class="button-selector" id="catChosen" :class="{ green: isCat }" @click="selectCat"><i class="fas fa-cat"></i></b-btn>
                                     </td> 
                                 </tr> 
                                 <tr>
@@ -40,17 +40,17 @@
                     </div>
                 </b-form-group>
 
-                <b-form-group id="genderGroup" v-if="formStep===3">
+                <b-form-group id="genderGroup" v-if="formStep===3" class="form-box">
                     <div class="genderBox">
                         <h5>Is {{ form.name }} a boy {{ form.species }} or a girl {{ form.species }}?</h5>
                         <table>
                             <tbody>
                                 <tr>
                                     <td>
-                                        <b-btn class="buttonSelector" :class="{ green: isMale }" @click="selectMale"><i class="fas fa-male" style="font-size: 44px;"></i></b-btn>
+                                        <b-btn class="button-selector" :class="{ green: isMale }" @click="selectMale"><i class="fas fa-male"></i></b-btn>
                                     </td>
                                     <td>
-                                        <b-btn class="buttonSelector" :class="{ green: isFemale }" @click="selectFemale"><i class="fas fa-female" style="font-size: 44px;"></i></b-btn>
+                                        <b-btn class="button-selector" :class="{ green: isFemale }" @click="selectFemale"><i class="fas fa-female"></i></b-btn>
                                     </td>
                                 </tr>
                                 <tr>
@@ -66,27 +66,27 @@
                     </div>
                 </b-form-group>
                     
-                <b-form-group id="sourceGroup" v-if="formStep===4">
+                <b-form-group id="sourceGroup" v-if="formStep===4" class="form-box">
                     <div class="sourceBox">
                         <h5>Where is {{ form.name }} from?</h5>
-                        <b-btn class="buttonSelector" :class="{ green: isCacc }" @click="selectCacc" style="font-size: 24px;">CACC</b-btn>
-                        <b-btn class="buttonSelector" :class="{ green: isCrisp }" @click="selectCrisp" style="font-size: 24px;">CRISP</b-btn>
-                        <b-btn class="buttonSelector" :class="{ green: isStray }" @click="selectStray" style="font-size: 24px;">STRAY</b-btn>
-                        <b-btn class="buttonSelector" :class="{ green: isAlive }" @click="selectAlive" style="font-size: 24px;">ALIVE</b-btn>
+                        <b-btn class="button-selector" :class="{ green: isCacc }" @click="selectCacc" style="font-size: 1rem;">CACC</b-btn>
+                        <b-btn class="button-selector" :class="{ green: isCrisp }" @click="selectCrisp" style="font-size: 1rem;">CRISP</b-btn>
+                        <b-btn class="button-selector" :class="{ green: isStray }" @click="selectStray" style="font-size: 1rem;">STRAY</b-btn>
+                        <b-btn class="button-selector" :class="{ green: isAlive }" @click="selectAlive" style="font-size: 1rem;">ALIVE</b-btn>
                     </div>
                 </b-form-group>
 
-                <b-form-group id="genderGroup" v-if="formStep===5">
+                <b-form-group id="genderGroup" v-if="formStep===5" class="form-box">
                     <div class="genderBox">
                         <h5>Is {{ form.name }} {{ fixed }}?</h5>
                         <table>
                             <tbody>
                                 <tr>
                                     <td>
-                                        <b-btn class="buttonSelector" :class="{ green: isAltered }" @click="altered"><i class="fas fa-check-circle" style="font-size: 36px;" ></i></b-btn>
+                                        <b-btn class="button-selector" :class="{ green: isAltered }" @click="altered"><i class="fas fa-check-circle"></i></b-btn>
                                     </td>
                                     <td>
-                                        <b-btn class="buttonSelector" :class="{ red: isUnaltered }" @click="unaltered"><i class="fas fa-exclamation-circle" style="font-size: 36px;" ></i></b-btn>
+                                        <b-btn class="button-selector" :class="{ red: isUnaltered }" @click="unaltered"><i class="fas fa-exclamation-circle"></i></b-btn>
                                     </td>
                                 </tr>
                                 <tr>
@@ -102,40 +102,37 @@
                     </div>
                 </b-form-group>
                 
-                <b-form-group id="nameGroup" v-if="formStep===6">
+                <b-form-group id="microchipGroup" v-if="formStep===6" class="form-box">
                     <h5>If {{  form.name }} is chipped, enter {{ pronoun }} chip number:.</h5>
                     <b-form-input id="microchip"
-                    class="input-box"
-                    type="text"
-                    v-model="form.microchipNumber"
-                    placeholder="Microchip number"/>                 
+                                onkeypress="return event.keyCode != 13;"
+                                class="input-box"
+                                type="text"
+                                v-model="form.microchipNumber"
+                                placeholder="Microchip number"/>                 
                 </b-form-group>
 
-                <b-form-group id="birthdateGroup" v-if="formStep===7">
-                    <b-col>
-                        <b-form-input id="birthdate"
-                                    
-                                    type="date"
-                                    v-model="form.birthdate">
-                        </b-form-input>
-                        <v-date-picker></v-date-picker>
-                    </b-col>
+                <b-form-group id="birthdateGroup" v-if="formStep===7" class="form-box">
+                    <h5>What is {{ form.name }}'s birthday?</h5>
+                    <b-form-input id="birthdate"
+                                onkeypress="return event.keyCode != 13;"
+                                type="date"
+                                v-model="form.birthdate"/>
                 </b-form-group>
 
-                <b-form-group v-if="formStep===10">
+                <b-form-group v-if="formStep===8" class="form-box">
                     <b-row>
                         <b-col sm="12" md="4" md-offset="5" v-if="!images.length">
                             <label for="profilePhoto">Select a file</label>
-                            <button @click="upload">Upload</button>
+
                             <input type="file"
                                     id="profilePhoto"
-                                    class="fas fa-cloud-upload-alt"
                                     :name="form.profilePhoto" 
                                     @change="onInputChange" 
                                     enctype="multipart/form-data">
-                            <img id="image" ref="image" :src="image">
+                            
                         </b-col>
-                        <b-col sm="12" md="4" offset="5">
+                        <b-col sm="12" md="4" offset-md="4">
                             <div class="images-preview">
                                 <div  v-for="(image, index) in images" :key="index">
                                     <img :src="image" alt="uploaded image">
@@ -149,18 +146,59 @@
                     </b-row>
                 </b-form-group>
 
-                <b-form-group class="navBox">
-                    <b-btn class="navButton" @click="previousFormStep" v-if="formStep>1"><i class="fas fa-arrow-left" style="font-size: 44px;"></i></b-btn>
-                    <b-btn class="navButton" @click="nextFormStep"><i class="fas fa-arrow-right" style="font-size: 44px;"></i></b-btn>
+                <b-form-group v-if="formStep===9" class="form-box">
+                    <h5 style="margin-bottom: 20px;">How much does {{ form.name }} weigh:</h5>
+                    <input type="number"
+                            id="weight"
+                            v-model="form.weight">
+
+                    <b-row class="digit-row">
+                        <b-btn class="button-digit" :class="{ green: is1 }" @click="select1" style="font-size: 1rem;">1</b-btn>
+                        <b-btn class="button-digit" :class="{ green: is2 }" @click="select2" style="font-size: 1rem;">2</b-btn>
+                        <b-btn class="button-digit" :class="{ green: is3 }" @click="select3" style="font-size: 1rem;">3</b-btn>
+                    </b-row>
+
+                    <b-row class="digit-row">
+                        <b-btn class="button-digit" :class="{ green: is4 }" @click="select4" style="font-size: 1rem;">4</b-btn>
+                        <b-btn class="button-digit" :class="{ green: is5 }" @click="select5" style="font-size: 1rem;">5</b-btn>
+                        <b-btn class="button-digit" :class="{ green: is6 }" @click="select6" style="font-size: 1rem;">6</b-btn>
+                    </b-row>
+
+                    <b-row class="digit-row">
+                        <b-btn class="button-digit" :class="{ green: is7 }" @click="select7" style="font-size: 1rem;">7</b-btn>
+                        <b-btn class="button-digit" :class="{ green: is8 }" @click="select8" style="font-size: 1rem;">8</b-btn>
+                        <b-btn class="button-digit" :class="{ green: is9 }" @click="select9" style="font-size: 1rem;">9</b-btn>
+                    </b-row>
+
+                    <b-row class="digit-row">
+                        <b-btn class="button-digit" :class="{ green: is0 }" @click="select0" style="font-size: 1rem;">0</b-btn>
+                    </b-row>
+                    
                 </b-form-group>
 
-                <b-form-group class="submitBox" v-if="formStep>7">
+                <b-form-group class="submitBox" v-if="formStep>9">
                     <b-button class="my-3" variant="dark" :disabled="$v.form.$invalid" @click="createAnimal">Welcome to Alive, {{ form.name }}</b-button>
                 </b-form-group>
 
-                    
             </b-form>
-        </b-col>  
+
+            <div class="progress">
+                <div class="progress"
+                style="background-color: white; margin: 0;"
+                :style="{width: progress + '%'}"/>
+            </div>
+
+            
+
+            <div class="nav-box">
+
+                <b-row>
+                    <b-btn class="nav-button" @click="previousFormStep" :disabled="formStep<2"><i class="fas fa-arrow-left"></i></b-btn>
+                    <b-btn class="nav-button" @click="nextFormStep"><i class="fas fa-arrow-right"></i></b-btn>
+                </b-row>
+
+            </div>
+        </b-col>
     </div>
 </template>
 
@@ -216,6 +254,7 @@
             form: {
                 name: {
                     required,
+                    minLength: 1,
                 },
                 species: {
                     required,
@@ -246,6 +285,9 @@
                     return "spayed"
                 }
             },
+            progress() {
+                return this.formStep * 10;
+            }
         },
         methods: {
             noenter(e) {
@@ -305,7 +347,7 @@
                 let self = this;
                 setTimeout(function() {
                     self.formStep += 1;
-                }, 700);
+                }, 500);
             },
             selectCat() {
                 this.form.species = "cat";
@@ -317,7 +359,7 @@
                 let self = this;
                 setTimeout(function() {
                     self.formStep += 1;
-                }, 700);
+                }, 500);
                 // add to "profile" as user builds
             },
             selectMale() {
@@ -330,7 +372,7 @@
                 let self = this;
                 setTimeout(function() {
                     self.formStep += 1;
-                }, 700);
+                }, 500);
                 // add to "profile" as user builds
             },
             selectFemale() {
@@ -343,7 +385,7 @@
                 let self = this;
                 setTimeout(function() {
                     self.formStep += 1;
-                }, 700);
+                }, 500);
                 // add to "profile" as user builds
             },
             selectCacc() {
@@ -364,7 +406,7 @@
                 let self = this;
                 setTimeout(function() {
                     self.formStep += 1;
-                }, 700);
+                }, 500);
                 // add to "profile" as user builds
             },
             selectCrisp() {
@@ -384,7 +426,7 @@
                 let self = this;
                 setTimeout(function() {
                     self.formStep += 1;
-                }, 700);
+                }, 500);
                 // add to "profile" as user builds
             },
             selectStray() {
@@ -404,7 +446,7 @@
                 let self = this;
                 setTimeout(function() {
                     self.formStep += 1;
-                }, 700);
+                }, 500);
                 // add to "profile" as user builds
             },
             selectAlive() {
@@ -424,11 +466,41 @@
                 let self = this;
                 setTimeout(function() {
                     self.formStep += 1;
-                }, 700);
+                }, 500);
                 // add to "profile" as user builds
             },
+            select1() {
+                this.form.weight += '1';
+            },
+            select2() {
+                this.form.weight += '2';
+            },
+            select3() {
+                this.form.weight += '3';
+            },
+            select4() {
+                this.form.weight += '4';
+            },
+            select5() {
+                this.form.weight += '5';
+            },
+            select6() {
+                this.form.weight += '6';
+            },
+            select7() {
+                this.form.weight += '7';
+            },
+            select8() {
+                this.form.weight += '8';
+            },
+            select9() {
+                this.form.weight += '9';
+            },
+            select0() {
+                this.form.weight += '0';
+            },
             altered() {
-                this.form.fixed = true;
+                this.form.fixed = 1;
                 this.isAltered = true;
 
                 if (this.isUnaltered) { 
@@ -438,7 +510,7 @@
                 let self = this;
                 setTimeout(function() {
                     self.formStep += 1;
-                }, 700);
+                }, 500);
                 // add to "profile" as user builds
             },
             unaltered() {
@@ -450,7 +522,7 @@
                 let self = this;
                 setTimeout(function() {
                     self.formStep += 1;
-                }, 700);
+                }, 500);
                 // add to "profile" as user builds
             },
             nextFormStep() {
@@ -552,8 +624,13 @@
     }
 </script>
 
+
+
+
+
 <style lang="scss" scoped>
 
+        
 
         .uploader {
         width: 100%;
@@ -611,6 +688,7 @@
             display: flex;
             flex-wrap: wrap;
             margin-top: 20px;
+            margin-left: auto;
 
             .img-wrapper {
                 width: 160px;
@@ -673,37 +751,47 @@
 
 
 
-    .buttonSelector {
-        width: 100px;
-        height: 100px;
+    .button-selector {
+        width: 6rem;
+        height: 6rem;
         border-radius: 25px;
-        margin: 30px;
-        margin-bottom: 5px;
-        margin-top: 10px;
+        margin: 1rem;
+        font-size: 3rem;
     }
-    .navButton {
-        width: 100px;
-        height: 60px;
+    .button-digit {
+        width: 3rem;
+        height: 3rem;
         border-radius: 25px;
-        margin: 30px;
-        margin-bottom: 5px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1rem;
+    }
+    .nav-button {
+        width: 6rem;
+        height: 3rem;
+        font-size: 1rem;
+        border-radius: 25px;
+        margin: 1rem;
         background-color: lightgray;
     }
     .body {
-        background-color: #2196F3;
-        height: 1000px;
-        padding: 20px;
+        height: 100vh;
     }
     
     .input-box {
 
-        width: 100%;
-    }
-    .selectedButton {
-        background-color: white;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
     }
     .create-animal-box {
+        background-color: #2196F3;
+        margin-top: 20px;
+        padding-top: 20px;
         text-align: center;
+        border: 2px solid black;
+        box-shadow: 5px 5px;
+        height: 90vh;
     }
     .speciesBox {
         text-align: center;
@@ -714,9 +802,12 @@
     .sourceBox {
         text-align: center;
     }
-    .navBox {
+    .nav-box {
         text-align: center;
-        padding-bottom: 25px;
+        position: absolute;
+        width: 50%;
+        left: 25%;
+        bottom: 0;
     }
     .submitBox {
         text-align: center;
@@ -730,9 +821,46 @@
     .grey {
         color: slategrey;
     }
+    .progress {
+        background-color: navy;
+        height: 10px;
+        transition: width 500ms;
+        border-right: 2px solid black
+    }
+    .form-box {
+        height: 300px;
+    }
+    .pic-box {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+    .digit-row {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 1rem;
+    }
 
     table {
         margin-left: auto;
         margin-right: auto;
+    }
+
+    @media only screen and (max-width: 900px) {
+        .nav-box {
+            text-align: center;
+            color: red;
+            position: absolute;
+            bottom: 0;
+        }
+
+        .nav-button {
+            width: 4rem;
+            height: 3rem;
+            font-size: 1rem;
+            border-radius: 25px;
+            margin: .4rem;
+            background-color: lightgray;
+        }
     }
 </style>

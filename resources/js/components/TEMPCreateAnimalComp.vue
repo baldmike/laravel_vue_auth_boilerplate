@@ -20,7 +20,7 @@
                     
                     <b-col sm="12" md="4">
                             <b-form-input id="animalName"
-                                        class="inputBox"
+                                        class="input-box"
                                         type="text"
                                         v-model="form.name"
                                         required
@@ -32,7 +32,7 @@
                     </b-col>
                     <b-col sm="4" md="3">
                             <b-form-select id="gender"
-                                    class="inputBox" 
+                                    class="input-box" 
                                     :options="gender"
                                     required
                                     v-model="form.gender"
@@ -41,7 +41,7 @@
                     </b-col>                    
                     <b-col sm="3" md="4">
                             <b-form-select id="source"
-                                        class="inputBox"
+                                        class="input-box"
                                         :options="sources"
                                         required
                                         v-model="form.source"
@@ -63,7 +63,7 @@
                     
                     <b-col>
                             <b-form-select id="breed"
-                                        class="inputBox"
+                                        class="input-box"
                                         :options="breeds"
                                         v-model="form.breed">
                             </b-form-select>
@@ -71,7 +71,7 @@
 
                     <b-col>
                             <b-form-input id="microchipNumber"
-                                        class="inputBox"
+                                        class="input-box"
                                         type="text"
                                         v-model="form.microchipNumber"
                                         placeholder="What is their microchip number?">
@@ -82,7 +82,7 @@
                 <b-row>
                     <b-col>
                             <b-form-input id="birthdate"
-                                        class="inputBox"
+                                        class="input-box"
                                         type="date"
                                         v-model="form.birthdate">
                             </b-form-input>
@@ -90,7 +90,7 @@
 
                     <b-col>
                             <b-form-input id="weight"
-                                    class="inputBox"
+                                    class="input-box"
                                     type="number"
                                     v-model="form.weight">
                             </b-form-input>
@@ -100,7 +100,7 @@
                 <b-row>
                     <b-col>
                             <b-form-textarea id="description"
-                                    class="inputBox"
+                                    class="input-box"
                                     :rows="3"
                                     :max-rows="6"
                                     v-model="form.description"
@@ -379,9 +379,10 @@
         background-color: white;
         text-align: center;
     }
-    .inputBox {
+    .input-box {
         margin: 10px;
         margin-left: 0px;
+        width: 50%;
     }
     .selectedButton {
         background-color: white;
