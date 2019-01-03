@@ -15,7 +15,7 @@
                 </b-form-group>
                 
                 <b-form-group id="speciesGroup" v-if="formStep===2" class="form-box">
-                    <div class="speciesBox">
+                    <div class="selection-box">
                         <h5>What is {{ form.name }}?</h5>
                         <table>
                             <tbody>
@@ -41,7 +41,7 @@
                 </b-form-group>
 
                 <b-form-group id="genderGroup" v-if="formStep===3" class="form-box">
-                    <div class="genderBox">
+                    <div class="selection-box">
                         <h5>Is {{ form.name }} a boy {{ form.species }} or a girl {{ form.species }}?</h5>
                         <table>
                             <tbody>
@@ -67,7 +67,7 @@
                 </b-form-group>
                     
                 <b-form-group id="sourceGroup" v-if="formStep===4" class="form-box">
-                    <div class="sourceBox">
+                    <div class="selection-box">
                         <h5>Where is {{ form.name }} from?</h5>
                         <b-btn class="button-selector" :class="{ green: isCacc }" @click="selectCacc" style="font-size: 1rem;">CACC</b-btn>
                         <b-btn class="button-selector" :class="{ green: isCrisp }" @click="selectCrisp" style="font-size: 1rem;">CRISP</b-btn>
@@ -77,7 +77,7 @@
                 </b-form-group>
 
                 <b-form-group id="genderGroup" v-if="formStep===5" class="form-box">
-                    <div class="genderBox">
+                    <div class="selection-box">
                         <h5>Is {{ form.name }} {{ fixed }}?</h5>
                         <table>
                             <tbody>
@@ -176,7 +176,7 @@
                     
                 </b-form-group>
 
-                <b-form-group class="submitBox" v-if="formStep>9">
+                <b-form-group class="submit-box" v-if="formStep>9">
                     <b-button class="my-3" variant="dark" :disabled="$v.form.$invalid" @click="createAnimal">Welcome to Alive, {{ form.name }}</b-button>
                 </b-form-group>
 
@@ -191,7 +191,6 @@
             
 
             <div class="nav-box">
-
                 <b-row>
                     <b-btn class="nav-button" @click="previousFormStep" :disabled="formStep<2"><i class="fas fa-arrow-left"></i></b-btn>
                     <b-btn class="nav-button" @click="nextFormStep"><i class="fas fa-arrow-right"></i></b-btn>
@@ -751,6 +750,15 @@
 
 
 
+
+
+
+
+
+
+    .body {
+        height: 100vh;
+    }
     .button-selector {
         width: 6rem;
         height: 6rem;
@@ -766,6 +774,13 @@
         margin-right: auto;
         font-size: 1rem;
     }
+    .nav-box {
+        text-align: center;
+        position: absolute;
+        width: 50%;
+        left: 25%;
+        bottom: 0;
+    }
     .nav-button {
         width: 6rem;
         height: 3rem;
@@ -774,12 +789,7 @@
         margin: 1rem;
         background-color: lightgray;
     }
-    .body {
-        height: 100vh;
-    }
-    
     .input-box {
-
         width: 80%;
         margin-left: auto;
         margin-right: auto;
@@ -793,23 +803,7 @@
         box-shadow: 5px 5px;
         height: 90vh;
     }
-    .speciesBox {
-        text-align: center;
-    }
-    .genderBox {
-        text-align: center;
-    }
-    .sourceBox {
-        text-align: center;
-    }
-    .nav-box {
-        text-align: center;
-        position: absolute;
-        width: 50%;
-        left: 25%;
-        bottom: 0;
-    }
-    .submitBox {
+    .selection-box {
         text-align: center;
     }
     .green {
@@ -851,6 +845,8 @@
             text-align: center;
             color: red;
             position: absolute;
+            width: 50%;
+            left: 25%;
             bottom: 0;
         }
 
