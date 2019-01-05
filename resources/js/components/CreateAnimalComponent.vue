@@ -1,11 +1,11 @@
 <template>
     <div class="body">
         <b-col sm="12" md="6" offset-md="3" class="create-animal-box">
-            <b-form>
+            <b-form v-on:submit.prevent="nextFormStep">
                 <b-form-group id="nameGroup" v-if="formStep===1" class="form-box">
                     <h5 style="margin-bottom: 20px;">Please enter the animal's name:</h5>
                     <b-form-input id="animalName"
-                    onkeypress="return event.keyCode != 13;"
+                    
                     class="input-box"
                     type="text"
                     v-model="form.name"

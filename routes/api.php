@@ -21,10 +21,9 @@ Route::post('/logout', 'Api\AuthController@logout');
 
 Route::middleware('auth:api')->group(function () {
     
-    // Route::get('/animals', 'Api\AnimalsController@index');
-
     // the following line creates all resource routes
     Route::resource('animals', 'Api\AnimalsController');
+    Route::resource('vaccinations', 'Api\VaccinationsController');
     
     Route::get('/user', 'Api\UsersController@current');
     

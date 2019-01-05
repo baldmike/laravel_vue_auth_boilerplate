@@ -29568,6 +29568,14 @@ var render = function() {
         [
           _c(
             "b-form",
+            {
+              on: {
+                submit: function($event) {
+                  $event.preventDefault()
+                  return _vm.nextFormStep($event)
+                }
+              }
+            },
             [
               _vm.formStep === 1
                 ? _c(
@@ -29582,7 +29590,6 @@ var render = function() {
                         staticClass: "input-box",
                         attrs: {
                           id: "animalName",
-                          onkeypress: "return event.keyCode != 13;",
                           type: "text",
                           required: "",
                           state: !_vm.$v.form.name.$invalid,
