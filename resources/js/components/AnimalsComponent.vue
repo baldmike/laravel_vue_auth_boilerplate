@@ -2,14 +2,14 @@
     <div class="body">
         <b-row>
             <b-col cols="4">
-                <b-button class="filterButton" @click="showAll" disabled>Show All</b-button>
-                <b-button class="filterButton" @click="showDogs">Dogs</b-button>
-                <b-button class="filterButton" @click="showCats">Cats</b-button>
-                <b-button class="filterButton" @click="showRabbits">Rabbits</b-button>
+                <b-button class="filter-button" @click="showAll" disabled>Show All</b-button>
+                <b-button class="filter-button" @click="showDogs">Dogs</b-button>
+                <b-button class="filter-button" @click="showCats">Cats</b-button>
+                <b-button class="filter-button" @click="showRabbits">Rabbits</b-button>
             </b-col>
             <b-col cols="4">
                 <div class="my-3">
-                    <input class="searchBar" type="text" v-model="search" placeholder="Search">
+                    <input class="search-bar" type="text" v-model="search" placeholder="Search">
                 </div>
             </b-col>
             <b-col cols="4">
@@ -19,12 +19,12 @@
 
         <b-row>
             <b-col v-for="(animal, index) in filteredAnimals"
-                    :key="index" cols="3" class="animal-card">
-                <b-card v-if="animal.profile_photo" :img-src="'http://localhost:8000/storage/' + animal.profile_photo" thumbnail fluid img-alt="Selected animal image" style="height: 400px;">
+                    :key="index" cols="12" md="3">
+                <b-card v-if="animal.profile_photo" :img-src="'http://localhost:8000/storage/' + animal.profile_photo" thumbnail fluid img-alt="Selected animal image" class="animal-card">
                 </b-card>
-                <b-card v-else :img-src="'http://localhost:8000/storage/images/dog_placeholder.jpg'" style="height: 400px;" img-alt="No Selected animal image">
+                <b-card v-else :img-src="'http://localhost:8000/storage/images/dog_placeholder.jpg'" thumbnail fluid img-alt="No Selected animal image" class="animal-card">
                 </b-card>
-                <b-btn class="selectButton" @click="showModal(animal)" animal="'animal.id'">{{ animal.name }}  |  <span style="color: black;"> {{ animal.species }} </span>  |  {{ animal.breed }}</b-btn>
+                <b-btn class="select-button" @click="showModal(animal)" animal="'animal.id'">{{ animal.name }}  |  <span style="color: black;"> {{ animal.species }} </span>  |  {{ animal.breed }}</b-btn>
             </b-col>
         </b-row>
         
@@ -100,17 +100,20 @@
     .center {
         text-align: center;
     }
-    .searchBar {
+    .search-bar {
         width: 100%;
         text-align: center;
     }
-    .selectButton {
+    .select-button {
         width: 100%;
+        margin-bottom: 20px;
     }
-    .filterButton {
+    .filter-button {
         width: 24%;
     }
     .animal-card {
         margin-bottom: 20px;
+        padding: 1rem;
+        
     }
 </style>

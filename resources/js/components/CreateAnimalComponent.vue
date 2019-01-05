@@ -171,8 +171,13 @@
                     </b-row>
 
                     <b-row class="digit-row">
-                        <b-btn class="button-digit" @click="select0" style="font-size: 1rem;">0</b-btn>
-                        <b-btn class="button-digit" @click="deleteDigit" style="font-size: 1rem;">C</b-btn>
+                        <b-col>
+                            <b-btn class="button-digit" @click="select0" style="font-size: 1rem;">0</b-btn>
+                        </b-col>
+                        <b-col>
+                            <b-btn class="button-digit" @click="deleteDigit" style="font-size: 1rem;">C</b-btn>
+                        </b-col>
+                        
                     </b-row>
                     
                 </b-form-group>
@@ -771,12 +776,17 @@
         font-size: 3rem;
     }
     .button-digit {
-        width: 3rem;
-        height: 3rem;
+        width: 6rem;
+        height: 6rem;
         border-radius: 25px;
         margin-left: auto;
         margin-right: auto;
         font-size: 1rem;
+    }
+    .digit-row {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 1rem;
     }
     .nav-box {
         text-align: center;
@@ -833,18 +843,12 @@
         margin-right: auto;
         text-align: center;
     }
-    .digit-row {
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 1rem;
-    }
 
     table {
         margin-left: auto;
         margin-right: auto;
     }
-
-    @media only screen and (max-width: 900px) {
+    @media only screen and (max-width: 600px) {
         .nav-box {
             text-align: center;
             color: red;
@@ -861,6 +865,15 @@
             border-radius: 25px;
             margin: .4rem;
             background-color: lightgray;
+        }
+
+        .button-digit {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 25px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1rem;
         }
     }
 </style>

@@ -28155,7 +28155,7 @@ exports = module.exports = __webpack_require__(8)(false);
 
 
 // module
-exports.push([module.i, "\n.uploader[data-v-07337dea] {\n  width: 100%;\n  background: #2196F3;\n  color: #fff;\n  padding: 40px 15px;\n  text-align: center;\n  border-radius: 10px;\n  border: 3px dashed #fff;\n  font-size: 20px;\n  position: relative;\n}\n.uploader.dragging[data-v-07337dea] {\n    background: #fff;\n    color: #2196F3;\n    border: 3px dashed #2196F3;\n}\n.uploader.dragging .file-input label[data-v-07337dea] {\n      background: #2196F3;\n      color: #fff;\n}\n.uploader i[data-v-07337dea] {\n    font-size: 85px;\n}\n.uploader .file-input[data-v-07337dea] {\n    width: 200px;\n    margin: auto;\n    height: 68px;\n    position: relative;\n}\n.uploader .file-input label[data-v-07337dea],\n    .uploader .file-input input[data-v-07337dea] {\n      background: #fff;\n      color: #2196F3;\n      width: 100%;\n      position: absolute;\n      left: 0;\n      top: 0;\n      padding: 10px;\n      border-radius: 4px;\n      margin-top: 7px;\n      cursor: pointer;\n}\n.uploader .file-input input[data-v-07337dea] {\n      opacity: 0;\n      z-index: -2;\n}\n.uploader .images-preview[data-v-07337dea] {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-wrap: wrap;\n        flex-wrap: wrap;\n    margin-top: 20px;\n    margin-left: auto;\n}\n.uploader .images-preview .img-wrapper[data-v-07337dea] {\n      width: 160px;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: vertical;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: column;\n              flex-direction: column;\n      margin: 10px;\n      height: 150px;\n      -webkit-box-pack: justify;\n          -ms-flex-pack: justify;\n              justify-content: space-between;\n      background: #fff;\n      -webkit-box-shadow: 5px 5px 20px #3e3737;\n              box-shadow: 5px 5px 20px #3e3737;\n}\n.uploader .images-preview .img-wrapper img[data-v-07337dea] {\n        max-height: 105px;\n}\n.uploader .images-preview .details[data-v-07337dea] {\n      font-size: 12px;\n      background: #fff;\n      color: #000;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: vertical;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: column;\n              flex-direction: column;\n      -webkit-box-align: self-start;\n          -ms-flex-align: self-start;\n              align-items: self-start;\n      padding: 3px 6px;\n}\n.uploader .images-preview .details .name[data-v-07337dea] {\n        overflow: hidden;\n        height: 18px;\n}\n.uploader .upload-control[data-v-07337dea] {\n    position: absolute;\n    width: 100%;\n    background: #fff;\n    top: 0;\n    left: 0;\n    border-top-left-radius: 7px;\n    border-top-right-radius: 7px;\n    padding: 10px;\n    padding-bottom: 4px;\n    text-align: right;\n}\n.uploader .upload-control button[data-v-07337dea], .uploader .upload-control label[data-v-07337dea] {\n      background: #2196F3;\n      border: 2px solid #03A9F4;\n      border-radius: 3px;\n      color: #fff;\n      font-size: 15px;\n      cursor: pointer;\n}\n.uploader .upload-control label[data-v-07337dea] {\n      padding: 2px 5px;\n      margin-right: 10px;\n}\n.body[data-v-07337dea] {\n  height: 100vh;\n}\n.button-selector[data-v-07337dea] {\n  width: 6rem;\n  height: 6rem;\n  border-radius: 25px;\n  margin: 1rem;\n  font-size: 3rem;\n}\n.button-digit[data-v-07337dea] {\n  width: 3rem;\n  height: 3rem;\n  border-radius: 25px;\n  margin-left: auto;\n  margin-right: auto;\n  font-size: 1rem;\n}\n.nav-box[data-v-07337dea] {\n  text-align: center;\n  position: absolute;\n  width: 50%;\n  left: 25%;\n  bottom: 0;\n}\n.nav-button[data-v-07337dea] {\n  width: 6rem;\n  height: 3rem;\n  font-size: 1rem;\n  border-radius: 25px;\n  margin: 1rem;\n  background-color: lightgray;\n}\n.input-box[data-v-07337dea] {\n  width: 80%;\n  margin-left: auto;\n  margin-right: auto;\n}\n.create-animal-box[data-v-07337dea] {\n  background-color: #2196F3;\n  margin-top: 20px;\n  padding-top: 20px;\n  text-align: center;\n  border: 2px solid black;\n  -webkit-box-shadow: 5px 5px;\n          box-shadow: 5px 5px;\n  height: 90vh;\n}\n.selection-box[data-v-07337dea] {\n  text-align: center;\n}\n.green[data-v-07337dea] {\n  color: limegreen;\n}\n.red[data-v-07337dea] {\n  color: red;\n}\n.grey[data-v-07337dea] {\n  color: slategrey;\n}\n.progress[data-v-07337dea] {\n  background-color: navy;\n  height: 10px;\n  -webkit-transition: width 500ms;\n  transition: width 500ms;\n  border-right: 2px solid black;\n}\n.form-box[data-v-07337dea] {\n  height: 300px;\n}\n.pic-box[data-v-07337dea] {\n  margin-left: auto;\n  margin-right: auto;\n  text-align: center;\n}\n.digit-row[data-v-07337dea] {\n  margin-left: auto;\n  margin-right: auto;\n  margin-top: 1rem;\n}\ntable[data-v-07337dea] {\n  margin-left: auto;\n  margin-right: auto;\n}\n@media only screen and (max-width: 900px) {\n.nav-box[data-v-07337dea] {\n    text-align: center;\n    color: red;\n    position: absolute;\n    width: 50%;\n    left: 25%;\n    bottom: 0;\n}\n.nav-button[data-v-07337dea] {\n    width: 4rem;\n    height: 3rem;\n    font-size: 1rem;\n    border-radius: 25px;\n    margin: .4rem;\n    background-color: lightgray;\n}\n}\n", ""]);
+exports.push([module.i, "\n.uploader[data-v-07337dea] {\n  width: 100%;\n  background: #2196F3;\n  color: #fff;\n  padding: 40px 15px;\n  text-align: center;\n  border-radius: 10px;\n  border: 3px dashed #fff;\n  font-size: 20px;\n  position: relative;\n}\n.uploader.dragging[data-v-07337dea] {\n    background: #fff;\n    color: #2196F3;\n    border: 3px dashed #2196F3;\n}\n.uploader.dragging .file-input label[data-v-07337dea] {\n      background: #2196F3;\n      color: #fff;\n}\n.uploader i[data-v-07337dea] {\n    font-size: 85px;\n}\n.uploader .file-input[data-v-07337dea] {\n    width: 200px;\n    margin: auto;\n    height: 68px;\n    position: relative;\n}\n.uploader .file-input label[data-v-07337dea],\n    .uploader .file-input input[data-v-07337dea] {\n      background: #fff;\n      color: #2196F3;\n      width: 100%;\n      position: absolute;\n      left: 0;\n      top: 0;\n      padding: 10px;\n      border-radius: 4px;\n      margin-top: 7px;\n      cursor: pointer;\n}\n.uploader .file-input input[data-v-07337dea] {\n      opacity: 0;\n      z-index: -2;\n}\n.uploader .images-preview[data-v-07337dea] {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-wrap: wrap;\n        flex-wrap: wrap;\n    margin-top: 20px;\n    margin-left: auto;\n}\n.uploader .images-preview .img-wrapper[data-v-07337dea] {\n      width: 160px;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: vertical;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: column;\n              flex-direction: column;\n      margin: 10px;\n      height: 150px;\n      -webkit-box-pack: justify;\n          -ms-flex-pack: justify;\n              justify-content: space-between;\n      background: #fff;\n      -webkit-box-shadow: 5px 5px 20px #3e3737;\n              box-shadow: 5px 5px 20px #3e3737;\n}\n.uploader .images-preview .img-wrapper img[data-v-07337dea] {\n        max-height: 105px;\n}\n.uploader .images-preview .details[data-v-07337dea] {\n      font-size: 12px;\n      background: #fff;\n      color: #000;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: vertical;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: column;\n              flex-direction: column;\n      -webkit-box-align: self-start;\n          -ms-flex-align: self-start;\n              align-items: self-start;\n      padding: 3px 6px;\n}\n.uploader .images-preview .details .name[data-v-07337dea] {\n        overflow: hidden;\n        height: 18px;\n}\n.uploader .upload-control[data-v-07337dea] {\n    position: absolute;\n    width: 100%;\n    background: #fff;\n    top: 0;\n    left: 0;\n    border-top-left-radius: 7px;\n    border-top-right-radius: 7px;\n    padding: 10px;\n    padding-bottom: 4px;\n    text-align: right;\n}\n.uploader .upload-control button[data-v-07337dea], .uploader .upload-control label[data-v-07337dea] {\n      background: #2196F3;\n      border: 2px solid #03A9F4;\n      border-radius: 3px;\n      color: #fff;\n      font-size: 15px;\n      cursor: pointer;\n}\n.uploader .upload-control label[data-v-07337dea] {\n      padding: 2px 5px;\n      margin-right: 10px;\n}\n.body[data-v-07337dea] {\n  height: 100vh;\n}\n.button-selector[data-v-07337dea] {\n  width: 6rem;\n  height: 6rem;\n  border-radius: 25px;\n  margin: 1rem;\n  font-size: 3rem;\n}\n.button-digit[data-v-07337dea] {\n  width: 6rem;\n  height: 6rem;\n  border-radius: 25px;\n  margin-left: auto;\n  margin-right: auto;\n  font-size: 1rem;\n}\n.digit-row[data-v-07337dea] {\n  margin-left: auto;\n  margin-right: auto;\n  margin-top: 1rem;\n}\n.nav-box[data-v-07337dea] {\n  text-align: center;\n  position: absolute;\n  width: 50%;\n  left: 25%;\n  bottom: 0;\n}\n.nav-button[data-v-07337dea] {\n  width: 6rem;\n  height: 3rem;\n  font-size: 1rem;\n  border-radius: 25px;\n  margin: 1rem;\n  background-color: lightgray;\n}\n.input-box[data-v-07337dea] {\n  width: 80%;\n  margin-left: auto;\n  margin-right: auto;\n}\n.create-animal-box[data-v-07337dea] {\n  background-color: #2196F3;\n  margin-top: 20px;\n  padding-top: 20px;\n  text-align: center;\n  border: 2px solid black;\n  -webkit-box-shadow: 5px 5px;\n          box-shadow: 5px 5px;\n  height: 90vh;\n}\n.selection-box[data-v-07337dea] {\n  text-align: center;\n}\n.green[data-v-07337dea] {\n  color: limegreen;\n}\n.red[data-v-07337dea] {\n  color: red;\n}\n.grey[data-v-07337dea] {\n  color: slategrey;\n}\n.progress[data-v-07337dea] {\n  background-color: navy;\n  height: 10px;\n  -webkit-transition: width 500ms;\n  transition: width 500ms;\n  border-right: 2px solid black;\n}\n.form-box[data-v-07337dea] {\n  height: 300px;\n}\n.pic-box[data-v-07337dea] {\n  margin-left: auto;\n  margin-right: auto;\n  text-align: center;\n}\ntable[data-v-07337dea] {\n  margin-left: auto;\n  margin-right: auto;\n}\n@media only screen and (max-width: 600px) {\n.nav-box[data-v-07337dea] {\n    text-align: center;\n    color: red;\n    position: absolute;\n    width: 50%;\n    left: 25%;\n    bottom: 0;\n}\n.nav-button[data-v-07337dea] {\n    width: 4rem;\n    height: 3rem;\n    font-size: 1rem;\n    border-radius: 25px;\n    margin: .4rem;\n    background-color: lightgray;\n}\n.button-digit[data-v-07337dea] {\n    width: 3rem;\n    height: 3rem;\n    border-radius: 25px;\n    margin-left: auto;\n    margin-right: auto;\n    font-size: 1rem;\n}\n}\n", ""]);
 
 // exports
 
@@ -28170,6 +28170,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuelidate___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vuelidate__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__);
+//
+//
+//
+//
+//
 //
 //
 //
@@ -30189,23 +30194,35 @@ var render = function() {
                         { staticClass: "digit-row" },
                         [
                           _c(
-                            "b-btn",
-                            {
-                              staticClass: "button-digit",
-                              staticStyle: { "font-size": "1rem" },
-                              on: { click: _vm.select0 }
-                            },
-                            [_vm._v("0")]
+                            "b-col",
+                            [
+                              _c(
+                                "b-btn",
+                                {
+                                  staticClass: "button-digit",
+                                  staticStyle: { "font-size": "1rem" },
+                                  on: { click: _vm.select0 }
+                                },
+                                [_vm._v("0")]
+                              )
+                            ],
+                            1
                           ),
                           _vm._v(" "),
                           _c(
-                            "b-btn",
-                            {
-                              staticClass: "button-digit",
-                              staticStyle: { "font-size": "1rem" },
-                              on: { click: _vm.deleteDigit }
-                            },
-                            [_vm._v("C")]
+                            "b-col",
+                            [
+                              _c(
+                                "b-btn",
+                                {
+                                  staticClass: "button-digit",
+                                  staticStyle: { "font-size": "1rem" },
+                                  on: { click: _vm.deleteDigit }
+                                },
+                                [_vm._v("C")]
+                              )
+                            ],
+                            1
                           )
                         ],
                         1
@@ -30427,7 +30444,7 @@ exports = module.exports = __webpack_require__(8)(false);
 
 
 // module
-exports.push([module.i, "\n.body[data-v-6cd9df9e] {\n    padding: 20px;\n}\n.btn[data-v-6cd9df9e] {\n    text-align: center;\n    /* width: 24%; */\n}\n.center[data-v-6cd9df9e] {\n    text-align: center;\n}\n.searchBar[data-v-6cd9df9e] {\n    width: 100%;\n    text-align: center;\n}\n.selectButton[data-v-6cd9df9e] {\n    width: 100%;\n}\n.filterButton[data-v-6cd9df9e] {\n    width: 24%;\n}\n.animal-card[data-v-6cd9df9e] {\n    margin-bottom: 20px;\n}\n", ""]);
+exports.push([module.i, "\n.body[data-v-6cd9df9e] {\n    padding: 20px;\n}\n.btn[data-v-6cd9df9e] {\n    text-align: center;\n    /* width: 24%; */\n}\n.center[data-v-6cd9df9e] {\n    text-align: center;\n}\n.search-bar[data-v-6cd9df9e] {\n    width: 100%;\n    text-align: center;\n}\n.select-button[data-v-6cd9df9e] {\n    width: 100%;\n    margin-bottom: 20px;\n}\n.filter-button[data-v-6cd9df9e] {\n    width: 24%;\n}\n.animal-card[data-v-6cd9df9e] {\n    margin-bottom: 20px;\n    padding: 1rem;\n}\n", ""]);
 
 // exports
 
@@ -30555,7 +30572,7 @@ var render = function() {
               _c(
                 "b-button",
                 {
-                  staticClass: "filterButton",
+                  staticClass: "filter-button",
                   attrs: { disabled: "" },
                   on: { click: _vm.showAll }
                 },
@@ -30564,19 +30581,22 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "b-button",
-                { staticClass: "filterButton", on: { click: _vm.showDogs } },
+                { staticClass: "filter-button", on: { click: _vm.showDogs } },
                 [_vm._v("Dogs")]
               ),
               _vm._v(" "),
               _c(
                 "b-button",
-                { staticClass: "filterButton", on: { click: _vm.showCats } },
+                { staticClass: "filter-button", on: { click: _vm.showCats } },
                 [_vm._v("Cats")]
               ),
               _vm._v(" "),
               _c(
                 "b-button",
-                { staticClass: "filterButton", on: { click: _vm.showRabbits } },
+                {
+                  staticClass: "filter-button",
+                  on: { click: _vm.showRabbits }
+                },
                 [_vm._v("Rabbits")]
               )
             ],
@@ -30594,7 +30614,7 @@ var render = function() {
                     expression: "search"
                   }
                 ],
-                staticClass: "searchBar",
+                staticClass: "search-bar",
                 attrs: { type: "text", placeholder: "Search" },
                 domProps: { value: _vm.search },
                 on: {
@@ -30619,11 +30639,11 @@ var render = function() {
         _vm._l(_vm.filteredAnimals, function(animal, index) {
           return _c(
             "b-col",
-            { key: index, staticClass: "animal-card", attrs: { cols: "3" } },
+            { key: index, attrs: { cols: "12", md: "3" } },
             [
               animal.profile_photo
                 ? _c("b-card", {
-                    staticStyle: { height: "400px" },
+                    staticClass: "animal-card",
                     attrs: {
                       "img-src":
                         "http://localhost:8000/storage/" + animal.profile_photo,
@@ -30633,10 +30653,12 @@ var render = function() {
                     }
                   })
                 : _c("b-card", {
-                    staticStyle: { height: "400px" },
+                    staticClass: "animal-card",
                     attrs: {
                       "img-src":
                         "http://localhost:8000/storage/images/dog_placeholder.jpg",
+                      thumbnail: "",
+                      fluid: "",
                       "img-alt": "No Selected animal image"
                     }
                   }),
@@ -30644,7 +30666,7 @@ var render = function() {
               _c(
                 "b-btn",
                 {
-                  staticClass: "selectButton",
+                  staticClass: "select-button",
                   attrs: { animal: "'animal.id'" },
                   on: {
                     click: function($event) {
