@@ -30465,8 +30465,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(13);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-//
-//
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -30515,23 +30515,51 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     name: 'animal',
     data: function data() {
         return {
+
             name: '',
             animal: '',
             search: '',
-            selectedAnimal: ''
+            selectedAnimal: '',
+            filterDogs: false,
+            filterCats: false,
+            filterRabbits: false
         };
     },
 
     computed: _extends({
         filteredAnimals: function filteredAnimals() {
             var self = this;
+            var results = [];
+            var allAnimals = this.$store.state.animals;
 
-            return this.$store.state.animals.filter(function (animal) {
-                return animal.name.toLowerCase().indexOf(self.search.toLowerCase()) >= 0 || animal.breed.toLowerCase().indexOf(self.search.toLowerCase()) >= 0 || animal.species.toLowerCase().indexOf(self.search.toLowerCase()) >= 0;
-            });
+            if (this.filterDogs) {
+                allAnimals = this.$store.state.animals.filter(function (animal) {
+                    return animal.species === 'dog';
+                });
+            }
+
+            if (this.filterCats) {
+                allAnimals = this.$store.state.animals.filter(function (animal) {
+                    return animal.species === 'cat';
+                });
+            }
+
+            if (this.filterRabbits) {
+                allAnimals = this.$store.state.animals.filter(function (animal) {
+                    return animal.species === 'rab';
+                });
+            }
+
+            if (this.search) {
+                return this.$store.state.animals.filter(function (animal) {
+                    return animal.name.toLowerCase().indexOf(self.search.toLowerCase()) >= 0;
+                });
+            }
+
+            return allAnimals;
         }
     }, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['isAuthenticated', 'currentUser', 'getAnimals'])),
-    methods: {
+    methods: _defineProperty({
         showModal: function showModal(item) {
             this.selectedAnimal = item;
             this.$refs.selectedAnimalModal.show();
@@ -30539,22 +30567,19 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         hideModal: function hideModal() {
             this.$refs.selectedAnimalModal.hide();
         },
-        showDogs: function showDogs() {
-            this.$router.push('dogs');
-        },
-        showCats: function showCats() {
-            this.$router.push('cats');
-        },
-        showRabbits: function showRabbits() {
-            this.$router.push('rabbits');
-        },
         showAll: function showAll() {
             this.$router.push('dashboard');
         },
         noPic: function noPic() {
             console.log("NO PROFILE PICTURE");
-        }
-    }
+        },
+        filterDogs: function filterDogs() {
+            this.findDogs = true;
+        },
+        filterCats: function filterCats() {}
+    }, 'showAll', function showAll() {
+        this.findDogs = false;
+    })
 });
 
 /***/ }),
@@ -30577,32 +30602,43 @@ var render = function() {
             { attrs: { cols: "4" } },
             [
               _c(
-                "b-button",
+                "b-form-checkbox",
                 {
-                  staticClass: "filter-button",
-                  attrs: { disabled: "" },
-                  on: { click: _vm.showAll }
+                  model: {
+                    value: _vm.filterDogs,
+                    callback: function($$v) {
+                      _vm.filterDogs = $$v
+                    },
+                    expression: "filterDogs"
+                  }
                 },
-                [_vm._v("Show All")]
-              ),
-              _vm._v(" "),
-              _c(
-                "b-button",
-                { staticClass: "filter-button", on: { click: _vm.showDogs } },
                 [_vm._v("Dogs")]
               ),
               _vm._v(" "),
               _c(
-                "b-button",
-                { staticClass: "filter-button", on: { click: _vm.showCats } },
+                "b-form-checkbox",
+                {
+                  model: {
+                    value: _vm.filterCats,
+                    callback: function($$v) {
+                      _vm.filterCats = $$v
+                    },
+                    expression: "filterCats"
+                  }
+                },
                 [_vm._v("Cats")]
               ),
               _vm._v(" "),
               _c(
-                "b-button",
+                "b-form-checkbox",
                 {
-                  staticClass: "filter-button",
-                  on: { click: _vm.showRabbits }
+                  model: {
+                    value: _vm.filterRabbits,
+                    callback: function($$v) {
+                      _vm.filterRabbits = $$v
+                    },
+                    expression: "filterRabbits"
+                  }
                 },
                 [_vm._v("Rabbits")]
               )
