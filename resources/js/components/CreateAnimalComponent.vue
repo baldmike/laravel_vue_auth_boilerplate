@@ -5,13 +5,12 @@
                 <b-form-group id="nameGroup" v-if="formStep===1" class="form-box">
                     <h5 style="margin-bottom: 20px;">Please enter the animal's name:</h5>
                     <b-form-input id="animalName"
-                    
-                    class="input-box"
-                    type="text"
-                    v-model="form.name"
-                    required
-                    :state="!$v.form.name.$invalid"
-                    placeholder="Animal's name"/>                 
+                        class="input-box"
+                        type="text"
+                        v-model="form.name"
+                        required
+                        :state="!$v.form.name.$invalid"
+                        placeholder="Animal's name"/>                 
                 </b-form-group>
                 
                 <b-form-group id="speciesGroup" v-if="formStep===2" class="form-box">
@@ -123,19 +122,28 @@
 
                 <b-form-group v-if="formStep===8" class="form-box">
                     <b-row>
+                        
+                            
+                        
                         <b-col v-if="!images.length">
                             <h5 style="margin-bottom: 20px;">Select an image to upload</h5>
                         </b-col>
+                        <br><br>
                         <b-col sm="12" v-if="!images.length">
                             
-
-                            <input type="file"
-                                    id="profilePhoto"
-                                    :name="form.profilePhoto" 
-                                    @change="onInputChange" 
-                                    placeholder="Choose Image to Upload"
-                                    class="uploadButton"
-                                    enctype="multipart/form-data">
+                            <div class="image-wrapper">
+                                <b-btn class="button-selector" @click="triggerSelectImage"><i class="fa fa-download"></i></b-btn>
+                                <div class="upload-button">
+                                    <input type="file"
+                                        id="profilePhoto"
+                                        :name="form.profilePhoto" 
+                                        @change="onInputChange" 
+                                        ref="imageInput"
+                                        enctype="multipart/form-data">
+                                </div>
+                            </div>
+                            
+                            
                             
                         </b-col>
                         <b-col sm="12" md="4" offset-md="4">
@@ -606,6 +614,9 @@
                 }
                 return `${(Math.round(size * 100) / 100)} ${fSExt[i]}`;
             },
+            
+            
+            
             upload() {
                 const formData = new FormData();
                 
@@ -624,6 +635,12 @@
                     this.files = [];
                 })
             },
+
+            triggerSelectImage() {
+                this.$refs.imageInput.click()
+            },
+
+
             showModal() {
                 this.$refs.formIndexModal.show()
             },
@@ -772,6 +789,7 @@
 
     .body {
         height: 90vh;
+        width: 90vw;
     }
     .button-selector {
         width: 6rem;
@@ -815,9 +833,10 @@
         margin-left: auto;
         margin-right: auto;
     }
-    .uploadButton {
-        height: 6rem;
-        width: 6rem;
+    .upload-button {
+        visibility: hidden;
+        
+        width: 100%;
     }
     .create-animal-box {
         padding: 20px;
@@ -856,6 +875,13 @@
         margin-left: auto;
         margin-right: auto;
         text-align: center;
+    }
+    .image-wrapper {
+        position: relative;
+    }
+    .upButton {
+        color: slategray;
+        margin-bottom: 2rem;
     }
 
     table {
