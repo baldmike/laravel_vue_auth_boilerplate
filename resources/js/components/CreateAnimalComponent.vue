@@ -117,6 +117,7 @@
                     <b-form-input id="birthdate"
                                 onkeypress="return event.keyCode != 13;"
                                 type="date"
+                                class="input-box"
                                 v-model="form.birthdate"/>
                 </b-form-group>
 
@@ -797,7 +798,7 @@
         position: absolute;
         width: 50%;
         left: 25%;
-        bottom: 5%;
+        bottom: 10%;
     }
     .nav-button {
         width: 8rem;
@@ -810,7 +811,7 @@
         background-color: lightgray;
     }
     .input-box {
-        width: 80%;
+        width: 16rem;
         margin-left: auto;
         margin-right: auto;
     }
@@ -845,6 +846,7 @@
         height: 10px;
         transition: width 500ms;
         border-right: 2px solid black
+        
     }
     .form-box {
         height: 300px;
@@ -867,7 +869,7 @@
             position: absolute;
             width: 50%;
             left: 25%;
-            bottom: 0;
+            bottom: 10%;
         }
 
         .nav-button {
@@ -875,7 +877,7 @@
             height: 3rem;
             font-size: 1rem;
             border-radius: 25px;
-            margin: .3rem;
+            margin: .5rem;
             margin-left: auto;
             margin-right: auto;
             background-color: lightgray;
