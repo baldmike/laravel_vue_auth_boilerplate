@@ -2,10 +2,9 @@
     <div class="body">
         <b-row>
             <b-col cols="4">
-                <b-button class="filter-button" @click="showAll" disabled>Show All</b-button>
-                <b-button class="filter-button" @click="showDogs">Dogs</b-button>
-                <b-button class="filter-button" @click="showCats">Cats</b-button>
-                <b-button class="filter-button" @click="showRabbits">Rabbits</b-button>
+                <b-form-checkbox v-model="filterDogs">Dogs</b-form-checkbox>
+                <b-form-checkbox v-model="filterCats">Cats</b-form-checkbox>
+                <b-form-checkbox v-model="filterRabbits">Rabbits</b-form-checkbox>
             </b-col>
             <b-col cols="4">
                 <div class="my-3">
@@ -27,7 +26,6 @@
                 <b-btn class="select-button" @click="showModal(animal)" animal="'animal.id'">{{ animal.name }}  |  <span style="color: black;"> {{ animal.species }} </span>  |  {{ animal.breed }}</b-btn>
             </b-col>
         </b-row>
-        
 
         <div>
             <!-- Modal Component -->
@@ -48,17 +46,41 @@
         name: 'animal',
         data() {
             return {
+                
                 name: '',
                 animal: '',
                 search: '',
                 selectedAnimal: '',
+                filterDogs: false,
+                filterCats: false,
+                filterRabbits: false,
             }
         },
         computed: {
             filteredAnimals() {
-                var self=this;
+                let self=this;
+                let results = [];
+                let allAnimals = this.$store.state.animals;
 
-                return this.$store.state.animals.filter(animal => animal.name.toLowerCase().indexOf(self.search.toLowerCase())>=0 || animal.breed.toLowerCase().indexOf(self.search.toLowerCase())>=0 || animal.species.toLowerCase().indexOf(self.search.toLowerCase())>=0);
+                if (this.filterDogs) {
+                    allAnimals = this.$store.state.animals.filter(animal => animal.species === 'dog')
+                }
+
+                if (this.filterCats) {
+                    allAnimals = this.$store.state.animals.filter(animal => animal.species === 'cat')
+                }
+            
+                if (this.filterRabbits) {
+                    allAnimals = this.$store.state.animals.filter(animal => animal.species === 'rab')
+                }
+
+                if (this.search) {
+                    return this.$store.state.animals.filter(animal => animal.name.toLowerCase().indexOf(self.search.toLowerCase())>=0);
+                
+                }
+                
+                return allAnimals;
+                
             },
         ...mapGetters(['isAuthenticated', 'currentUser', 'getAnimals'])},
         methods: {
@@ -69,21 +91,12 @@
             hideModal () {
                 this.$refs.selectedAnimalModal.hide()
             },
-            showDogs() {
-                this.$router.push('dogs');
-            },
-            showCats() {
-                this.$router.push('cats');
-            },
-            showRabbits() {
-                this.$router.push('rabbits');
-            },
             showAll() {
                 this.$router.push('dashboard')
             },
             noPic() {
                 console.log("NO PROFILE PICTURE");
-            }
+            },
         },
     }
 </script>
