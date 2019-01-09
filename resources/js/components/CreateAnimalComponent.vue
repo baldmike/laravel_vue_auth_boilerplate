@@ -122,13 +122,18 @@
 
                 <b-form-group v-if="formStep===8" class="form-box">
                     <b-row>
-                        <b-col sm="12" md="4" md-offset="5" v-if="!images.length">
-                            <label for="profilePhoto">Select a file</label>
+                        <b-col v-if="!images.length">
+                            <h5 style="margin-bottom: 20px;">Select an image to upload</h5>
+                        </b-col>
+                        <b-col sm="12" v-if="!images.length">
+                            
 
                             <input type="file"
                                     id="profilePhoto"
                                     :name="form.profilePhoto" 
                                     @change="onInputChange" 
+                                    placeholder="Choose Image to Upload"
+                                    class="uploadButton"
                                     enctype="multipart/form-data">
                             
                         </b-col>
@@ -188,21 +193,20 @@
 
             </b-form>
 
-            <div class="progress">
-                <div class="progress"
-                style="background-color: white; margin: 0;"
-                :style="{width: progress + '%'}"/>
-            </div>
-
-            
-
             <div class="nav-box">
                 <b-row>
                     <b-btn class="nav-button" @click="previousFormStep" :disabled="formStep<2"><i class="fas fa-arrow-left"></i></b-btn>
                     <b-btn class="nav-button" @click="nextFormStep"><i class="fas fa-arrow-right"></i></b-btn>
                 </b-row>
 
+                <div class="progress">
+                    <div class="progress"
+                    style="background-color: white; margin: 0;"
+                    :style="{width: progress + '%'}"/>
+                </div>
             </div>
+
+            
         </b-col>
     </div>
 </template>
@@ -766,7 +770,7 @@
 
 
     .body {
-        height: 100vh;
+        height: 90vh;
     }
     .button-selector {
         width: 6rem;
@@ -793,14 +797,16 @@
         position: absolute;
         width: 50%;
         left: 25%;
-        bottom: 0;
+        bottom: 5%;
     }
     .nav-button {
-        width: 6rem;
+        width: 8rem;
         height: 3rem;
         font-size: 1rem;
         border-radius: 25px;
         margin: 1rem;
+        margin-left: auto;
+        margin-right: auto;
         background-color: lightgray;
     }
     .input-box {
@@ -808,7 +814,12 @@
         margin-left: auto;
         margin-right: auto;
     }
+    .uploadButton {
+        height: 6rem;
+        width: 6rem;
+    }
     .create-animal-box {
+        padding: 20px;
         background-color: #2196F3;
         margin-top: 20px;
         padding-top: 20px;
@@ -830,13 +841,14 @@
         color: slategrey;
     }
     .progress {
-        background-color: navy;
+        background-color: black;
         height: 10px;
         transition: width 500ms;
         border-right: 2px solid black
     }
     .form-box {
         height: 300px;
+        padding-top: 2rem;
     }
     .pic-box {
         margin-left: auto;
@@ -848,7 +860,7 @@
         margin-left: auto;
         margin-right: auto;
     }
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 940px) {
         .nav-box {
             text-align: center;
             color: red;
@@ -863,7 +875,9 @@
             height: 3rem;
             font-size: 1rem;
             border-radius: 25px;
-            margin: .4rem;
+            margin: .3rem;
+            margin-left: auto;
+            margin-right: auto;
             background-color: lightgray;
         }
 

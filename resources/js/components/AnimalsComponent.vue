@@ -97,16 +97,6 @@
             noPic() {
                 console.log("NO PROFILE PICTURE");
             },
-            filterDogs() {
-                this.findDogs = true;
-
-            },
-            filterCats() {
-
-            },
-            showAll() {
-                this.findDogs = false;
-            }
         },
     }
 </script>
