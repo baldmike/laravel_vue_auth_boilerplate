@@ -351,12 +351,6 @@
             }
         },
         methods: {
-            noenter(e) {
-                e = e || window.event;
-                var key = e.keyCode || e.charCode;
-                //alert('e.type: ' + e.type + '; key: ' + key);
-                return key !== 13; 
-            },
             onSubmit(e) {
                 e.preventDefault();
             },

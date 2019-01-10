@@ -28513,12 +28513,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }
     },
     methods: {
-        noenter: function noenter(e) {
-            e = e || window.event;
-            var key = e.keyCode || e.charCode;
-            //alert('e.type: ' + e.type + '; key: ' + key);
-            return key !== 13;
-        },
         onSubmit: function onSubmit(e) {
             e.preventDefault();
         },
