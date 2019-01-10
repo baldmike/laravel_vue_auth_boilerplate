@@ -351,12 +351,6 @@
             }
         },
         methods: {
-            noenter(e) {
-                e = e || window.event;
-                var key = e.keyCode || e.charCode;
-                //alert('e.type: ' + e.type + '; key: ' + key);
-                return key !== 13; 
-            },
             onSubmit(e) {
                 e.preventDefault();
             },
@@ -424,7 +418,7 @@
                 // add to "profile" as user builds
             },
             selectMale() {
-                this.form.gender = "male";
+                this.form.gender = "M";
                 this.isMale = true;
 
                 if (this.isFemale) {
@@ -437,7 +431,7 @@
                 // add to "profile" as user builds
             },
             selectFemale() {
-                this.form.gender = "female";
+                this.form.gender = "F";
                 this.isFemale = true;
 
                 if (this.isMale) {
