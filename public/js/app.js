@@ -28155,7 +28155,7 @@ exports = module.exports = __webpack_require__(8)(false);
 
 
 // module
-exports.push([module.i, "\n.uploader[data-v-07337dea] {\n  width: 100%;\n  background: #2196F3;\n  color: #fff;\n  padding: 40px 15px;\n  text-align: center;\n  border-radius: 10px;\n  border: 3px dashed #fff;\n  font-size: 20px;\n  position: relative;\n}\n.uploader.dragging[data-v-07337dea] {\n    background: #fff;\n    color: #2196F3;\n    border: 3px dashed #2196F3;\n}\n.uploader.dragging .file-input label[data-v-07337dea] {\n      background: #2196F3;\n      color: #fff;\n}\n.uploader i[data-v-07337dea] {\n    font-size: 85px;\n}\n.uploader .file-input[data-v-07337dea] {\n    width: 200px;\n    margin: auto;\n    height: 68px;\n    position: relative;\n}\n.uploader .file-input label[data-v-07337dea],\n    .uploader .file-input input[data-v-07337dea] {\n      background: #fff;\n      color: #2196F3;\n      width: 100%;\n      position: absolute;\n      left: 0;\n      top: 0;\n      padding: 10px;\n      border-radius: 4px;\n      margin-top: 7px;\n      cursor: pointer;\n}\n.uploader .file-input input[data-v-07337dea] {\n      opacity: 0;\n      z-index: -2;\n}\n.uploader .images-preview[data-v-07337dea] {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-wrap: wrap;\n        flex-wrap: wrap;\n    margin-top: 20px;\n    margin-left: auto;\n}\n.uploader .images-preview .img-wrapper[data-v-07337dea] {\n      width: 160px;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: vertical;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: column;\n              flex-direction: column;\n      margin: 10px;\n      height: 150px;\n      -webkit-box-pack: justify;\n          -ms-flex-pack: justify;\n              justify-content: space-between;\n      background: #fff;\n      -webkit-box-shadow: 5px 5px 20px #3e3737;\n              box-shadow: 5px 5px 20px #3e3737;\n}\n.uploader .images-preview .img-wrapper img[data-v-07337dea] {\n        max-height: 105px;\n}\n.uploader .images-preview .details[data-v-07337dea] {\n      font-size: 12px;\n      background: #fff;\n      color: #000;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: vertical;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: column;\n              flex-direction: column;\n      -webkit-box-align: self-start;\n          -ms-flex-align: self-start;\n              align-items: self-start;\n      padding: 3px 6px;\n}\n.uploader .images-preview .details .name[data-v-07337dea] {\n        overflow: hidden;\n        height: 18px;\n}\n.uploader .upload-control[data-v-07337dea] {\n    position: absolute;\n    width: 100%;\n    background: #fff;\n    top: 0;\n    left: 0;\n    border-top-left-radius: 7px;\n    border-top-right-radius: 7px;\n    padding: 10px;\n    padding-bottom: 4px;\n    text-align: right;\n}\n.uploader .upload-control button[data-v-07337dea], .uploader .upload-control label[data-v-07337dea] {\n      background: #2196F3;\n      border: 2px solid #03A9F4;\n      border-radius: 3px;\n      color: #fff;\n      font-size: 15px;\n      cursor: pointer;\n}\n.uploader .upload-control label[data-v-07337dea] {\n      padding: 2px 5px;\n      margin-right: 10px;\n}\n.body[data-v-07337dea] {\n  height: 90vh;\n  width: 90vw;\n}\n.button-selector[data-v-07337dea] {\n  width: 6rem;\n  height: 6rem;\n  border-radius: 25px;\n  margin: 1rem;\n  font-size: 3rem;\n}\n.button-digit[data-v-07337dea] {\n  width: 6rem;\n  height: 6rem;\n  border-radius: 25px;\n  margin-left: auto;\n  margin-right: auto;\n  font-size: 1rem;\n}\n.digit-row[data-v-07337dea] {\n  margin-left: auto;\n  margin-right: auto;\n  margin-top: 1rem;\n}\n.nav-box[data-v-07337dea] {\n  text-align: center;\n  position: absolute;\n  width: 50%;\n  left: 25%;\n  bottom: 10%;\n}\n.nav-button[data-v-07337dea] {\n  width: 8rem;\n  height: 3rem;\n  font-size: 1rem;\n  border-radius: 25px;\n  margin: 1rem;\n  margin-left: auto;\n  margin-right: auto;\n  background-color: lightgray;\n}\n.input-box[data-v-07337dea] {\n  width: 16rem;\n  margin-left: auto;\n  margin-right: auto;\n}\n.upload-button[data-v-07337dea] {\n  visibility: hidden;\n  width: 100%;\n}\n.create-animal-box[data-v-07337dea] {\n  padding: 20px;\n  background-color: #2196F3;\n  margin-top: 20px;\n  padding-top: 20px;\n  text-align: center;\n  border: 2px solid black;\n  -webkit-box-shadow: 5px 5px;\n          box-shadow: 5px 5px;\n  height: 90vh;\n}\n.selection-box[data-v-07337dea] {\n  text-align: center;\n}\n.green[data-v-07337dea] {\n  color: limegreen;\n}\n.red[data-v-07337dea] {\n  color: red;\n}\n.grey[data-v-07337dea] {\n  color: slategrey;\n}\n.progress[data-v-07337dea] {\n  background-color: black;\n  height: 10px;\n  -webkit-transition: width 500ms;\n  transition: width 500ms;\n  border-right: 2px solid black;\n}\n.form-box[data-v-07337dea] {\n  height: 300px;\n  padding-top: 2rem;\n}\n.pic-box[data-v-07337dea] {\n  margin-left: auto;\n  margin-right: auto;\n  text-align: center;\n}\n.image-wrapper[data-v-07337dea] {\n  position: relative;\n}\n.upButton[data-v-07337dea] {\n  color: slategray;\n  margin-bottom: 2rem;\n}\ntable[data-v-07337dea] {\n  margin-left: auto;\n  margin-right: auto;\n}\n@media only screen and (max-width: 940px) {\n.nav-box[data-v-07337dea] {\n    text-align: center;\n    color: red;\n    position: absolute;\n    width: 50%;\n    left: 25%;\n    bottom: 10%;\n}\n.nav-button[data-v-07337dea] {\n    width: 4rem;\n    height: 3rem;\n    font-size: 1rem;\n    border-radius: 25px;\n    margin: .5rem;\n    margin-left: auto;\n    margin-right: auto;\n    background-color: lightgray;\n}\n.button-digit[data-v-07337dea] {\n    width: 3rem;\n    height: 3rem;\n    border-radius: 25px;\n    margin-left: auto;\n    margin-right: auto;\n    font-size: 1rem;\n}\n}\n", ""]);
+exports.push([module.i, "\n.uploader[data-v-07337dea] {\n  width: 100%;\n  background: #2196F3;\n  color: #fff;\n  padding: 40px 15px;\n  text-align: center;\n  border-radius: 10px;\n  border: 3px dashed #fff;\n  font-size: 20px;\n  position: relative;\n}\n.uploader.dragging[data-v-07337dea] {\n    background: #fff;\n    color: #2196F3;\n    border: 3px dashed #2196F3;\n}\n.uploader.dragging .file-input label[data-v-07337dea] {\n      background: #2196F3;\n      color: #fff;\n}\n.uploader i[data-v-07337dea] {\n    font-size: 85px;\n}\n.uploader .file-input[data-v-07337dea] {\n    width: 200px;\n    margin: auto;\n    height: 68px;\n    position: relative;\n}\n.uploader .file-input label[data-v-07337dea],\n    .uploader .file-input input[data-v-07337dea] {\n      background: #fff;\n      color: #2196F3;\n      width: 100%;\n      position: absolute;\n      left: 0;\n      top: 0;\n      padding: 10px;\n      border-radius: 4px;\n      margin-top: 7px;\n      cursor: pointer;\n}\n.uploader .file-input input[data-v-07337dea] {\n      opacity: 0;\n      z-index: -2;\n}\n.uploader .images-preview[data-v-07337dea] {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-wrap: wrap;\n        flex-wrap: wrap;\n    margin-top: 20px;\n    margin-left: auto;\n}\n.uploader .images-preview .img-wrapper[data-v-07337dea] {\n      width: 160px;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: vertical;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: column;\n              flex-direction: column;\n      margin: 10px;\n      height: 150px;\n      -webkit-box-pack: justify;\n          -ms-flex-pack: justify;\n              justify-content: space-between;\n      background: #fff;\n      -webkit-box-shadow: 5px 5px 20px #3e3737;\n              box-shadow: 5px 5px 20px #3e3737;\n}\n.uploader .images-preview .img-wrapper img[data-v-07337dea] {\n        max-height: 105px;\n}\n.uploader .images-preview .details[data-v-07337dea] {\n      font-size: 12px;\n      background: #fff;\n      color: #000;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: vertical;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: column;\n              flex-direction: column;\n      -webkit-box-align: self-start;\n          -ms-flex-align: self-start;\n              align-items: self-start;\n      padding: 3px 6px;\n}\n.uploader .images-preview .details .name[data-v-07337dea] {\n        overflow: hidden;\n        height: 18px;\n}\n.uploader .upload-control[data-v-07337dea] {\n    position: absolute;\n    width: 100%;\n    background: #fff;\n    top: 0;\n    left: 0;\n    border-top-left-radius: 7px;\n    border-top-right-radius: 7px;\n    padding: 10px;\n    padding-bottom: 4px;\n    text-align: right;\n}\n.uploader .upload-control button[data-v-07337dea], .uploader .upload-control label[data-v-07337dea] {\n      background: #2196F3;\n      border: 2px solid #03A9F4;\n      border-radius: 3px;\n      color: #fff;\n      font-size: 15px;\n      cursor: pointer;\n}\n.uploader .upload-control label[data-v-07337dea] {\n      padding: 2px 5px;\n      margin-right: 10px;\n}\n.body[data-v-07337dea] {\n  height: 90vh;\n  width: 90vw;\n}\n.button-selector[data-v-07337dea] {\n  width: 6rem;\n  height: 6rem;\n  border-radius: 25px;\n  margin: 1rem;\n  font-size: 3rem;\n}\n.button-digit[data-v-07337dea] {\n  width: 5rem;\n  height: 5rem;\n  border-radius: 25px;\n  margin-left: auto;\n  margin-right: auto;\n  font-size: 1rem;\n}\n.digit-row[data-v-07337dea] {\n  margin-left: auto;\n  margin-right: auto;\n  margin-top: 1rem;\n}\n.nav-box[data-v-07337dea] {\n  text-align: center;\n  position: absolute;\n  width: 50%;\n  left: 25%;\n  bottom: 10%;\n}\n.nav-button[data-v-07337dea] {\n  width: 8rem;\n  height: 3rem;\n  font-size: 1rem;\n  border-radius: 25px;\n  margin: 1rem;\n  margin-left: auto;\n  margin-right: auto;\n  background-color: lightgray;\n}\n.input-box[data-v-07337dea] {\n  width: 16rem;\n  margin-left: auto;\n  margin-right: auto;\n}\n.upload-button[data-v-07337dea] {\n  visibility: hidden;\n  width: 100%;\n}\n.create-animal-box[data-v-07337dea] {\n  padding: 20px;\n  background-color: #2196F3;\n  margin-top: 20px;\n  padding-top: 20px;\n  text-align: center;\n  border: 2px solid black;\n  -webkit-box-shadow: 5px 5px;\n          box-shadow: 5px 5px;\n  height: 90vh;\n}\n.selection-box[data-v-07337dea] {\n  text-align: center;\n}\n.green[data-v-07337dea] {\n  color: limegreen;\n}\n.red[data-v-07337dea] {\n  color: red;\n}\n.grey[data-v-07337dea] {\n  color: slategrey;\n}\n.progress[data-v-07337dea] {\n  background-color: black;\n  height: 10px;\n  -webkit-transition: width 500ms;\n  transition: width 500ms;\n  border-right: 2px solid black;\n}\n.form-box[data-v-07337dea] {\n  height: 300px;\n  padding-top: 2rem;\n  margin-bottom: 20px;\n}\n.pic-box[data-v-07337dea] {\n  margin-left: auto;\n  margin-right: auto;\n  text-align: center;\n}\n.image-wrapper[data-v-07337dea] {\n  position: relative;\n}\n.upButton[data-v-07337dea] {\n  color: slategray;\n  margin-bottom: 2rem;\n}\ntable[data-v-07337dea] {\n  margin-left: auto;\n  margin-right: auto;\n}\n@media only screen and (max-width: 940px) {\n.nav-box[data-v-07337dea] {\n    text-align: center;\n    color: red;\n    position: absolute;\n    width: 50%;\n    left: 25%;\n    bottom: 10%;\n}\n.nav-button[data-v-07337dea] {\n    width: 4rem;\n    height: 3rem;\n    font-size: 1rem;\n    border-radius: 25px;\n    margin: .5rem;\n    margin-left: auto;\n    margin-right: auto;\n    background-color: lightgray;\n}\n.button-digit[data-v-07337dea] {\n    width: 3rem;\n    height: 3rem;\n    border-radius: 25px;\n    margin-left: auto;\n    margin-right: auto;\n    font-size: 1rem;\n}\n}\n", ""]);
 
 // exports
 
@@ -28170,7 +28170,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuelidate___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vuelidate__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__);
-//
 //
 //
 //
@@ -29921,34 +29920,40 @@ var render = function() {
                       attrs: { id: "microchipGroup" }
                     },
                     [
-                      _c("h5", [
-                        _vm._v(
-                          "If " +
-                            _vm._s(_vm.form.name) +
-                            " is chipped, enter " +
-                            _vm._s(_vm.pronoun) +
-                            " chip number:."
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("b-form-input", {
-                        staticClass: "input-box",
-                        attrs: {
-                          id: "microchip",
-                          onkeypress: "return event.keyCode != 13;",
-                          type: "text",
-                          placeholder: "Microchip number"
-                        },
-                        model: {
-                          value: _vm.form.microchipNumber,
-                          callback: function($$v) {
-                            _vm.$set(_vm.form, "microchipNumber", $$v)
-                          },
-                          expression: "form.microchipNumber"
-                        }
-                      })
-                    ],
-                    1
+                      _c(
+                        "div",
+                        { staticClass: "selection-box" },
+                        [
+                          _c("h5", [
+                            _vm._v(
+                              "If " +
+                                _vm._s(_vm.form.name) +
+                                " is chipped, enter " +
+                                _vm._s(_vm.pronoun) +
+                                " chip number:."
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("b-form-input", {
+                            staticClass: "input-box",
+                            attrs: {
+                              id: "microchip",
+                              onkeypress: "return event.keyCode != 13;",
+                              type: "text",
+                              placeholder: "Microchip number"
+                            },
+                            model: {
+                              value: _vm.form.microchipNumber,
+                              callback: function($$v) {
+                                _vm.$set(_vm.form, "microchipNumber", $$v)
+                              },
+                              expression: "form.microchipNumber"
+                            }
+                          })
+                        ],
+                        1
+                      )
+                    ]
                   )
                 : _vm._e(),
               _vm._v(" "),
@@ -30245,36 +30250,30 @@ var render = function() {
                         "b-row",
                         { staticClass: "digit-row" },
                         [
+                          _c("b-btn", {
+                            staticClass: "button-digit",
+                            staticStyle: { "font-size": "1rem" },
+                            on: { click: _vm.select0 }
+                          }),
+                          _vm._v(" "),
                           _c(
-                            "b-col",
-                            [
-                              _c(
-                                "b-btn",
-                                {
-                                  staticClass: "button-digit",
-                                  staticStyle: { "font-size": "1rem" },
-                                  on: { click: _vm.select0 }
-                                },
-                                [_vm._v("0")]
-                              )
-                            ],
-                            1
+                            "b-btn",
+                            {
+                              staticClass: "button-digit",
+                              staticStyle: { "font-size": "1rem" },
+                              on: { click: _vm.select0 }
+                            },
+                            [_vm._v("0")]
                           ),
                           _vm._v(" "),
                           _c(
-                            "b-col",
-                            [
-                              _c(
-                                "b-btn",
-                                {
-                                  staticClass: "button-digit",
-                                  staticStyle: { "font-size": "1rem" },
-                                  on: { click: _vm.deleteDigit }
-                                },
-                                [_vm._v("C")]
-                              )
-                            ],
-                            1
+                            "b-btn",
+                            {
+                              staticClass: "button-digit",
+                              staticStyle: { "font-size": "1rem" },
+                              on: { click: _vm.deleteDigit }
+                            },
+                            [_vm._v("C")]
                           )
                         ],
                         1
