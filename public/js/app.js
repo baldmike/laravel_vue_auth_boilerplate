@@ -30495,7 +30495,7 @@ exports = module.exports = __webpack_require__(8)(false);
 
 
 // module
-exports.push([module.i, "\n.body[data-v-6cd9df9e] {\n    padding: 20px;\n}\n.btn[data-v-6cd9df9e] {\n    text-align: center;\n    /* width: 24%; */\n}\n.center[data-v-6cd9df9e] {\n    text-align: center;\n}\n.search-bar[data-v-6cd9df9e] {\n    width: 100%;\n    text-align: center;\n}\n.select-button[data-v-6cd9df9e] {\n    width: 100%;\n    margin-bottom: 20px;\n}\n.filter-button[data-v-6cd9df9e] {\n    width: 24%;\n}\n.animal-card[data-v-6cd9df9e] {\n    margin-bottom: 20px;\n    padding: 1rem;\n}\n", ""]);
+exports.push([module.i, "\n.body[data-v-6cd9df9e] {\n    padding: 20px;\n}\n.btn[data-v-6cd9df9e] {\n    text-align: center;\n    /* width: 24%; */\n}\n.center[data-v-6cd9df9e] {\n    text-align: center;\n}\n.search-bar[data-v-6cd9df9e] {\n    width: 100%;\n    text-align: center;\n}\n.select-button[data-v-6cd9df9e] {\n    width: 100%;\n    margin-bottom: 20px;\n}\n.filter-button[data-v-6cd9df9e] {\n    width: 24%;\n}\n.animal-card[data-v-6cd9df9e] {\n    margin-bottom: 20px;\n    padding: 1rem;\n}\n.card-img[data-v-6cd9df9e] {\n    height: 16rem;\n}\n", ""]);
 
 // exports
 
@@ -30726,8 +30726,7 @@ var render = function() {
                     attrs: {
                       "img-src":
                         "http://localhost:8000/storage/" + animal.profile_photo,
-                      thumbnail: "",
-                      fluid: "",
+                      height: "60",
                       "img-alt": "Selected animal image"
                     }
                   })
@@ -30736,8 +30735,6 @@ var render = function() {
                     attrs: {
                       "img-src":
                         "http://localhost:8000/storage/images/dog_placeholder.jpg",
-                      thumbnail: "",
-                      fluid: "",
                       "img-alt": "No Selected animal image"
                     }
                   }),
