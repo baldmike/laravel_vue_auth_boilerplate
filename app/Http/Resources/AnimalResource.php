@@ -27,6 +27,7 @@ class AnimalResource extends JsonResource
             'fixed' => $this->fixed,
             'created_at' => $this->created_at->toDateTimeString(),
             'profile_photo' => $this->profile_photo,
+            'animal_number' => $this->animal_number
         ];
     }
 }
