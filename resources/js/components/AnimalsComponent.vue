@@ -19,9 +19,9 @@
         <b-row>
             <b-col v-for="(animal, index) in filteredAnimals"
                     :key="index" cols="12" md="3">
-                <b-card v-if="animal.profile_photo" :img-src="'http://localhost:8000/storage/' + animal.profile_photo" thumbnail fluid img-alt="Selected animal image" class="animal-card">
+                <b-card v-if="animal.profile_photo" :img-src="'http://localhost:8000/storage/' + animal.profile_photo" height="60" img-alt="Selected animal image" class="animal-card">
                 </b-card>
-                <b-card v-else :img-src="'http://localhost:8000/storage/images/dog_placeholder.jpg'" thumbnail fluid img-alt="No Selected animal image" class="animal-card">
+                <b-card v-else :img-src="'http://localhost:8000/storage/images/dog_placeholder.jpg'" img-alt="No Selected animal image" class="animal-card">
                 </b-card>
                 <b-btn class="select-button" @click="showModal(animal)" animal="'animal.id'">{{ animal.name }}  |  <span style="color: black;"> {{ animal.species }} </span>  |  {{ animal.breed }}</b-btn>
             </b-col>
@@ -32,7 +32,7 @@
             <b-modal ref="selectedAnimalModal" :animal="'animal'" ok-only ok-title="Close" ok-variant="dark">
                 <h1 class="my-2">{{ selectedAnimal.name }}</h1>
                 <li class="my-4">{{ selectedAnimal.breed }}, {{selectedAnimal.gender}}, {{ selectedAnimal.weight }} pounds</li>
-                <li class="my-4">From {{ selectedAnimal.source }} on {{ selectedAnimal.created_at | moment("dddd, MMMM Do YYYY" )}}</li>
+                <li class="my-4">From {{ selectedAnimal.source }} on {{ selectedAnimal.created_at | moment("dddd, MMMM Do YYYY")}}</li>
                 <div class="my-4">{{ selectedAnimal.description }}</div>
             </b-modal>
         </div>
@@ -128,5 +128,8 @@
         margin-bottom: 20px;
         padding: 1rem;
         
+    }
+    .card-img {
+        height: 16rem;
     }
 </style>

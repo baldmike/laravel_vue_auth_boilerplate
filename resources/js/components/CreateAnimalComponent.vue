@@ -102,13 +102,16 @@
                 </b-form-group>
                 
                 <b-form-group id="microchipGroup" v-if="formStep===6" class="form-box">
-                    <h5>If {{  form.name }} is chipped, enter {{ pronoun }} chip number:.</h5>
-                    <b-form-input id="microchip"
-                                onkeypress="return event.keyCode != 13;"
-                                class="input-box"
-                                type="text"
-                                v-model="form.microchipNumber"
-                                placeholder="Microchip number"/>                 
+                    <div class="selection-box">
+                        <h5>If {{  form.name }} is chipped, enter {{ pronoun }} chip number:.</h5>
+                        <b-form-input id="microchip"
+                                    onkeypress="return event.keyCode != 13;"
+                                    class="input-box"
+                                    type="text"
+                                    v-model="form.microchipNumber"
+                                    placeholder="Microchip number"/>                 
+                    </div>
+                    
                 </b-form-group>
 
                 <b-form-group id="birthdateGroup" v-if="formStep===7" class="form-box">
@@ -185,13 +188,9 @@
                     </b-row>
 
                     <b-row class="digit-row">
-                        <b-col>
-                            <b-btn class="button-digit" @click="select0" style="font-size: 1rem;">0</b-btn>
-                        </b-col>
-                        <b-col>
-                            <b-btn class="button-digit" @click="deleteDigit" style="font-size: 1rem;">C</b-btn>
-                        </b-col>
-                        
+                        <b-btn class="button-digit" @click="select0" style="font-size: 1rem;"></b-btn>
+                        <b-btn class="button-digit" @click="select0" style="font-size: 1rem;">0</b-btn>
+                        <b-btn class="button-digit" @click="deleteDigit" style="font-size: 1rem;">C</b-btn>                        
                     </b-row>
                     
                 </b-form-group>
@@ -799,8 +798,8 @@
         font-size: 3rem;
     }
     .button-digit {
-        width: 6rem;
-        height: 6rem;
+        width: 5rem;
+        height: 5rem;
         border-radius: 25px;
         margin-left: auto;
         margin-right: auto;
@@ -870,6 +869,7 @@
     .form-box {
         height: 300px;
         padding-top: 2rem;
+        margin-bottom: 20px;
     }
     .pic-box {
         margin-left: auto;
