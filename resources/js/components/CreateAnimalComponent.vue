@@ -39,7 +39,34 @@
                     </div>
                 </b-form-group>
 
-                <b-form-group id="genderGroup" v-if="formStep===3" class="form-box">
+                <b-form-group id="breedGroup" v-if="formStep===3" class="form-box">
+                    <div class="selection-box">
+                        <h5>What kind of {{ form.species }} is {{ form.name }}?</h5>
+                        <b-form-select id="breedInputDogs"
+                                    v-if="form.species==='dog'"
+                                    :options="dogBreeds"
+                                    class="input-box"
+                                    required
+                                    v-model="form.breed">
+                        </b-form-select>
+                        <b-form-select id="breedInputCats"
+                                    v-if="form.species==='cat'"
+                                    :options="catBreeds"
+                                    class="input-box"
+                                    required
+                                    v-model="form.breed">
+                        </b-form-select>
+                        <b-form-select id="breedInputRabbits"
+                                    v-if="form.species==='rab'"
+                                    :options="rabBreeds"
+                                    class="input-box"
+                                    required
+                                    v-model="form.breed">
+                        </b-form-select>
+                    </div>
+                </b-form-group>
+
+                <b-form-group id="genderGroup" v-if="formStep===4" class="form-box">
                     <div class="selection-box">
                         <h5>Is {{ form.name }} a boy {{ form.species }} or a girl {{ form.species }}?</h5>
                         <table>
@@ -65,7 +92,7 @@
                     </div>
                 </b-form-group>
                     
-                <b-form-group id="sourceGroup" v-if="formStep===4" class="form-box">
+                <b-form-group id="sourceGroup" v-if="formStep===5" class="form-box">
                     <div class="selection-box">
                         <h5>Where is {{ form.name }} from?</h5>
                         <b-btn class="button-selector" :class="{ green: isCacc }" @click="selectCacc" style="font-size: 1rem;">CACC</b-btn>
@@ -75,7 +102,7 @@
                     </div>
                 </b-form-group>
 
-                <b-form-group id="genderGroup" v-if="formStep===5" class="form-box">
+                <b-form-group id="genderGroup" v-if="formStep===6" class="form-box">
                     <div class="selection-box">
                         <h5>Is {{ form.name }} {{ fixed }}?</h5>
                         <table>
@@ -101,7 +128,7 @@
                     </div>
                 </b-form-group>
                 
-                <b-form-group id="microchipGroup" v-if="formStep===6" class="form-box">
+                <b-form-group id="microchipGroup" v-if="formStep===7" class="form-box">
                     <div class="selection-box">
                         <h5>If {{  form.name }} is chipped, enter {{ pronoun }} chip number:.</h5>
                         <b-form-input id="microchip"
@@ -114,7 +141,7 @@
                     
                 </b-form-group>
 
-                <b-form-group id="birthdateGroup" v-if="formStep===7" class="form-box">
+                <b-form-group id="birthdateGroup" v-if="formStep===8" class="form-box">
                     <h5>What is {{ form.name }}'s birthday?</h5>
                     <b-form-input id="birthdate"
                                 onkeypress="return event.keyCode != 13;"
@@ -123,7 +150,7 @@
                                 v-model="form.birthdate"/>
                 </b-form-group>
 
-                <b-form-group v-if="formStep===8" class="form-box">
+                <b-form-group v-if="formStep===9" class="form-box">
                     <b-row>
                         
                             
@@ -135,7 +162,7 @@
                         <b-col sm="12" v-if="!images.length">
                             
                             <div class="image-wrapper">
-                                <b-btn class="button-selector" @click="triggerSelectImage"><i class="fa fa-download"></i></b-btn>
+                                <b-btn class="button-selector" @click="triggerSelectImage"><i class="fa fa-upload"></i></b-btn>
                                 <div class="upload-button">
                                     <input type="file"
                                         id="profilePhoto"
@@ -163,7 +190,7 @@
                     </b-row>
                 </b-form-group>
 
-                <b-form-group v-if="formStep===9" class="form-box">
+                <b-form-group v-if="formStep===10" class="form-box">
                     <h5 style="margin-bottom: 20px;">How much does {{ form.name }} weigh:</h5>
                     <input type="number"
                             id="weight"
@@ -195,7 +222,7 @@
                     
                 </b-form-group>
 
-                <b-form-group class="submit-box" v-if="formStep>9">
+                <b-form-group class="submit-box" v-if="formStep>10">
                     <b-button class="my-3" variant="dark" :disabled="$v.form.$invalid" @click="createAnimal">Welcome to Alive, {{ form.name }}</b-button>
                 </b-form-group>
 
@@ -241,9 +268,17 @@
                     description: '',
                     profilePhoto: ''
                 },
-                breeds: [
-                    { text: "What breed are they?'", value: null },
-                    'Pit Bull', 'Chihuahua', 'Terrier', 'Calico', 'Siamese', 'Tabby', 'Rabbit'
+                dogBreeds: [
+                    { text: "Click to Select", value: null },
+                    'Pit Bull', 'Chihuahua', 'Poodle','Terrier', 'Lhasa Ahpso', 'Samoyed'
+                ],
+                catBreeds: [
+                    { text: "breed", value: null },
+                    'Tabby', 'Siamese', 'Blue Ridge Tickler'
+                ],
+                rabbitBreeds: [
+                    { text: "breed", value: null },
+                    'Floppy', 'Fluffy', 'Delicious'
                 ],
                 show: true,
                 formStep: 1,
@@ -828,7 +863,7 @@
         background-color: lightgray;
     }
     .input-box {
-        width: 16rem;
+        width: 12rem;
         margin-left: auto;
         margin-right: auto;
     }
