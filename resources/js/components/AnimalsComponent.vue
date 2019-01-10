@@ -19,11 +19,13 @@
         <b-row>
             <b-col v-for="(animal, index) in filteredAnimals"
                     :key="index" cols="12" md="3">
-                <b-card v-if="animal.profile_photo" :img-src="'http://localhost:8000/storage/' + animal.profile_photo" height="60" img-alt="Selected animal image" class="animal-card">
+                <b-card :class="{ blue: animal.gender==='M' }" v-if="animal.profile_photo" :img-src="'http://localhost:8000/storage/' + animal.profile_photo" height="60" img-alt="Selected animal image" class="animal-card">
+                    <b-btn class="select-button" @click="showModal(animal)" animal="'animal.id'">{{ animal.name }}  |  <span style="color: black;"> {{ animal.species }} </span>  |  {{ animal.breed }}</b-btn>
                 </b-card>
-                <b-card v-else :img-src="'http://localhost:8000/storage/images/dog_placeholder.jpg'" img-alt="No Selected animal image" class="animal-card">
+                <b-card :class="{ blue: animal.gender==='M' }" v-else :img-src="'http://localhost:8000/storage/images/dog_placeholder.jpg'" img-alt="No Selected animal image" class="animal-card">
+                    <b-btn class="select-button" @click="showModal(animal)" animal="'animal.id'">{{ animal.name }}  |  <span style="color: black;"> {{ animal.species }} </span>  |  {{ animal.breed }}</b-btn>
                 </b-card>
-                <b-btn class="select-button" @click="showModal(animal)" animal="'animal.id'">{{ animal.name }}  |  <span style="color: black;"> {{ animal.species }} </span>  |  {{ animal.breed }}</b-btn>
+                
             </b-col>
         </b-row>
 
@@ -54,12 +56,14 @@
                 filterDogs: false,
                 filterCats: false,
                 filterRabbits: false,
+                
             }
         },
         computed: {
             filteredAnimals() {
                 let self=this;
                 let results = [];
+
                 let allAnimals = this.$store.state.animals;
 
                 if (this.filterDogs) {
@@ -76,7 +80,6 @@
 
                 if (this.search) {
                     return this.$store.state.animals.filter(animal => animal.name.toLowerCase().indexOf(self.search.toLowerCase())>=0);
-                
                 }
                 
                 return allAnimals;
@@ -126,10 +129,16 @@
     }
     .animal-card {
         margin-bottom: 20px;
-        padding: 1rem;
+        padding: .6rem;
         
     }
     .card-img {
         height: 16rem;
+    }
+    .card {
+        background-color: pink;
+    }
+    .blue {
+        background-color: lightblue;
     }
 </style>
