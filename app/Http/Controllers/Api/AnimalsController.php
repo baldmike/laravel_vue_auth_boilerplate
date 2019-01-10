@@ -63,6 +63,7 @@ class AnimalsController extends Controller
             $animal->description = request('description');
             $animal->weight = request('weight');
             $animal->fixed = request('fixed');
+            $animal->animal_number = request('animal_number');
 
             // putFile creates a unique string name, saves file in 'storage/app/public/images', makes it public and returns the path that we'll concat onto our URL (on the front end)
             $path = Storage::putFile('public/images', $request->file('profile_photo'), 'public');
@@ -125,6 +126,8 @@ class AnimalsController extends Controller
             $animal->description = request('description');
             $animal->weight = request('weight');
             $animal->fixed = request('fixed');
+            $animal->animal_number = request('animal_number');
+
 
             // if ($request->hasFile('profile_photo')) {
                 // $uuid = (string) Str::uuid();

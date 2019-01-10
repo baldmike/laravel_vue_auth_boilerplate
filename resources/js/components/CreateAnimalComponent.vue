@@ -102,7 +102,19 @@
                     </div>
                 </b-form-group>
 
-                <b-form-group id="genderGroup" v-if="formStep===6" class="form-box">
+                <b-form-group id="animalNumGroup" v-if="formStep===6" class="form-box">
+                    <div class="selection-box">
+                        <h5>If {{ form.name }} has a CACC Animal Number, enter it here:</h5>
+                        <b-form-input id="animal_number"
+                                    onkeypress="return event.keyCode != 13;"
+                                    class="input-box"
+                                    type="text"
+                                    v-model="form.animal_number"
+                                    placeholder="Animal Number"/> 
+                    </div>
+                </b-form-group>
+
+                <b-form-group id="genderGroup" v-if="formStep===7" class="form-box">
                     <div class="selection-box">
                         <h5>Is {{ form.name }} {{ fixed }}?</h5>
                         <table>
@@ -128,7 +140,7 @@
                     </div>
                 </b-form-group>
                 
-                <b-form-group id="microchipGroup" v-if="formStep===7" class="form-box">
+                <b-form-group id="microchipGroup" v-if="formStep===8" class="form-box">
                     <div class="selection-box">
                         <h5>If {{  form.name }} is chipped, enter {{ pronoun }} chip number:.</h5>
                         <b-form-input id="microchip"
@@ -141,7 +153,7 @@
                     
                 </b-form-group>
 
-                <b-form-group id="birthdateGroup" v-if="formStep===8" class="form-box">
+                <b-form-group id="birthdateGroup" v-if="formStep===9" class="form-box">
                     <h5>What is {{ form.name }}'s birthday?</h5>
                     <b-form-input id="birthdate"
                                 onkeypress="return event.keyCode != 13;"
@@ -150,7 +162,7 @@
                                 v-model="form.birthdate"/>
                 </b-form-group>
 
-                <b-form-group v-if="formStep===9" class="form-box">
+                <b-form-group v-if="formStep===10" class="form-box">
                     <b-row>
                         
                             
@@ -158,7 +170,7 @@
                         <b-col v-if="!images.length">
                             <h5 style="margin-bottom: 20px;">Select an image to upload</h5>
                         </b-col>
-                        <br><br>
+                        
                         <b-col sm="12" v-if="!images.length">
                             
                             <div class="image-wrapper">
@@ -172,9 +184,6 @@
                                         enctype="multipart/form-data">
                                 </div>
                             </div>
-                            
-                            
-                            
                         </b-col>
                         <b-col sm="12" md="4" offset-md="4">
                             <div class="images-preview">
@@ -190,39 +199,39 @@
                     </b-row>
                 </b-form-group>
 
-                <b-form-group v-if="formStep===10" class="form-box">
+                <b-form-group v-if="formStep===11" class="form-box">
                     <h5 style="margin-bottom: 20px;">How much does {{ form.name }} weigh:</h5>
                     <input type="number"
                             id="weight"
                             v-model="form.weight">
 
-                    <b-row class="digit-row">
+                    <b-col>
                         <b-btn class="button-digit" @click="select1" style="font-size: 1rem;">1</b-btn>
                         <b-btn class="button-digit" @click="select2" style="font-size: 1rem;">2</b-btn>
                         <b-btn class="button-digit" @click="select3" style="font-size: 1rem;">3</b-btn>
-                    </b-row>
+                    </b-col>
 
-                    <b-row class="digit-row">
+                    <b-col>
                         <b-btn class="button-digit" @click="select4" style="font-size: 1rem;">4</b-btn>
                         <b-btn class="button-digit" @click="select5" style="font-size: 1rem;">5</b-btn>
                         <b-btn class="button-digit" @click="select6" style="font-size: 1rem;">6</b-btn>
-                    </b-row>
-
-                    <b-row class="digit-row">
+                    </b-col>
+                            
+                    <b-col>
                         <b-btn class="button-digit" @click="select7" style="font-size: 1rem;">7</b-btn>
                         <b-btn class="button-digit" @click="select8" style="font-size: 1rem;">8</b-btn>
                         <b-btn class="button-digit" @click="select9" style="font-size: 1rem;">9</b-btn>
-                    </b-row>
+                    </b-col>
 
-                    <b-row class="digit-row">
-                        <b-btn class="button-digit" @click="select0" style="font-size: 1rem;"></b-btn>
-                        <b-btn class="button-digit" @click="select0" style="font-size: 1rem;">0</b-btn>
-                        <b-btn class="button-digit" @click="deleteDigit" style="font-size: 1rem;">C</b-btn>                        
-                    </b-row>
+                    <b-col>
+                        <b-btn class="button-digit" style="background-color: #2196F3; border: none;"></b-btn>
+                        <b-btn class="button-digit" @click="select9" style="font-size: 1rem;">0</b-btn>
+                        <b-btn class="button-digit" @click="deleteDigit" style="font-size: 1rem;">C</b-btn> 
+                    </b-col>
                     
                 </b-form-group>
 
-                <b-form-group class="submit-box" v-if="formStep>10">
+                <b-form-group class="submit-box" v-if="formStep>11">
                     <b-button class="my-3" variant="dark" :disabled="$v.form.$invalid" @click="createAnimal">Welcome to Alive, {{ form.name }}</b-button>
                 </b-form-group>
 
@@ -338,7 +347,7 @@
                 }
             },
             progress() {
-                return this.formStep * 10;
+                return this.formStep * 8.5;
             }
         },
         methods: {
@@ -453,7 +462,6 @@
                 if (this.isAlive) {
                     this.isAlive = false;
                 }
-                
                 
                 let self = this;
                 setTimeout(function() {
@@ -814,13 +822,6 @@
     }
 
 
-
-
-
-
-
-
-
     .body {
         height: 90vh;
         width: 90vw;
@@ -833,9 +834,10 @@
         font-size: 3rem;
     }
     .button-digit {
-        width: 5rem;
-        height: 5rem;
+        width: 4rem;
+        height: 4rem;
         border-radius: 25px;
+        margin-top: 1rem;
         margin-left: auto;
         margin-right: auto;
         font-size: 1rem;
@@ -898,8 +900,6 @@
         background-color: black;
         height: 10px;
         transition: width 500ms;
-        border-right: 2px solid black
-        
     }
     .form-box {
         height: 300px;
