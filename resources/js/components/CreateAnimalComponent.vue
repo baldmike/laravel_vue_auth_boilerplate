@@ -75,6 +75,7 @@
                                     <td>
                                         <b-btn class="button-selector" :class="{ green: isMale }" @click="selectMale"><i class="fas fa-male"></i></b-btn>
                                     </td>
+
                                     <td>
                                         <b-btn class="button-selector" :class="{ green: isFemale }" @click="selectFemale"><i class="fas fa-female"></i></b-btn>
                                     </td>
@@ -113,8 +114,20 @@
                                     placeholder="Animal Number"/> 
                     </div>
                 </b-form-group>
+                
+                <b-form-group id="microchipGroup" v-if="formStep===7" class="form-box">
+                    <div class="selection-box">
+                        <h5>If {{  form.name }} is chipped, enter {{ getPronoun1 }} chip number:.</h5>
+                        <b-form-input id="microchip"
+                                    onkeypress="return event.keyCode != 13;"
+                                    class="input-box"
+                                    type="text"
+                                    v-model="form.microchipNumber"
+                                    placeholder="Microchip number"/>                 
+                    </div>
+                </b-form-group>
 
-                <b-form-group id="genderGroup" v-if="formStep===7" class="form-box">
+                <b-form-group id="genderGroup" v-if="formStep===8" class="form-box">
                     <div class="selection-box">
                         <h5>Is {{ form.name }} {{ fixed }}?</h5>
                         <table>
@@ -139,19 +152,6 @@
                         </table>
                     </div>
                 </b-form-group>
-                
-                <b-form-group id="microchipGroup" v-if="formStep===8" class="form-box">
-                    <div class="selection-box">
-                        <h5>If {{  form.name }} is chipped, enter {{ pronoun }} chip number:.</h5>
-                        <b-form-input id="microchip"
-                                    onkeypress="return event.keyCode != 13;"
-                                    class="input-box"
-                                    type="text"
-                                    v-model="form.microchipNumber"
-                                    placeholder="Microchip number"/>                 
-                    </div>
-                    
-                </b-form-group>
 
                 <b-form-group id="birthdateGroup" v-if="formStep===9" class="form-box">
                     <h5>What is {{ form.name }}'s birthday?</h5>
@@ -168,7 +168,7 @@
                             
                         
                         <b-col v-if="!images.length">
-                            <h5 style="margin-bottom: 20px;">Select an image to upload</h5>
+                            <h5 style="margin-bottom: 20px;">Select a picture of {{ form.name }} to upload</h5>
                         </b-col>
                         
                         <b-col sm="12" v-if="!images.length">
@@ -186,13 +186,10 @@
                             </div>
                         </b-col>
                         <b-col sm="12" md="4" offset-md="4">
-                            <div class="images-preview">
+                            <div class="image-preview">
                                 <div  v-for="(image, index) in images" :key="index">
-                                    <img :src="image" alt="uploaded image">
-                                    <div class="details">
-                                        <span class="name" v-text="files[index].name"></span>
-                                        <span class="size" v-text="getFileSize(files[index].size)"></span>
-                                    </div>
+                                    <img :src="image" width="200" @click="deleteImageSelection" alt="uploaded image">
+                                    <h6><em>click the image to delete</em></h6>
                                 </div>
                             </div>
                         </b-col>
@@ -204,35 +201,34 @@
                     <input type="number"
                             id="weight"
                             v-model="form.weight">
-
-                    <b-col>
-                        <b-btn class="button-digit" @click="select1" style="font-size: 1rem;">1</b-btn>
-                        <b-btn class="button-digit" @click="select2" style="font-size: 1rem;">2</b-btn>
-                        <b-btn class="button-digit" @click="select3" style="font-size: 1rem;">3</b-btn>
-                    </b-col>
-
-                    <b-col>
-                        <b-btn class="button-digit" @click="select4" style="font-size: 1rem;">4</b-btn>
-                        <b-btn class="button-digit" @click="select5" style="font-size: 1rem;">5</b-btn>
-                        <b-btn class="button-digit" @click="select6" style="font-size: 1rem;">6</b-btn>
-                    </b-col>
-                            
-                    <b-col>
-                        <b-btn class="button-digit" @click="select7" style="font-size: 1rem;">7</b-btn>
-                        <b-btn class="button-digit" @click="select8" style="font-size: 1rem;">8</b-btn>
-                        <b-btn class="button-digit" @click="select9" style="font-size: 1rem;">9</b-btn>
-                    </b-col>
-
-                    <b-col>
-                        <b-btn class="button-digit" style="background-color: #2196F3; border: none;"></b-btn>
-                        <b-btn class="button-digit" @click="select9" style="font-size: 1rem;">0</b-btn>
-                        <b-btn class="button-digit" @click="deleteDigit" style="font-size: 1rem;">C</b-btn> 
-                    </b-col>
-                    
                 </b-form-group>
 
                 <b-form-group class="submit-box" v-if="formStep>11">
-                    <b-button class="my-3" variant="dark" :disabled="$v.form.$invalid" @click="createAnimal">Welcome to Alive, {{ form.name }}</b-button>
+                    <div class="selection-box">
+                        <h5>Check the following for accuracy, if you need to change anything, use the back arrow.</h5>
+                        <h5> Welcome to Alive, {{ form.name }}!</h5>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <li>{{ form.name }} is a {{ form.weight }} pound, {{ getGender }} {{ form.breed }} {{ form.species }} from {{ form.source }} who is {{ isFixed }} <span v-if="form.microchipNumber">and has a microchip, {{ form.microchipNumber }}</span></li>
+                                        <li>{{ getPronoun1 }} birthday is {{ form. birthdate }}</li>
+                                        <li v-if="!form.microchipNumber">{{ getPronoun2 }} is not microchipped.</li>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <b-col sm="12" md="4" offset-md="4">
+                            <div class="image-preview">
+                                <div  v-for="(image, index) in images" :key="index">
+                                    <img :src="image" width="200" alt="uploaded image">
+                                </div>
+                            </div>
+                        </b-col>
+                    </div>
+
+                    <b-button class="my-3" variant="dark" :disabled="$v.form.$invalid" @click="createAnimal">Submit</b-button>
                 </b-form-group>
 
             </b-form>
@@ -240,7 +236,7 @@
             <div class="nav-box">
                 <b-row>
                     <b-btn class="nav-button" @click="previousFormStep" :disabled="formStep<2"><i class="fas fa-arrow-left"></i></b-btn>
-                    <b-btn class="nav-button" @click="nextFormStep"><i class="fas fa-arrow-right"></i></b-btn>
+                    <b-btn class="nav-button" @click="nextFormStep" :disabled="formStep>11 || $v.form.name.$invalid"><i class="fas fa-arrow-right"></i></b-btn>
                 </b-row>
 
                 <div class="progress">
@@ -332,18 +328,39 @@
             selectedSpecies() {
                 return this.form.species;
             },
-            pronoun() {
-                if (this.form.gender === "male") {
+            getPronoun1() {
+                if (this.form.gender === "M") {
                     return "his";
                 } else {
                     return "her";
                 }
             },
+            getPronoun2() {
+                if (this.form.gender === "M") {
+                    return "he"
+                } else {
+                    return "she"
+                }
+            },
+            getGender() {
+                if (this.form.gender === "M") {
+                    return "male"
+                } else {
+                    return "female"
+                }
+            },
             fixed() {
-                if (this.form.gender === "male") {
+                if (this.form.gender === "M") {
                     return "neutered"
                 } else {
                     return "spayed"
+                }
+            },
+            isFixed() {
+                if (this.form.fixed === 1) {
+                    return this.fixed;
+                } else {
+                    return "not altered"
                 }
             },
             progress() {
@@ -383,12 +400,14 @@
                         duration: '6000',
                         width: '100%'
                     });
+                    
                     console.log("CreateAnimalComponent -- createAnimal -- createAnimal()" + data.toString());
                 }).catch((error) => {
                     console.log(error);
                 })
 
-                this.$router.push('dashboard');
+                this.$store.dispatch('getAllAnimals');
+                this.$router.push('/dashboard');
                 
             },
             selectDog() {
@@ -523,39 +542,7 @@
                 }, 500);
                 // add to "profile" as user builds
             },
-            select1() {
-                this.form.weight += '1';
-            },
-            select2() {
-                this.form.weight += '2';
-            },
-            select3() {
-                this.form.weight += '3';
-            },
-            select4() {
-                this.form.weight += '4';
-            },
-            select5() {
-                this.form.weight += '5';
-            },
-            select6() {
-                this.form.weight += '6';
-            },
-            select7() {
-                this.form.weight += '7';
-            },
-            select8() {
-                this.form.weight += '8';
-            },
-            select9() {
-                this.form.weight += '9';
-            },
-            select0() {
-                this.form.weight += '0';
-            },
-            deleteDigit() {
-                this.form.weight = this.form.weight.slice(0, -1);
-            },
+            
             altered() {
                 this.form.fixed = 1;
                 this.isAltered = true;
@@ -650,27 +637,6 @@
                 }
                 return `${(Math.round(size * 100) / 100)} ${fSExt[i]}`;
             },
-            
-            
-            
-            upload() {
-                const formData = new FormData();
-                
-                this.files.forEach(file => {
-                    formData.append('images[]', file, file.name);
-                });
-                axios.post('/images-upload', formData).then(response => {
-                    this.$notify({
-                        group: 'notifications',
-                        title: 'Success',
-                        text: 'Image successfully uploaded',
-                        duration: '6000',
-                        width: '100%'
-                    });
-                    this.images = [];
-                    this.files = [];
-                })
-            },
 
             triggerSelectImage() {
                 this.$refs.imageInput.click()
@@ -682,6 +648,11 @@
             },
             init() {
                 console.log("CreateAnimalComponent Mounted")
+            },
+            deleteImageSelection() {
+                this.form.profilePhoto = null;
+                this.files = [];
+                this.images = [];
             }
         },
         mounted() {
@@ -695,127 +666,6 @@
 
 
 <style lang="scss" scoped>
-
-        
-
-        .uploader {
-        width: 100%;
-        background: #2196F3;
-        color: #fff;
-        padding: 40px 15px;
-        text-align: center;
-        border-radius: 10px;
-        border: 3px dashed #fff;
-        font-size: 20px;
-        position: relative;
-
-        &.dragging {
-            background: #fff;
-            color: #2196F3;
-            border: 3px dashed #2196F3;
-
-            .file-input label {
-                background: #2196F3;
-                color: #fff;
-            }
-        }
-
-        i {
-            font-size: 85px;
-        }
-
-        .file-input {
-            width: 200px;
-            margin: auto;
-            height: 68px;
-            position: relative;
-
-            label,
-            input {
-                background: #fff;
-                color: #2196F3;
-                width: 100%;
-                position: absolute;
-                left: 0;
-                top: 0;
-                padding: 10px;
-                border-radius: 4px;
-                margin-top: 7px;
-                cursor: pointer;
-            }
-
-            input {
-                opacity: 0;
-                z-index: -2;
-            }
-        }
-
-        .images-preview {
-            display: flex;
-            flex-wrap: wrap;
-            margin-top: 20px;
-            margin-left: auto;
-
-            .img-wrapper {
-                width: 160px;
-                display: flex;
-                flex-direction: column;
-                margin: 10px;
-                height: 150px;
-                justify-content: space-between;
-                background: #fff;
-                box-shadow: 5px 5px 20px #3e3737;
-
-                img {
-                    max-height: 105px;
-                }
-            }
-
-            .details {
-                font-size: 12px;
-                background: #fff;
-                color: #000;
-                display: flex;
-                flex-direction: column;
-                align-items: self-start;
-                padding: 3px 6px;
-
-                .name {
-                    overflow: hidden;
-                    height: 18px;
-                }
-            }
-        }
-
-        .upload-control {
-            position: absolute;
-            width: 100%;
-            background: #fff;
-            top: 0;
-            left: 0;
-            border-top-left-radius: 7px;
-            border-top-right-radius: 7px;
-            padding: 10px;
-            padding-bottom: 4px;
-            text-align: right;
-
-            button, label {
-                background: #2196F3;
-                border: 2px solid #03A9F4;
-                border-radius: 3px;
-                color: #fff;
-                font-size: 15px;
-                cursor: pointer;
-            }
-
-            label {
-                padding: 2px 5px;
-                margin-right: 10px;
-            }
-        }
-    }
-
-
     .body {
         height: 90vh;
         width: 90vw;
@@ -911,6 +761,9 @@
     .upButton {
         color: slategray;
         margin-bottom: 2rem;
+    }
+    .image-preview {
+        width: 200px;
     }
 
     table {
