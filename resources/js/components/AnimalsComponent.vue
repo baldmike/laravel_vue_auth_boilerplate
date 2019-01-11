@@ -18,12 +18,12 @@
 
         <b-row>
             <b-col v-for="(animal, index) in filteredAnimals"
-                    :key="index" cols="12" md="3">
-                <b-card :class="{ blue: animal.gender==='M' }" v-if="animal.profile_photo" :img-src="'http://localhost:8000/storage/' + animal.profile_photo" height="60" img-alt="Selected animal image" class="animal-card">
-                    <b-btn class="select-button" @click="showModal(animal)" animal="'animal.id'">{{ animal.name }}  |  <span style="color: black;"> {{ animal.species }} </span>  |  {{ animal.breed }}</b-btn>
+                    :key="index" cols="12" md="2">
+                <b-card v-if="animal.profile_photo" :img-src="'http://localhost:8000/storage/' + animal.profile_photo"  @click="showModal(animal)" animal="'animal.id'" img-alt="Selected animal image" class="animal-card">
+                    <b-btn class="select-button" >{{ animal.name }} | {{ animal.breed }}</b-btn>
                 </b-card>
-                <b-card :class="{ blue: animal.gender==='M' }" v-else :img-src="'http://localhost:8000/storage/images/dog_placeholder.jpg'" img-alt="No Selected animal image" class="animal-card">
-                    <b-btn class="select-button" @click="showModal(animal)" animal="'animal.id'">{{ animal.name }}  |  <span style="color: black;"> {{ animal.species }} </span>  |  {{ animal.breed }}</b-btn>
+                <b-card v-else :img-src="'http://localhost:8000/storage/images/dog_placeholder.jpg'" @click="showModal(animal)" animal="'animal.id'" img-alt="No Selected animal image" class="animal-card">
+                    <b-btn class="select-button" >{{ animal.name }} | {{ animal.breed }}</b-btn>
                 </b-card>
                 
             </b-col>
@@ -130,15 +130,8 @@
     .animal-card {
         margin-bottom: 20px;
         padding: .6rem;
-        
     }
     .card-img {
-        height: 16rem;
-    }
-    .card {
-        background-color: pink;
-    }
-    .blue {
-        background-color: lightblue;
+        height: 12rem;
     }
 </style>

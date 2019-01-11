@@ -28155,7 +28155,7 @@ exports = module.exports = __webpack_require__(8)(false);
 
 
 // module
-exports.push([module.i, "\n.uploader[data-v-07337dea] {\n  width: 100%;\n  background: #2196F3;\n  color: #fff;\n  padding: 40px 15px;\n  text-align: center;\n  border-radius: 10px;\n  border: 3px dashed #fff;\n  font-size: 20px;\n  position: relative;\n}\n.uploader.dragging[data-v-07337dea] {\n    background: #fff;\n    color: #2196F3;\n    border: 3px dashed #2196F3;\n}\n.uploader.dragging .file-input label[data-v-07337dea] {\n      background: #2196F3;\n      color: #fff;\n}\n.uploader i[data-v-07337dea] {\n    font-size: 85px;\n}\n.uploader .file-input[data-v-07337dea] {\n    width: 200px;\n    margin: auto;\n    height: 68px;\n    position: relative;\n}\n.uploader .file-input label[data-v-07337dea],\n    .uploader .file-input input[data-v-07337dea] {\n      background: #fff;\n      color: #2196F3;\n      width: 100%;\n      position: absolute;\n      left: 0;\n      top: 0;\n      padding: 10px;\n      border-radius: 4px;\n      margin-top: 7px;\n      cursor: pointer;\n}\n.uploader .file-input input[data-v-07337dea] {\n      opacity: 0;\n      z-index: -2;\n}\n.uploader .images-preview[data-v-07337dea] {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-wrap: wrap;\n        flex-wrap: wrap;\n    margin-top: 20px;\n    margin-left: auto;\n}\n.uploader .images-preview .img-wrapper[data-v-07337dea] {\n      width: 160px;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: vertical;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: column;\n              flex-direction: column;\n      margin: 10px;\n      height: 150px;\n      -webkit-box-pack: justify;\n          -ms-flex-pack: justify;\n              justify-content: space-between;\n      background: #fff;\n      -webkit-box-shadow: 5px 5px 20px #3e3737;\n              box-shadow: 5px 5px 20px #3e3737;\n}\n.uploader .images-preview .img-wrapper img[data-v-07337dea] {\n        max-height: 105px;\n}\n.uploader .images-preview .details[data-v-07337dea] {\n      font-size: 12px;\n      background: #fff;\n      color: #000;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: vertical;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: column;\n              flex-direction: column;\n      -webkit-box-align: self-start;\n          -ms-flex-align: self-start;\n              align-items: self-start;\n      padding: 3px 6px;\n}\n.uploader .images-preview .details .name[data-v-07337dea] {\n        overflow: hidden;\n        height: 18px;\n}\n.uploader .upload-control[data-v-07337dea] {\n    position: absolute;\n    width: 100%;\n    background: #fff;\n    top: 0;\n    left: 0;\n    border-top-left-radius: 7px;\n    border-top-right-radius: 7px;\n    padding: 10px;\n    padding-bottom: 4px;\n    text-align: right;\n}\n.uploader .upload-control button[data-v-07337dea], .uploader .upload-control label[data-v-07337dea] {\n      background: #2196F3;\n      border: 2px solid #03A9F4;\n      border-radius: 3px;\n      color: #fff;\n      font-size: 15px;\n      cursor: pointer;\n}\n.uploader .upload-control label[data-v-07337dea] {\n      padding: 2px 5px;\n      margin-right: 10px;\n}\n.body[data-v-07337dea] {\n  height: 90vh;\n  width: 90vw;\n}\n.button-selector[data-v-07337dea] {\n  width: 6rem;\n  height: 6rem;\n  border-radius: 25px;\n  margin: 1rem;\n  font-size: 3rem;\n}\n.button-digit[data-v-07337dea] {\n  width: 4rem;\n  height: 4rem;\n  border-radius: 25px;\n  margin-top: 1rem;\n  margin-left: auto;\n  margin-right: auto;\n  font-size: 1rem;\n}\n.digit-row[data-v-07337dea] {\n  margin-left: auto;\n  margin-right: auto;\n  margin-top: 1rem;\n}\n.nav-box[data-v-07337dea] {\n  text-align: center;\n  position: absolute;\n  width: 50%;\n  left: 25%;\n  bottom: 10%;\n}\n.nav-button[data-v-07337dea] {\n  width: 8rem;\n  height: 3rem;\n  font-size: 1rem;\n  border-radius: 25px;\n  margin: 1rem;\n  margin-left: auto;\n  margin-right: auto;\n  background-color: lightgray;\n}\n.input-box[data-v-07337dea] {\n  width: 12rem;\n  margin-left: auto;\n  margin-right: auto;\n}\n.upload-button[data-v-07337dea] {\n  visibility: hidden;\n  width: 100%;\n}\n.create-animal-box[data-v-07337dea] {\n  padding: 20px;\n  background-color: #2196F3;\n  margin-top: 20px;\n  padding-top: 20px;\n  text-align: center;\n  border: 2px solid black;\n  -webkit-box-shadow: 5px 5px;\n          box-shadow: 5px 5px;\n  height: 90vh;\n}\n.selection-box[data-v-07337dea] {\n  text-align: center;\n}\n.green[data-v-07337dea] {\n  color: limegreen;\n}\n.red[data-v-07337dea] {\n  color: red;\n}\n.grey[data-v-07337dea] {\n  color: slategrey;\n}\n.progress[data-v-07337dea] {\n  background-color: black;\n  height: 10px;\n  -webkit-transition: width 500ms;\n  transition: width 500ms;\n}\n.form-box[data-v-07337dea] {\n  height: 300px;\n  padding-top: 2rem;\n  margin-bottom: 20px;\n}\n.pic-box[data-v-07337dea] {\n  margin-left: auto;\n  margin-right: auto;\n  text-align: center;\n}\n.image-wrapper[data-v-07337dea] {\n  position: relative;\n}\n.upButton[data-v-07337dea] {\n  color: slategray;\n  margin-bottom: 2rem;\n}\ntable[data-v-07337dea] {\n  margin-left: auto;\n  margin-right: auto;\n}\n@media only screen and (max-width: 940px) {\n.nav-box[data-v-07337dea] {\n    text-align: center;\n    color: red;\n    position: absolute;\n    width: 50%;\n    left: 25%;\n    bottom: 10%;\n}\n.nav-button[data-v-07337dea] {\n    width: 4rem;\n    height: 3rem;\n    font-size: 1rem;\n    border-radius: 25px;\n    margin: .5rem;\n    margin-left: auto;\n    margin-right: auto;\n    background-color: lightgray;\n}\n.button-digit[data-v-07337dea] {\n    width: 3rem;\n    height: 3rem;\n    border-radius: 25px;\n    margin-left: auto;\n    margin-right: auto;\n    font-size: 1rem;\n}\n}\n", ""]);
+exports.push([module.i, "\n.body[data-v-07337dea] {\n  height: 90vh;\n  width: 90vw;\n}\n.button-selector[data-v-07337dea] {\n  width: 6rem;\n  height: 6rem;\n  border-radius: 25px;\n  margin: 1rem;\n  font-size: 3rem;\n}\n.button-digit[data-v-07337dea] {\n  width: 4rem;\n  height: 4rem;\n  border-radius: 25px;\n  margin-top: 1rem;\n  margin-left: auto;\n  margin-right: auto;\n  font-size: 1rem;\n}\n.digit-row[data-v-07337dea] {\n  margin-left: auto;\n  margin-right: auto;\n  margin-top: 1rem;\n}\n.nav-box[data-v-07337dea] {\n  text-align: center;\n  position: absolute;\n  width: 50%;\n  left: 25%;\n  bottom: 10%;\n}\n.nav-button[data-v-07337dea] {\n  width: 8rem;\n  height: 3rem;\n  font-size: 1rem;\n  border-radius: 25px;\n  margin: 1rem;\n  margin-left: auto;\n  margin-right: auto;\n  background-color: lightgray;\n}\n.input-box[data-v-07337dea] {\n  width: 12rem;\n  margin-left: auto;\n  margin-right: auto;\n}\n.upload-button[data-v-07337dea] {\n  visibility: hidden;\n  width: 100%;\n}\n.create-animal-box[data-v-07337dea] {\n  padding: 20px;\n  background-color: #2196F3;\n  margin-top: 20px;\n  padding-top: 20px;\n  text-align: center;\n  border: 2px solid black;\n  -webkit-box-shadow: 5px 5px;\n          box-shadow: 5px 5px;\n  height: 90vh;\n}\n.selection-box[data-v-07337dea] {\n  text-align: center;\n}\n.green[data-v-07337dea] {\n  color: limegreen;\n}\n.red[data-v-07337dea] {\n  color: red;\n}\n.grey[data-v-07337dea] {\n  color: slategrey;\n}\n.progress[data-v-07337dea] {\n  background-color: black;\n  height: 10px;\n  -webkit-transition: width 500ms;\n  transition: width 500ms;\n}\n.form-box[data-v-07337dea] {\n  height: 300px;\n  padding-top: 2rem;\n  margin-bottom: 20px;\n}\n.pic-box[data-v-07337dea] {\n  margin-left: auto;\n  margin-right: auto;\n  text-align: center;\n}\n.image-wrapper[data-v-07337dea] {\n  position: relative;\n}\n.upButton[data-v-07337dea] {\n  color: slategray;\n  margin-bottom: 2rem;\n}\n.image-preview[data-v-07337dea] {\n  width: 200px;\n}\ntable[data-v-07337dea] {\n  margin-left: auto;\n  margin-right: auto;\n}\n@media only screen and (max-width: 940px) {\n.nav-box[data-v-07337dea] {\n    text-align: center;\n    color: red;\n    position: absolute;\n    width: 50%;\n    left: 25%;\n    bottom: 10%;\n}\n.nav-button[data-v-07337dea] {\n    width: 4rem;\n    height: 3rem;\n    font-size: 1rem;\n    border-radius: 25px;\n    margin: .5rem;\n    margin-left: auto;\n    margin-right: auto;\n    background-color: lightgray;\n}\n.button-digit[data-v-07337dea] {\n    width: 3rem;\n    height: 3rem;\n    border-radius: 25px;\n    margin-left: auto;\n    margin-right: auto;\n    font-size: 1rem;\n}\n}\n", ""]);
 
 // exports
 
@@ -28170,10 +28170,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuelidate___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vuelidate__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__);
-//
-//
-//
-//
 //
 //
 //
@@ -28494,18 +28490,39 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         selectedSpecies: function selectedSpecies() {
             return this.form.species;
         },
-        pronoun: function pronoun() {
-            if (this.form.gender === "male") {
+        getPronoun1: function getPronoun1() {
+            if (this.form.gender === "M") {
                 return "his";
             } else {
                 return "her";
             }
         },
+        getPronoun2: function getPronoun2() {
+            if (this.form.gender === "M") {
+                return "he";
+            } else {
+                return "she";
+            }
+        },
+        getGender: function getGender() {
+            if (this.form.gender === "M") {
+                return "male";
+            } else {
+                return "female";
+            }
+        },
         fixed: function fixed() {
-            if (this.form.gender === "male") {
+            if (this.form.gender === "M") {
                 return "neutered";
             } else {
                 return "spayed";
+            }
+        },
+        isFixed: function isFixed() {
+            if (this.form.fixed === 1) {
+                return this.fixed;
+            } else {
+                return "not altered";
             }
         },
         progress: function progress() {
@@ -28549,12 +28566,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     duration: '6000',
                     width: '100%'
                 });
+
                 console.log("CreateAnimalComponent -- createAnimal -- createAnimal()" + data.toString());
             }).catch(function (error) {
                 console.log(error);
             });
 
-            this.$router.push('dashboard');
+            this.$store.dispatch('getAllAnimals');
+            this.$router.push('/dashboard');
         },
         selectDog: function selectDog() {
             this.form.species = "dog";
@@ -28688,39 +28707,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }, 500);
             // add to "profile" as user builds
         },
-        select1: function select1() {
-            this.form.weight += '1';
-        },
-        select2: function select2() {
-            this.form.weight += '2';
-        },
-        select3: function select3() {
-            this.form.weight += '3';
-        },
-        select4: function select4() {
-            this.form.weight += '4';
-        },
-        select5: function select5() {
-            this.form.weight += '5';
-        },
-        select6: function select6() {
-            this.form.weight += '6';
-        },
-        select7: function select7() {
-            this.form.weight += '7';
-        },
-        select8: function select8() {
-            this.form.weight += '8';
-        },
-        select9: function select9() {
-            this.form.weight += '9';
-        },
-        select0: function select0() {
-            this.form.weight += '0';
-        },
-        deleteDigit: function deleteDigit() {
-            this.form.weight = this.form.weight.slice(0, -1);
-        },
         altered: function altered() {
             this.form.fixed = 1;
             this.isAltered = true;
@@ -28824,26 +28810,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }
             return Math.round(size * 100) / 100 + " " + fSExt[i];
         },
-        upload: function upload() {
-            var _this5 = this;
-
-            var formData = new FormData();
-
-            this.files.forEach(function (file) {
-                formData.append('images[]', file, file.name);
-            });
-            axios.post('/images-upload', formData).then(function (response) {
-                _this5.$notify({
-                    group: 'notifications',
-                    title: 'Success',
-                    text: 'Image successfully uploaded',
-                    duration: '6000',
-                    width: '100%'
-                });
-                _this5.images = [];
-                _this5.files = [];
-            });
-        },
         triggerSelectImage: function triggerSelectImage() {
             this.$refs.imageInput.click();
         },
@@ -28852,6 +28818,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         init: function init() {
             console.log("CreateAnimalComponent Mounted");
+        },
+        deleteImageSelection: function deleteImageSelection() {
+            this.form.profilePhoto = null;
+            this.files = [];
+            this.images = [];
         }
     },
     mounted: function mounted() {
@@ -29987,6 +29958,51 @@ var render = function() {
               _vm.formStep === 7
                 ? _c(
                     "b-form-group",
+                    {
+                      staticClass: "form-box",
+                      attrs: { id: "microchipGroup" }
+                    },
+                    [
+                      _c(
+                        "div",
+                        { staticClass: "selection-box" },
+                        [
+                          _c("h5", [
+                            _vm._v(
+                              "If " +
+                                _vm._s(_vm.form.name) +
+                                " is chipped, enter " +
+                                _vm._s(_vm.getPronoun1) +
+                                " chip number:."
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("b-form-input", {
+                            staticClass: "input-box",
+                            attrs: {
+                              id: "microchip",
+                              onkeypress: "return event.keyCode != 13;",
+                              type: "text",
+                              placeholder: "Microchip number"
+                            },
+                            model: {
+                              value: _vm.form.microchipNumber,
+                              callback: function($$v) {
+                                _vm.$set(_vm.form, "microchipNumber", $$v)
+                              },
+                              expression: "form.microchipNumber"
+                            }
+                          })
+                        ],
+                        1
+                      )
+                    ]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.formStep === 8
+                ? _c(
+                    "b-form-group",
                     { staticClass: "form-box", attrs: { id: "genderGroup" } },
                     [
                       _c("div", { staticClass: "selection-box" }, [
@@ -30066,51 +30082,6 @@ var render = function() {
                   )
                 : _vm._e(),
               _vm._v(" "),
-              _vm.formStep === 8
-                ? _c(
-                    "b-form-group",
-                    {
-                      staticClass: "form-box",
-                      attrs: { id: "microchipGroup" }
-                    },
-                    [
-                      _c(
-                        "div",
-                        { staticClass: "selection-box" },
-                        [
-                          _c("h5", [
-                            _vm._v(
-                              "If " +
-                                _vm._s(_vm.form.name) +
-                                " is chipped, enter " +
-                                _vm._s(_vm.pronoun) +
-                                " chip number:."
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("b-form-input", {
-                            staticClass: "input-box",
-                            attrs: {
-                              id: "microchip",
-                              onkeypress: "return event.keyCode != 13;",
-                              type: "text",
-                              placeholder: "Microchip number"
-                            },
-                            model: {
-                              value: _vm.form.microchipNumber,
-                              callback: function($$v) {
-                                _vm.$set(_vm.form, "microchipNumber", $$v)
-                              },
-                              expression: "form.microchipNumber"
-                            }
-                          })
-                        ],
-                        1
-                      )
-                    ]
-                  )
-                : _vm._e(),
-              _vm._v(" "),
               _vm.formStep === 9
                 ? _c(
                     "b-form-group",
@@ -30158,7 +30129,13 @@ var render = function() {
                                 _c(
                                   "h5",
                                   { staticStyle: { "margin-bottom": "20px" } },
-                                  [_vm._v("Select an image to upload")]
+                                  [
+                                    _vm._v(
+                                      "Select a picture of " +
+                                        _vm._s(_vm.form.name) +
+                                        " to upload"
+                                    )
+                                  ]
                                 )
                               ])
                             : _vm._e(),
@@ -30206,36 +30183,22 @@ var render = function() {
                             [
                               _c(
                                 "div",
-                                { staticClass: "images-preview" },
+                                { staticClass: "image-preview" },
                                 _vm._l(_vm.images, function(image, index) {
                                   return _c("div", { key: index }, [
                                     _c("img", {
                                       attrs: {
                                         src: image,
+                                        width: "200",
                                         alt: "uploaded image"
-                                      }
+                                      },
+                                      on: { click: _vm.deleteImageSelection }
                                     }),
                                     _vm._v(" "),
-                                    _c("div", { staticClass: "details" }, [
-                                      _c("span", {
-                                        staticClass: "name",
-                                        domProps: {
-                                          textContent: _vm._s(
-                                            _vm.files[index].name
-                                          )
-                                        }
-                                      }),
-                                      _vm._v(" "),
-                                      _c("span", {
-                                        staticClass: "size",
-                                        domProps: {
-                                          textContent: _vm._s(
-                                            _vm.getFileSize(
-                                              _vm.files[index].size
-                                            )
-                                          )
-                                        }
-                                      })
+                                    _c("h6", [
+                                      _c("em", [
+                                        _vm._v("click the image to delete")
+                                      ])
                                     ])
                                   ])
                                 })
@@ -30251,181 +30214,34 @@ var render = function() {
                 : _vm._e(),
               _vm._v(" "),
               _vm.formStep === 11
-                ? _c(
-                    "b-form-group",
-                    { staticClass: "form-box" },
-                    [
-                      _c("h5", { staticStyle: { "margin-bottom": "20px" } }, [
-                        _vm._v(
-                          "How much does " + _vm._s(_vm.form.name) + " weigh:"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.form.weight,
-                            expression: "form.weight"
-                          }
-                        ],
-                        attrs: { type: "number", id: "weight" },
-                        domProps: { value: _vm.form.weight },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(_vm.form, "weight", $event.target.value)
-                          }
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c(
-                        "b-col",
-                        [
-                          _c(
-                            "b-btn",
-                            {
-                              staticClass: "button-digit",
-                              staticStyle: { "font-size": "1rem" },
-                              on: { click: _vm.select1 }
-                            },
-                            [_vm._v("1")]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "b-btn",
-                            {
-                              staticClass: "button-digit",
-                              staticStyle: { "font-size": "1rem" },
-                              on: { click: _vm.select2 }
-                            },
-                            [_vm._v("2")]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "b-btn",
-                            {
-                              staticClass: "button-digit",
-                              staticStyle: { "font-size": "1rem" },
-                              on: { click: _vm.select3 }
-                            },
-                            [_vm._v("3")]
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "b-col",
-                        [
-                          _c(
-                            "b-btn",
-                            {
-                              staticClass: "button-digit",
-                              staticStyle: { "font-size": "1rem" },
-                              on: { click: _vm.select4 }
-                            },
-                            [_vm._v("4")]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "b-btn",
-                            {
-                              staticClass: "button-digit",
-                              staticStyle: { "font-size": "1rem" },
-                              on: { click: _vm.select5 }
-                            },
-                            [_vm._v("5")]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "b-btn",
-                            {
-                              staticClass: "button-digit",
-                              staticStyle: { "font-size": "1rem" },
-                              on: { click: _vm.select6 }
-                            },
-                            [_vm._v("6")]
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "b-col",
-                        [
-                          _c(
-                            "b-btn",
-                            {
-                              staticClass: "button-digit",
-                              staticStyle: { "font-size": "1rem" },
-                              on: { click: _vm.select7 }
-                            },
-                            [_vm._v("7")]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "b-btn",
-                            {
-                              staticClass: "button-digit",
-                              staticStyle: { "font-size": "1rem" },
-                              on: { click: _vm.select8 }
-                            },
-                            [_vm._v("8")]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "b-btn",
-                            {
-                              staticClass: "button-digit",
-                              staticStyle: { "font-size": "1rem" },
-                              on: { click: _vm.select9 }
-                            },
-                            [_vm._v("9")]
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "b-col",
-                        [
-                          _c("b-btn", {
-                            staticClass: "button-digit",
-                            staticStyle: {
-                              "background-color": "#2196F3",
-                              border: "none"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c(
-                            "b-btn",
-                            {
-                              staticClass: "button-digit",
-                              staticStyle: { "font-size": "1rem" },
-                              on: { click: _vm.select9 }
-                            },
-                            [_vm._v("0")]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "b-btn",
-                            {
-                              staticClass: "button-digit",
-                              staticStyle: { "font-size": "1rem" },
-                              on: { click: _vm.deleteDigit }
-                            },
-                            [_vm._v("C")]
-                          )
-                        ],
-                        1
+                ? _c("b-form-group", { staticClass: "form-box" }, [
+                    _c("h5", { staticStyle: { "margin-bottom": "20px" } }, [
+                      _vm._v(
+                        "How much does " + _vm._s(_vm.form.name) + " weigh:"
                       )
-                    ],
-                    1
-                  )
+                    ]),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.weight,
+                          expression: "form.weight"
+                        }
+                      ],
+                      attrs: { type: "number", id: "weight" },
+                      domProps: { value: _vm.form.weight },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.form, "weight", $event.target.value)
+                        }
+                      }
+                    })
+                  ])
                 : _vm._e(),
               _vm._v(" "),
               _vm.formStep > 11
@@ -30433,6 +30249,101 @@ var render = function() {
                     "b-form-group",
                     { staticClass: "submit-box" },
                     [
+                      _c(
+                        "div",
+                        { staticClass: "selection-box" },
+                        [
+                          _c("h5", [
+                            _vm._v(
+                              "Check the following for accuracy, if you need to change anything, use the back arrow."
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("h5", [
+                            _vm._v(
+                              " Welcome to Alive, " +
+                                _vm._s(_vm.form.name) +
+                                "!"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("table", [
+                            _c("tbody", [
+                              _c("tr", [
+                                _c("td", [
+                                  _c("li", [
+                                    _vm._v(
+                                      _vm._s(_vm.form.name) +
+                                        " is a " +
+                                        _vm._s(_vm.form.weight) +
+                                        " pound, " +
+                                        _vm._s(_vm.getGender) +
+                                        " " +
+                                        _vm._s(_vm.form.breed) +
+                                        " " +
+                                        _vm._s(_vm.form.species) +
+                                        " from " +
+                                        _vm._s(_vm.form.source) +
+                                        " who is " +
+                                        _vm._s(_vm.isFixed) +
+                                        " "
+                                    ),
+                                    _vm.form.microchipNumber
+                                      ? _c("span", [
+                                          _vm._v(
+                                            "and has a microchip, " +
+                                              _vm._s(_vm.form.microchipNumber)
+                                          )
+                                        ])
+                                      : _vm._e()
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("li", [
+                                    _vm._v(
+                                      _vm._s(_vm.getPronoun1) +
+                                        " birthday is " +
+                                        _vm._s(_vm.form.birthdate)
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  !_vm.form.microchipNumber
+                                    ? _c("li", [
+                                        _vm._v(
+                                          _vm._s(_vm.getPronoun2) +
+                                            " is not microchipped."
+                                        )
+                                      ])
+                                    : _vm._e()
+                                ])
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "b-col",
+                            { attrs: { sm: "12", md: "4", "offset-md": "4" } },
+                            [
+                              _c(
+                                "div",
+                                { staticClass: "image-preview" },
+                                _vm._l(_vm.images, function(image, index) {
+                                  return _c("div", { key: index }, [
+                                    _c("img", {
+                                      attrs: {
+                                        src: image,
+                                        width: "200",
+                                        alt: "uploaded image"
+                                      }
+                                    })
+                                  ])
+                                })
+                              )
+                            ]
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
                       _c(
                         "b-button",
                         {
@@ -30443,7 +30354,7 @@ var render = function() {
                           },
                           on: { click: _vm.createAnimal }
                         },
-                        [_vm._v("Welcome to Alive, " + _vm._s(_vm.form.name))]
+                        [_vm._v("Submit")]
                       )
                     ],
                     1
@@ -30474,6 +30385,9 @@ var render = function() {
                     "b-btn",
                     {
                       staticClass: "nav-button",
+                      attrs: {
+                        disabled: _vm.formStep > 11 || _vm.$v.form.name.$invalid
+                      },
                       on: { click: _vm.nextFormStep }
                     },
                     [_c("i", { staticClass: "fas fa-arrow-right" })]
@@ -30640,7 +30554,7 @@ exports = module.exports = __webpack_require__(8)(false);
 
 
 // module
-exports.push([module.i, "\n.body[data-v-6cd9df9e] {\n    padding: 20px;\n}\n.btn[data-v-6cd9df9e] {\n    text-align: center;\n    /* width: 24%; */\n}\n.center[data-v-6cd9df9e] {\n    text-align: center;\n}\n.search-bar[data-v-6cd9df9e] {\n    width: 100%;\n    text-align: center;\n}\n.select-button[data-v-6cd9df9e] {\n    width: 100%;\n    margin-bottom: 20px;\n}\n.filter-button[data-v-6cd9df9e] {\n    width: 24%;\n}\n.animal-card[data-v-6cd9df9e] {\n    margin-bottom: 20px;\n    padding: .6rem;\n}\n.card-img[data-v-6cd9df9e] {\n    height: 16rem;\n}\n.card[data-v-6cd9df9e] {\n    background-color: pink;\n}\n.blue[data-v-6cd9df9e] {\n    background-color: lightblue;\n}\n", ""]);
+exports.push([module.i, "\n.body[data-v-6cd9df9e] {\n    padding: 20px;\n}\n.btn[data-v-6cd9df9e] {\n    text-align: center;\n    /* width: 24%; */\n}\n.center[data-v-6cd9df9e] {\n    text-align: center;\n}\n.search-bar[data-v-6cd9df9e] {\n    width: 100%;\n    text-align: center;\n}\n.select-button[data-v-6cd9df9e] {\n    width: 100%;\n    margin-bottom: 20px;\n}\n.filter-button[data-v-6cd9df9e] {\n    width: 24%;\n}\n.animal-card[data-v-6cd9df9e] {\n    margin-bottom: 20px;\n    padding: .6rem;\n}\n.card-img[data-v-6cd9df9e] {\n    height: 12rem;\n}\n", ""]);
 
 // exports
 
@@ -30867,42 +30781,32 @@ var render = function() {
         _vm._l(_vm.filteredAnimals, function(animal, index) {
           return _c(
             "b-col",
-            { key: index, attrs: { cols: "12", md: "3" } },
+            { key: index, attrs: { cols: "12", md: "2" } },
             [
               animal.profile_photo
                 ? _c(
                     "b-card",
                     {
                       staticClass: "animal-card",
-                      class: { blue: animal.gender === "M" },
                       attrs: {
                         "img-src":
                           "http://localhost:8000/storage/" +
                           animal.profile_photo,
-                        height: "60",
+                        animal: "'animal.id'",
                         "img-alt": "Selected animal image"
+                      },
+                      on: {
+                        click: function($event) {
+                          _vm.showModal(animal)
+                        }
                       }
                     },
                     [
-                      _c(
-                        "b-btn",
-                        {
-                          staticClass: "select-button",
-                          attrs: { animal: "'animal.id'" },
-                          on: {
-                            click: function($event) {
-                              _vm.showModal(animal)
-                            }
-                          }
-                        },
-                        [
-                          _vm._v(_vm._s(animal.name) + "  |  "),
-                          _c("span", { staticStyle: { color: "black" } }, [
-                            _vm._v(" " + _vm._s(animal.species) + " ")
-                          ]),
-                          _vm._v("  |  " + _vm._s(animal.breed))
-                        ]
-                      )
+                      _c("b-btn", { staticClass: "select-button" }, [
+                        _vm._v(
+                          _vm._s(animal.name) + " | " + _vm._s(animal.breed)
+                        )
+                      ])
                     ],
                     1
                   )
@@ -30910,33 +30814,24 @@ var render = function() {
                     "b-card",
                     {
                       staticClass: "animal-card",
-                      class: { blue: animal.gender === "M" },
                       attrs: {
                         "img-src":
                           "http://localhost:8000/storage/images/dog_placeholder.jpg",
+                        animal: "'animal.id'",
                         "img-alt": "No Selected animal image"
+                      },
+                      on: {
+                        click: function($event) {
+                          _vm.showModal(animal)
+                        }
                       }
                     },
                     [
-                      _c(
-                        "b-btn",
-                        {
-                          staticClass: "select-button",
-                          attrs: { animal: "'animal.id'" },
-                          on: {
-                            click: function($event) {
-                              _vm.showModal(animal)
-                            }
-                          }
-                        },
-                        [
-                          _vm._v(_vm._s(animal.name) + "  |  "),
-                          _c("span", { staticStyle: { color: "black" } }, [
-                            _vm._v(" " + _vm._s(animal.species) + " ")
-                          ]),
-                          _vm._v("  |  " + _vm._s(animal.breed))
-                        ]
-                      )
+                      _c("b-btn", { staticClass: "select-button" }, [
+                        _vm._v(
+                          _vm._s(animal.name) + " | " + _vm._s(animal.breed)
+                        )
+                      ])
                     ],
                     1
                   )
