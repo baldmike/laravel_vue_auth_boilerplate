@@ -1,8 +1,8 @@
 # changoZephyr
-Vue front end, Laravel back end.  Just like I like 'em... Throw in a little Full Oauth token-based authentication on server (passport) and client (cookies, vuex & vue-router) and you got yourself a stew.
+Vue front end, Laravel back end.  Just like I like 'em... Throw in a little Oauth token-based authentication on server (passport) and client (cookies, vuex & vue-router) and you got yourself a stew.
 
 
-Run the following commands to install dependencies: vuex, vue-router (front end router), bootstrap-vue (Vue-specific version of Bootstrap) and axios (http library) & Passport (Laravel's Oauth implementation).  key:generate needs to be run only once, after cloning the repo, then run following:
+Run the following commands to install dependencies: vuex, vue-router (front end router), bootstrap-vue (Vue-specific version of Bootstrap) and axios (http library) & Passport (Laravel's Oauth implementation).  key:generate needs to be run only once, after cloning the repo.
 
 ```
 composer install
@@ -21,23 +21,12 @@ DB_USERNAME={ YOUR USERNAME }
 DB_PASSWORD={ YOUR PASSWORD }
 ```
 
-run the migrations and seed the DB with dummy data:
-```
-php artisan migrate
-php artisan db:seed
-```
-
 install Passport and generate client tokens:
 ```
 php artisan passport:install
 ```
 
-run the migration to add passport tables (this gives you client (vue) token): 
-```
-php artisan migrate
-```
-
-in your DB, find oauth_clients table and copy the 'secret' for id=2 (Laravel Password Grant Client) - this was created by passport:install, above, and is needed for Vue to connect.  Then paste the following lines in .ENV file, using that 'secret':
+This will generate two keys, copy the 'secret' for id=2 (Laravel Password Grant Client) - this was created by passport:install, above, and is needed for Vue to connect.  Then paste the following lines in .ENV file, using that 'secret':
 
 ```
 PASSPORT_LOGIN_ENDPOINT = 'localhost:8000'
@@ -45,10 +34,17 @@ PASSPORT_CLIENT_ID=2
 PASSPORT_CLIENT_SECRET={ THE 'SECRET' OF LARAVEL PASSWORD GRANT CLIENT }
 ```
 
+run the migrations, seed db with admin, add passport tables (this gives you client (vue) token): 
+```
+php artisan migrate
+php artisan db:seed
+```
+
+
 Now restart literally EVERYTHING in your house, your fridge, the TV, the coffee maker, the cute little speaker that's listening to everything you say so it can sell you stuff and run:
 
 ```
 npm run live
 ``` 
 
-grab an email from your db and use the password that is set in the factory to login and adopt your next dog or cat from your local shelter or rescue group, please and thank you.
+Use 'email@example.com' and 'password' to login and adopt your next dog or cat from your local shelter or rescue group, please and thank you.
