@@ -1,8 +1,7 @@
 # Laravel Vue Auth Boilerplate 
-Laravel, Passport/Oauth2, Vue.js, Vuex, Vue-router, Bootstrap-Vue, Vuelidate, Vue-notification, Vuetify, Axios HTTP library
+This is a very sexy auth/login boilerplate for a PHP/Laravel and Vue.js application with both bootstrap-vue. Token-based authentication (coupling Vue and Laravel) is achieved with Laravel Passport (an Oauth2 server implementation), and Vuex for client-side state management. Once authenticated, Vue-router takes user to a hello world dashboard.
 
-
-Run the following commands to install dependencies. **php artisan key:generate needs to be run only once, after cloning the repo.
+Run the following commands to install dependencies. **php artisan key:generate needs to be run after cloning the repo.
 
 ```
 composer install
@@ -39,7 +38,6 @@ run the migrations, seed db with admin, add passport tables (this gives you clie
 php artisan migrate
 php artisan db:seed
 ```
-
 
 Now restart literally EVERYTHING in your house, your fridge, the TV, the coffee maker, the cute little speaker that's listening to everything you say so it can sell you stuff and run:
 
