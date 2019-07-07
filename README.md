@@ -1,5 +1,4 @@
 # Laravel Vue Auth Boilerplate 
-This is a very sexy auth/login boilerplate for a PHP/Laravel and Vue.js application with both bootstrap-vue. Token-based authentication (coupling Vue and Laravel) is achieved with Laravel Passport (an Oauth2 server implementation), and Vuex for client-side state management. Once authenticated, Vue-router takes user to a hello world dashboard.
 
 Run the following commands to install dependencies. **php artisan key:generate needs to be run after cloning the repo.
 
