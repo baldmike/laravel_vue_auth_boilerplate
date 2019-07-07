@@ -1,8 +1,6 @@
-# changoZephyr
-Vue front end, Laravel back end.  Just like I like 'em... Throw in a little Oauth token-based authentication on server (passport) and client (cookies, vuex & vue-router) and you got yourself a stew.
+# Laravel Vue Auth Boilerplate 
 
-
-Run the following commands to install dependencies: vuex, vue-router (front end router), bootstrap-vue (Vue-specific version of Bootstrap) and axios (http library) & Passport (Laravel's Oauth implementation).  key:generate needs to be run only once, after cloning the repo.
+Run the following commands to install dependencies. **php artisan key:generate needs to be run after cloning the repo.
 
 ```
 composer install
@@ -39,7 +37,6 @@ run the migrations, seed db with admin, add passport tables (this gives you clie
 php artisan migrate
 php artisan db:seed
 ```
-
 
 Now restart literally EVERYTHING in your house, your fridge, the TV, the coffee maker, the cute little speaker that's listening to everything you say so it can sell you stuff and run:
 
