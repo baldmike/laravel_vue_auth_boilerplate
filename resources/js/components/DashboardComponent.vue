@@ -2,7 +2,7 @@
     <div class="mainPlace">
         <b-row>
             <b-col>
-                <animals-component></animals-component>
+                <h1>HELLO, WORLD</h1>
             </b-col>
         </b-row>
     </div>
@@ -10,39 +10,27 @@
 
 <script>
 
-    import AnimalsComponent from './AnimalsComponent';
+    
     import { mapActions, mapGetters } from "vuex";
 
     export default {
         name: 'dashboard',
         components: {
-            AnimalsComponent,
+            
         },
         data() {
             return {
                 
             }
         },
-        computed: mapGetters(['isAuthenticated', 'currentUser', 'getAnimals']),
+        computed: mapGetters(['isAuthenticated', 'currentUser']),
         methods: {
             init() {
-                this.$store.dispatch('getAllAnimals');
-                console.log("AnimalsComponent - init method - THIS.DOGS: ");
-            },
-            showModal (item) {
-                this.selectedAnimal = item;
-                this.$refs.selectedAnimalModal.show()
-            },
-            hideModal () {
-                this.$refs.selectedAnimalModal.hide()
+                
             },
         },
         created() {
-            if (this.$store.state.animals.length === 0) {
-                this.init();
-            }
-
-            console.log('Dashboard Component mounted.')
+            
         }
     }
 </script>

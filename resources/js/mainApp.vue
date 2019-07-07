@@ -1,6 +1,6 @@
 <template>    
     <div class="container-fluid">
-        <notifications group="notifications" position="top center" width="50%"/>
+        <notifications group="notifications" position="bottom center" width="100%"/>
         <nav-bar></nav-bar>
         <login-component v-if="!isAuthenticated" :is="loginComponent"></login-component>
         <router-view v-if="isAuthenticated"></router-view>
