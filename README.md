@@ -9,7 +9,7 @@ php artisan key:generate
 
 ``` 
 
-set up your database and update the following lines in .ENV file:
+set up your database and update the following lines in .ENV file (this assumes a mysql db):
 ```
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -44,4 +44,4 @@ Now restart literally EVERYTHING in your house, your fridge, the TV, the coffee 
 npm run live
 ``` 
 
-Use 'email@example.com' and 'password' to login and adopt your next dog or cat from your local shelter or rescue group, please and thank you.
+Use 'email@example.com' and 'password' to login, you'll be taken to dashboard and adopt your next dog or cat from your local shelter or rescue group, please and thank you.
