@@ -72,25 +72,39 @@ export default {
         const formData = {
           email: this.form.email,
           password: this.form.password,
-        };
-
-        console.log("[LoginComponent] - LOGIN - FORM DATA SET");
+		};
+		
+		// this is out of scope in catch -- set this to self
+		let self=this;
 
         axios.post("/api/login", formData).then(({data}) => {
-            console.log("login api hit: " + data.user)
+
             this.$cookie.set('token', data.token)
             this.$cookie.set('user', data.user.email)
             auth.setAuthToken(data.token)
             auth.login(data.token, data.user.email);
-            
-            console.log("YOU DID IT! " + data.message);
-
-            this.$router.push({path: 'dashboard'});
+    
+			this.$router.push({path: 'dashboard'});
+			
+			self.$notify({
+				group: 'notifications',
+				type: 'success',
+				title: 'Success!',
+				text: 'You are now logged in',
+				duration: '15000',
+				width: '100%'
+			});
         })
         .catch(function (error) {
-          
-          console.log("[LoginComponent] - api/login call: " + error);
-        
+
+			self.$notify({
+				group: 'notifications',
+				type: 'error',
+				title: error,
+				text: 'INVALID CREDENTIALS - PLEASE TRY AGAIN.',
+				duration: '15000',
+				width: '100%'
+			});
         });
         
       },
@@ -100,13 +114,7 @@ export default {
     },
     computed: mapGetters(['isAuthenticated']),
     mounted() {
-      this.$notify({
-      group: 'auth',
-      title: 'Important message',
-      text: 'Please log in!',
-      duration: '10000',
-      width: '80%'
-    });
+		
     }
 }
 

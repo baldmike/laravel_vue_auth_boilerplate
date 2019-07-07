@@ -23,10 +23,6 @@ export default new Vuex.Store({
         return {
             token: userToken ? userToken : null,
             user: user ? user : null,
-            animals: [],
-            dogs: [],
-            cats: [],
-            rabbits: [],
         }
     },
     getters: { 
@@ -35,9 +31,6 @@ export default new Vuex.Store({
         // !! returns boolean  --  if there is a token, the user is authenticated
         isAuthenticated: state => !!state.token,
         currentUser: state => state.user,
-        getAnimals: state => state.animals,
-        getCats: state => state.cats,
-        getDogs: state => state.dogs
     },
     mutations: {
         // mutations are committed by actions, and are the ONLY way to manipulate state
@@ -50,12 +43,6 @@ export default new Vuex.Store({
         },
         setUser(state, user) {
             state.user = user;
-        },
-        setAnimals(state, payload) {
-            state.animals = payload.data;
-            state.cats = payload.data.filter(animal => animal.species === 'cat');
-            state.dogs = payload.data.filter(animal => animal.species === 'dog');
-            state.rabbits = payload.data.filter(animal => animal.species === 'rab');
         },
         logout(state) {
             state.token = null;
@@ -77,16 +64,6 @@ export default new Vuex.Store({
                 console.log("USER ----> " + user);
                 context.commit('setUser', user)
             })
-        },
-        getAllAnimals(context) {
-            axios.call("get", "/api/animals").then(({ data }) => {
-                console.log("[API call to animals]: " + JSON.stringify(data));
-                context.commit('setAnimals', data);
-            })
-            .catch(error => {
-                console.log("API call error: " + error);
-            });
-            
         },
         logout( { commit }) {
         

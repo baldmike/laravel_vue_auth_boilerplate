@@ -1,12 +1,8 @@
 import VueRouter from 'vue-router' 
 import store from './store'
+
 import mainApp from './mainApp'
-import CreateAnimalComponent from './components/CreateAnimalComponent'
 import DashboardComponent from './components/DashboardComponent'
-import AnimalsComponent from './components/AnimalsComponent'
-import DogsComponent from './components/DogsComponent'
-import CatsComponent from './components/CatsComponent'
-import RabbitsComponent from './components/RabbitsComponent'
 import LoginComponent from './components/LoginComponent'
 
 export const router = new VueRouter({ 
@@ -32,72 +28,6 @@ export const router = new VueRouter({
                         next();
                     }
                 },
-                {
-                    path: 'animals',
-                    component: AnimalsComponent,
-                    beforeEnter: (to, from, next) => {
-                        if (!window.auth.check()) {
-                            next({
-                                path: '/'
-                            });
-                            return;
-                        }
-                        next();
-                    }
-                },
-                {
-                    path: 'dogs',
-                    component: DogsComponent,
-                    beforeEnter: (to, from, next) => {
-                        if (!window.auth.check()) {
-                            next({
-                                path: '/'
-                            });
-                            return;
-                        }
-                        next();
-                    }
-                },
-                {
-                    path: 'cats',
-                    component: CatsComponent,
-                    beforeEnter: (to, from, next) => {
-                        if (!window.auth.check()) {
-                            next({
-                                path: '/'
-                            });
-                            return;
-                        }
-                        next();
-                    }
-                },
-                {
-                    path: 'rabbits',
-                    component: RabbitsComponent,
-                    beforeEnter: (to, from, next) => {
-                        if (!window.auth.check()) {
-                            next({
-                                path: '/'
-                            });
-                            return;
-                        }
-                        next();
-                    }
-                },
-                {
-                    path: 'createAnimal',
-                    component: CreateAnimalComponent,
-                    beforeEnter: (to, from, next) => {
-                        if (!window.auth.check()) {
-                            next({
-                                path: '/'
-                            });
-                            return;
-                        }
-                        next();
-                    }
-                },
-                // {path: '*', component: DashboardComponent}
             ]
         },
     ]

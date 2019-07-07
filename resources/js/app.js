@@ -18,7 +18,6 @@ Vue.use(VueCookie)
 Vue.use(Notifications)
 Vue.use(require('vue-moment'));
 
-
 window.Vue = require('vue')
 window.auth = new Auth();
 
@@ -26,14 +25,6 @@ Vue.component('main-app', require('./mainApp.vue'))
 Vue.component('login-component', require('./components/LoginComponent.vue'))
 Vue.component('dashboard-component', require('./components/DashboardComponent.vue'))
 Vue.component('not-found', require('./components/NotFound.vue'))
-
-Vue.component('animals-component', require('./components/AnimalsComponent.vue'))
-Vue.component('dogs-component', require('./components/DogsComponent.vue'))
-Vue.component('cats-component', require('./components/CatsComponent.vue'))
-Vue.component('rabbits-component', require('./components/RabbitsComponent.vue'))
-Vue.component('create-animal-component', require('./components/CreateAnimalComponent.vue'))
-
-
 
 window.addEventListener('load', function () { 
     const app = new Vue({ 
