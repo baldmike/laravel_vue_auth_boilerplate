@@ -24,7 +24,7 @@ class AuthController extends Controller
                 'message' => 'This email is already registered, please login.'
             ], Response::HTTP_INTERNAL_SERVER_ERROR);
         }
-
+        
         $request->validate([
             'first_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
@@ -34,7 +34,7 @@ class AuthController extends Controller
 
         $user = User::create([
             'first_name' => $request->first_name,
-            'last_name' => $request->lastt_name,
+            'last_name' => $request->last_name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);

@@ -1,8 +1,23 @@
 <template>
     <div class="container-fluid">
       <b-col cols="4">
-        <b-form @submit="login">
-            <h3>login</h3>
+        <b-form @submit="register">
+            <h3>Register</h3>
+
+            <b-form-group id="nameInputGroup"
+                        label="Name"
+                        label-for="name">
+                <b-form-input id="name"
+                            type="name"
+                            v-model="form.first_name"
+                            :state="!$v.form.first_name.$invalid"
+                            aria-describedby="nameLiveFeedback"
+                            placeholder="Name" />
+                <b-form-invalid-feedback id="nameLiveFeedback">
+                    Please enter a valid First Name
+                </b-form-invalid-feedback>
+            </b-form-group>
+
             <b-form-group id="emailInputGroup"
                         label="Email"
                         label-for="email">
@@ -11,9 +26,9 @@
                             v-model="form.email"
                             :state="!$v.form.email.$invalid"
                             aria-describedby="emailLiveFeedback"
-                            placeholder="Enter email" />
+                            placeholder="Enter Email" />
                 <b-form-invalid-feedback id="emailLiveFeedback">
-                    Please enter a valid email address
+                    Please enter a valid Email
                 </b-form-invalid-feedback>
             </b-form-group>
             <b-form-group id="passwordLoginGroup"
@@ -27,8 +42,8 @@
                     Your password must be at least 8 characters
                 </b-form-invalid-feedback>
             </b-form-group>
-            <b-button type="submit" @click.prevent="login" variant="dark" size="lg" :disabled="$v.form.$invalid">
-                Login
+            <b-button type="submit" @click.prevent="register" variant="dark" size="lg" :disabled="$v.form.$invalid">
+                Register
             </b-button>
         </b-form>
       </b-col>
@@ -43,13 +58,14 @@ import { validationMixin } from "vuelidate";
 import { required, minLength, email } from "vuelidate/lib/validators";
 
 export default {
-    name: "login",
+    name: "register",
     data() {
       return {
         
         form: {
-          email: "",
-          password: "",
+            name: "",
+            email: "",
+            password: "",
         }
       }
     },
@@ -58,6 +74,9 @@ export default {
     ],
     validations: {
       form: {
+        name: {
+        required,
+        },
         password: {
           required,
         },
@@ -68,22 +87,23 @@ export default {
       }
     },
     methods: {
-      login() {
+      register() {
 
         const formData = {
-          email: this.form.email,
-          password: this.form.password,
+            name: this.form.name,
+            email: this.form.email,
+            password: this.form.password,
 		    };
 		
 		// this is out of scope in catch -- set this to self
 		  let self=this;
 
-        axios.post("/api/login", formData).then(({data}) => {
+        axios.post("/api/register", formData).then(({data}) => {
 
             this.$cookie.set('token', data.token)
             this.$cookie.set('user', data.user.email)
             auth.setAuthToken(data.token)
-            auth.login(data.token, data.user.email);
+            auth.register(data.token, data.user.email);
     
 			this.$router.push({path: 'dashboard'});
 			
@@ -110,7 +130,7 @@ export default {
         
       },
       register() {
-        console.log("[LoginComponent]->register")
+        console.log("[RegisterComponent]->register")
       }
     },
     computed: mapGetters(['isAuthenticated']),

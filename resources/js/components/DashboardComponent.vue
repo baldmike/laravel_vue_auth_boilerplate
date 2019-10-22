@@ -38,8 +38,8 @@
 <style lang="scss" scoped>
     @import "../../sass/_variables.scss";
 
-    .mainPlace {
-        background-color: $blue;
-    }
+    // .mainPlace {
+    //     background-color: $blue;
+    // }
     
 </style>
