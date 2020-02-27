@@ -115,11 +115,8 @@ export default {
         register() {
             console.log("[LoginComponent]->register")
         }
-        },
-        computed: mapGetters(['isAuthenticated']),
-        mounted() {
-            
-            }
-    }
+    },
+    computed: mapGetters(['isAuthenticated']),
+}
 
-    </script>
+</script>

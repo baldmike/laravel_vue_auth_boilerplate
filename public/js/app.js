@@ -1870,8 +1870,7 @@ __webpack_require__.r(__webpack_exports__);
       console.log("[LoginComponent]->register");
     }
   },
-  computed: Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])(['isAuthenticated']),
-  mounted: function mounted() {}
+  computed: Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])(['isAuthenticated'])
 });
 
 /***/ }),
