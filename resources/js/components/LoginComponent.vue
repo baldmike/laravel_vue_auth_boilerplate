@@ -45,78 +45,81 @@ import { required, minLength, email } from "vuelidate/lib/validators";
 export default {
     name: "login",
     data() {
-      return {
+        return {
         
-        form: {
-          email: "",
-          password: "",
+            form: {
+                email: "",
+                password: "",
+            }
         }
-      }
     },
+
     mixins: [
       validationMixin
     ],
+
     validations: {
-      form: {
-        password: {
-          required,
-        },
-        email: {
-          required,
-          email
+        form: {
+            password: {
+                required,
+            },
+            email: {
+                required,
+                email
+            }
         }
-      }
     },
+
     methods: {
-      login() {
+        login() {
 
-        const formData = {
-          email: this.form.email,
-          password: this.form.password,
-		    };
-		
-		// this is out of scope in catch -- set this to self
-		  let self=this;
+            const formData = {
+                email: this.form.email,
+                password: this.form.password,
+            };
+            
+            // this is out of scope in catch -- set this to self
+            let self=this;
 
-        axios.post("/api/login", formData).then(({data}) => {
+            axios.post("/api/login", formData).then(({data}) => {
 
-            this.$cookie.set('token', data.token)
-            this.$cookie.set('user', data.user.email)
-            auth.setAuthToken(data.token)
-            auth.login(data.token, data.user.email);
-    
-			this.$router.push({path: 'dashboard'});
-			
-			self.$notify({
-				group: 'notifications',
-				type: 'success',
-				title: 'Success!',
-				text: 'You are now logged in',
-				duration: '15000',
-				width: '100%'
-			});
-        })
-        .catch(function (error) {
-
-			self.$notify({
-				group: 'notifications',
-				type: 'error',
-				title: error,
-				text: 'INVALID CREDENTIALS - PLEASE TRY AGAIN.',
-				duration: '15000',
-				width: '100%'
-			});
-        });
+                this.$cookie.set('token', data.token)
+                this.$cookie.set('user', data.user.email)
+                auth.setAuthToken(data.token)
+                auth.login(data.token, data.user.email);
         
-      },
-      register() {
-        console.log("[LoginComponent]->register")
-      }
-    },
-    computed: mapGetters(['isAuthenticated']),
-    mounted() {
-		
-    }
-}
+                this.$router.push({path: 'dashboard'});
+                
+                self.$notify({
+                    group: 'notifications',
+                    type: 'success',
+                    title: 'Success!',
+                    text: 'You are now logged in',
+                    duration: '15000',
+                    width: '100%'
+                });
+            })
+            .catch(function (error) {
 
-</script>
+                self.$notify({
+                    group: 'notifications',
+                    type: 'error',
+                    title: error,
+                    text: 'INVALID CREDENTIALS - PLEASE TRY AGAIN.',
+                    duration: '15000',
+                    width: '100%'
+                });
+            });
+            
+        },
+        register() {
+            console.log("[LoginComponent]->register")
+        }
+        },
+        computed: mapGetters(['isAuthenticated']),
+        mounted() {
+            
+            }
+    }
+
+    </script>
