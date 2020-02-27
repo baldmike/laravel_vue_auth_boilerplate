@@ -75495,8 +75495,8 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_cookie__WEBPACK_IMPORTED_MODU
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/heribertomiguel/Documents/learningProjects/laravel/vueProjects/laravel_vue_auth_boilerplate/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/heribertomiguel/Documents/learningProjects/laravel/vueProjects/laravel_vue_auth_boilerplate/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/baldmike/Documents/projects_laravel/laravel_vue_auth_boilerplate/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/baldmike/Documents/projects_laravel/laravel_vue_auth_boilerplate/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
