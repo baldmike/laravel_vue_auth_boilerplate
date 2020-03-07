@@ -50,5 +50,11 @@ Kill you docker container and run:
 docker-compose down 
 docker-compose up
 ``` 
+You don't need to use a Docker container to run this - follow the same steps without Docker, and run
+
+```
+npm run live
+```
+The project will be running on `localhost:8088`
 
 Use 'baldmike@example.com' and 'password' to login, you'll be taken to dashboard and adopt your next dog or cat from your local shelter or rescue group, please and thank you.
