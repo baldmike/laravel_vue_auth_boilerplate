@@ -11,9 +11,7 @@ Run the following commands to install dependencies (this assumes both Composer a
 composer install
 npm install
 
-
 php artisan key:generate
-
 ``` 
 
 set up your database and update the following lines in .env file (this assumes a mysql db):
@@ -26,7 +24,7 @@ DB_USERNAME={ YOUR USERNAME }
 DB_PASSWORD={ YOUR PASSWORD }
 ```
 
-Spin up a Docker container
+Spin up a Docker container (this assumes you have docker desktop running):
 ```
 docker-compose build && docker-compose up
 ```
