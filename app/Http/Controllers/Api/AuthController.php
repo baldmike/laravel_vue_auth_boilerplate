@@ -11,12 +11,20 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Cookie;
 
+use Illuminate\Support\Facades\DB;
+
 class AuthController extends Controller
 {
+    /**
+     * register method
+     *
+     * @param Request $request
+     * @return Response
+     */
     public function register(Request $request)
     {
         // check if email is in use
-        $user = User::where('email', $request->username)->first();
+        $user = User::where('email', $request->email)->first();
         if ($user) 
         {
             return response()->json([
@@ -26,15 +34,13 @@ class AuthController extends Controller
         }
         
         $request->validate([
-            'first_name' => 'required|string|max:255',
-            'last_name' => 'required|string|max:255',
+            'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8',
         ]);
 
         $user = User::create([
-            'first_name' => $request->first_name,
-            'last_name' => $request->last_name,
+            'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
@@ -48,14 +54,25 @@ class AuthController extends Controller
                 'status' => Response::HTTP_CREATED,
             ], Response::HTTP_CREATED);
         }
+
+        return response()->json([
+            'status' => Response::HTTP_UNPROCESSABLE_ENTITY,
+            'message' => 'This email is not registered, please register'
+        ], Response::HTTP_UNPROCESSABLE_ENTITY);
     }
 
+    /**
+     * login method
+     *
+     * @param Request $request
+     * @return void
+     */
     public function login(Request $request)
     {
         
         // check if user exists
         $user = User::where('email', $request->email)->first();
-        Log::debug('[AuthController]-> user check: '.$user);
+        Log::debug('[AuthController]-> user check: ' . $user);
         
         if (!$user)                  
         {
@@ -96,8 +113,6 @@ class AuthController extends Controller
         Log::debug("$request");
 
         $response = app()->handle($request);
-
-        
 
         if ($response->getStatusCode() != 200) {
             Log::debug("AuthController - login failed");
