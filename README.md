@@ -80,7 +80,7 @@ PASSPORT_CLIENT_ID={ Client ID }
 PASSPORT_CLIENT_SECRET={ THE 'SECRET' OF LARAVEL PASSWORD GRANT CLIENT }
 ```
 
-Kill you docker container and run:
+Kill your docker container and run:
 
 ```
 docker-compose down
