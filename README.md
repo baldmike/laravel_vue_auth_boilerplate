@@ -5,14 +5,43 @@ cd laravel_vue_auth_boilerplate
 cp example.env .env
 ```
 
-Run the following commands to install dependencies (this assumes both Composer and Node & NPM are installed).
+Run the following commands to install dependencies:
 
+Locally:
 ```
 composer install
-npm install
+```
 
+or using a container:
+```
+docker run --rm --interactive --tty \
+  --volume $PWD:/app \
+  composer install
+```
+
+Locally:
+```
+npm install
+```
+
+or
+
+from your container:
+```
+docker-compose exec php npm install
+```
+
+Locally:
+```
 php artisan key:generate
-``` 
+```
+
+or
+
+from your container:
+```
+docker-compose exec php php artisan key:generate
+```
 
 set up your database and update the following lines in .env file (this assumes a mysql db):
 ```
