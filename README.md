@@ -80,17 +80,14 @@ PASSPORT_CLIENT_ID={ Client ID }
 PASSPORT_CLIENT_SECRET={ THE 'SECRET' OF LARAVEL PASSWORD GRANT CLIENT }
 ```
 
-Kill your docker container and run:
+Once you've updated these values you can then run:
 
 ```
-docker-compose down
-docker-compose up
+docker-compose exec php npm run live
 ```
-You don't need to use a Docker container to run this - follow the same steps without Docker, and run
 
-```
-npm run live
-```
+This will first run through some compilation processes and then you'll be ready to run.
+
 The project will be running on `localhost:8088`
 
-Use 'baldmike@example.com' and 'password' to login, you'll be taken to dashboard and adopt your next dog or cat from your local shelter or rescue group, please and thank you.
+You will need to get a user name from the database. Use the username and 'password' to login, you'll be taken to dashboard and adopt your next dog or cat from your local shelter or rescue group, please and thank you.
