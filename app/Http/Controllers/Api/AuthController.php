@@ -55,8 +55,8 @@ class AuthController extends Controller
         
         // check if user exists
         $user = User::where('email', $request->email)->first();
-        Log::debug('[AuthController]-> user check: '.$user);
         
+        // if there is no user with that email, respond in kind
         if (!$user)                  
         {
             return response()->json([
@@ -65,23 +65,18 @@ class AuthController extends Controller
             ], Response::HTTP_UNPROCESSABLE_ENTITY);
         }
 
+        // if password doesn't match, no soup for you
         if (!Hash::check(request('password'), $user->password)) {
-            Log::debug("AuthController->login  **failed Hash::check");
-
-            if (Hash::needsRehash($user->password) ){
-                $hashed = Hash::make(request('password'));
-            }
 
             return response()->json()([
                 'message' => 'Incorrect email or password',
                 'status' => Response::HTTP_UNPROCESSABLE_ENTITY,
             ], Response::HTTP_UNPROCESSABLE_ENTITY);
             
-        } else {
-            Log::info("AuthController->login: hash checked");
         }
 
-        // gather data to get access_token
+        // gather data to get access_token which allows user to login
+        // note that Oauth is expecting username
         $data = [
                 'grant_type' => 'password',
                 'client_id' => config('services.passport.client_id'),
@@ -93,14 +88,11 @@ class AuthController extends Controller
 
         // Get access_token
         $request = Request::create('/oauth/token', 'POST', $data);
-        Log::debug("$request");
-
+            
+        // 
         $response = app()->handle($request);
 
-        
-
         if ($response->getStatusCode() != 200) {
-            Log::debug("AuthController - login failed");
 
             return response()->json([
                 'message' => 'Incorrect email or password - maybe both, or at least one(1).',
@@ -110,44 +102,30 @@ class AuthController extends Controller
         // unpack the response
         $responseData = json_decode($response->getContent());
 
+        // log the user in
         Auth::login($user);
 
-        // set user
+        // set user var
         $user = Auth::User();
 
-        Log::debug("logged in user: ");
-        Log::debug($user);
-
         // set the token cookie
-        $token_cookie = cookie(
-            'tokenCookie',
-            $responseData->access_token,
-            null,
-            null,
-            null,
-            true
-        );
+        $token_cookie = cookie('tokenCookie', $responseData->access_token);
 
         // set the user cookie
-        $user_cookie = cookie(
-            'userCookie',
-            $user,
-            null,
-            null,
-            null,
-            true
-        );
+        $user_cookie = cookie('userCookie', $user);
 
+        // queue the cookies...  Heeeeere's the cookies!
         Cookie::queue($token_cookie);
         Cookie::queue($user_cookie);
 
+        // return a JSON response
         return response()->json([
             'user' => $user,
             'token' => $responseData->access_token,
             'expires_in' => $responseData->expires_in,
             'message' => "{$user->name} successfully logged in.",
             'status' => Response::HTTP_OK,
-        ], Response::HTTP_OK);
+        ]);
     }
 
     public function logout()

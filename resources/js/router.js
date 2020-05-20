@@ -4,6 +4,8 @@ import store from './store'
 import mainApp from './mainApp'
 import DashboardComponent from './components/DashboardComponent'
 import LoginComponent from './components/LoginComponent'
+import AnimalsComponent from './components/AnimalsComponent'
+import CreateAnimalComponent from './components/CreateAnimalComponent'
 
 export const router = new VueRouter({ 
     mode: 'history', 
@@ -17,7 +19,7 @@ export const router = new VueRouter({
             children: [
                 {
                     path: 'dashboard',
-                    component: DashboardComponent,
+                    component: CreateAnimalComponent,
                     beforeEnter: (to, from, next) => {
                         if (!window.auth.check()) {
                             next({
