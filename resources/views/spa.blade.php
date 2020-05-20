@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1"> 
         <meta name="csrf-token" content="{{ csrf_token()}}"> 
     
-        <title>Chango Zephyr</title>
+        <title>Sexy Auth</title>
 
         <!-- Fonts -->
         <link href="https://bootswatch.com/4/litera/bootstrap.min.css" rel="stylesheet">
@@ -15,8 +15,6 @@
         <link href="https://unpkg.com/nprogress@0.2.0/nprogress.css" rel="stylesheet" />
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
         <link  href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.4.3/cropper.css" rel="stylesheet">
-
-        
     </head>
 
     <body>
@@ -27,6 +25,7 @@
         
         <script>window.laravel = { csrfToken: '{{ csrf_token() }}' }</script>
         <script src="{{ asset('js/app.js') }}"></script>
+
         <script src="https://unpkg.com/nprogress@0.2.0/nprogress.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.4.3/cropper.js"></script>
 
