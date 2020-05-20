@@ -72,10 +72,7 @@ class AuthController extends Controller
         
         // check if user exists
         $user = User::where('email', $request->email)->first();
-<<<<<<< HEAD
-=======
         Log::debug('[AuthController]-> user check: ' . $user);
->>>>>>> 474e717128508e1e781515421cc4721217c93f7f
         
         // if there is no user with that email, respond in kind
         if (!$user)                  
