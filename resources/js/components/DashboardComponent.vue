@@ -2,7 +2,7 @@
     <div class="mainPlace">
         <b-row>
             <b-col>
-                <h1>HELLO, WORLD</h1>
+                <h1>HELLO, {{ currentUser }}</h1>
             </b-col>
         </b-row>
     </div>

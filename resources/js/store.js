@@ -15,11 +15,6 @@ export default new Vuex.Store({
         let userToken = Vue.cookie.get('token');
         let user = Vue.cookie.get('user');
 
-        let currentUser = JSON.stringify(user);
-
-        console.log("[STORE.STATE] --> user: " + (currentUser));
-        console.log("[STORE.STATE] --> token: " + (userToken));
-
         return {
             token: userToken ? userToken : null,
             user: user ? user : null,
@@ -61,7 +56,7 @@ export default new Vuex.Store({
         refreshUserData(context) {
             axios.call("get", "/api/user").then((userData) => {
                 let user = userData.data.data
-                console.log("USER ----> " + user);
+                
                 context.commit('setUser', user)
             })
         },
