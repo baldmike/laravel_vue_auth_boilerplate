@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import mainApp from './mainApp'
 import DashboardComponent from './components/DashboardComponent'
 import LoginComponent from './components/LoginComponent'
+import NotFound from './components/NotFound'
 
 export const router = new VueRouter({ 
     mode: 'history', 
@@ -29,6 +30,11 @@ export const router = new VueRouter({
                 },
             ]
         },
+
+        {
+            path: '/*',
+            component: NotFound
+        }
     ]
 })
 

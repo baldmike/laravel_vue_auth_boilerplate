@@ -51101,21 +51101,21 @@ var render = function() {
     "div",
     { staticClass: "container-fluid" },
     [
-      _c("notifications", {
-        attrs: {
-          group: "notifications",
-          position: "bottom center",
-          width: "100%"
-        }
-      }),
-      _vm._v(" "),
       _c("nav-bar"),
       _vm._v(" "),
       !_vm.isAuthenticated
         ? _c(_vm.loginComponent, { tag: "login-component" })
         : _vm._e(),
       _vm._v(" "),
-      _vm.isAuthenticated ? _c("router-view") : _vm._e()
+      _vm.isAuthenticated ? _c("router-view") : _vm._e(),
+      _vm._v(" "),
+      _c("notifications", {
+        attrs: {
+          group: "notifications",
+          position: "bottom center",
+          width: "100%"
+        }
+      })
     ],
     1
   )
@@ -75325,6 +75325,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mainApp__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./mainApp */ "./resources/js/mainApp.vue");
 /* harmony import */ var _components_DashboardComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/DashboardComponent */ "./resources/js/components/DashboardComponent.vue");
 /* harmony import */ var _components_LoginComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/LoginComponent */ "./resources/js/components/LoginComponent.vue");
+/* harmony import */ var _components_NotFound__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/NotFound */ "./resources/js/components/NotFound.vue");
+
 
 
 
@@ -75351,6 +75353,9 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
         next();
       }
     }]
+  }, {
+    path: '/*',
+    component: _components_NotFound__WEBPACK_IMPORTED_MODULE_4__["default"]
   }]
 });
 router.beforeEach(function (to, from, next) {
