@@ -26,7 +26,7 @@
             }
         },
         
-        computed: mapGetters(['isAuthenticated']),
+        computed: mapGetters(['isAuthenticated', 'currentUser']),
             
     }
 </script>
