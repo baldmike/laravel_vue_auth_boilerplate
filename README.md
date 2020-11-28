@@ -75,7 +75,7 @@ docker-compose exec php php artisan passport:install
 This will generate two keys, copy the 'secret' for id=2 (Laravel Password Grant Client) - this was created by passport:install, above, and is needed for Vue to connect.  Then paste the following lines in `.env` file, using that 'secret':
 
 ```
-PASSPORT_LOGIN_ENDPOINT = 'localhost:8088'
+PASSPORT_LOGIN_ENDPOINT = 'localhost:8000'
 PASSPORT_CLIENT_ID={ Client ID }
 PASSPORT_CLIENT_SECRET={ THE 'SECRET' OF LARAVEL PASSWORD GRANT CLIENT }
 ```
@@ -88,6 +88,6 @@ docker-compose exec php npm run live
 
 This will first run through some compilation processes and then you'll be ready to run.
 
-The project will be running on `localhost:8088`
+The project will be running on `localhost:8000`
 
 You will need to get a user name from the database. Use the username and 'password' to login, you'll be taken to dashboard and adopt your next dog or cat from your local shelter or rescue group, please and thank you.
