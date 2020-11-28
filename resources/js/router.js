@@ -1,5 +1,4 @@
 import VueRouter from 'vue-router' 
-import store from './store'
 
 import mainApp from './mainApp'
 import DashboardComponent from './components/DashboardComponent'
